@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "seed": "node seed-from-xlsx.mjs"
+    "seed": "node seed-from-xlsx.mjs",
+    "migrate:seed": "node seed-from-xlsx.mjs"
   },
   "dependencies": {
     "pg": "^8.16.0"

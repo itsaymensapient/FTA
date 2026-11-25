@@ -16,11 +16,14 @@ export function ActivityFooter({
       {items.map((item) => (
         <span key={item.label} className="inline-flex items-center gap-1.5 leading-none">
           {item.status === 'done' ? (
-            <Check className="size-3.5 text-success" strokeWidth={2.5} />
+            <Check className="size-3.5 text-success" strokeWidth={2.5} aria-hidden="true" />
           ) : item.status === 'wait' ? (
-            <LoaderCircle className="size-3.5 animate-spin text-gold" />
+            <LoaderCircle
+              className="size-3.5 animate-spin text-gold motion-reduce:animate-none"
+              aria-hidden="true"
+            />
           ) : (
-            <Circle className="size-3 text-muted-foreground/60" />
+            <Circle className="size-3 text-muted-foreground/60" aria-hidden="true" />
           )}
           <span>{item.label}</span>
         </span>

@@ -3,8 +3,9 @@ import { Separator } from '@/components/ui/separator'
 import { DEMO } from '@/data/fixtures'
 import { cn } from '@/lib/utils'
 import type { Role } from '@/data/types'
+import { useStand } from '@/session/StandSession'
 import { CalendarDays, CircleUserRound } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 
 type Props = {
@@ -30,6 +31,8 @@ export function Shell({
   const isEntry = role === 'ENTRY'
   const title = isBiz ? 'CDP · FTA ASSISTANT' : 'FTA CDP · AI Agent Demo'
   const shownDate = date ?? (isBiz ? DEMO.bizToday : DEMO.ftaToday)
+  const { flash } = useStand()
+  const reduce = useReducedMotion()
 
   return (
     <div
@@ -39,38 +42,57 @@ export function Shell({
       )}
       style={{ background: 'var(--shell-bg)' }}
     >
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <header
         className="sticky top-0 z-20 border-b border-border/80 backdrop-blur-md"
         style={{ background: 'color-mix(in oklab, var(--shell-chrome) 92%, transparent)' }}
       >
-        <div className="stand-page flex items-center justify-between gap-4 px-6 py-3.5">
+        <div className="stand-page flex items-center justify-between gap-4 px-6 py-3">
           <div className="min-w-0">
             <div
               className={cn(
-                'truncate text-[0.9375rem] font-semibold tracking-[-0.01em]',
+                'truncate text-[0.875rem] font-semibold tracking-[-0.01em]',
                 isBiz ? 'text-gold' : 'text-foreground',
               )}
+              translate="no"
             >
               {title}
             </div>
             {isBiz ? (
-              <div className="mt-0.5 text-xs leading-5 text-muted-foreground">
+              <div className="mt-0.5 text-[0.6875rem] leading-4 text-muted-foreground">
                 for business · GITEX concept
               </div>
             ) : null}
           </div>
 
-          <div className="flex shrink-0 items-center gap-2.5">
-            <Badge variant="outline" className="h-8 rounded-full px-3 text-xs font-medium">
+          <div className="flex shrink-0 items-center gap-2">
+            {!isEntry ? (
+              <a
+                className="hidden sm:inline"
+                href={isBiz ? '/guides/business.html' : '/guides/fta-specialist.html'}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Badge
+                  variant="outline"
+                  className="h-5 px-1.5 text-[0.625rem] font-semibold tracking-wide"
+                >
+                  GUIDE
+                </Badge>
+              </a>
+            ) : null}
+            <Badge variant="outline" className="h-6 px-2 font-medium">
               Demo data
             </Badge>
             <div className="hidden items-center gap-1.5 text-sm leading-none text-muted-foreground sm:flex">
-              <CalendarDays className="size-3.5 opacity-70" />
+              <CalendarDays className="size-3.5 opacity-70" aria-hidden="true" />
               <span>{shownDate}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm font-medium leading-none text-foreground">
-              <CircleUserRound className="size-3.5 opacity-70" />
-              <span>
+            <div className="flex min-w-0 items-center gap-1.5 text-sm font-medium leading-none text-foreground">
+              <CircleUserRound className="size-3.5 shrink-0 opacity-70" aria-hidden="true" />
+              <span className="truncate">
                 {visitorName}
                 {isBiz ? ' · Business' : ''}
               </span>
@@ -83,10 +105,10 @@ export function Shell({
             <Separator />
             <div className="bg-primary text-primary-foreground">
               <div className="stand-page flex flex-wrap items-center justify-between gap-2 px-6 py-2.5 text-sm leading-5">
-                <span className="font-medium">
-                  {visitorName} · Business
+                <span className="font-medium">{visitorName} · Business</span>
+                <span className="min-w-0 truncate opacity-90" translate="no">
+                  {companyLabel}
                 </span>
-                <span className="opacity-90">{companyLabel}</span>
                 <span className="opacity-80">{shownDate}</span>
               </div>
             </div>
@@ -94,12 +116,29 @@ export function Shell({
         ) : null}
       </header>
 
+      {flash ? (
+        <div
+          className="border-b border-gold/30 bg-gold/15"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <div className="stand-page px-6 py-2 text-[0.8125rem] font-medium leading-5 text-foreground">
+            {flash}
+          </div>
+        </div>
+      ) : null}
+
       <motion.main
+        id="main"
         key={String(role) + String(companyLabel) + String(date)}
-        initial={isEntry ? false : { opacity: 0, y: 8 }}
+        initial={isEntry || reduce ? false : { opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-        className={cn('stand-page flex-1 px-6 py-6', className)}
+        transition={{
+          duration: reduce ? 0 : 0.22,
+          ease: [0.23, 1, 0.32, 1],
+        }}
+        className={cn('stand-page flex-1 scroll-mt-20 px-6 py-5', className)}
       >
         {children}
       </motion.main>

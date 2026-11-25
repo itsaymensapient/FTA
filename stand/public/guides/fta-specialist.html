@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1f33" />
+    <title>FTA Specialist · How the stand process works</title>
+    <style>
+      :root {
+        --bg: #0b1f33;
+        --card: #152a40;
+        --fg: #e8eef5;
+        --muted: #9bb0c4;
+        --line: #2c425c;
+        --primary: #3b7af0;
+        --gold: #c4a35a;
+        --ok: #3aaa78;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font: 16px/1.55 "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(circle at top left, #163252 0%, #0b1f33 48%, #071422 100%);
+        color: var(--fg);
+      }
+      main { max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
+      a { color: var(--primary); }
+      h1 { font-size: 1.75rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 12px; }
+      h2 { font-size: 1.05rem; margin: 32px 0 10px; letter-spacing: -0.015em; }
+      p, li { color: var(--muted); }
+      .kicker { color: var(--gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .card {
+        background: color-mix(in oklab, var(--card) 88%, transparent);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 16px 18px;
+        margin: 14px 0;
+      }
+      ol.steps { margin: 0; padding-left: 1.2rem; }
+      ol.steps li { margin: 0.55rem 0; }
+      .meta { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 20px; font-size: 0.875rem; }
+      .back { display: inline-block; margin-top: 28px; }
+      code { color: var(--fg); font-size: 0.9em; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="kicker">GITEX stand · process guide</div>
+      <h1>FTA Specialist path</h1>
+      <p>
+        You are the FTA specialist. The Central Data Platform (CDP) has already checked overnight data.
+        The AI agent ranks findings, explains them in plain language, and drafts actions — you decide what is sent.
+      </p>
+
+      <div class="card">
+        <strong style="color: var(--fg)">Who does what</strong>
+        <p style="margin: 8px 0 0">
+          <strong style="color: var(--fg)">CDP / rules</strong> own the numbers (returns vs e-invoices, refund support).<br />
+          <strong style="color: var(--fg)">AI agent</strong> briefs, explains, recommends, and drafts.<br />
+          <strong style="color: var(--fg)">You</strong> choose the option, edit if needed, send, and close.
+        </p>
+      </div>
+
+      <h2>Demo sequence</h2>
+      <ol class="steps">
+        <li><strong style="color: var(--fg)">Prep</strong> — see what the agent checked before you arrived.</li>
+        <li><strong style="color: var(--fg)">Briefing</strong> — two high-risk events, ordered by risk (Al Yasmeen return gap, then Al Waha refund).</li>
+        <li><strong style="color: var(--fg)">Explain</strong> — read the reconciliation / refund split; open invoices or supplier checks.</li>
+        <li><strong style="color: var(--fg)">Act</strong> — pick an option (recommended path asks the taxpayer / partial approval); Send the letter.</li>
+        <li><strong style="color: var(--fg)">Follow-up</strong> — review the reply / VD / paper invoices; close or escalate.</li>
+        <li><strong style="color: var(--fg)">Summary</strong> — session outcomes; optionally try the Business role on the same cases.</li>
+      </ol>
+
+      <h2>Case 1 · Al Yasmeen (return vs e-invoices)</h2>
+      <p>
+        Box 1b (Dubai) shows a VAT gap of AED 486,200 from 38 October e-invoices. Net Box 14 gap is AED 412,000
+        after an overstatement in Box 1a. Recommended path: ask the taxpayer; on follow-up the VD explains the cut-off
+        and emirate allocation — close when remaining difference is zero.
+      </p>
+
+      <h2>Case 2 · Al Waha (refund)</h2>
+      <p>
+        Refund claim AED 284,600 is only partly supported by received e-invoices. Bright Line invoices sit on hold
+        because the supplier has not filed. Recommended path: partial approval + request documents; on follow-up approve
+        supported paper invoices, reject unsupported amounts, hold supplier-dependent VAT.
+      </p>
+
+      <div class="meta">
+        <span>Sources: scenario v2.9 · data model v1.2</span>
+        <span style="color: var(--ok)">Demo data only — not live EmaraTax</span>
+      </div>
+      <a class="back" href="/">← Back to the stand demo</a>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Re-migrate & Seed",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "program": "${workspaceFolder}/db/seed-from-xlsx.mjs",
+      "cwd": "${workspaceFolder}/db",
+      "console": "integratedTerminal",
+      "preLaunchTask": "Start PostgreSQL",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Launch Backend API",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--watch", "src/index.mjs"],
+      "cwd": "${workspaceFolder}/server",
+      "console": "integratedTerminal",
+      "preLaunchTask": "Start PostgreSQL",
+      "env": {
+        "API_PORT": "8787"
+      },
+      "serverReadyAction": {
+        "pattern": "listening on (https?://\\S+)",
+        "uriFormat": "%s/health",
+        "action": "openExternally"
+      },
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Launch Stand UI",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:5173",
+      "webRoot": "${workspaceFolder}/stand",
+      "preLaunchTask": "Launch Stand UI"
+    },
+    {
+      "name": "Launch Stand UI (server only)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--host", "127.0.0.1", "--port", "5173"],
+      "cwd": "${workspaceFolder}/stand",
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "pattern": "Local:\\s+(https?://\\S+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (PG + API + UI)",
+      "configurations": ["Launch Backend API", "Launch Stand UI"],
+      "preLaunchTask": "Start PostgreSQL",
+      "stopAll": true
+    }
+  ]
+}

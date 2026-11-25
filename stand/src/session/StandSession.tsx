@@ -18,6 +18,7 @@ type SessionState = {
   activity: string[]
   choices: Record<string, string>
   weakMessage: string | null
+  flash: string | null
 }
 
 type SessionApi = SessionState & {
@@ -26,6 +27,7 @@ type SessionApi = SessionState & {
   go: (screen: ScreenId) => void
   openCase: (company: NonNullable<CaseKey>, next: ScreenId) => void
   log: (line: string) => void
+  flashMessage: (msg: string) => void
   setChoice: (key: string, optionId: string) => void
   setWeakMessage: (msg: string | null) => void
   reset: () => void
@@ -39,6 +41,7 @@ const initial: SessionState = {
   activity: [],
   choices: {},
   weakMessage: null,
+  flash: null,
 }
 
 const Ctx = createContext<SessionApi | null>(null)
@@ -80,6 +83,13 @@ export function StandSessionProvider({ children }: { children: ReactNode }) {
     setState((s) => ({ ...s, weakMessage }))
   }, [])
 
+  const flashMessage = useCallback((flash: string) => {
+    setState((s) => ({ ...s, flash }))
+    window.setTimeout(() => {
+      setState((s) => (s.flash === flash ? { ...s, flash: null } : s))
+    }, 2600)
+  }, [])
+
   const reset = useCallback(() => setState(initial), [])
 
   const api = useMemo(
@@ -90,11 +100,23 @@ export function StandSessionProvider({ children }: { children: ReactNode }) {
       go,
       openCase,
       log,
+      flashMessage,
       setChoice,
       setWeakMessage,
       reset,
     }),
-    [state, setName, chooseRole, go, openCase, log, setChoice, setWeakMessage, reset],
+    [
+      state,
+      setName,
+      chooseRole,
+      go,
+      openCase,
+      log,
+      flashMessage,
+      setChoice,
+      setWeakMessage,
+      reset,
+    ],
   )
 
   return <Ctx.Provider value={api}>{children}</Ctx.Provider>

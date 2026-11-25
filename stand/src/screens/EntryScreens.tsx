@@ -1,8 +1,8 @@
-﻿import { motion } from 'motion/react'
+﻿import { motion, useReducedMotion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { ActivityFooter } from '@/components/ActivityFooter'
 import { Shell } from '@/components/Shell'
-import { Button, Input, Panel } from '@/components/ui'
+import { ActionCard, Button, Input, Panel } from '@/components/ui'
 import { Badge } from '@/components/ui/badge'
 import { BRIEFING, COMPANIES, DEMO, PREP_BIZ_LINES, PREP_FTA_LINES } from '@/data/fixtures'
 import { useStand } from '@/session/StandSession'
@@ -14,31 +14,39 @@ export function NameScreen() {
     <Shell role="ENTRY" visitorName={visitorName || 'Visitor'} date={DEMO.ftaToday}>
       <div className="mx-auto flex min-h-[68vh] max-w-lg flex-col justify-center gap-7 text-center">
         <div className="flex flex-col gap-3">
-          <h1 className="stand-title text-balance text-[2rem] text-white sm:text-[2.25rem]">
-            Welcome to the FTA Central Data Platform
-          </h1>
+          <h1 className="stand-title text-white">Welcome to the FTA Central Data Platform</h1>
           <p className="stand-subtitle mx-auto max-w-[38ch]">
             Type your name to begin the Federal Tax Authority stand demo.
           </p>
         </div>
-        <Input
-          autoFocus
-          placeholder="Your name"
-          value={visitorName}
-          onChange={(e) => setName(e.target.value)}
-          className="h-14 bg-card/70 text-center text-lg leading-none"
-        />
-        <Button
-          size="lg"
-          className="mx-auto min-w-44"
-          disabled={!visitorName.trim()}
-          onClick={() => {
-            setName(visitorName.trim())
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={(e) => {
+            e.preventDefault()
+            const next = visitorName.trim()
+            if (!next) return
+            setName(next)
             go('02_role')
           }}
         >
-          Continue
-        </Button>
+          <label className="sr-only" htmlFor="visitor-name">
+            Your name
+          </label>
+          <Input
+            id="visitor-name"
+            name="visitor-name"
+            autoComplete="nickname"
+            autoFocus
+            spellCheck={false}
+            placeholder="e.g. Sara…"
+            value={visitorName}
+            onChange={(e) => setName(e.target.value)}
+            className="h-11 bg-card/70 text-center text-[0.9375rem] leading-none"
+          />
+          <Button size="lg" type="submit" className="mx-auto min-w-40" disabled={!visitorName.trim()}>
+            Continue
+          </Button>
+        </form>
       </div>
       <div className="mt-8 text-center text-xs leading-5 text-muted-foreground">
         Waiting for a visitor
@@ -57,32 +65,76 @@ export function RoleScreen() {
           Hello, {name}. Who are you today?
         </h1>
         <div className="grid gap-4 md:grid-cols-2">
-          <button
-            type="button"
-            className="rounded-2xl border-2 border-primary bg-card p-6 text-left transition hover:bg-card/90"
+          <div
+            role="button"
+            tabIndex={0}
+            className="relative rounded-md border-2 border-primary bg-card p-5 text-left transition-[background-color,border-color,transform] duration-150 ease-[var(--ease-out)] hover:bg-card/90 focus-visible:ring-3 focus-visible:ring-ring/40 active:scale-[0.99]"
             onClick={() => chooseRole('FTA_SPECIALIST')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                chooseRole('FTA_SPECIALIST')
+              }
+            }}
           >
-            <div className="mb-4 flex size-11 items-center justify-center rounded-xl bg-primary/15 text-primary">
-              <Landmark className="size-5" />
+            <a
+              href="/guides/fta-specialist.html"
+              target="_blank"
+              rel="noreferrer"
+              className="absolute top-3 right-3"
+              onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => e.stopPropagation()}
+            >
+              <Badge
+                variant="outline"
+                className="h-5 px-1.5 text-[0.625rem] font-semibold tracking-wide text-primary"
+              >
+                GUIDE
+              </Badge>
+            </a>
+            <div className="mb-3 flex size-9 items-center justify-center rounded-md bg-primary/15 text-primary">
+              <Landmark className="size-4" aria-hidden="true" />
             </div>
-            <div className="text-lg font-semibold leading-snug text-white">FTA Specialist</div>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+            <div className="text-[0.9375rem] font-semibold leading-snug text-white">FTA Specialist</div>
+            <p className="mt-2 text-[0.8125rem] leading-5 text-muted-foreground">
               Work with the FTA agent on overnight findings, letters, and follow-up.
             </p>
-          </button>
-          <button
-            type="button"
-            className="rounded-2xl border border-border bg-card p-6 text-left transition hover:border-gold/60 hover:bg-card/90"
+          </div>
+          <div
+            role="button"
+            tabIndex={0}
+            className="relative rounded-md border border-border bg-card p-5 text-left transition-[background-color,border-color,transform] duration-150 ease-[var(--ease-out)] hover:border-gold/60 hover:bg-card/90 focus-visible:ring-3 focus-visible:ring-ring/40 active:scale-[0.99]"
             onClick={() => chooseRole('BUSINESS')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                chooseRole('BUSINESS')
+              }
+            }}
           >
-            <div className="mb-4 flex size-11 items-center justify-center rounded-xl bg-gold/15 text-gold">
-              <Building2 className="size-5" />
+            <a
+              href="/guides/business.html"
+              target="_blank"
+              rel="noreferrer"
+              className="absolute top-3 right-3"
+              onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => e.stopPropagation()}
+            >
+              <Badge
+                variant="outline"
+                className="h-5 px-1.5 text-[0.625rem] font-semibold tracking-wide text-gold"
+              >
+                GUIDE
+              </Badge>
+            </a>
+            <div className="mb-3 flex size-9 items-center justify-center rounded-md bg-gold/15 text-gold">
+              <Building2 className="size-4" aria-hidden="true" />
             </div>
-            <div className="text-lg font-semibold leading-snug text-white">Business</div>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+            <div className="text-[0.9375rem] font-semibold leading-snug text-white">Business</div>
+            <p className="mt-2 text-[0.8125rem] leading-5 text-muted-foreground">
               Become the VAT manager. The FTA Assistant already has the letter and a draft answer.
             </p>
-          </button>
+          </div>
         </div>
       </div>
     </Shell>
@@ -94,30 +146,35 @@ function PrepList({
 }: {
   lines: { text: string; done: boolean; time?: string }[]
 }) {
-  const [visible, setVisible] = useState(1)
+  const reduce = useReducedMotion()
+  const [visible, setVisible] = useState(reduce ? lines.length : 1)
   useEffect(() => {
+    if (reduce) {
+      setVisible(lines.length)
+      return
+    }
     if (visible >= lines.length) return
-    const t = setTimeout(() => setVisible((v) => v + 1), 650)
+    const t = setTimeout(() => setVisible((v) => v + 1), 520)
     return () => clearTimeout(t)
-  }, [visible, lines.length])
+  }, [visible, lines.length, reduce])
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" aria-live="polite" aria-relevant="additions">
       {lines.slice(0, visible).map((line, index) => {
         const isCurrent = !line.done && index === visible - 1
         return (
           <motion.div
             key={line.text}
-            initial={{ opacity: 0, y: 6, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            initial={reduce ? false : { opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: reduce ? 0 : 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="flex items-start gap-3 text-sm leading-6"
           >
-            <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center">
+            <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center" aria-hidden="true">
               {line.done ? (
                 <Check className="size-4 text-success" strokeWidth={2.5} />
               ) : isCurrent ? (
-                <LoaderCircle className="size-4 animate-spin text-gold" />
+                <LoaderCircle className="size-4 animate-spin text-gold motion-reduce:animate-none" />
               ) : (
                 <span className="size-2 rounded-full bg-border" />
               )}
@@ -269,20 +326,21 @@ export function BriefingScreen() {
         <div className="grid gap-4">
           {BRIEFING.map((item) => (
             <Panel key={item.id}>
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="min-w-0">
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div className="min-w-0 flex-1">
                   <div className="mb-2 flex flex-wrap items-center gap-2">
-                    <Badge variant="destructive" className="h-6 rounded-full px-2.5">
+                    <Badge variant="destructive" className="h-6 px-2">
                       High
                     </Badge>
-                    <span className="text-sm font-medium text-destructive">{item.reason}</span>
+                    <span className="text-[0.8125rem] font-medium text-destructive">{item.reason}</span>
                   </div>
-                  <div className="text-lg font-semibold leading-snug tracking-[-0.01em]">
+                  <div className="text-[0.9375rem] font-semibold leading-snug tracking-[-0.01em]">
                     {item.event}
                   </div>
-                  <div className="mt-1 text-sm leading-5 text-muted-foreground">{item.company}</div>
+                  <div className="mt-1 text-[0.8125rem] leading-5 text-muted-foreground">{item.company}</div>
                 </div>
                 <Button
+                  className="shrink-0 self-end"
                   onClick={() => {
                     log(`Opened ${item.company}`)
                     if (item.id === 'yasmeen') openCase('yasmeen', '04_c1_explain')
@@ -314,32 +372,30 @@ export function CompanyChooserScreen() {
         <p className="stand-subtitle mb-6 max-w-[60ch]">
           You become the VAT manager. Each card shows the open issue and its deadline — no risk ratings on this side.
         </p>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Panel>
-            <div className="flex flex-col gap-4">
-              <Badge variant="outline" className="h-7 w-fit rounded-full border-destructive/40 text-destructive">
-                Reply due 07.01.2027
-              </Badge>
-              <div className="text-lg font-semibold leading-snug">{COMPANIES.yasmeen.name}</div>
-              <p className="text-sm leading-6 text-muted-foreground">
-                The FTA asks for an explanation of the August–October 2026 return: e-invoices show AED 486,200 more VAT
-                for Dubai, AED 412,000 net.
-              </p>
-              <Button onClick={() => openCase('yasmeen', 'Y1_home')}>Open</Button>
-            </div>
-          </Panel>
-          <Panel>
-            <div className="flex flex-col gap-4">
-              <Badge variant="outline" className="h-7 w-fit rounded-full border-destructive/40 text-destructive">
-                Documents due 24.12.2026
-              </Badge>
-              <div className="text-lg font-semibold leading-snug">{COMPANIES.waha.name}</div>
-              <p className="text-sm leading-6 text-muted-foreground">
-                Of a refund of AED 284,600, AED 53,600 is approved; documents needed for AED 231,000.
-              </p>
-              <Button onClick={() => openCase('waha', 'W1_home')}>Open</Button>
-            </div>
-          </Panel>
+        <div className="grid items-stretch gap-4 md:grid-cols-2">
+          <ActionCard
+            action={<Button onClick={() => openCase('yasmeen', 'Y1_home')}>Open</Button>}
+          >
+            <Badge variant="destructive" className="h-6 w-fit">
+              Reply due 07.01.2027
+            </Badge>
+            <div className="text-[0.9375rem] font-semibold leading-snug">{COMPANIES.yasmeen.name}</div>
+            <p className="text-[0.8125rem] leading-5 text-muted-foreground">
+              The FTA asks for an explanation of the August–October 2026 return: e-invoices show AED 486,200 more VAT for
+              Dubai, AED 412,000 net.
+            </p>
+          </ActionCard>
+          <ActionCard
+            action={<Button onClick={() => openCase('waha', 'W1_home')}>Open</Button>}
+          >
+            <Badge variant="destructive" className="h-6 w-fit">
+              Documents due 24.12.2026
+            </Badge>
+            <div className="text-[0.9375rem] font-semibold leading-snug">{COMPANIES.waha.name}</div>
+            <p className="text-[0.8125rem] leading-5 text-muted-foreground">
+              Of a refund of AED 284,600, AED 53,600 is approved; documents needed for AED 231,000.
+            </p>
+          </ActionCard>
         </div>
       </div>
     </Shell>

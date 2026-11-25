@@ -43,18 +43,18 @@ export function Stepper({ variant, current, eventLabel }: Props) {
             <li key={step.id} className="flex items-center gap-1.5">
               <div
                 className={cn(
-                  'flex size-8 items-center justify-center rounded-full text-xs font-semibold transition-colors',
+                  'flex size-7 items-center justify-center rounded-sm text-[0.6875rem] font-semibold transition-colors',
                   done && 'bg-success text-white',
                   active && 'bg-primary text-primary-foreground shadow-sm',
                   !done && !active && 'border border-border bg-card/40 text-muted-foreground',
                 )}
                 aria-current={active ? 'step' : undefined}
               >
-                {done ? <Check className="size-3.5" strokeWidth={2.5} /> : i + 1}
+                {done ? <Check className="size-3" strokeWidth={2.5} aria-hidden="true" /> : i + 1}
               </div>
               <span
                 className={cn(
-                  'pr-2 text-sm leading-none',
+                  'pr-2 text-[0.8125rem] leading-none',
                   active ? 'font-semibold text-foreground' : 'font-medium text-muted-foreground',
                 )}
               >

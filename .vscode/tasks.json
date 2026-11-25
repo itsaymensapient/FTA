@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start PostgreSQL",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$svc = Get-Service -Name 'postgresql-x64-17' -ErrorAction SilentlyContinue; if (-not $svc) { Write-Error 'Service postgresql-x64-17 not found. Install PostgreSQL 17 or update this task.'; exit 1 }; if ($svc.Status -ne 'Running') { Start-Service postgresql-x64-17 }; Get-Service postgresql-x64-17 | Format-Table Name, Status, DisplayName -AutoSize\"",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Re-migrate & Seed",
+      "type": "shell",
+      "command": "npm run migrate:seed",
+      "dependsOn": ["Start PostgreSQL"],
+      "options": {
+        "cwd": "${workspaceFolder}/db"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch Backend API",
+      "type": "npm",
+      "script": "dev",
+      "path": "server/",
+      "isBackground": true,
+      "dependsOn": ["Start PostgreSQL"],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false
+      },
+      "problemMatcher": {
+        "owner": "stand-api",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".",
+          "endsPattern": "listening on"
+        }
+      }
+    },
+    {
+      "label": "Launch Stand UI",
+      "type": "npm",
+      "script": "dev",
+      "path": "stand/",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": false
+      },
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".",
+          "endsPattern": "(Local:|ready in)"
+        }
+      }
+    },
+    {
+      "label": "Start Full Stack",
+      "dependsOn": ["Start PostgreSQL", "Launch Backend API", "Launch Stand UI"],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

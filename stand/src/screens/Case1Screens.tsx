@@ -2,6 +2,7 @@ import { ActivityFooter } from '@/components/ActivityFooter'
 import { Shell } from '@/components/Shell'
 import { Stepper } from '@/components/Stepper'
 import {
+  ActionCard,
   AskBar,
   Button,
   DangerNote,
@@ -207,7 +208,7 @@ export function C1DocumentsFta() {
 }
 
 export function C1ActFta() {
-  const { visitorName, go, choices, setChoice, log } = useStand()
+  const { visitorName, go, choices, setChoice, log, flashMessage } = useStand()
   const selected = choices.c1_fta || 'OPT-FTA-REC-1'
   return (
     <Shell
@@ -244,7 +245,15 @@ export function C1ActFta() {
             >
               Send
             </Button>
-            <Button variant="outline">Edit</Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                log('Opened letter editor')
+                flashMessage('Draft letter opened for edit. Adjust the text, then Send.')
+              }}
+            >
+              Edit
+            </Button>
             <Button variant="ghost" onClick={() => go('04_c1_explain')}>
               Cancel
             </Button>
@@ -269,7 +278,7 @@ export function C1ActFta() {
 }
 
 export function C1FollowupFta() {
-  const { visitorName, go, log } = useStand()
+  const { visitorName, go, log, flashMessage } = useStand()
   return (
     <Shell
       role="FTA_SPECIALIST"
@@ -337,7 +346,16 @@ export function C1FollowupFta() {
             </div>
           </Panel>
           <div className="flex flex-wrap gap-2">
-            <Button variant="outline">Open VD</Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                log('Opened Voluntary Disclosure')
+                flashMessage('VD opened: AED 412,000 cut-off + AED 74,200 emirate move.')
+                go('05_c1_documents')
+              }}
+            >
+              Open VD
+            </Button>
             <Button
               variant="success"
               onClick={() => {
@@ -347,8 +365,26 @@ export function C1FollowupFta() {
             >
               Close case
             </Button>
-            <Button variant="outline">Ask for more information</Button>
-            <Button variant="destructive">Refer to audit</Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                log('Asked for more information')
+                go('16_query_table')
+              }}
+            >
+              Ask for more information
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={() => {
+                if (!window.confirm('Refer this case to audit? This ends the FTA follow-up path.')) return
+                log('Referred to audit')
+                flashMessage('Case referred to audit. Session continues to summary.')
+                go('18_summary')
+              }}
+            >
+              Refer to audit
+            </Button>
           </div>
         </FadeIn>
       </div>
@@ -453,21 +489,21 @@ export function Y1Home() {
     >
       <Stepper variant="BUSINESS" current="CHECK" />
       <FadeIn className="mx-auto mt-5 flex max-w-4xl flex-col gap-4">
-        <h1 className="stand-title text-[1.5rem]">VAT overview</h1>
-        <Panel className="ring-gold/40">
-          <Badge variant="destructive" className="mb-2">
+        <h1 className="stand-title">VAT overview</h1>
+        <ActionCard
+          className="ring-gold/40"
+          action={<Button onClick={() => go('Y2_explain')}>Open the item</Button>}
+        >
+          <Badge variant="destructive" className="w-fit">
             Reply due 07.01.2027
           </Badge>
-          <div className="text-lg font-semibold leading-snug tracking-[-0.02em]">
+          <div className="text-[0.9375rem] font-semibold leading-snug tracking-[-0.02em]">
             Request for clarification · {company.caseId}
           </div>
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">
+          <p className="text-[0.8125rem] leading-5 text-muted-foreground">
             The FTA asks about AED 486,200 more VAT for Dubai on e-invoices, AED 412,000 net.
           </p>
-          <Button className="mt-4" onClick={() => go('Y2_explain')}>
-            Open the item
-          </Button>
-        </Panel>
+        </ActionCard>
         <div className="grid gap-3 md:grid-cols-3">
           {['VAT · Active', 'E-invoicing · Active', 'Excise · Not registered'].map((card) => (
             <Panel key={card} contentClassName="py-4">
@@ -622,7 +658,8 @@ export function Y2bDocuments() {
 }
 
 export function Y3Act() {
-  const { visitorName, go, choices, setChoice, setWeakMessage, weakMessage, log } = useStand()
+  const { visitorName, go, choices, setChoice, setWeakMessage, weakMessage, log, flashMessage } =
+    useStand()
   const selected = choices.c1_biz || 'OPT-BUS-REC-1'
   return (
     <Shell
@@ -672,7 +709,15 @@ export function Y3Act() {
             >
               Submit VD and reply
             </Button>
-            <Button variant="outline">Edit</Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                log('Editing VD and reply')
+                flashMessage('Edit mode: review the VD table and reply, then submit.')
+              }}
+            >
+              Edit
+            </Button>
             <Button variant="ghost" onClick={() => go('Y2_explain')}>
               Cancel
             </Button>
@@ -722,7 +767,7 @@ export function Y3Act() {
 }
 
 export function Y4Followup() {
-  const { visitorName, go } = useStand()
+  const { visitorName, go, flashMessage, log } = useStand()
   return (
     <Shell
       role="BUSINESS"
@@ -755,7 +800,16 @@ export function Y4Followup() {
               <Button variant="gold" onClick={() => go('Z1_summary')}>
                 Finish
               </Button>
-              <Button variant="outline">Open payment summary</Button>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  log('Opened payment summary')
+                  flashMessage('Payment summary: additional VAT AED 412,000 for Aug–Oct 2026.')
+                  go('Z1_summary')
+                }}
+              >
+                Open payment summary
+              </Button>
             </div>
           </Panel>
         </FadeIn>

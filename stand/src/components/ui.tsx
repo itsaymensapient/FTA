@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/table'
 import { cn } from '@/lib/utils'
 import { Check } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import type { ReactNode } from 'react'
 
 export function Panel({
@@ -28,6 +28,26 @@ export function Panel({
     <Card className={cn('gap-0 py-0 shadow-none ring-border/70', className)}>
       <CardContent className={cn('p-5', contentClassName)}>{children}</CardContent>
     </Card>
+  )
+}
+
+/** Equal-height card with body content and a CTA pinned to the bottom edge. */
+export function ActionCard({
+  children,
+  action,
+  className,
+  contentClassName,
+}: {
+  children: ReactNode
+  action: ReactNode
+  className?: string
+  contentClassName?: string
+}) {
+  return (
+    <Panel className={cn('h-full', className)} contentClassName={cn('flex h-full flex-col', contentClassName)}>
+      <div className="flex min-h-0 flex-1 flex-col gap-3">{children}</div>
+      <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">{action}</div>
+    </Panel>
   )
 }
 
@@ -52,7 +72,7 @@ export function PaperPanel({
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="mb-2.5 text-[0.6875rem] font-semibold tracking-[0.12em] text-gold uppercase">
+    <div className="mb-2 text-[0.625rem] font-semibold tracking-[0.1em] text-gold uppercase">
       {children}
     </div>
   )
@@ -67,12 +87,17 @@ export function FadeIn({
   className?: string
   delay?: number
 }) {
+  const reduce = useReducedMotion()
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 6 }}
+      initial={reduce ? false : { opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.28, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        duration: reduce ? 0 : 0.22,
+        delay: reduce ? 0 : delay,
+        ease: [0.23, 1, 0.32, 1],
+      }}
     >
       {children}
     </motion.div>
@@ -99,7 +124,14 @@ export function AskBar({
         e.currentTarget.reset()
       }}
     >
-      <Input name="q" placeholder={placeholder} aria-label={placeholder} className="h-12" />
+      <Input
+        name="q"
+        placeholder={placeholder}
+        aria-label={placeholder}
+        autoComplete="off"
+        spellCheck={false}
+        className="h-10"
+      />
     </form>
   )
 }
@@ -132,7 +164,8 @@ export function OptionList({
             aria-selected={active}
             onClick={() => onSelect(opt.id)}
             className={cn(
-              'flex w-full items-start gap-2 rounded-lg border px-3.5 py-3 text-left text-sm leading-5 transition-colors',
+              'flex w-full items-start gap-2 rounded-md border px-3 py-2.5 text-left text-[0.8125rem] leading-5 transition-[color,background-color,border-color] duration-150 ease-[var(--ease-out)]',
+              'focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40',
               active && accent === 'primary' && 'border-primary bg-primary/15 text-foreground',
               active && accent === 'gold' && 'border-gold bg-gold/15 text-foreground',
               !active && 'border-border bg-transparent text-foreground hover:bg-muted/50',
@@ -140,7 +173,7 @@ export function OptionList({
             )}
           >
             {opt.recommended ? (
-              <Check className="mt-0.5 size-3.5 shrink-0 text-success" aria-hidden />
+              <Check className="mt-0.5 size-3.5 shrink-0 text-success" aria-hidden="true" />
             ) : null}
             <span>{opt.label}</span>
           </button>
@@ -152,7 +185,7 @@ export function OptionList({
 
 export function DangerNote({ children }: { children: ReactNode }) {
   return (
-    <Alert variant="destructive" className="mt-3">
+    <Alert variant="destructive" className="mt-3" role="alert">
       <AlertDescription className="text-sm leading-5">{children}</AlertDescription>
     </Alert>
   )
@@ -171,19 +204,19 @@ export function StatTile({
 }) {
   return (
     <Panel>
-      <div className="text-[0.6875rem] font-semibold tracking-[0.08em] text-muted-foreground uppercase">
+      <div className="text-[0.625rem] font-semibold tracking-[0.08em] text-muted-foreground uppercase">
         {label}
       </div>
       <div
         className={cn(
-          'mt-1.5 text-xl font-semibold leading-tight tracking-[-0.02em]',
+          'mt-1 text-[1.0625rem] font-semibold leading-tight tracking-[-0.02em] tabular-nums',
           tone === 'ok' && 'num-ok',
           tone === 'gold' && 'num-gold',
         )}
       >
         {value}
       </div>
-      {hint ? <div className="mt-1 text-xs leading-5 text-muted-foreground">{hint}</div> : null}
+      {hint ? <div className="mt-1 text-[0.6875rem] leading-4 text-muted-foreground">{hint}</div> : null}
     </Panel>
   )
 }

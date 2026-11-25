@@ -1,0 +1,379 @@
+GITEX Dubai: CDP with AI agents
+How the FTA AI agent works, and the stand scenario
+1. How the FTA AI agent works
+One AI agent works on top of the CDP and has two faces: the FTA agent for the FTA specialist and the FTA Assistant for the taxpayer. Both use the same CDP data; each side sees only its own. CDP rules find the issues; the agent explains, proposes and prepares. People decide and press "Send", "Submit" or "Close".
+The agent works on its own between these decisions. It works with the rule results before anyone opens the screen, leads each case to the end (waits for the answer, checks it, recommends closing or escalation) and hands the case to the other side agent to agent: the FTA agent's letter reaches the taxpayer's FTA Assistant, which has the answer prepared before the taxpayer opens it.
+1.1 The process
+
+The general process: people, agents and the CDP
+Five lanes: two people (FTA specialist, taxpayer), two faces of the agent (FTA agent, FTA Assistant) and the CDP. The specialist acts twice: chooses an option and approves the letter, then closes the case or escalates. The taxpayer reviews, approves and submits. Each case has its own diagram in sections 3 and 4.
+1.2 Who does what: CDP and the agent
+The CDP does everything that is a number or a legal rule. The agent does the reading, writing, choosing and sequencing around it, and calls the CDP for every figure. People make the decisions.
+Step
+CDP: data and rules
+Agent: AI with CDP tools
+Person
+Find
+Loads the data and runs the use-case rules: return vs e-invoices by box, refund vs received invoices, non-filers. Produces findings with amounts
+Reads the findings, ranks them with context (deadlines, history), writes the briefing
+—
+Explain
+Gives the figures: box table, invoice lists, supplier status
+Chooses what evidence to pull, explains it in plain words, answers questions by calling CDP tools
+Asks
+Decide
+Holds the thresholds and deadlines (VD above AED 10,000, 20 business days)
+Recommends one option and says why the others are weak
+Chooses
+Act
+Case number, deadline, letter templates
+Drafts the letter, VD or reply from the template and the data
+Sends or submits
+Taxpayer side
+Gives only the taxpayer's own data
+Reads the FTA letter, matches it with the ledger, finds the cause, prepares the answer (agent to agent)
+Submits
+Follow-up
+Checks the VD against e-invoices; registration and filing status of suppliers
+Reads the reply and the scanned paper invoices, extracts amounts and supplier TRNs for the rules, recommends close, ask for more or audit
+Decides
+Close
+Stores the case and the log
+Writes the case history and the summary
+Closes
+
+1.3 The agent at work
+The agent screens carry the UAE emblem, the same on the FTA side and the taxpayer side. One agent, two sides. Before each role starts, the stand shows what the CDP rules checked overnight and what the agent did with the results: lines appear one by one with a spinner, then a tick, for 5–6 seconds; the visitor can skip.
+
+FTA specialist: what the agent did before the day started
+
+Taxpayer: the FTA letter handed agent to agent, the answer already in preparation
+1.4 Six steps on both sides
+
+The six steps: FTA specialist and Business
+Step
+FTA specialist with the FTA agent
+Taxpayer with the FTA Assistant
+1 Signal / Check
+Briefing ordered by risk
+Company overview: open issue and deadlines
+2 Explain
+What was found and the evidence; invoices open as forms
+The FTA letter explained from the company's records
+3 Decide
+Two or three options, recommended first
+The same; a weak option is explained
+4 Act
+Draft letter; the specialist sends
+Draft VD and reply; the taxpayer submits
+5 Follow-up
+Answer checked against the data
+FTA decision explained
+6 Closed / Done
+Case history; next event
+Result and the FTA side of the case
+
+1.5 Rules for development
+Numbers from data. Every figure comes from a CDP query or rule; the model writes only the text. Each answer has a "How I got this" note.
+Tax rules in code. Thresholds and deadlines (VD above AED 10,000, 20 business days for a refund decision, Emirate of the establishment, tax invoice for input VAT) are business rules.
+People decide. Nothing is sent, submitted or closed without a person; every step is logged.
+Access by role. The FTA specialist sees the data of the role; the taxpayer sees only its own data and its counterparties.
+One case, one set of facts on both sides: same number, dates, amounts.
+Synthetic data only on the stand.
+1.6 What the agent uses in the CDP
+Capability
+CDP source
+Case
+Return vs e-invoices by VAT201 box (1a–1g, 9, 14)
+VAT Return Reconciliation (BRD 5)
+1
+VD checked against e-invoices
+VD & Credit Note Reconciliation (BRD 7)
+1
+Refund vs received e-invoices (Box 9)
+Refund Requests (UC18–UC22)
+2
+Supplier filing status
+Non-Filer (BRD 6), VAT registration
+2
+Invoice lists and invoice forms
+E-Invoice Registry (UC-05)
+1, 2
+Letters and cases with deadlines
+Case store of the demo (FTA case management in production)
+1, 2
+
+1.7 Data the stand needs
+Data
+What it is used for
+In the test set
+Registration: taxpayers and their establishments
+Names, TIN and TRN; the Emirate of the establishment decides Box 1a–1g; e-invoicing status of suppliers
+147 taxpayers, 65 establishments
+E-invoices with lines
+Output VAT by Emirate, input VAT, invoice lists, the tax-invoice form
+6,538 invoices
+VAT returns by box
+What the taxpayer declared
+2 returns
+Filing status
+Suppliers that do not file (Bright Line)
+90 periods
+Voluntary Disclosures
+The taxpayer's correction, checked against e-invoices
+2 VDs
+Refund request
+Case 2
+1 request
+FTA letters and taxpayer replies
+Both sides of each case, with deadlines
+6 letters
+Documents sent with a reply
+Paper tax invoices, bank confirmations
+20 documents
+Taxpayer's ledger
+The assistant's explanation (booked late, wrong Emirate, card slips); seen only by the taxpayer side
+81 records
+Cases, findings, invoice lists, audit log
+The case store shared by both sides
+3 cases, 16 events
+Reference and agent settings
+VAT201 boxes, options offered at each step
+20 boxes, 11 options
+
+The full structure with the test data is in the workbook GITEX_CDP_Stand_Data_Model_v1.2.xlsx.
+Open question for the development team: can the agent answer free questions typed in the visitor's own words? If yes, how, given that every number must come from the data and not from the language model. If not, the free query is limited to a set of suggested questions.
+2. The stand
+A visitor types a name and chooses a role: FTA Specialist or Business. The stand has two cases and a free query; each case is played from either side, and a visitor who plays both sees one story from two sides. A run takes 3–4 minutes per role. From the summary of one role the visitor can switch to the other.
+Dates are real calendar dates and depend on the event. In this document they are set for GITEX GLOBAL 2026 (8–11 December 2026): the FTA specialist's "today" is Thursday 10.12.2026, the business "today" is Friday 11.12.2026, and answers arrive a few days later on their own. If the event moves, all dates move with it.
+#
+Case
+Company
+FTA specialist side
+Taxpayer side
+1
+VAT return does not match e-invoices
+Al Yasmeen General Trading LLC
+Sees a net gap of AED 412,000 (Dubai +486,200, Abu Dhabi −74,200), sends a request, closes the case
+Traces the 38 invoices, submits a VD and replies
+2
+VAT refund not fully supported
+Al Waha Electronics Trading LLC
+Approves AED 53,600, asks for documents for AED 231,000, decides on the rest
+Sends 6 paper invoices and proof of payment, corrects AED 34,200 by VD
+3
+Free query
+Any
+Questions on all demo data
+Questions on the own company only
+
+Name entry
+
+Role choice: FTA Specialist
+
+Role choice: Business
+2.1 FTA specialist: briefing
+After the role choice the visitor sees the agent at work (section 1.3), then the briefing.
+Good day, Sara. Since your last session I checked 21,480 new e-invoices, 214 VAT returns and 12 refund requests. Two items need your attention, ordered by risk.
+
+Briefing: two events ordered by risk
+#
+Priority and reason
+Event
+Company
+1
+🔴 High · AED 412,000 under-declared
+VAT return does not match e-invoices
+Al Yasmeen General Trading LLC
+2
+🔴 High · refund decision due 25 Dec
+VAT refund request not fully supported
+Al Waha Electronics Trading LLC
+
+2.2 Business: choose a company
+After the company is chosen the visitor sees the assistant at work with the FTA letter (section 1.3), then the company overview.
+The visitor becomes the VAT manager of one of two companies. Each card shows the open issue and its deadline; there are no risk ratings on this side. Each company also has "Ask the FTA for more time": the assistant drafts the request and the FTA extends the deadline. Style: FTA colours (dark blue, gold, light grey), no portal menus.
+
+Choose a company
+Deadline
+Company
+Open issue
+Reply due 07.01.2027
+Al Yasmeen General Trading LLC
+The FTA asks for an explanation of the August–October 2026 return: e-invoices show AED 486,200 more VAT for Dubai, AED 412,000 net
+Documents due 24.12.2026
+Al Waha Electronics Trading LLC
+Of a refund of AED 284,600, AED 53,600 is approved; documents needed for AED 231,000
+
+Company overview
+3. Case 1 · VAT return does not match e-invoices
+Al Yasmeen General Trading LLC, period August–October 2026, return filed on 25.11.2026.
+
+Case 1: the process
+3.1 FTA specialist side
+Step
+Agent
+FTA specialist
+2 Explain
+Box 1b (Dubai): VAT AED 1,140,000 declared, AED 1,626,200 on e-invoices, a gap of AED 486,200 from 38 October invoices to six buyers, all confirmed by the buyers' providers. Box 1a (Abu Dhabi): AED 74,200 more declared than on e-invoices. Box 9 matches. Box 14: AED 823,100 vs AED 1,235,100, net gap AED 412,000
+Opens the 38 invoices and any invoice as a form
+3 Decide
+Ask the taxpayer to explain or correct within 20 business days (recommended), or refer to audit
+Chooses
+4 Act
+Letter with the 38 invoices attached; case CDP-VAT-2026-1187, follow-up on 07.01.2027
+Presses "Send"
+5 Follow-up
+Reply of 11.12: AED 412,000 is a cut-off error (34 October invoices booked in November); AED 74,200 is 4 invoices of the Dubai branch reported under Abu Dhabi. One VD corrects both: Box 1b +486,200, Box 1a −74,200, Box 14 +412,000. The VD matches the e-invoices. "The whole difference is explained"
+Closes the case
+6 Closed
+History: letter 10.12, reply 11.12, closure 14.12. + AED 412,000 VAT; AED 74,200 moved to Dubai. Offers event 2
+Opens event 2
+
+Explain: return vs e-invoices by VAT201 box
+
+Invoice list and an invoice as a document
+
+Decide and Act: options and draft letter
+
+Follow-up: the taxpayer's reply checked
+
+Closed: case history and the next event
+Other branches: refer to audit (the agent drafts the referral, status In audit); the reply explains only part of the gap (the agent shows what is left and offers to ask for more or refer to audit); no reply by 07.01.2027 (the agent suggests a referral).
+3.2 Business side
+Letter CDP-VAT-2026-1187 of 10.12.2026: explain the difference or submit a VD by 07.01.2027.
+Step
+Assistant
+Taxpayer
+2 Explain
+The return vs e-invoices: Box 1b AED 1,140,000 vs 1,626,200; Box 1a AED 288,800 vs 214,600. From the ledger: 34 invoices with VAT of AED 412,000 are dated October but booked in November; 4 invoices with VAT of AED 74,200 were issued by the Dubai branch but reported in Box 1a, while supplies are reported in the Emirate of the establishment that makes them
+Opens the invoices; sees AYT-2026-10-1147 issued on 14.10 and booked on 3.11
+3 Decide
+Submit a VD for AED 412,000 and reply (recommended); reply with an explanation only; ask for more time
+Chooses
+4 Act
+VD: Box 1a 288,800 → 214,600; Box 1b 1,140,000 → 1,626,200; Box 14 823,100 → 1,235,100. Reply drafted. Reminder: do not count the 34 invoices again in the next return; a penalty for the late correction is possible
+Presses "Submit VD and reply"
+5 Follow-up
+FTA reply: the VD matches the e-invoices, the case is closed
+Presses "Finish"
+6 Done
+Case closed, reply 27 days before the deadline
+—
+
+Explain: FTA letter and the 38 invoices traced
+
+Explain: an invoice compared with the ledger
+
+Act: VD and reply
+
+Follow-up: FTA decision
+Other branch, explanation only: "A difference above AED 10,000 must be corrected with a VD. An explanation alone will not close the case." Back to the options.
+4. Case 2 · VAT refund not fully supported
+Al Waha Electronics Trading LLC, period August–October 2026. Refund request (VAT311) for AED 284,600 submitted on 27.11.2026; decision due by 25.12.2026.
+
+Case 2: the process
+4.1 FTA specialist side
+Step
+Agent
+FTA specialist
+2 Explain
+Box 9: AED 1,212,000 in the return, AED 1,027,800 on received e-invoices. AED 184,200 has no e-invoice. AED 46,800 comes from 14 invoices of Bright Line General Trading LLC, which has not filed for Q2 and Q3. Fully supported: AED 53,600
+Opens the supplier check and a Bright Line invoice
+3 Decide
+Approve AED 53,600 and ask for documents for AED 231,000 (recommended); hold the whole refund; refer to audit
+Chooses
+4 Act
+Letter: AED 53,600 approved; by 24.12, tax invoices for AED 184,200 and proof of VAT paid to Bright Line for AED 46,800. Suggests a non-filer case on Bright Line (CDP-NF-2026-0733)
+Presses "Send"
+5 Follow-up
+Reply of 11.12: 6 paper tax invoices for AED 150,000 from suppliers not yet on e-invoicing; bank confirmations of VAT paid to Bright Line; a VD removing AED 34,200 from Box 9. Recommendation: approve AED 150,000, reject AED 34,200, hold AED 46,800 until Bright Line is verified
+Opens the documents; approves
+6 Closed
+AED 203,600 approved, AED 34,200 rejected, AED 46,800 on hold, non-filer case open. Last event, so the summary opens
+Sees the summary
+
+Explain: Box 9 and the refund broken down
+
+Explain: supplier check and a Bright Line invoice
+
+Decide and Act: partial approval
+
+Follow-up: documents and decision
+E-invoicing comes in phases, so some suppliers still issue paper invoices. The agent asks for documents instead of rejecting. A supplier that does not file is a reason to verify, so AED 46,800 is held, not rejected.
+4.2 Business side
+Letter CDP-REF-2026-0219 of 10.12: AED 53,600 approved; documents for AED 231,000 needed by 24.12.
+Step
+Assistant
+Taxpayer
+2 Explain
+Box 9: AED 1,212,000 vs AED 1,027,800 on received e-invoices. AED 150,000: 6 paper tax invoices from 2 suppliers not yet on e-invoicing. AED 34,200: 23 card slips and booking confirmations without the supplier's TRN; they are not tax invoices, so this VAT cannot be recovered. AED 46,800: 14 invoices from Bright Line, which has not filed for Q2 and Q3; payments confirmed by the bank
+Opens the scanned paper invoices
+3 Decide
+Send the 6 invoices and the proof of payment and accept AED 34,200 as not recoverable (recommended); send everything including the card slips; ask for more time
+Chooses
+4 Act
+Reply with 20 documents; a VD removing AED 34,200 from Box 9, since it is above AED 10,000. Warns that AED 46,800 may be held
+Presses "Send reply"
+5 Follow-up
+FTA decision: AED 150,000 more approved, AED 203,600 in total; AED 34,200 not approved; AED 46,800 on hold until Bright Line is verified
+Presses "Finish"
+6 Done
+Refund of AED 203,600; decision 11 days before the deadline
+—
+
+Explain: FTA letter and the refund broken down
+
+Explain: scanned paper invoices
+
+Act: reply with documents
+
+Follow-up: refund decision
+Other branch, send the card slips too: "Card slips are not tax invoices. The FTA will reject AED 34,200 anyway, and the return still needs a VD." The result is the same.
+5. Free query
+There are two places to ask, by text or voice:
+About the open case, in "Ask about this case…" on every case screen. Examples: "Why Box 1b and not Box 1a?" for Al Yasmeen, "Why are the card slips not enough?" for Al Waha.
+About the data in general: from the FTA specialist's briefing, or on the taxpayer's "Ask the FTA Assistant" screen. The answer is a table, list or chart with a "How I got this" note and a next step. A finding can be turned into a case.
+
+FTA specialist: answer as a table with an offer to open cases
+
+FTA specialist: answer as a list of invoices
+
+Taxpayer: question about the company's data
+Side
+Question
+Answer
+FTA specialist
+Top 5 companies in Sharjah with the biggest output VAT gap for Aug–Oct 2026
+A table of 5 companies. "Two have no open case yet. Open cases for them?"
+FTA specialist
+Show Al Yasmeen's invoices to Marina Hospitality in October
+12 invoices, VAT AED 168,400; each can be opened
+FTA specialist
+Companies in Dubai that did not file the Q3 return
+A list with their Q3 sales from e-invoices
+Taxpayer
+Which of my November sales invoices were not confirmed by the buyer?
+13 of 642, VAT AED 25,750, 11 of them to one buyer. "Draft a note to this buyer?"
+Taxpayer
+When is my next return due?
+Period, due date, whether the draft matches the e-invoices
+Both
+A real company, another company's data, or off topic
+"This stand uses synthetic data only" or "I can only show your company's data", plus example questions
+
+6. Summary screens
+
+FTA specialist: session summary
+FTA specialist: 2 of 2 events closed; VAT secured AED 412,000; refund not paid AED 81,000 (34,200 rejected, 46,800 on hold); the visitor's decisions; buttons "Try as Business" and "Finish".
+
+Business: summary for one company
+Business: time, case status, amount, deadline; what the visitor did; the same case on the FTA side by date; buttons for the other company and "Try as FTA Specialist".
+Company
+Result for the business
+Al Yasmeen
+VD accepted: + AED 412,000, AED 74,200 moved to Dubai, case closed 27 days before the deadline
+Al Waha
+Refund of AED 203,600; AED 34,200 not recoverable and corrected by VD; AED 46,800 on hold until the supplier is verified
+
+After 30 seconds the stand returns to name entry.

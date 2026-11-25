@@ -38,7 +38,7 @@ export function FtaSummaryScreen() {
       }
     >
       <FadeIn className="mx-auto flex max-w-4xl flex-col gap-5">
-        <h1 className="stand-title text-balance text-[1.75rem] sm:text-[2rem]">
+        <h1 className="stand-title text-balance">
           Well done, {name}. Your session in 4 minutes.
         </h1>
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
@@ -113,7 +113,7 @@ export function BizSummaryScreen() {
       }
     >
       <FadeIn className="mx-auto flex max-w-4xl flex-col gap-5">
-        <h1 className="stand-title text-balance text-[1.75rem] sm:text-[2rem]">
+        <h1 className="stand-title text-balance">
           Well done, {name}. The case of {c.short} is closed.
         </h1>
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">

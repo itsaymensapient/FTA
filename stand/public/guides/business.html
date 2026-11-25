@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#163a5f" />
+    <title>Business · How the FTA Assistant process works</title>
+    <style>
+      :root {
+        --bg: #eef2f6;
+        --card: #ffffff;
+        --fg: #12263a;
+        --muted: #5b6b7c;
+        --line: #d5dee8;
+        --primary: #163a5f;
+        --gold: #b8893a;
+        --ok: #1f8a5b;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font: 16px/1.55 "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(180deg, #f7f9fb 0%, #e8eef4 100%);
+        color: var(--fg);
+      }
+      main { max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
+      a { color: var(--primary); }
+      h1 { font-size: 1.75rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 12px; }
+      h2 { font-size: 1.05rem; margin: 32px 0 10px; letter-spacing: -0.015em; }
+      p, li { color: var(--muted); }
+      .kicker { color: var(--gold); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 16px 18px;
+        margin: 14px 0;
+      }
+      ol.steps { margin: 0; padding-left: 1.2rem; }
+      ol.steps li { margin: 0.55rem 0; }
+      .meta { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 20px; font-size: 0.875rem; }
+      .back { display: inline-block; margin-top: 28px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="kicker">GITEX stand · process guide</div>
+      <h1>Business / FTA Assistant path</h1>
+      <p>
+        You are the VAT manager for a company. The FTA Assistant already has the FTA letter, matched it to your
+        ledger or purchase records, and prepared a recommended reply — you check and submit.
+      </p>
+
+      <div class="card">
+        <strong>Who does what</strong>
+        <p style="margin: 8px 0 0">
+          <strong>FTA Assistant</strong> explains the letter, finds the invoices in your records, and drafts the VD / reply pack.<br />
+          <strong>You</strong> choose how to respond, edit if needed, and submit before the deadline.
+        </p>
+      </div>
+
+      <h2>Demo sequence</h2>
+      <ol class="steps">
+        <li><strong>Prep</strong> — see what the assistant prepared overnight.</li>
+        <li><strong>Choose a company</strong> — Al Yasmeen (return clarification) or Al Waha (refund documents).</li>
+        <li><strong>Check</strong> — open the overview item with its deadline.</li>
+        <li><strong>Explain</strong> — read the FTA ask vs your ledger / purchase evidence; open invoice lists.</li>
+        <li><strong>Act</strong> — pick the recommended option (VD + reply, or documents + VD); submit / send.</li>
+        <li><strong>Follow-up</strong> — read the FTA decision; finish to the summary.</li>
+      </ol>
+
+      <h2>Al Yasmeen · request for clarification</h2>
+      <p>
+        The FTA asks about AED 486,200 more Dubai VAT on e-invoices (AED 412,000 net). Your ledger shows 34 invoices
+        booked late and 4 reported under the wrong emirate. Recommended path: one Voluntary Disclosure correcting both,
+        plus a clear reply — do not double-count those invoices in the next return.
+      </p>
+
+      <h2>Al Waha · refund request</h2>
+      <p>
+        AED 53,600 was already supported. For the rest: six paper tax invoices (AED 150,000) are recoverable; card slips
+        (AED 34,200) are not; Bright Line (AED 46,800) depends on the supplier filing. Recommended path: send the paper
+        invoices + payment proof and a VD removing the non-recoverable amount.
+      </p>
+
+      <div class="meta">
+        <span>Sources: scenario v2.9 · data model v1.2</span>
+        <span style="color: var(--ok)">Demo data only — not live EmaraTax</span>
+      </div>
+      <a class="back" href="/">← Back to the stand demo</a>
+    </main>
+  </body>
+</html>

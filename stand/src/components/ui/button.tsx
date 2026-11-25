@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-semibold whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-md border border-transparent bg-clip-padding text-[0.8125rem] font-semibold whitespace-nowrap outline-none select-none transition-[color,background-color,border-color,box-shadow,transform,opacity] duration-150 ease-[var(--ease-out)] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/40 active:not-aria-[haspopup]:scale-[0.97] disabled:pointer-events-none disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5",
   {
     variants: {
       variant: {
@@ -15,17 +15,17 @@ const buttonVariants = cva(
         destructive:
           'border border-destructive/40 bg-transparent text-destructive hover:bg-destructive/10',
         success: 'bg-success text-white hover:bg-success/90',
-        gold: 'bg-gold text-[#12263a] hover:bg-gold/90',
+        gold: 'bg-gold text-gold-foreground hover:bg-gold/90',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
-        default: 'h-11 gap-2 px-4',
-        xs: 'h-8 gap-1 rounded-md px-2.5 text-xs',
-        sm: 'h-9 gap-1.5 px-3 text-[0.8125rem]',
-        lg: 'h-12 gap-2 px-5 text-[0.9375rem]',
-        icon: 'size-11',
-        'icon-sm': 'size-9',
-        'icon-lg': 'size-12',
+        default: 'h-9 gap-1.5 px-3.5',
+        xs: 'h-7 gap-1 rounded-sm px-2 text-[0.75rem]',
+        sm: 'h-8 gap-1.5 px-3 text-[0.75rem]',
+        lg: 'h-10 gap-2 px-4 text-[0.875rem]',
+        icon: 'size-9',
+        'icon-sm': 'size-8',
+        'icon-lg': 'size-10',
       },
     },
     defaultVariants: {
