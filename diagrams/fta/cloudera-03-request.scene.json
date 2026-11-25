@@ -1,0 +1,651 @@
+{
+  "width": 1600,
+  "height": 1760,
+  "elements": [
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 274.34,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / CLOUDERA / HOSTING GUIDE",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 1085.76,
+      "height": 50.4,
+      "text": "One hosted request, from question to verified action",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 1133.8999999999999,
+      "height": 23.799999999999997,
+      "text": "Worked example: Al Yasmeen return reconciliation. The scenario figures are from the supplied synthetic GITEX draft.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "rectangle",
+      "id": "async-note",
+      "x": 64,
+      "y": 184,
+      "width": 1472,
+      "height": 52,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-5",
+      "x": 88,
+      "y": 199,
+      "width": 1281.8,
+      "height": 23.799999999999997,
+      "text": "The app starts a workflow and gets a trace ID. It retrieves run events/results; the durable business case has its own separate ID.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "actor-0",
+      "x": 64,
+      "y": 268,
+      "width": 288,
+      "height": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-6",
+      "x": 88,
+      "y": 280,
+      "width": 242.43999999999997,
+      "height": 30.799999999999997,
+      "text": "UI + server adapter",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "actor-1",
+      "x": 408,
+      "y": 268,
+      "width": 288,
+      "height": 64,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-7",
+      "x": 432,
+      "y": 280,
+      "width": 255.2,
+      "height": 30.799999999999997,
+      "text": "Agent workflow / CPU",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "actor-2",
+      "x": 752,
+      "y": 268,
+      "width": 288,
+      "height": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-8",
+      "x": 776,
+      "y": 280,
+      "width": 153.11999999999998,
+      "height": 30.799999999999997,
+      "text": "LLM endpoint",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "actor-3",
+      "x": 1096,
+      "y": 268,
+      "width": 288,
+      "height": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-9",
+      "x": 1120,
+      "y": 280,
+      "width": 280.71999999999997,
+      "height": 30.799999999999997,
+      "text": "Scoped tools / backend",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "approval-fragment",
+      "x": 64,
+      "y": 992,
+      "width": 1472,
+      "height": 384,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-10",
+      "x": 400,
+      "y": 1013,
+      "width": 389.17999999999995,
+      "height": 15.399999999999999,
+      "text": "OPT / ACTION PATH ONLY IF THE USER APPROVES THE EXACT PREVIEW",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-0",
+      "points": [
+        [
+          208,
+          392
+        ],
+        [
+          552,
+          392
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-11",
+      "x": 380,
+      "y": 361,
+      "width": 332.91999999999996,
+      "height": 19.599999999999998,
+      "text": "1  Start: scoped question + selected case",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-1",
+      "points": [
+        [
+          552,
+          472
+        ],
+        [
+          896,
+          472
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-12",
+      "x": 724,
+      "y": 441,
+      "width": 381.64,
+      "height": 19.599999999999998,
+      "text": "2  Approved instructions + goal: propose a plan",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-2",
+      "points": [
+        [
+          896,
+          552
+        ],
+        [
+          552,
+          552
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-13",
+      "x": 724,
+      "y": 521,
+      "width": 341.03999999999996,
+      "height": 19.599999999999998,
+      "text": "3  Proposed plan; application validates it",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-3",
+      "points": [
+        [
+          552,
+          632
+        ],
+        [
+          1240,
+          632
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-14",
+      "x": 896,
+      "y": 601,
+      "width": 414.11999999999995,
+      "height": 19.599999999999998,
+      "text": "4  Read Gold evidence; run certified reconciliation",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-4",
+      "points": [
+        [
+          1240,
+          712
+        ],
+        [
+          552,
+          712
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-15",
+      "x": 896,
+      "y": 681,
+      "width": 373.52,
+      "height": 19.599999999999998,
+      "text": "5  Evidence IDs; +486,200 / −74,200 / +412,000",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-5",
+      "points": [
+        [
+          552,
+          792
+        ],
+        [
+          896,
+          792
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-16",
+      "x": 724,
+      "y": 761,
+      "width": 422.23999999999995,
+      "height": 19.599999999999998,
+      "text": "6  Explain these results; cite the supplied evidence",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-6",
+      "points": [
+        [
+          896,
+          872
+        ],
+        [
+          552,
+          872
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-17",
+      "x": 724,
+      "y": 841,
+      "width": 389.76,
+      "height": 19.599999999999998,
+      "text": "7  Draft explanation; application checks support",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-7",
+      "points": [
+        [
+          552,
+          952
+        ],
+        [
+          208,
+          952
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-18",
+      "x": 380,
+      "y": 921,
+      "width": 357.28,
+      "height": 19.599999999999998,
+      "text": "8  Show explanation and a correction preview",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-8",
+      "points": [
+        [
+          208,
+          1072
+        ],
+        [
+          552,
+          1072
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-19",
+      "x": 380,
+      "y": 1041,
+      "width": 292.32,
+      "height": 19.599999999999998,
+      "text": "9  Approve the exact preview version",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-9",
+      "points": [
+        [
+          552,
+          1152
+        ],
+        [
+          1240,
+          1152
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-20",
+      "x": 896,
+      "y": 1121,
+      "width": 389.76,
+      "height": 19.599999999999998,
+      "text": "10  Backend checks approval; submits demo change",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-10",
+      "points": [
+        [
+          1240,
+          1232
+        ],
+        [
+          552,
+          1232
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-21",
+      "x": 896,
+      "y": 1201,
+      "width": 422.23999999999995,
+      "height": 19.599999999999998,
+      "text": "11  Operation status + refreshed-record verification",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "msg-11",
+      "points": [
+        [
+          552,
+          1312
+        ],
+        [
+          208,
+          1312
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-22",
+      "x": 380,
+      "y": 1281,
+      "width": 332.91999999999996,
+      "height": 19.599999999999998,
+      "text": "12  Verified outcome + shared case status",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "tools-example",
+      "x": 64,
+      "y": 1432,
+      "width": 1472,
+      "height": 232,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-23",
+      "x": 88,
+      "y": 1445,
+      "width": 638,
+      "height": 35,
+      "text": "What the tool contracts mean in this example",
+      "size": 25,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-24",
+      "x": 88,
+      "y": 1494,
+      "width": 1075.32,
+      "height": 25.2,
+      "text": "Read selected return: trusted company + period → authorized amounts, invoice IDs and a record snapshot.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-25",
+      "x": 88,
+      "y": 1528,
+      "width": 1148.3999999999999,
+      "height": 25.2,
+      "text": "Reconcile return: those records + approved definition → signed box adjustments and AED 412,000 net difference.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-26",
+      "x": 88,
+      "y": 1562,
+      "width": 1044,
+      "height": 25.2,
+      "text": "Submit demo change: exact payload + valid approval + unique operation key → one trackable operation.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-27",
+      "x": 88,
+      "y": 1596,
+      "width": 1169.28,
+      "height": 25.2,
+      "text": "Verify change: operation ID + refreshed records → verified, pending or failed; the LLM cannot choose the status.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "cloudera-03-request-text-28",
+      "x": 64,
+      "y": 1708,
+      "width": 1079.96,
+      "height": 19.599999999999998,
+      "text": "A human pause is persisted in application case state; do not assume Agent Studio provides a complete approval/case-management system.",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "meet-01-two-files",
+    "width": 1600,
+    "height": 980,
+    "textCount": 32,
+    "outside": [],
+    "textOverlaps": []
+  },
+  {
+    "slug": "meet-02-scenario-journey",
+    "width": 1600,
+    "height": 1080,
+    "textCount": 39,
+    "outside": [],
+    "textOverlaps": []
+  },
+  {
+    "slug": "meet-03-data-model",
+    "width": 1600,
+    "height": 1120,
+    "textCount": 46,
+    "outside": [],
+    "textOverlaps": []
+  },
+  {
+    "slug": "meet-04-who-does-what",
+    "width": 1600,
+    "height": 920,
+    "textCount": 34,
+    "outside": [],
+    "textOverlaps": []
+  },
+  {
+    "slug": "meet-05-yasmeen",
+    "width": 1600,
+    "height": 1000,
+    "textCount": 27,
+    "outside": [],
+    "textOverlaps": []
+  },
+  {
+    "slug": "meet-06-waha",
+    "width": 1600,
+    "height": 980,
+    "textCount": 25,
+    "outside": [],
+    "textOverlaps": []
+  }
+]

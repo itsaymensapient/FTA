@@ -1,0 +1,1836 @@
+{
+  "width": 1600,
+  "height": 1600,
+  "elements": [
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 255.2,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / DETAILED ARCHITECTURE",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 1002.2399999999999,
+      "height": 50.4,
+      "text": "Data agents, with approved guidance loaded first",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 897.26,
+      "height": 23.799999999999997,
+      "text": "Ali’s execution flow, section-based instructions and Sulieman’s specialist responsibilities",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "rectangle",
+      "id": "preparation-boundary",
+      "x": 64,
+      "y": 188,
+      "width": 1472,
+      "height": 176,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-5",
+      "x": 88,
+      "y": 205,
+      "width": 223.29999999999998,
+      "height": 15.399999999999999,
+      "text": "PREPARATION / DOMAIN + MODEL OWNERS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "model-inputs",
+      "x": 88,
+      "y": 236,
+      "width": 320,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-6",
+      "x": 112,
+      "y": 251,
+      "width": 242.43999999999997,
+      "height": 26.599999999999998,
+      "text": "Model logic + mappings",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-7",
+      "x": 112,
+      "y": 284,
+      "width": 300.44,
+      "height": 19.599999999999998,
+      "text": "Rules, output meanings and reason IDs",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "reviewed-preparation",
+      "x": 496,
+      "y": 236,
+      "width": 400,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-8",
+      "x": 520,
+      "y": 251,
+      "width": 341.62,
+      "height": 26.599999999999998,
+      "text": "Prepare reviewed plain language",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-9",
+      "x": 520,
+      "y": 284,
+      "width": 357.28,
+      "height": 19.599999999999998,
+      "text": "Describe behavior, interpretation and limits",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "instruction-files",
+      "x": 984,
+      "y": 220,
+      "width": 528,
+      "height": 128,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-10",
+      "x": 1008,
+      "y": 234,
+      "width": 406,
+      "height": 28,
+      "text": "Versioned section instruction files",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-11",
+      "x": 1008,
+      "y": 267,
+      "width": 339.29999999999995,
+      "height": 21,
+      "text": "Domain / semantic / calculation / model",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-12",
+      "x": 1008,
+      "y": 291,
+      "width": 374.09999999999997,
+      "height": 21,
+      "text": "Explanation guidance and permitted tool use",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-13",
+      "x": 1008,
+      "y": 315,
+      "width": 365.4,
+      "height": 21,
+      "text": "Key: domain + section + applicable version",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "prepare-guidance",
+      "points": [
+        [
+          408,
+          284
+        ],
+        [
+          496,
+          284
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "publish-guidance",
+      "points": [
+        [
+          896,
+          284
+        ],
+        [
+          984,
+          284
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-14",
+      "x": 1232,
+      "y": 409,
+      "width": 153.11999999999998,
+      "height": 15.399999999999999,
+      "text": "RUNTIME / EVERY QUESTION",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "question",
+      "x": 64,
+      "y": 384,
+      "width": 240,
+      "height": 44,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-15",
+      "x": 88,
+      "y": 395,
+      "width": 128.17999999999998,
+      "height": 23.799999999999997,
+      "text": "User question",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "question-to-supervisor",
+      "points": [
+        [
+          184,
+          428
+        ],
+        [
+          184,
+          456
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "runtime-1",
+      "x": 64,
+      "y": 456,
+      "width": 240,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-16",
+      "x": 88,
+      "y": 472,
+      "width": 198.35999999999999,
+      "height": 25.2,
+      "text": "1  Supervisor Agent",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-17",
+      "x": 88,
+      "y": 504,
+      "width": 113.67999999999999,
+      "height": 19.599999999999998,
+      "text": "Resolve domain",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-18",
+      "x": 88,
+      "y": 528,
+      "width": 186.76,
+      "height": 19.599999999999998,
+      "text": "and trusted permissions",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "runtime-2",
+      "x": 356,
+      "y": 456,
+      "width": 240,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-19",
+      "x": 380,
+      "y": 472,
+      "width": 208.79999999999998,
+      "height": 25.2,
+      "text": "2  Load instructions",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-20",
+      "x": 380,
+      "y": 504,
+      "width": 211.11999999999998,
+      "height": 19.599999999999998,
+      "text": "Select applicable sections",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-21",
+      "x": 380,
+      "y": 528,
+      "width": 186.76,
+      "height": 19.599999999999998,
+      "text": "Attach approved context",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "runtime-3",
+      "x": 648,
+      "y": 456,
+      "width": 240,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-22",
+      "x": 672,
+      "y": 472,
+      "width": 135.72,
+      "height": 25.2,
+      "text": "3  Build plan",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-23",
+      "x": 672,
+      "y": 504,
+      "width": 186.76,
+      "height": 19.599999999999998,
+      "text": "Choose agents and tools",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-24",
+      "x": 672,
+      "y": 528,
+      "width": 203,
+      "height": 19.599999999999998,
+      "text": "Declare task dependencies",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "runtime-4",
+      "x": 940,
+      "y": 456,
+      "width": 240,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-25",
+      "x": 964,
+      "y": 472,
+      "width": 167.04,
+      "height": 25.2,
+      "text": "4  Validate plan",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-26",
+      "x": 964,
+      "y": 504,
+      "width": 194.88,
+      "height": 19.599999999999998,
+      "text": "Check scope and tool use",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-27",
+      "x": 964,
+      "y": 528,
+      "width": 194.88,
+      "height": 19.599999999999998,
+      "text": "Enforce execution limits",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "runtime-5",
+      "x": 1232,
+      "y": 456,
+      "width": 304,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-28",
+      "x": 1256,
+      "y": 472,
+      "width": 177.48,
+      "height": 25.2,
+      "text": "5  Schedule tasks",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-29",
+      "x": 1256,
+      "y": 504,
+      "width": 186.76,
+      "height": 19.599999999999998,
+      "text": "Run only required tasks",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-30",
+      "x": 1256,
+      "y": 528,
+      "width": 162.39999999999998,
+      "height": 19.599999999999998,
+      "text": "Respect dependencies",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "planning-step-0",
+      "points": [
+        [
+          304,
+          512
+        ],
+        [
+          356,
+          512
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "planning-step-1",
+      "points": [
+        [
+          596,
+          512
+        ],
+        [
+          648,
+          512
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "planning-step-2",
+      "points": [
+        [
+          888,
+          512
+        ],
+        [
+          940,
+          512
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "planning-step-3",
+      "points": [
+        [
+          1180,
+          512
+        ],
+        [
+          1232,
+          512
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "load-before-planning",
+      "points": [
+        [
+          984,
+          312
+        ],
+        [
+          936,
+          312
+        ],
+        [
+          936,
+          396
+        ],
+        [
+          476,
+          396
+        ],
+        [
+          476,
+          456
+        ]
+      ],
+      "color": "#14665E",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-31",
+      "x": 704,
+      "y": 373,
+      "width": 63.8,
+      "height": 15.399999999999999,
+      "text": "LOAD FIRST",
+      "size": 11,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "clarify-reject",
+      "x": 940,
+      "y": 620,
+      "width": 240,
+      "height": 56,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-32",
+      "x": 964,
+      "y": 636,
+      "width": 167.04,
+      "height": 25.2,
+      "text": "Clarify / reject",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "invalid-plan",
+      "points": [
+        [
+          1060,
+          568
+        ],
+        [
+          1060,
+          620
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-33",
+      "x": 1124,
+      "y": 593,
+      "width": 44.66,
+      "height": 15.399999999999999,
+      "text": "INVALID",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-34",
+      "x": 64,
+      "y": 600,
+      "width": 649.5999999999999,
+      "height": 22.4,
+      "text": "Each specialist loads its relevant approved sections before execution.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-35",
+      "x": 64,
+      "y": 632,
+      "width": 584.64,
+      "height": 22.4,
+      "text": "The supervisor owns state, coordination and bounded replanning.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "schedule-semantic",
+      "points": [
+        [
+          1308,
+          568
+        ],
+        [
+          1308,
+          704
+        ],
+        [
+          320,
+          704
+        ],
+        [
+          320,
+          764
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "schedule-ml",
+      "points": [
+        [
+          1384,
+          568
+        ],
+        [
+          1384,
+          720
+        ],
+        [
+          824,
+          720
+        ],
+        [
+          824,
+          764
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "schedule-rag",
+      "points": [
+        [
+          1460,
+          568
+        ],
+        [
+          1460,
+          736
+        ],
+        [
+          1304,
+          736
+        ],
+        [
+          1304,
+          764
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-36",
+      "x": 64,
+      "y": 733,
+      "width": 153.11999999999998,
+      "height": 15.399999999999999,
+      "text": "SELECTED AGENT WORKFLOWS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "semantic-subgraph",
+      "x": 64,
+      "y": 764,
+      "width": 512,
+      "height": 248,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-37",
+      "x": 88,
+      "y": 781,
+      "width": 108.46,
+      "height": 15.399999999999999,
+      "text": "SEMANTIC SUBGRAPH",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-38",
+      "x": 88,
+      "y": 807,
+      "width": 194.88,
+      "height": 29.4,
+      "text": "Data Query Agent",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-39",
+      "x": 88,
+      "y": 840,
+      "width": 408.32,
+      "height": 22.4,
+      "text": "Resolve terms and schema; build a query plan",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-40",
+      "x": 88,
+      "y": 864,
+      "width": 389.76,
+      "height": 22.4,
+      "text": "Generate SQL; execute through scoped tools",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-41",
+      "x": 88,
+      "y": 907,
+      "width": 207.05999999999997,
+      "height": 29.4,
+      "text": "Calculation Agent",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-42",
+      "x": 88,
+      "y": 940,
+      "width": 426.88,
+      "height": 22.4,
+      "text": "Select certified formulas and input references",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-43",
+      "x": 88,
+      "y": 964,
+      "width": 399.03999999999996,
+      "height": 22.4,
+      "text": "Run deterministic functions; return working",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "ml-subgraph",
+      "x": 608,
+      "y": 764,
+      "width": 432,
+      "height": 248,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-44",
+      "x": 632,
+      "y": 781,
+      "width": 70.17999999999999,
+      "height": 15.399999999999999,
+      "text": "ML SUBGRAPH",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-45",
+      "x": 632,
+      "y": 807,
+      "width": 243.6,
+      "height": 29.4,
+      "text": "ML Explanation Agent",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-46",
+      "x": 632,
+      "y": 848,
+      "width": 371.2,
+      "height": 22.4,
+      "text": "Use loaded model interpretation guidance",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-47",
+      "x": 632,
+      "y": 876,
+      "width": 296.96,
+      "height": 22.4,
+      "text": "Read authorized prediction facts",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-48",
+      "x": 632,
+      "y": 904,
+      "width": 352.64,
+      "height": 22.4,
+      "text": "Receive approved evidence descriptions",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-49",
+      "x": 632,
+      "y": 932,
+      "width": 343.35999999999996,
+      "height": 22.4,
+      "text": "Explain supported findings and limits",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "rag-subgraph",
+      "x": 1072,
+      "y": 764,
+      "width": 464,
+      "height": 248,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-50",
+      "x": 1096,
+      "y": 781,
+      "width": 76.55999999999999,
+      "height": 15.399999999999999,
+      "text": "RAG SUBGRAPH",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-51",
+      "x": 1096,
+      "y": 807,
+      "width": 182.7,
+      "height": 29.4,
+      "text": "Knowledge Agent",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-52",
+      "x": 1096,
+      "y": 848,
+      "width": 352.64,
+      "height": 22.4,
+      "text": "Search approved documents and metadata",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-53",
+      "x": 1096,
+      "y": 876,
+      "width": 380.47999999999996,
+      "height": 22.4,
+      "text": "Filter access, applicability and versions",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-54",
+      "x": 1096,
+      "y": 904,
+      "width": 269.12,
+      "height": 22.4,
+      "text": "Return passages and citations",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-55",
+      "x": 1096,
+      "y": 962,
+      "width": 373.52,
+      "height": 19.599999999999998,
+      "text": "Retrieved content remains supporting evidence.",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-56",
+      "x": 64,
+      "y": 1041,
+      "width": 76.55999999999999,
+      "height": 15.399999999999999,
+      "text": "SCOPED TOOLS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "semantic-tools",
+      "points": [
+        [
+          320,
+          1012
+        ],
+        [
+          320,
+          1080
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "ml-tools",
+      "points": [
+        [
+          824,
+          1012
+        ],
+        [
+          824,
+          1080
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "rag-tools",
+      "points": [
+        [
+          1304,
+          1012
+        ],
+        [
+          1304,
+          1080
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "semantic-tool-results",
+      "points": [
+        [
+          352,
+          1080
+        ],
+        [
+          352,
+          1012
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "ml-tool-results",
+      "points": [
+        [
+          856,
+          1080
+        ],
+        [
+          856,
+          1012
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "rag-tool-results",
+      "points": [
+        [
+          1336,
+          1080
+        ],
+        [
+          1336,
+          1012
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "gold-tools",
+      "x": 64,
+      "y": 1080,
+      "width": 512,
+      "height": 128,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-57",
+      "x": 88,
+      "y": 1094,
+      "width": 382.79999999999995,
+      "height": 28,
+      "text": "Gold SQL + certified calculations",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-58",
+      "x": 88,
+      "y": 1127,
+      "width": 400.2,
+      "height": 21,
+      "text": "Enforce scope; validate SQL, inputs and limits",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-59",
+      "x": 88,
+      "y": 1151,
+      "width": 356.7,
+      "height": 21,
+      "text": "Return values, units and query provenance",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-60",
+      "x": 88,
+      "y": 1175,
+      "width": 252.29999999999998,
+      "height": 21,
+      "text": "Source: authorized Gold views",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "evidence-adapter",
+      "x": 608,
+      "y": 1080,
+      "width": 432,
+      "height": 128,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-61",
+      "x": 632,
+      "y": 1094,
+      "width": 313.2,
+      "height": 28,
+      "text": "Prediction evidence adapter",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-62",
+      "x": 632,
+      "y": 1127,
+      "width": 313.2,
+      "height": 21,
+      "text": "Resolve IDs to approved descriptions",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-63",
+      "x": 632,
+      "y": 1151,
+      "width": 356.7,
+      "height": 21,
+      "text": "Return prediction facts and evidence refs",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-64",
+      "x": 632,
+      "y": 1175,
+      "width": 304.5,
+      "height": 21,
+      "text": "Source: records + reviewed mappings",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "retrieval-tools",
+      "x": 1072,
+      "y": 1080,
+      "width": 464,
+      "height": 128,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-65",
+      "x": 1096,
+      "y": 1094,
+      "width": 208.79999999999998,
+      "height": 28,
+      "text": "Document retrieval",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-66",
+      "x": 1096,
+      "y": 1127,
+      "width": 321.9,
+      "height": 21,
+      "text": "Authorized keyword / vector retrieval",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-67",
+      "x": 1096,
+      "y": 1151,
+      "width": 348,
+      "height": 21,
+      "text": "Return applicable passages and citations",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-68",
+      "x": 1096,
+      "y": 1175,
+      "width": 269.7,
+      "height": 21,
+      "text": "Source: approved document index",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "collect-semantic",
+      "points": [
+        [
+          576,
+          980
+        ],
+        [
+          592,
+          980
+        ],
+        [
+          592,
+          1240
+        ],
+        [
+          172,
+          1240
+        ],
+        [
+          172,
+          1288
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "collect-ml",
+      "points": [
+        [
+          1040,
+          980
+        ],
+        [
+          1056,
+          980
+        ],
+        [
+          1056,
+          1256
+        ],
+        [
+          280,
+          1256
+        ],
+        [
+          280,
+          1288
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "collect-rag",
+      "points": [
+        [
+          1536,
+          980
+        ],
+        [
+          1552,
+          980
+        ],
+        [
+          1552,
+          1272
+        ],
+        [
+          388,
+          1272
+        ],
+        [
+          388,
+          1288
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "result-validation",
+      "x": 64,
+      "y": 1288,
+      "width": 432,
+      "height": 80,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-69",
+      "x": 88,
+      "y": 1302,
+      "width": 301.59999999999997,
+      "height": 28,
+      "text": "Collect + validate results",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-70",
+      "x": 88,
+      "y": 1336,
+      "width": 341.03999999999996,
+      "height": 19.599999999999998,
+      "text": "Check figures, provenance and completeness",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "investigation",
+      "x": 584,
+      "y": 1288,
+      "width": 432,
+      "height": 80,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-71",
+      "x": 608,
+      "y": 1302,
+      "width": 220.39999999999998,
+      "height": 28,
+      "text": "Investigation Agent",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-72",
+      "x": 608,
+      "y": 1336,
+      "width": 357.28,
+      "height": 19.599999999999998,
+      "text": "Reconcile findings; propose further evidence",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "reporting",
+      "x": 1104,
+      "y": 1288,
+      "width": 432,
+      "height": 80,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-73",
+      "x": 1128,
+      "y": 1302,
+      "width": 174,
+      "height": 28,
+      "text": "Reporting Agent",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-74",
+      "x": 1128,
+      "y": 1336,
+      "width": 373.52,
+      "height": 19.599999999999998,
+      "text": "Answer with calculations, citations and limits",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "investigate-if-needed",
+      "points": [
+        [
+          496,
+          1328
+        ],
+        [
+          584,
+          1328
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-75",
+      "x": 540,
+      "y": 1297,
+      "width": 57.419999999999995,
+      "height": 15.399999999999999,
+      "text": "IF NEEDED",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "investigation-to-report",
+      "points": [
+        [
+          1016,
+          1328
+        ],
+        [
+          1104,
+          1328
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "direct-answer",
+      "points": [
+        [
+          280,
+          1368
+        ],
+        [
+          280,
+          1412
+        ],
+        [
+          1320,
+          1412
+        ],
+        [
+          1320,
+          1368
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-76",
+      "x": 920,
+      "y": 1385,
+      "width": 82.94,
+      "height": 15.399999999999999,
+      "text": "DIRECT ANSWER",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-77",
+      "x": 104,
+      "y": 1413,
+      "width": 38.279999999999994,
+      "height": 15.399999999999999,
+      "text": "REPLAN",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "failure-policy",
+      "x": 64,
+      "y": 1460,
+      "width": 432,
+      "height": 72,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-78",
+      "x": 88,
+      "y": 1474,
+      "width": 162.39999999999998,
+      "height": 28,
+      "text": "Failure policy",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-79",
+      "x": 88,
+      "y": 1508,
+      "width": 365.4,
+      "height": 19.599999999999998,
+      "text": "Limited retry, clarification or human handoff",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "result-failure",
+      "points": [
+        [
+          172,
+          1368
+        ],
+        [
+          172,
+          1460
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-80",
+      "x": 232,
+      "y": 1385,
+      "width": 44.66,
+      "height": 15.399999999999999,
+      "text": "FAILURE",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "final-response",
+      "x": 1104,
+      "y": 1460,
+      "width": 432,
+      "height": 56,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-81",
+      "x": 1132,
+      "y": 1476,
+      "width": 162.39999999999998,
+      "height": 28,
+      "text": "Final response",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "final-report",
+      "points": [
+        [
+          1428,
+          1368
+        ],
+        [
+          1428,
+          1460
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-detailed-text-82",
+      "x": 64,
+      "y": 1565,
+      "width": 1096.1999999999998,
+      "height": 21,
+      "text": "Shared runtime: supervisor-mediated task/result messages, access enforcement, durable state, validation, audit and evaluation.",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

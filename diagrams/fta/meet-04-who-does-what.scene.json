@@ -1,0 +1,666 @@
+{
+  "width": 1600,
+  "height": 920,
+  "elements": [
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 306.23999999999995,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / GITEX / MEETING · 25 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 814.3199999999999,
+      "height": 50.4,
+      "text": "CDP finds · AI explains · people decide",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 384.53999999999996,
+      "height": 23.799999999999997,
+      "text": "Same split on every step of both cases.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "rectangle",
+      "id": "cdp-rules",
+      "x": 64,
+      "y": 204,
+      "width": 480,
+      "height": 240,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-5",
+      "x": 88,
+      "y": 218,
+      "width": 127.6,
+      "height": 28,
+      "text": "CDP / rules",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-6",
+      "x": 88,
+      "y": 251,
+      "width": 87,
+      "height": 21,
+      "text": "Loads data",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-7",
+      "x": 88,
+      "y": 275,
+      "width": 104.39999999999999,
+      "height": 21,
+      "text": "Runs R01–R13",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-8",
+      "x": 88,
+      "y": 299,
+      "width": 130.5,
+      "height": 21,
+      "text": "Stores findings",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-9",
+      "x": 88,
+      "y": 323,
+      "width": 147.89999999999998,
+      "height": 21,
+      "text": "Owns every figure",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "ai-agent",
+      "x": 568,
+      "y": 204,
+      "width": 480,
+      "height": 240,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-10",
+      "x": 592,
+      "y": 218,
+      "width": 92.8,
+      "height": 28,
+      "text": "AI agent",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-11",
+      "x": 592,
+      "y": 251,
+      "width": 121.8,
+      "height": 21,
+      "text": "Ranks & briefs",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-12",
+      "x": 592,
+      "y": 275,
+      "width": 139.2,
+      "height": 21,
+      "text": "Explains plainly",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-13",
+      "x": 592,
+      "y": 299,
+      "width": 147.89999999999998,
+      "height": 21,
+      "text": "Recommends option",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-14",
+      "x": 592,
+      "y": 323,
+      "width": 156.6,
+      "height": 21,
+      "text": "Drafts letter / VD",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "person",
+      "x": 1072,
+      "y": 204,
+      "width": 480,
+      "height": 240,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-15",
+      "x": 1096,
+      "y": 218,
+      "width": 69.6,
+      "height": 28,
+      "text": "Person",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-16",
+      "x": 1096,
+      "y": 251,
+      "width": 121.8,
+      "height": 21,
+      "text": "Chooses option",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-17",
+      "x": 1096,
+      "y": 275,
+      "width": 130.5,
+      "height": 21,
+      "text": "Edits if needed",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-18",
+      "x": 1096,
+      "y": 299,
+      "width": 104.39999999999999,
+      "height": 21,
+      "text": "Presses Send",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-19",
+      "x": 1096,
+      "y": 323,
+      "width": 130.5,
+      "height": 21,
+      "text": "Closes the case",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "c1",
+      "points": [
+        [
+          544,
+          324
+        ],
+        [
+          568,
+          324
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "c2",
+      "points": [
+        [
+          1048,
+          324
+        ],
+        [
+          1072,
+          324
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-20",
+      "x": 64,
+      "y": 473,
+      "width": 159.5,
+      "height": 15.399999999999999,
+      "text": "EXAMPLE FLOW (SIMPLIFIED)",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "flow-0",
+      "x": 64,
+      "y": 520,
+      "width": 228,
+      "height": 100,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-21",
+      "x": 80,
+      "y": 541,
+      "width": 44.08,
+      "height": 26.599999999999998,
+      "text": "Find",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-22",
+      "x": 80,
+      "y": 578,
+      "width": 24.36,
+      "height": 19.599999999999998,
+      "text": "CDP",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "f-0",
+      "points": [
+        [
+          292,
+          570
+        ],
+        [
+          312,
+          570
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "flow-1",
+      "x": 312,
+      "y": 520,
+      "width": 228,
+      "height": 100,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-23",
+      "x": 328,
+      "y": 541,
+      "width": 77.14,
+      "height": 26.599999999999998,
+      "text": "Explain",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-24",
+      "x": 328,
+      "y": 578,
+      "width": 81.19999999999999,
+      "height": 19.599999999999998,
+      "text": "AI + tools",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "f-1",
+      "points": [
+        [
+          540,
+          570
+        ],
+        [
+          560,
+          570
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "flow-2",
+      "x": 560,
+      "y": 520,
+      "width": 228,
+      "height": 100,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-25",
+      "x": 576,
+      "y": 541,
+      "width": 66.11999999999999,
+      "height": 26.599999999999998,
+      "text": "Decide",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-26",
+      "x": 576,
+      "y": 578,
+      "width": 48.72,
+      "height": 19.599999999999998,
+      "text": "Person",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "f-2",
+      "points": [
+        [
+          788,
+          570
+        ],
+        [
+          808,
+          570
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "flow-3",
+      "x": 808,
+      "y": 520,
+      "width": 228,
+      "height": 100,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-27",
+      "x": 824,
+      "y": 541,
+      "width": 99.17999999999999,
+      "height": 26.599999999999998,
+      "text": "Act draft",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-28",
+      "x": 824,
+      "y": 578,
+      "width": 20,
+      "height": 19.599999999999998,
+      "text": "AI",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "f-3",
+      "points": [
+        [
+          1036,
+          570
+        ],
+        [
+          1056,
+          570
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "flow-4",
+      "x": 1056,
+      "y": 520,
+      "width": 228,
+      "height": 100,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-29",
+      "x": 1072,
+      "y": 541,
+      "width": 44.08,
+      "height": 26.599999999999998,
+      "text": "Send",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-30",
+      "x": 1072,
+      "y": 578,
+      "width": 48.72,
+      "height": 19.599999999999998,
+      "text": "Person",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "f-4",
+      "points": [
+        [
+          1284,
+          570
+        ],
+        [
+          1304,
+          570
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "flow-5",
+      "x": 1304,
+      "y": 520,
+      "width": 228,
+      "height": 100,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-31",
+      "x": 1320,
+      "y": 541,
+      "width": 55.099999999999994,
+      "height": 26.599999999999998,
+      "text": "Check",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-32",
+      "x": 1320,
+      "y": 578,
+      "width": 40.599999999999994,
+      "height": 19.599999999999998,
+      "text": "Tools",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-33",
+      "x": 64,
+      "y": 663,
+      "width": 1015.5799999999999,
+      "height": 23.799999999999997,
+      "text": "Development rule from v2.9: the model writes text only. Each answer keeps a “How I got this” tool note.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-04-who-does-what-text-34",
+      "x": 64,
+      "y": 865,
+      "width": 756.9,
+      "height": 21,
+      "text": "Proposed stand behavior. Confirm CDP product interfaces separately from this demo seed.",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

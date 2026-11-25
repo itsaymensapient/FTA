@@ -1,0 +1,52 @@
+Subject: Re: Proposed high-level Agentic AI architecture for FTA
+
+Hi Ali,
+
+After reviewing the documents, the service characteristics, Sulieman's proposal and your feedback, I suggest combining the shared supervisor with your execution flow. We would keep Silver -> ML -> Gold as the data pipeline, with a separate agent layer that uses Gold and its supporting evidence.
+
+The main refinement is to resolve the domain, load its approved guidance, and validate the plan before selecting the required specialist workflows. A simple question should take a short path; a complex request can use several workflows under the same supervisor.
+
+1. The normal flow
+
+User request -> identity, domain and permissions -> load approved domain guidance -> supervisor builds a plan -> validate the plan -> schedule the required workflows -> collect and validate evidence -> investigate when needed -> report the answer.
+
+An invalid plan returns for clarification or rejection. Failed steps follow a defined policy for limited retries, partial results where appropriate, or human handoff. Each step returns a structured result to the supervisor, which owns the journey state and any replanning. We would parallelize only independent steps.
+
+2. Divide the work inside each workflow
+
+- Semantic/data workflow: resolve business terms, choose approved Gold tables and metrics, generate and validate SQL, execute through controlled read-only tools, and check the results. Calculations use certified SQL expressions or tested functions, including agreed rounding and period rules.
+- ML explanation workflow: identify the recorded prediction and model version, retrieve the applicable explanation guidance and prediction-specific evidence, then produce an explanation with its limitations.
+- Knowledge workflow: retrieve authorized regulations, guidance, data definitions and model documentation, preserving citations and the versions applicable to the question.
+- Investigation and reporting: reconcile evidence across workflows, identify gaps or contradictions, and produce the final answer. These are capabilities we invoke when needed, rather than requiring every request to visit every agent.
+
+The supervisor plans and coordinates. Database access, arithmetic, permission checks and system changes run through controlled tools and services. We do not need a separate LLM agent for every deterministic step.
+
+3. Approved guidance before planning; evidence when explaining
+
+My interpretation of your feedback is that we should prepare approved, plain-language guidance files divided by domain or section, rather than asking the model to interpret implementation code on each request. These packs would contain the procedures, terminology, calculation definitions, model interpretation guidance, permitted tools and escalation rules. The relevant pack is loaded before planning and refined when a specific model/version is identified.
+
+I would keep these reviewed instructions separate from retrieved reference documents. Both should be versioned, but retrieved documents remain evidence and cannot change permissions or authorize tools.
+
+For an individual classification, the guidance still needs evidence tied to that prediction. Gold, or a linked explanation store, should retain the prediction ID, model version, timestamp and input snapshot reference, plus the score where applicable and the available explanation evidence. This might be an approved reason-code mapping, a recorded rule trace or model feature contributions, depending on the model.
+
+A model guide explains how the classifier works generally. It cannot, by itself, prove why a particular invoice was flagged. If the evidence is missing, we should state that limitation and refer the case for review. A flag alone also does not establish a tax error or violation.
+
+4. Retrieval, tools and validation
+
+I recommend document retrieval using keyword and vector search where useful, with permission, effective-date and model-version filters. Exact code mappings and mandatory instructions should use direct, versioned lookup. Gold facts and aggregations should come from SQL through the semantic layer.
+
+Each tool needs a fixed input/output contract and enforced permissions. For SQL, the execution service should enforce allowed views and functions, read-only access, taxpayer/role scope, row limits, timeouts and query-cost limits. The model cannot choose its own access scope. Results should be checked for missing data, freshness, units and reconciliation before reporting. Answers should trace numbers to query results and explain the calculation definition, with supporting query details available to authorized users.
+
+5. Example and proposed starting scope
+
+For "Why was invoice 4471 flagged?", we authenticate the user, authorize access, load the relevant domain pack, and plan the lookup. The workflows retrieve the Gold classification and matching prediction evidence, then add relevant guidance if needed. Reporting distinguishes the recorded model finding from the regulatory reference and any proposed next step. An already-corrected invoice can still need a historical explanation, while further corrective action may be unnecessary.
+
+I suggest starting with a read-only PoC for one agreed persona and domain: a Gold data question, a certified calculation, and an explanation of a stored classification. The ten service characteristics also call for execution, customer control, resume, exceptions and outcome tracking. We should design those interfaces now, then enable actions once the approved business process and target APIs are confirmed. That path would be draft -> authorized approval -> execution -> status tracking, with duplicate-submission protection and human escalation.
+
+Independently of Cloudera, we can prepare the domain packs, semantic definitions, tool contracts, explanation-evidence contract, workflow/state design, and Arabic/English evaluation cases using mock data and tools.
+
+For the Cloudera meeting, I would confirm identity propagation into data and tools, durable workflow resume and approval support, available Gold/model evidence, private deployment constraints, and audit/evaluation capabilities. We can then map the agreed architecture to supported services and versions.
+
+I have attached a diagram showing this structure. It keeps the architecture technology-neutral while making the normal flow and the internal task divisions explicit.
+
+Best regards,

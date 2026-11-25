@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "cloudera-01-hosting",
+    "title": "Where our agents would run on Cloudera",
+    "sub": "Reference proposal: Cloudera AI on Cloud for a protected GITEX demo; the actual FTA edition and release must be confirmed."
+  },
+  {
+    "slug": "cloudera-02-deploy",
+    "title": "How we would deploy the GITEX agent application",
+    "sub": "Read top to bottom: platform setup → versioned project → workflow configuration → tools → publication → acceptance checks."
+  },
+  {
+    "slug": "cloudera-03-request",
+    "title": "One hosted request, from question to verified action",
+    "sub": "Worked example: Al Yasmeen return reconciliation. The scenario figures are from the supplied synthetic GITEX draft."
+  }
+]

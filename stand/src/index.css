@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-gold: var(--gold);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root,
+.shell-biz {
+  --radius: 0.75rem;
+  --background: #eef2f6;
+  --foreground: #12263a;
+  --card: #ffffff;
+  --card-foreground: #12263a;
+  --popover: #ffffff;
+  --popover-foreground: #12263a;
+  --primary: #163a5f;
+  --primary-foreground: #f7fafc;
+  --secondary: #e8eef4;
+  --secondary-foreground: #163a5f;
+  --muted: #e8eef4;
+  --muted-foreground: #5b6b7c;
+  --accent: #f3ece0;
+  --accent-foreground: #7a5a1e;
+  --destructive: #c2473f;
+  --border: #d5dee8;
+  --input: #d5dee8;
+  --ring: #163a5f;
+  --success: #1f8a5b;
+  --warning: #b8893a;
+  --gold: #b8893a;
+  --shell-surface: #ffffff;
+  --shell-chrome: #ffffff;
+  --shell-footer: #e7edf3;
+  --shell-bg: linear-gradient(180deg, #f7f9fb 0%, #e8eef4 100%);
+  --shell-gold: var(--gold);
+  --shell-muted: var(--muted-foreground);
+  --shell-line: var(--border);
+  --shell-danger: var(--destructive);
+  --shell-ok: var(--success);
+  --shell-accent: var(--primary);
+}
+
+.shell-fta,
+.dark {
+  --radius: 0.75rem;
+  --background: #0b1f33;
+  --foreground: #e8eef5;
+  --card: #152a40;
+  --card-foreground: #e8eef5;
+  --popover: #152a40;
+  --popover-foreground: #e8eef5;
+  --primary: #3b7af0;
+  --primary-foreground: #f5f8ff;
+  --secondary: #1a3048;
+  --secondary-foreground: #d7e3f0;
+  --muted: #1a3048;
+  --muted-foreground: #9bb0c4;
+  --accent: #2a3f28;
+  --accent-foreground: #d8c48a;
+  --destructive: #e06a62;
+  --border: #2c425c;
+  --input: #2c425c;
+  --ring: #3b7af0;
+  --success: #3aaa78;
+  --warning: #c4a35a;
+  --gold: #c4a35a;
+  --shell-surface: #152a40;
+  --shell-chrome: #0d2136;
+  --shell-footer: #0a1a2b;
+  --shell-bg: radial-gradient(circle at top left, #163252 0%, #0b1f33 48%, #071422 100%);
+  --shell-gold: var(--gold);
+  --shell-muted: var(--muted-foreground);
+  --shell-line: var(--border);
+  --shell-danger: var(--destructive);
+  --shell-ok: var(--success);
+  --shell-accent: var(--primary);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans antialiased;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-background text-foreground;
+    line-height: 1.5;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 28%, transparent);
+  }
+
+  input,
+  textarea,
+  button {
+    font: inherit;
+  }
+
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .stand-page {
+    @apply mx-auto w-full max-w-[1180px];
+  }
+
+  .stand-title {
+    @apply text-[1.75rem] font-semibold tracking-[-0.02em] text-foreground;
+    line-height: 1.2;
+  }
+
+  .stand-subtitle {
+    @apply text-[0.9375rem] text-muted-foreground;
+    line-height: 1.55;
+  }
+
+  .stand-label {
+    @apply text-[0.6875rem] font-semibold tracking-[0.12em] text-gold uppercase;
+  }
+
+  .num-gap {
+    @apply font-semibold text-destructive;
+  }
+
+  .num-ok {
+    @apply font-semibold text-success;
+  }
+
+  .num-gold {
+    @apply font-bold text-gold;
+  }
+}

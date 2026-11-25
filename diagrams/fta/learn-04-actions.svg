@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2394" role="img" aria-labelledby="learn-04-actions-title learn-04-actions-desc" id="learn-04-actions-root"><title id="learn-04-actions-title">How an agent acts without losing control</title><desc id="learn-04-actions-desc">Drafting, approving, executing and verifying are separate steps with separate evidence.</desc><defs>
+      <style>#learn-04-actions-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #learn-04-actions-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#learn-04-actions-root .diagram-container { overflow:visible }
+}</style><marker id="learn-04-actions-learn-04-actions-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="learn-04-actions-learn-04-actions-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="2394" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="1264" x2="1536" y2="1264" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="worked-example-heading" x="64" y="1344" width="1472" height="132" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<rect data-node-id="worked-row-0" x="64" y="1532" width="1472" height="120" rx="0" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-1" x="64" y="1652" width="1472" height="120" rx="0" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-2" x="64" y="1772" width="1472" height="120" rx="0" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-3" x="64" y="1892" width="1472" height="120" rx="0" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-4" x="64" y="2012" width="1472" height="120" rx="0" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-5" x="64" y="2132" width="1472" height="120" rx="0" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<path data-edge-id="preview" d="M 496 304 L 584 304" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-04-actions-learn-04-actions-arrow)"/>
+<path data-edge-id="approve" d="M 1016 304 L 1104 304" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-04-actions-learn-04-actions-arrow)"/>
+<path data-edge-id="execute-to-status" d="M 1320 384 L 1320 528" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-04-actions-learn-04-actions-arrow)"/>
+<path data-edge-id="status-to-check" d="M 1104 608 L 1016 608" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-04-actions-learn-04-actions-arrow)"/>
+<path data-edge-id="check-to-case" d="M 584 608 L 496 608" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-04-actions-learn-04-actions-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / GITEX / LEARNING GUIDE</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">How an agent acts without losing control</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Drafting, approving, executing and verifying are separate steps with separate evidence.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<rect data-node-id="1--Build-an-action-preview" x="64" y="224" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">1  Build an action preview</text>
+<text x="88" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Action Agent prepares a draft or tool request</text>
+<text x="88" y="310" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Exact company, case and affected record IDs</text>
+<text x="88" y="334" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Proposed values and document attachments</text>
+<rect data-node-id="2--Human-reviews-and-approves" x="584" y="224" width="432" height="160" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="608" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">2  Human reviews and approves</text>
+<text x="608" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Show before / after values and the full draft</text>
+<text x="608" y="310" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Allow edit, cancel or approve</text>
+<text x="608" y="334" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Bind approval to the exact payload version</text>
+<rect data-node-id="3--Backend-rechecks-and-executes" x="1104" y="224" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">3  Backend rechecks and executes</text>
+<text x="1128" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Recheck role, scope and record freshness</text>
+<text x="1128" y="310" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Reject changed or unapproved payloads</text>
+<text x="1128" y="334" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Use an idempotency key to prevent repeats</text>
+<rect data-node-id="4--Store-the-real-operation-status" x="1104" y="528" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="562" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">4  Store the real operation status</text>
+<text x="1128" y="590" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Return operation ID and committed status</text>
+<text x="1128" y="614" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">If the outcome is unknown, check status first</text>
+<text x="1128" y="638" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Do not blindly repeat a timed-out submission</text>
+<rect data-node-id="5--Reconcile-the-new-evidence" x="584" y="528" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="608" y="562" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">5  Reconcile the new evidence</text>
+<text x="608" y="590" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Read the submitted disclosure or documents</text>
+<text x="608" y="614" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Run the same validation against the new state</text>
+<text x="608" y="638" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Report unresolved differences explicitly</text>
+<rect data-node-id="6--Continue-the-shared-case" x="64" y="528" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="562" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">6  Continue the shared case</text>
+<text x="88" y="590" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Both roles read the same case and events</text>
+<text x="88" y="614" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Record approvals, submissions and checks</text>
+<text x="88" y="638" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Close only when closure conditions are met</text>
+<text x="64" y="756" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">PERSISTENT STATE / BACKEND CONTRACT</text>
+<text x="64" y="792" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">What must survive a restart, role switch or repeated button press</text>
+<text x="64" y="856" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" text-anchor="start">case_id + company_id + authorized role scope</text>
+<text x="64" y="896" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" text-anchor="start">current workflow stage + completed task IDs</text>
+<text x="64" y="936" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" text-anchor="start">approved payload version + action operation ID</text>
+<text x="64" y="976" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" text-anchor="start">evidence references + instruction versions</text>
+<text x="64" y="1016" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="400" text-anchor="start">event timestamps + separate simulated business dates</text>
+<text x="896" y="856" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Demo clock: move to the next prepared event.</text>
+<text x="896" y="896" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Approval: still required before each effect.</text>
+<text x="896" y="936" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Pending: a valid status, not an automatic closure.</text>
+<text x="896" y="976" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Reset: isolate or clear the visitor session safely.</text>
+<text x="896" y="1016" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">All external actions stay inside the demo sandbox.</text>
+<text x="64" y="1288" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Case/state storage and business APIs are application components to build or integrate; confirm Cloudera runtime support separately.</text>
+<text x="88" y="1372" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WORKED EXAMPLE / READ FROM TOP TO BOTTOM</text>
+<text x="88" y="1408" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" text-anchor="start">From “please fix it” to a verified demo correction</text>
+<text x="88" y="1446" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">After reading the explanation, the Al Yasmeen user says: “Prepare the correction.”</text>
+<text x="88" y="1514" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">STEP / WHO ACTS</text>
+<text x="360" y="1514" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHAT THEY ACTUALLY DO</text>
+<text x="1032" y="1514" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHAT COMES BACK / WHY IT MATTERS</text>
+<text x="88" y="1567" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">01</text>
+<text x="136" y="1566" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Action workflow</text>
+<text x="360" y="1564" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Prepares the demo disclosure using the supported changes: Dubai</text>
+<text x="360" y="1589" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">+486,200; Abu Dhabi −74,200; net +412,000.</text>
+<text x="1032" y="1564" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Preview v1: company, case, affected boxes,</text>
+<text x="1032" y="1589" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">amounts and evidence references.</text>
+<text x="88" y="1687" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">02</text>
+<text x="136" y="1686" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Human user</text>
+<text x="360" y="1684" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Reviews the exact preview and selects Approve. If the user edits</text>
+<text x="360" y="1709" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">it, the edited version needs fresh approval.</text>
+<text x="1032" y="1684" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">An approval record tied to preview v1. Cancel</text>
+<text x="1032" y="1709" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">produces no submission.</text>
+<text x="88" y="1807" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">03</text>
+<text x="136" y="1806" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Backend execution</text>
+<text x="360" y="1804" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Checks role, company scope, current record version and approval.</text>
+<text x="360" y="1829" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Sends the approved request to the demo submission API.</text>
+<text x="1032" y="1804" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">One operation ID. A changed record blocks</text>
+<text x="1032" y="1829" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">execution until the preview is refreshed.</text>
+<text x="88" y="1927" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">04</text>
+<text x="136" y="1926" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Status tool</text>
+<text x="360" y="1924" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">If the request times out, checks that operation’s status before</text>
+<text x="360" y="1949" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">trying again. Reuses its unique operation key.</text>
+<text x="1032" y="1924" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">The same correction is not submitted twice after</text>
+<text x="1032" y="1949" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">a retry or double click.</text>
+<text x="88" y="2047" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">05</text>
+<text x="136" y="2046" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Reconciliation tool</text>
+<text x="360" y="2044" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Reads the resulting return and checks both Emirate boxes and the</text>
+<text x="360" y="2069" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">invoice evidence against the expected state.</text>
+<text x="1032" y="2044" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Verified correction, or a specific remaining</text>
+<text x="1032" y="2069" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">difference with a pending/failed status.</text>
+<text x="88" y="2167" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">06</text>
+<text x="136" y="2166" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Case engine + UI</text>
+<text x="360" y="2164" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Records the outcome and shows the same event history in Business</text>
+<text x="360" y="2189" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">and Inspector views. Advances simulated follow-up events when</text>
+<text x="360" y="2214" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">needed.</text>
+<text x="1032" y="2164" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Both roles agree on the case status. “Closed”</text>
+<text x="1032" y="2189" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">requires the closure checks to pass.</text>
+<text x="64" y="2294" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">What to remember</text>
+<text x="64" y="2326" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">The agent may prepare a change; the backend controls whether the exact approved change may execute and whether it actually succeeded.</text>
+<text x="64" y="2374" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Worked examples use the supplied synthetic draft. Tool behavior and interfaces are proposed; these are not live taxpayer operations.</text>
+</svg>

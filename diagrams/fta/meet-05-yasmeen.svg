@@ -1,0 +1,36 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="meet-05-yasmeen-title meet-05-yasmeen-desc"><title id="meet-05-yasmeen-title">Case 1 · Al Yasmeen — AED 412,000 net</title><desc id="meet-05-yasmeen-desc">Tool math first. Then the agent explains. Both Emirate boxes must move.</desc><defs><marker id="meet-05-yasmeen-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="meet-05-yasmeen-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1000" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="936" x2="1536" y2="936" stroke="#D8E0E5" stroke-width="1"/>
+
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / GITEX / MEETING · 25 NOV 2026</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">Case 1 · Al Yasmeen — AED 412,000 net</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Tool math first. Then the agent explains. Both Emirate boxes must move.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 25 NOV 2026</text>
+<text x="64" y="188" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">BOX COMPARISON (FROM TOOLS)</text>
+<rect data-node-id="bar-0" x="64" y="220" width="1472" height="104" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="260" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Box 1b Dubai</text>
+<text x="420" y="260" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Return 1,140,000</text>
+<text x="820" y="260" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">E-invoices 1,626,200</text>
+<text x="1220" y="260" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Gap +486,200</text>
+<rect data-node-id="bar-1" x="64" y="340" width="1472" height="104" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="380" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Box 1a Abu Dhabi</text>
+<text x="420" y="380" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Return 288,800</text>
+<text x="820" y="380" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">E-invoices 214,600</text>
+<text x="1220" y="380" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Gap −74,200</text>
+<rect data-node-id="bar-2" x="64" y="460" width="1472" height="104" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="88" y="500" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Box 14 net</text>
+<text x="420" y="500" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Return 823,100</text>
+<text x="820" y="500" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Recomputed 1,235,100</text>
+<text x="1220" y="500" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Net +412,000</text>
+<text x="64" y="600" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHY (LEDGER EVIDENCE)</text>
+<rect data-node-id="34-cut-off-invoices" x="64" y="636" width="704" height="140" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="670" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">34 cut-off invoices</text>
+<text x="88" y="698" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">October supplies booked in November</text>
+<text x="88" y="722" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">VAT AED 412,000</text>
+<rect data-node-id="4-mis-allocated-invoices" x="832" y="636" width="704" height="140" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="856" y="670" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">4 mis-allocated invoices</text>
+<text x="856" y="698" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Dubai establishment reported in Box 1a</text>
+<text x="856" y="722" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">VAT AED 74,200 → move to Box 1b</text>
+<text x="64" y="820" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">AI help afterward</text>
+<text x="64" y="856" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Call get_return_reconciliation + list_finding_invoices + match_ledger → explain → draft VD for both boxes → person submits → check_answer.</text>
+<text x="64" y="960" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Amounts from Data Model Checks / Scenario Case 1. Do not “just add 412k to Dubai”.</text>
+</svg>

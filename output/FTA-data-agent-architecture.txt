@@ -1,0 +1,251 @@
+FTA DATA AGENT ARCHITECTURE
+Prepared 23 November 2026
+Latest scope: AI agents that query, calculate over, investigate and explain Gold data
+Status: proposal for team alignment
+
+This is the current agent-focused proposal. output/FTA-architecture-notes.txt retains the earlier source review and wider platform/service considerations. The current design uses Ali's execution flow and section-based instruction loading as its organizing structure, with specialist responsibilities adapted from Sulieman's proposal.
+
+1. LOGICAL STRUCTURE AND OWNERSHIP
+
+Our work is the agent application layer:
+  Supervisor, specialist agent definitions and context
+  semantic/ML/RAG subgraph workflows
+  plan/task/result schemas and dependency scheduling
+  tool adapters and validation around their use
+  result collection, investigation and grounded reporting
+  durable run state, failure policy, traces and evaluation
+
+Gold tables, stored predictions, explanation artifacts and approved documents are external inputs/interfaces. Their required contracts must be agreed with their owners. This proposal does not redesign the ingestion/ML pipeline or assume that prediction evidence already exists. Cloudera is the intended hosting/integration environment; its product selection follows the logical design.
+
+2. ALI'S NORMAL FLOW, MADE EXECUTABLE
+
+1 User question
+2 Supervisor receives the goal and existing journey context
+3 Resolve domain and permissions
+4 Load approved section instructions
+5 Build execution plan
+6 Validate plan
+7 Workflow scheduler dispatches selected subgraph tasks
+8 Semantic, ML and/or RAG subgraphs execute assigned tasks
+9 Collect and validate results
+10 Investigation when needed
+11 Reporting
+12 Final response
+
+Domain selection can use agent reasoning. Identity and permissions come from trusted services and remain enforced on every tool call. Missing domain information leads to clarification before a dependent query is executed.
+
+Instruction sections load before planning. Each specialist gets its task-specific section set before execution. When a query identifies a model/version or a new domain dependency, the Supervisor resolves the corresponding approved section, revises the plan if necessary and validates it again.
+
+Each stage has a defined input, output and failure status. The scheduler respects dependencies. It may run independent work in parallel, but it does not run all agents for every question. Replanning uses the same validation gate as the original plan.
+
+3. AGENT RESPONSIBILITIES AND INTERNAL DIVISIONS
+
+SUPERVISOR AGENT
+Inputs: question, trusted identity/scope reference, authorized journey context and approved instruction sections.
+Responsibilities: understand the requested outcome, identify ambiguity, choose the domain, assemble a bounded task graph, select specialist roles, collect their structured results and coordinate follow-up work.
+Internal division: intent/domain resolution -> context assembly -> plan construction -> delegation -> result review/replanning -> completion or handoff.
+Output: validated task requests or a clarification/handoff/completion decision.
+Tools: instruction registry and workflow/state interfaces. It delegates business data access through the assigned subgraph tools.
+Boundary: an LLM plan cannot grant permissions or override a failed policy check.
+
+SEMANTIC SUBGRAPH
+
+Data Query Agent
+Inputs: scoped question/subtask, approved semantic definitions, authorized schema metadata and relevant verified query examples.
+Internal division:
+  Resolve terms, period, grain and requested dimensions.
+  Select permitted tables/views, joins and metric definitions.
+  Build a query plan before generating SQL.
+  Generate SQL or select a certified metric/query template.
+  Submit through deterministic SQL validation and a read-only query gateway.
+  Inspect result shape, nulls, empty sets, duplicates, units and freshness.
+Output: result reference, query ID, source snapshot, semantic version, units and warnings.
+Boundary: requested record IDs identify data to look for; they do not establish authority. No writes or arbitrary code execution.
+
+Calculation Agent
+Inputs: requested measure/comparison, authorized result references, approved formula definitions and applicable rule version.
+Internal division:
+  Select the certified formula or metric.
+  Check input grain, units, period alignment and rounding.
+  Bind inputs to a tested function or certified SQL expression.
+  Execute using the tool and check its output.
+Output: numeric result, units, formula/function version, input references and user-readable working.
+Boundary: the model selects and explains the calculation; the tool performs it. An unsupported formula is identified as such rather than silently invented.
+
+The two roles can be one implementation with separate task modes initially. A simple known total can use a certified SQL metric directly. Separate calculation reasoning is useful when the user requests a comparison, derived measure or explanation of the formula.
+
+ML SUBGRAPH
+
+ML Explanation Agent
+Inputs: authorized prediction reference and the question about that prediction/classification.
+Internal division:
+  Retrieve the recorded prediction and identify model/preprocessing versions.
+  Load the matching approved model interpretation section.
+  Retrieve prediction-specific explanation evidence through its tool.
+  Check evidence/model/input-snapshot compatibility.
+  Produce the supported explanation and its limitations.
+Output: classification explanation, evidence references, model version and explicit gaps.
+Boundary: general model documentation is context, not proof of why an individual prediction occurred. Historical explanation does not implicitly rescore a record. A flag is described as a model output; the agent does not convert it into an unsupported legal finding.
+
+Available explanation evidence may be a rule trace, an exact reason mapping or model feature contributions, depending on the classifier. If it is absent, the agent can describe the model generally and identify that it cannot establish an individual reason. An on-demand explanation tool would need the approved model, preprocessing and original feature snapshot and a separately agreed contract.
+
+RAG SUBGRAPH
+
+Knowledge Agent
+Inputs: a focused retrieval task, domain, applicable date/model version and trusted access filters.
+Internal division:
+  Select approved document/metadata collections.
+  Search using keyword/vector retrieval where appropriate.
+  Filter access, versions, effective dates and relevance.
+  Return supporting passages with source references and applicability metadata.
+Output: evidence passages and citations, or an explicit retrieval gap.
+Boundary: retrieved content cannot become a new instruction or tool authorization. Gold facts/aggregations come from SQL. Exact identifiers and mandatory instructions use direct lookup rather than approximate retrieval.
+
+Verified SQL examples and schema descriptions may be retrieved as supporting context for the Data Query Agent. Mandatory metric definitions come from the approved versioned semantic contract. A direct catalog lookup can be a deterministic step and does not always require a Knowledge Agent invocation.
+
+POST-COLLECTION INVESTIGATION
+
+Investigation Agent
+Inputs: validated results and evidence from the selected subgraphs, plus the original question.
+Internal division:
+  Compare results and reconcile definitions, periods and snapshots.
+  Examine supported patterns, anomalies or contradictions.
+  Distinguish observed associations from unproven explanations.
+  Identify whether more evidence is necessary.
+  Return findings or proposed follow-up tasks to the Supervisor.
+Output: supported findings, remaining questions and evidence references.
+Boundary: it does not directly instruct peer agents or bypass the scheduler. Any additional data access becomes a new scoped task through the Supervisor. Investigation is conditional after collection, following Ali's flow.
+
+REPORTING
+
+Reporting Agent
+Inputs: the validated answer/evidence package, applicable language and audience scope.
+Internal division:
+  Compose a clear answer.
+  Present calculation definitions and traceable values.
+  Attach appropriate citations and explain material limitations.
+  Check that final claims stay inside the supplied evidence.
+Output: final response and permitted supporting detail.
+Boundary: it has no independent authority to invent figures, new explanations or broader data access. This role may share the Supervisor's implementation for the first PoC.
+
+These are logical agent roles. Deterministic modules are not separate LLM agents. Agent instances and model endpoints can be consolidated after evaluation without changing the task contracts.
+
+4. APPROVED INSTRUCTION FILES
+
+This implements Ali's note about files divided by section that are loaded before plan execution. Proposed structure:
+
+  shared/interaction-and-reporting
+  shared/tool-use-and-escalation
+  domains/<domain>/procedures-and-terminology
+  domains/<domain>/semantic-definitions
+  domains/<domain>/calculation-definitions
+  domains/<domain>/verified-query-patterns
+  models/<model>/<version>/interpretation-guide
+  agents/<role>/task-procedure
+
+Each reviewed section has an ID, owner, approval status, version and applicability interval. The runtime loads the required sections using explicit keys and records their versions. These files provide task guidance comparable to system-level instructions within the application, subject to the application's actual instruction hierarchy. They do not implement access controls.
+
+Ali's word "code" could mean implementation code or reason codes. For implementation code, domain/ML owners should prepare and review a plain-language guide; the runtime should not ask the LLM to interpret source code for every explanation. For reason codes, an exact versioned mapping can resolve identifiers into approved descriptions before narration. Neither removes the need for evidence tied to the prediction being explained.
+
+5. COMMUNICATION, STATE AND EXECUTION
+
+Task envelope:
+  run_id, task_id, role/subgraph, objective
+  authorized scope reference and input/evidence references
+  instruction section IDs/versions
+  dependencies, allowed tool IDs and expected output schema
+  execution/retry budget and completion criteria
+
+Result envelope:
+  run_id, task_id, status
+  result reference or structured findings
+  query/calculation/model/document evidence references
+  units, snapshot/freshness and relevant versions
+  warnings, missing evidence and safe failure code
+
+The trusted runtime supplies identity/scope references. Model-authored payloads cannot expand them. Agents communicate via the Supervisor and scheduler rather than free-form peer-to-peer conversations. Structured messages reduce context duplication and make dependency handling reviewable.
+
+Persist the approved plan, task statuses, instruction versions, evidence references, checkpoints and retry counts. Resume revalidates identity, permissions and data freshness. Persisting a transcript alone is insufficient.
+
+6. VALIDATION GATES AND FAILURE POLICY
+
+Plan gate: confirm supported task/domain, permissible tools, dependency correctness, budgets and expected evidence.
+SQL/tool gate: parse SQL, restrict operations/views/functions, enforce read-only credentials and row/column scope, validate tool inputs, and apply output/time/cost limits.
+Result gate: inspect provenance, units, completeness, missing records, duplicate joins, calculation reconciliation and model-evidence version compatibility.
+Response gate: ensure each material number/claim is traceable, cited evidence supports the statement and limitations remain visible. Automated checks enforce what they can; an LLM review can supplement, not replace, those controls.
+
+Policy denials stop the blocked operation. Transient safe failures receive bounded retries. Ambiguity returns for clarification. Missing required evidence blocks the corresponding claim. Partial responses identify their limits. Unresolved cases go to a human with the relevant authorized context. Investigation-driven replanning has a finite budget and explicit stop conditions.
+
+7. EXAMPLE TOOL CONTRACTS AND EXTERNAL INPUTS
+
+get_instruction_sections(section_ids, versions/applicability)
+  Returns reviewed instructions and version references.
+
+get_semantic_context(domain, metric_ids, applicable_time)
+  Returns permitted schema, grain, joins and authoritative metric definitions.
+
+query_gold(query_spec, semantic_version)
+  Validates and executes under trusted scope. Returns query/result IDs, units, snapshot and warnings.
+
+calculate(formula_id, input_refs, rule_version)
+  Runs certified arithmetic or a metric definition and returns value/working/lineage.
+
+get_prediction_evidence(prediction_id)
+  Returns authorized prediction metadata, available explanation evidence and matching versions. Missing evidence is an explicit status.
+
+retrieve_knowledge(query, domain, applicability)
+  Applies trusted access filters and returns passages/citations and version metadata.
+
+No function requires a specific transport or vendor service in this logical design. MCP may be an implementation option. Tools receive credentials and scope from the execution layer; these are not supplied as secrets in model context.
+
+Required input contracts from data/ML/document owners:
+  allowed Gold views and authoritative semantic definitions
+  prediction/model identifiers and available explanation evidence
+  approved knowledge sources and version/applicability metadata
+  trusted identity/access context
+
+8. EXAMPLE ROUTES
+
+Simple total
+  Supervisor -> semantic subgraph -> certified SQL metric -> result validation -> reporting.
+
+Formula question
+  Supervisor -> calculation definition lookup -> Calculation Agent/tool -> result validation -> reporting.
+
+Why an existing record was flagged
+  Supervisor -> authorized Gold/prediction lookup -> matching ML guidance and evidence -> ML Explanation Agent -> validation -> reporting. Add document retrieval only when required.
+
+Compare flagged invoices across two periods and explain patterns
+  Supervisor plans comparable queries -> Data Query Agent executes them -> Calculation Agent/tool computes differences -> ML/Knowledge work supplies relevant evidence when required -> collect/validate -> Investigation Agent examines supported patterns -> bounded follow-up through Supervisor if needed -> Reporting.
+
+These are illustrations of agent behavior, not confirmed tax use cases or findings about real FTA records. Every route loads the applicable instruction sections and respects the same validation gates.
+
+9. DEVELOPMENT DELIVERABLES FOR OUR TEAM
+
+  Agent role configurations and internal procedures
+  Semantic/ML/RAG subgraph definitions and conditional routes
+  Versioned section-based instruction library
+  Task/result schemas, plan validation and bounded scheduler behavior
+  Scoped tool contracts, adapters and mocks
+  Result collection, investigation and reporting modules
+  State/checkpoint, trace and failure handling
+  Arabic/English reference questions and evaluations
+
+Start with one agreed data domain and mock Gold/prediction/document interfaces. Test a simple data question, a certified calculation, an existing classification explanation, and one multi-step investigation. Include access-denial, missing-evidence, stale-version, ambiguous-period, retrieval-injection and timeout/resume cases. Assess result correctness and grounding as well as tool selection, unnecessary agent calls, latency and safe failure behavior.
+
+10. WHAT MAKES THIS MORE COMPLETE THAN A ROLE DIAGRAM
+
+Ali's full execution sequence governs the request, including pre-plan instructions, plan validation, dependency scheduling, post-collection investigation and explicit failures.
+Sulieman's specialist roles have concrete internal steps, allowed tools, input/output contracts and completion criteria.
+The plan determines which roles execute. More roles in the picture do not force more model calls for a simple request.
+Instruction context, retrieved evidence and actual prediction evidence have different purposes and trust boundaries.
+Deterministic checks and scoped tools enforce data operations independently of model behavior.
+Durable state and bounded replanning make multi-step data work resumable and reviewable.
+
+11. CURRENT DELIVERABLES
+
+output/FTA-email-data-agent-architecture.txt
+opinions/FTA-data-agent-architecture-ali-flow.png
+output/FTA-data-agent-diagram-prompt.txt
+
+The earlier five-file source review remains in output/FTA-architecture-notes.txt. No email has been sent.

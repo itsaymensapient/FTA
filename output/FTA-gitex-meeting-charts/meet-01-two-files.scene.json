@@ -1,0 +1,556 @@
+{
+  "width": 1600,
+  "height": 980,
+  "elements": [
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 306.23999999999995,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / GITEX / MEETING · 25 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 417.59999999999997,
+      "height": 50.4,
+      "text": "Two files, one stand",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 956.42,
+      "height": 23.799999999999997,
+      "text": "Scenario v2.9 is the visitor script. Data Model v1.2 is the seed data, rules and tools behind it.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-5",
+      "x": 64,
+      "y": 177,
+      "width": 127.6,
+      "height": 15.399999999999999,
+      "text": "A  WHAT EACH FILE IS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "scenario-v2-9-en-the-script",
+      "x": 64,
+      "y": 220,
+      "width": 704,
+      "height": 200,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-6",
+      "x": 88,
+      "y": 234,
+      "width": 336.4,
+      "height": 28,
+      "text": "Scenario v2.9 EN — the script",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-7",
+      "x": 88,
+      "y": 267,
+      "width": 278.4,
+      "height": 21,
+      "text": "Roles: FTA Specialist · Business",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-8",
+      "x": 88,
+      "y": 291,
+      "width": 200.1,
+      "height": 21,
+      "text": "Six steps on every case",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-9",
+      "x": 88,
+      "y": 315,
+      "width": 313.2,
+      "height": 21,
+      "text": "Two cases + free-query open question",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-10",
+      "x": 88,
+      "y": 339,
+      "width": 278.4,
+      "height": 21,
+      "text": "What the visitor sees and clicks",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "data-model-v1-2-the-stockroom",
+      "x": 832,
+      "y": 220,
+      "width": 704,
+      "height": 200,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-11",
+      "x": 856,
+      "y": 234,
+      "width": 359.59999999999997,
+      "height": 28,
+      "text": "Data Model v1.2 — the stockroom",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-12",
+      "x": 856,
+      "y": 267,
+      "width": 243.6,
+      "height": 21,
+      "text": "21 tables + field dictionary",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-13",
+      "x": 856,
+      "y": 291,
+      "width": 269.7,
+      "height": 21,
+      "text": "Rules R01–R13 (numbers in code)",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-14",
+      "x": 856,
+      "y": 315,
+      "width": 234.89999999999998,
+      "height": 21,
+      "text": "AgentTools the AI must call",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-15",
+      "x": 856,
+      "y": 339,
+      "width": 243.6,
+      "height": 21,
+      "text": "Checks: expected demo totals",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "files-link",
+      "points": [
+        [
+          768,
+          320
+        ],
+        [
+          832,
+          320
+        ]
+      ],
+      "color": "#14665E",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-16",
+      "x": 800,
+      "y": 289,
+      "width": 38.279999999999994,
+      "height": 15.399999999999999,
+      "text": "PAIRED",
+      "size": 11,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-17",
+      "x": 64,
+      "y": 449,
+      "width": 165.88,
+      "height": 15.399999999999999,
+      "text": "B  HOW THEY FIT AT RUNTIME",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "visitor-ui",
+      "x": 64,
+      "y": 500,
+      "width": 360,
+      "height": 160,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-18",
+      "x": 88,
+      "y": 514,
+      "width": 115.99999999999999,
+      "height": 28,
+      "text": "Visitor UI",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-19",
+      "x": 88,
+      "y": 547,
+      "width": 226.2,
+      "height": 21,
+      "text": "Name · role · case screens",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-20",
+      "x": 88,
+      "y": 571,
+      "width": 139.2,
+      "height": 21,
+      "text": "Six-step tracker",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "lane-0",
+      "points": [
+        [
+          424,
+          580
+        ],
+        [
+          444,
+          580
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "ai-agent",
+      "x": 444,
+      "y": 500,
+      "width": 360,
+      "height": 160,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-21",
+      "x": 468,
+      "y": 514,
+      "width": 92.8,
+      "height": 28,
+      "text": "AI agent",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-22",
+      "x": 468,
+      "y": 547,
+      "width": 261,
+      "height": 21,
+      "text": "Explains · recommends · drafts",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-23",
+      "x": 468,
+      "y": 571,
+      "width": 191.39999999999998,
+      "height": 21,
+      "text": "Calls named tools only",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "lane-1",
+      "points": [
+        [
+          804,
+          580
+        ],
+        [
+          824,
+          580
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "cdp-case-store",
+      "x": 824,
+      "y": 500,
+      "width": 360,
+      "height": 160,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-24",
+      "x": 848,
+      "y": 514,
+      "width": 185.6,
+      "height": 28,
+      "text": "CDP + case store",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-25",
+      "x": 848,
+      "y": 547,
+      "width": 252.29999999999998,
+      "height": 21,
+      "text": "Findings · invoices · returns",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-26",
+      "x": 848,
+      "y": 571,
+      "width": 191.39999999999998,
+      "height": 21,
+      "text": "Rules own every figure",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "lane-2",
+      "points": [
+        [
+          1184,
+          580
+        ],
+        [
+          1204,
+          580
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "person",
+      "x": 1204,
+      "y": 500,
+      "width": 360,
+      "height": 160,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-27",
+      "x": 1228,
+      "y": 514,
+      "width": 69.6,
+      "height": 28,
+      "text": "Person",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-28",
+      "x": 1228,
+      "y": 547,
+      "width": 182.7,
+      "height": 21,
+      "text": "Send · Submit · Close",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-29",
+      "x": 1228,
+      "y": 571,
+      "width": 234.89999999999998,
+      "height": 21,
+      "text": "Nothing leaves without this",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-30",
+      "x": 64,
+      "y": 698,
+      "width": 114.83999999999999,
+      "height": 30.799999999999997,
+      "text": "Core rule",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-31",
+      "x": 64,
+      "y": 739,
+      "width": 926.8399999999999,
+      "height": 23.799999999999997,
+      "text": "CDP / rules produce numbers. The agent writes plain language from tool results. People decide.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-01-two-files-text-32",
+      "x": 64,
+      "y": 905,
+      "width": 826.4999999999999,
+      "height": 21,
+      "text": "Stand design from Scenario v2.9 and Data Model v1.2. Synthetic data. Not a live FTA deployment.",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

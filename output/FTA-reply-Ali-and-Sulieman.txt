@@ -1,0 +1,39 @@
+Subject: Re: FTA Agentic AI architecture - proposed agent structure and execution flow
+
+Hi Ali and Sulieman,
+
+Building on Sulieman's specialist-agent proposal and Ali's execution flow and feedback, I suggest the attached architecture for the AI agent layer over Gold. It covers how the agents prepare context, plan their work, query data, calculate results and explain classifications.
+
+The main refinement is how we prepare and use the instructions, particularly for ML explanations. We should first turn the relevant model logic, output meanings and reason mappings into reviewed plain-language guidance. We can store that guidance in versioned files divided by domain and section, covering business rules, semantic definitions, calculations, model interpretation and permitted tool use.
+
+The Supervisor loads the applicable sections before building the plan, and each specialist loads its relevant sections before executing its task. This follows Ali's point about bringing the instructions into context first. The explanation agent would receive the prepared guidance and authorized prediction facts. Where prediction records contain reason identifiers, a controlled evidence adapter resolves them to approved descriptions before passing the evidence to the agent.
+
+Proposed execution flow
+
+User question -> Supervisor -> resolve domain and permissions -> load section instructions -> build and validate the plan -> schedule the required tasks -> collect and validate results -> investigate when needed -> report the answer.
+
+The Supervisor owns the task dependencies, coordination and journey state. It chooses only the agents required, runs independent tasks in parallel and coordinates any bounded replanning. Invalid plans return for clarification or rejection. Failed tasks follow a defined retry or human-handoff policy.
+
+Agents and internal workflows
+
+- Semantic subgraph: the Data Query Agent resolves business terms and schema, builds a query plan and generates SQL. The Calculation Agent selects certified formulas and uses tested functions or SQL expressions to perform the arithmetic. Both operate through controlled tools that validate requests and enforce read-only data access and user scope.
+- ML subgraph: the ML Explanation Agent uses the loaded model guidance, the stored prediction and approved evidence descriptions to explain what is supported for that record. It identifies missing evidence or interpretation limits rather than supplying an assumed reason.
+- RAG subgraph: the Knowledge Agent retrieves approved regulations, guidance, schema descriptions and model documentation with access and version filters. It returns relevant passages and citations. Retrieved documents support the task; they cannot change its instructions or permissions.
+- Investigation Agent: after result collection, it compares findings, examines patterns or inconsistencies and proposes further evidence gathering through the Supervisor when necessary.
+- Reporting Agent: produces the response from validated results, including figures, calculation definitions, citations and limitations. This is a logical role that can initially share the Supervisor's implementation.
+
+These subgraphs combine agent reasoning with deterministic execution steps. For example, the Data Query workflow is context selection -> query planning -> SQL generation -> validation -> execution -> result checks. We do not need a separate model call for every step, and a simple data question should take the shortest supported route.
+
+Data, tools and validation
+
+Gold facts and aggregations come through SQL. Document retrieval can use keyword/vector search where useful. Mandatory instruction sections and exact mappings use direct, versioned lookup. Every tool has a defined input/output contract and independently enforces permissions.
+
+Each agent returns a structured result with its task status, evidence references and relevant versions. Result validation checks numbers, units, provenance, completeness and consistency before reporting. Prepared model guidance explains how to interpret a classifier, while the individual explanation remains tied to the available evidence for that prediction.
+
+What we can start now
+
+Our team can define the agents and their internal workflows, prepare the section-based instruction library, agree task/result schemas, implement tool contracts and mocks, and build the state, validation and evaluation logic. We can test a data query, a certified calculation and an existing-classification explanation against representative mock interfaces before mapping the design to Cloudera's supported runtime.
+
+I have attached a clear overview and a detailed execution diagram. The detailed view makes the preparation of plain-language instructions and their loading before planning and execution explicit.
+
+Best regards,

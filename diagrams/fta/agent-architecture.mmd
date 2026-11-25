@@ -1,0 +1,29 @@
+%% src: output/FTA-reply-Ali-and-Sulieman.txt
+flowchart TD
+title FTA data agent architecture - proposed
+U([User question]) --> S[Supervisor Agent]
+M[Model logic and mappings] --> P[Prepare reviewed plain language]
+P --> I[Versioned section instructions]
+I -.->|load first| S
+S --> SEM
+S --> ML
+S --> RAG
+subgraph SEM [Semantic subgraph]
+Q[Data Query Agent] -->|when required| C[Calculation Agent]
+end
+subgraph ML [ML subgraph]
+E[ML Explanation Agent]
+AD[Prediction evidence adapter] -->|approved descriptions| E
+end
+subgraph RAG [RAG subgraph]
+K[Knowledge Agent]
+end
+Q --> V[Result collection and validation]
+C --> V
+E --> V
+K --> V
+V -->|investigation needed| A[Investigation Agent]
+V -->|sufficient evidence| R[Reporting Agent]
+A --> R
+A -.->|follow-up tasks| S
+R --> O([Grounded response])

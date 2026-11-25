@@ -1,0 +1,39 @@
+Generation method: built-in image_gen tool, followed by a targeted text edit.
+
+INITIAL PROMPT
+
+Create a polished, precise enterprise architecture diagram, large landscape aspect ratio approximately 4:3, white background, navy text, restrained teal and muted gold highlights. Title: "FTA Agentic AI | Proposed Architecture". Subtitle: "Domain guidance before planning. Evidence before explanation." Flat technical diagram, crisp readable typography, straight orthogonal arrows with clear arrowheads, ample whitespace, no decorative imagery, no vendor logos, no gradients. This is a brand new technical diagram, not an edit.
+
+Layout must show these EXACT logical components and connections, with clear separate regions. Prioritize legibility, limit extra prose.
+
+TOP LEFT horizontal data pipeline inside a light gray band labelled "EXISTING DATA FLOW": "Silver" -> "ML classification" -> "Gold + prediction evidence". Gold evidence subtitle: "Prediction ID, model version, input snapshot, explanation reference".
+
+MAIN CENTRAL vertical request flow under the data band, occupying left two thirds:
+1. "User request" small subtitle "FTA staff / taxpayers within scope"
+down to 2. "Identity + domain + permissions"
+down to 3. "Load approved domain pack"
+down to 4. "Supervisor: build plan"
+down to 5. "Validate plan"
+down to 6. "Workflow scheduler".
+To the RIGHT of node 3 put "Versioned domain packs" with smaller lines "Instructions and procedures", "Metric definitions and model guides", "Allowed tools and escalation rules". Arrow from domain packs INTO "Load approved domain pack". Caption: "Approved instructions are separate from retrieved evidence".
+From "Validate plan" a side branch "Invalid" leads to "Clarify / reject".
+From "Workflow scheduler" branch to THREE boxes in one row below:
+"Semantic workflow" smaller "Gold SQL + certified calculations"
+"ML explanation workflow" smaller "Recorded prediction + matching evidence"
+"Knowledge workflow" smaller "Authorized document retrieval + citations".
+Above these branches a small caption "Select only the workflows required".
+Arrows from all three boxes converge into "Collect evidence + validate results".
+Down to "Investigation / synthesis when needed".
+Down to "Reporting + final response".
+Beside workflow region place compact callout "Failure policy" with text "Bounded retry, clarify, or human handoff". Thin connector from scheduler/evidence region to this callout.
+
+BOTTOM RIGHT separate dashed outlined region labelled "OPTIONAL SERVICE EXECUTION":
+"Draft action" -> "Authorized approval" -> "Execute + track outcome".
+Connect "Reporting + final response" to this OPTIONAL region with dashed arrow labelled "When requested and enabled". Do not imply every answer executes an action.
+Bottom full-width slim footer: "Across all steps: access enforcement, durable journey state, model gateway, audit, evaluation".
+Show Gold data pipeline output feeding semantic and ML explanation workflows through one side connector labelled "Controlled read-only tools". Avoid an arrow that sends user requests into Silver or retrains ML. Knowledge workflow uses documents, not Gold embeddings.
+All text must be correctly spelled. Make diagram understandable at a glance with no overlapping connectors. Proposal, technology neutral.
+
+EDIT PROMPT
+
+Edit the latest generated FTA architecture diagram. Preserve all boxes, arrows, layout, typography, colors, and text exactly, with ONE text change: replace the two-line top-left band label "EXISTING DATA FLOW" with the three-line label "DATA FLOW + PROPOSED EVIDENCE". Fit it neatly in the same left band region, using a slightly smaller bold font if needed. This makes clear that Gold evidence fields are a proposed requirement rather than a verified existing capability. Do not change anything else.

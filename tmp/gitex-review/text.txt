@@ -1,0 +1,526 @@
+GITEX Dubai: CDP with AI agents
+Stand scenario: inspector and business
+1. Stand concept
+The stand shows the CDP working with AI agents. A visitor types a name and chooses a role: FTA Inspector or Business. Both roles work on the same synthetic data: e-invoices, VAT returns, refund requests and FTA letters.
+The stand has four scenarios and a free query. Each scenario is solved from both sides. The inspector, working with the FTA agent, finds the problem and writes to the company. The taxpayer, working with the FTA Assistant, works out what went wrong and replies. Dates, amounts and letter numbers are the same in both roles, so a visitor who plays both sees one story from two sides. Scenario 1 runs live: in the Business role the visitor issues an e-invoice from a seller's e-invoicing app and sees it in the FTA system with the check results; in the Inspector role the same invoice appears as a fresh event. The stand is one station; the visitor chooses the role.
+The dates in the scenarios are real calendar dates and depend on the date of the event: "today" on the stand is a day of the event, the FTA letters are dated that day, and the replies come a few days later. In this document the dates are set for GITEX GLOBAL 2026 (8–11 December 2026): the inspector's "today" is Thursday 10.12.2026, the business "today" is Friday 11.12.2026. If the event moves, all dates move with it. Scenario 1 uses the real date and time of the stand.
+#
+Scenario
+Company
+Inspector side
+Taxpayer side
+1
+Your own e-invoice, live
+Najmat Al Khaleej Retail LLC
+Sees the fresh invoice with the FTA check results, asks the seller to correct it or explain in writing, then closes the case
+Issues an e-invoice in the seller's e-invoicing app, sees how the FTA checks it, corrects it with a credit note and a new invoice
+2
+VAT return does not match e-invoices
+Al Yasmeen General Trading LLC
+Sees a net gap of AED 412,000 (Dubai +486,200, Abu Dhabi −74,200) and sends a request, then closes the case
+Traces the 38 invoices, submits a VD that adds AED 412,000 and moves 4 invoices from Abu Dhabi to Dubai, and replies
+3
+VAT refund not fully supported
+Al Waha Electronics Trading LLC
+Approves AED 53,600, asks for documents for AED 231,000, then decides on the rest
+Sends 6 paper tax invoices and proof of the VAT paid to Bright Line, and corrects AED 34,200 by VD
+4
+Voluntary Disclosure not submitted
+Al Saqr Building Materials LLC
+Sends a reminder about a VD of AED 162,400 for Q3, then closes the case
+Submits the VD and takes the same invoices out of the Q4 draft
+5
+Free query
+Any
+Questions on all demo data: rankings, lists, charts
+Questions on the visitor's own company only
+
+The six steps on both sides
+Every scenario goes through the same six steps on both sides. A step tracker stays at the top of the screen.
+
+The six steps: FTA Inspector and Business
+Step
+Inspector with the FTA agent
+Business with the FTA Assistant
+1 Signal / Check
+The briefing lists a fresh flagged e-invoice and three events ordered by risk. Each card shows a colour, the reason (for example "High · refund decision due 25 Dec"), the company and one line on the issue. The agent greets the visitor by name and says what it has checked since the last session. The visitor opens an event or types a question.
+"Choose a company" shows four companies: three with an open issue and its deadline, and Najmat Al Khaleej, where the visitor issues an e-invoice live. There are no risk ratings on this side. On the company overview the assistant greets the visitor and shows the issue card, the FTA letters with their deadlines and the company's registration. The visitor opens the issue or types a question.
+2 Explain
+In two or three short messages the agent says what it found, and the right side shows the evidence: the return against e-invoices by VAT201 box, the invoice list, a timeline, the supplier status. The visitor can open the invoice list and any invoice as a tax-invoice form, and ask about the case in the "Ask about this case…" field. The step ends with the button "What can I do?".
+The assistant shows the FTA letter and explains the cause from the company's own records: ledger against e-invoices, the invoices behind the gap. The visitor can open the invoice list and an invoice form, or the scanned paper invoices, and ask about the case (for example "Why Q3 and not Q4?"). The step ends with "What can I do?".
+3 Decide
+Under "What you can do" the agent offers two or three options, the recommended one first and highlighted: ask, remind or notify the company, or refer the case to audit. The visitor picks one.
+The assistant offers two or three options, the recommended one first: correct with a VD and reply, reply with an explanation only, ask for more time. If the visitor picks a weak option, the assistant says why it will not work and shows the options again.
+4 Act
+The agent drafts the letter, reminder or notice with the list of invoices attached, and shows the case it will open with its follow-up date. The visitor reads the draft, can edit it, and presses "Send". Nothing goes out without that press.
+The assistant prepares the VD box by box (as reported, as corrected, change), the reply to the FTA and, where needed, a message to a supplier or to the ERP team. The visitor checks them and presses "Submit" or "Send".
+5 Follow-up
+The taxpayer's reply arrives a few days later on its own; the visitor does not wait for it. The agent compares the reply with the data (the VD with the e-invoices, the documents with the amounts requested) and recommends what to do: close, ask for more, or refer to audit. The visitor can open the VD or the documents received.
+The FTA's answer arrives a few days later on its own. The assistant says what it means for the company: case closed, amount approved or on hold, anything still open.
+6 Closed / Done
+The visitor closes the case. The agent shows the case history (who did what and when) and offers the next event on the list or a return to the briefing. After the last event the session summary appears.
+The visitor presses "Finish". The summary shows what the visitor did, the result, and the same case as seen on the FTA side, with buttons for the other companies and for the inspector role.
+
+Open question for the development team: can the agent answer free questions on the stand, typed in the visitor's own words? If yes, how, given that every number in an answer must come from the data and not from the language model. If not, the free query is limited to a set of suggested questions.
+Scenario 1 needs no free input: the visitor chooses from fixed options, so every invoice and its check results are known in advance and the test data can include them.
+2. Entry and role choice
+
+Name entry
+
+Role choice: FTA Inspector
+
+Role choice: Business
+The entry screens are shared by both roles. The visitor types a name and chooses "FTA Inspector" or "Business". From the summary of one role the visitor can switch to the other.
+3. Starting point of each role
+3.1 Inspector: briefing
+The visitor works through an inspector's day with the FTA agent: a fresh flagged e-invoice and three events in order of risk, plus their own questions on the data if they want. A full run takes 5–6 minutes.
+Path: name → role FTA Inspector → briefing → event in six steps → next event or free query → summary.
+
+Briefing: a fresh invoice and three events in order of risk
+Good day, Sara. Since your last session I checked 21,480 new e-invoices, 214 VAT returns and 12 refund requests. A fresh e-invoice was flagged two minutes ago, and three more items need your attention, ordered by risk. Where would you like to start?
+#
+Priority and reason
+Event
+Who
+In short
+1
+🟡 Low · AED 1,300 not charged, received 2 min ago
+Fresh e-invoice flagged
+Najmat Al Khaleej Retail LLC
+2 of 3 lines with a VAT category that does not fit the supply
+2
+🔴 High · AED 412,000 under-declared
+VAT return does not match e-invoices
+Al Yasmeen General Trading LLC
+Output VAT under-declared by AED 412,000 net for Aug–Oct 2026; Dubai gap AED 486,200
+3
+🔴 High · refund decision due 25 Dec
+VAT refund request not fully supported
+Al Waha Electronics Trading LLC
+Refund claimed AED 284,600; AED 231,000 is not supported by e-invoices or comes from a supplier that does not file returns
+4
+🟠 Medium · VD overdue since 30 Nov
+Voluntary Disclosure not submitted
+Al Saqr Building Materials LLC
+Invoices issued after filing add AED 162,400 of VAT to Q3 2026
+
+The visitor opens any event or asks a question (section 8).
+3.2 Business: choose a company and company overview
+The visitor becomes the VAT manager of one of four companies and resolves its open issue with the FTA Assistant. The FTA Assistant is an agent on the FTA side. It sees only the chosen company's data: its e-invoices, its suppliers' e-invoices, its returns and its letters from the FTA. One company takes 3–4 minutes. After that the visitor can take another company or switch to the inspector role.
+Path: name → role Business → choose a company → company overview → case in six steps → summary.
+Each company with an open issue also has the option "Ask the FTA for more time". The assistant drafts the request; in the follow-up the FTA extends the deadline and the case stays open.
+Look and feel: colours in the style of FTA services (dark blue, gold, light grey), tables with grey headers, tiles with a gold top line. It is a style, not a copy of any portal: there are no menus, search bar or other portal elements. The header reads "CDP · FTA Assistant for business".
+
+Choose a company: three open issues and one live e-invoice
+Najmat Al Khaleej has nothing open; with it the visitor issues an e-invoice live. In each of the other three companies the assistant found one open issue. There are no risk ratings on the business side: each card shows the issue and its deadline.
+Deadline
+Company
+Open issue
+Live, no deadline
+Najmat Al Khaleej Retail LLC
+No open letters. The visitor issues an e-invoice in the e-invoicing app and sees how the FTA checks it
+Reply due 07.01.2027
+Al Yasmeen General Trading LLC
+The FTA asks for an explanation of the August–October 2026 return: e-invoices show AED 486,200 more VAT for Dubai, AED 412,000 net
+Documents due 24.12.2026
+Al Waha Electronics Trading LLC
+Of a refund of AED 284,600, AED 53,600 is approved; the FTA asks for documents for AED 231,000
+VD overdue since 30.11.2026
+Al Saqr Building Materials LLC
+The FTA reminds the company about a VD for Q3: 11 invoices issued after filing added AED 162,400 of VAT
+
+The overview is the same for every company; only the content changes. Example for Al Yasmeen:
+
+Company overview
+Good day, Sara. I am the FTA Assistant for Al Yasmeen General Trading LLC. I check your e-invoices, your VAT filings and your letters from the FTA. One item needs your attention. I have already gone through the data behind it.
+On the right:
+the issue card with its deadline;
+"Letters from the FTA and deadlines": the FTA letter with its due date and the next returns;
+"Your company": VAT registration, e-invoicing provider, excise.
+The visitor opens the issue (step Check is done) or asks a question.
+4. Case 1 · Your own e-invoice, live
+Company: Najmat Al Khaleej Retail LLC, a seller of office furniture in Dubai.
+The visitor issues an e-invoice on the stand and sees within seconds what the FTA sees and what its checks found. The invoice is not issued in an FTA system. It is issued in the seller's own e-invoicing app, a simple illustrative interface of an e-invoicing provider, and then opens in the FTA system with the check results. Times are the real time of the stand; in the example it is Thursday 10.12.2026, 11:42. The business side comes first here, because the invoice starts there.
+The visitor types nothing. The app has three short steps: the buyer, what to sell with quantities set by + and −, and the VAT category and rate for each line. The VAT step is filled in from the seller's item list, and two items in that list carry the wrong code, so the errors come from the data, as they often do in practice. The visitor can change any line. The app offers only valid pairs of category and rate and checks the format, as real invoicing software does, so the stand shows no format or arithmetic errors. The errors it shows are about the content and are found only on the FTA side.
+What the visitor can choose:
+Step in the app
+Options
+Right or wrong
+1 Buyer
+Bluewave Facilities LLC, Dubai, TRN 100562018370003
+TRN active, right
+1 Buyer
+Gulf Star Office Supplies LLC, Sharjah, TRN 100481726350003
+TRN not active: VAT registration cancelled on 30.09.2026. The app does not know this
+2 Items
+Office chair ERG-5, AED 420; Meeting table MT-240, AED 3,800; Executive desk ED-180, AED 2,450; Delivery and installation, AED 1,500
+All are standard-rated supplies in the UAE
+3 VAT for each line
+S · standard rated 5%; Z · zero rated 0%; E · exempt
+Only S 5% is right for these goods and this service. Prefilled: chairs and tables S 5%, desks Z, delivery and installation E
+
+The screens open with Bluewave, 10 desks, 25 chairs and 1 delivery and installation already selected and the VAT step prefilled, so a visitor who just presses "Next", "Preview" and "Send" gets two flagged lines. Because every choice is fixed, every invoice the stand can send and its check results are known in advance. The test data only has to cover these combinations; no free input is needed.
+What the FTA shows:
+What was sent
+FTA check
+What the assistant says
+All lines at S 5%, buyer Bluewave
+All five checks pass
+Accepted. The buyer can recover the VAT; the sale goes into the December 2026 return, Box 1b Dubai
+A line at Z
+VAT category in context: zero rate on a domestic sale
+Zero rate applies to exports and a short list of supplies; these goods were delivered in the UAE with no export. The line should be at 5%
+A line at E
+VAT category in context: exemption on a taxable supply
+Exempt supplies are a short list, such as some financial services and residential rent; furniture and installation are not on it. The line should be at 5%
+Buyer Gulf Star
+Seller and buyer registration: buyer TRN not active
+The VAT of the invoice is still due, but this TRN cannot be used on a tax invoice and Gulf Star cannot recover the VAT. Check the buyer: if it has a new TRN, issue a credit note and a new invoice to that TRN; if it is no longer registered, the new invoice goes without a TRN
+
+If several choices are wrong, the FTA shows all the flags on one invoice.
+In every flagged case the assistant offers the same two ways, the same ones the FTA would ask for: correct the invoice with a credit note and a new invoice, or explain to the FTA in writing why the invoice is right. If there is no legal basis for the explanation, the assistant says so and returns to the options.
+4.1 Business side
+Walkthrough with the default selection: net AED 36,500; VAT charged AED 525 on the chairs only; correct VAT AED 1,825; VAT not charged AED 1,300.
+Step
+Assistant or app
+Visitor
+1 Check
+The company overview offers "Open my e-invoicing app". In the app: buyer and items, then the VAT category and rate for each line, prefilled from the item list. "Preview invoice" shows the full tax invoice; the app confirms that all required fields are filled in
+Changes the buyer, quantities or VAT if they want, opens the preview, presses "Send"
+2 Explain
+The invoice opens in the FTA system: sent at 11:42:05, received at 11:42:06, checked in one second. A table of the five FTA checks and the invoice form with lines 1 and 3 highlighted. "The invoice is accepted: the format is right and each VAT category matches its rate. Two lines are flagged." The assistant explains the zero-rated desks and the exempt installation and adds that both codes came from the item list in the app
+Asks "Can my buyer recover this VAT?". Answer: "Only AED 525 on the chairs. With a corrected invoice, Bluewave can recover AED 1,825."
+3 Decide
+What you can do: correct the invoice with a credit note and a corrected invoice at 5% (recommended); explain to the FTA in writing why zero rate and exemption apply
+Chooses
+4 Act
+A sent e-invoice cannot be edited. The assistant prepares credit note NKR-2026-CN-0217 and corrected invoice NKR-2026-104589 with all lines at 5%, VAT AED 1,825, adds AED 1,300 to the December draft, and lists the two codes to fix in the item list (ED-180 Z → S; delivery and installation E → S)
+Presses "Send through my e-invoicing app"
+5 Follow-up
+Seconds later, not days. Both documents reached the FTA at 11:47 and passed all checks; the buyer can now recover AED 1,825. The assistant suggests the Inspector role to see the same invoices from the FTA side
+Presses "Finish" or "Try as FTA Inspector"
+6 Done
+Five minutes from the first invoice to the correction; AED 1,300 of extra VAT charged
+—
+
+
+Company overview: open the e-invoicing app
+
+Check, step 1 and 2 in the app: buyer and items
+
+Check, step 3 in the app: VAT category and rate for each line
+
+Check: preview before sending
+
+Explain: the invoice in the FTA system, two lines flagged
+
+Another variant: buyer TRN not active
+
+Another variant: all checks passed
+
+Decide and Act: credit note and corrected invoice
+
+Follow-up: correction accepted
+Other branches:
+All lines at 5% and buyer Bluewave. All checks pass and the case goes straight to Done.
+Explain in writing. Assistant: "I found no legal basis: desks delivered in Dubai are not an export, and installation is not on the exempt list. The FTA will not accept this explanation and will ask for a correction." It returns to the options.
+Buyer Gulf Star. The assistant asks the visitor to check the buyer's details and prepares a credit note and a new invoice; the explanation option is open if the buyer has re-registered under a new TRN.
+4.2 Inspector side
+The stand is one station, and the visitor chooses the role. Event 1 in the briefing is the latest flagged invoice that was sent on the stand in the Business role and has not been corrected yet, by an earlier visitor or by the same visitor. If there is none, it is a prepared invoice with the default selection. The screens do not mention the stand: for the inspector it is simply a fresh invoice from Najmat. The seller's correction in step 5 is prepared and arrives on its own, as the replies do in the other cases.
+Step
+Agent
+Visitor
+1 Signal
+Event 1, marked yellow "Low · AED 1,300 not charged · received 2 min ago": invoice NKR-2026-104588 from Najmat at 11:42, 2 of 3 lines with a VAT category that does not fit the supply
+Opens the event
+2 Explain
+The same five checks the business sees: format, registration and category-rate pass; the context check flags lines 1 and 3. The desks are zero-rated although they were delivered in Dubai with no export flag; delivery and installation is marked exempt, which is not an exempt supply. "Likely wrong tax codes in the seller's invoicing software; only the seller can confirm." The invoice opens as a tax-invoice form
+Can open "This seller's invoices today": the E-Invoice Registry with Najmat's 23 invoices today, 14 passed, 7 with a wrong VAT category, 2 to a buyer whose TRN is not active
+3 Decide
+What you can do: ask the seller to correct the invoice or explain in writing (recommended); refer to audit
+Chooses
+4 Act
+Drafts the request: issue a credit note and a corrected invoice, or explain in writing the legal basis for the zero rate and the exemption, by 17.12.2026 (5 business days), and check the tax codes in the invoicing software. Opens case CDP-INV-2026-0588
+Presses "Send" at 11:45
+5 Follow-up
+A few minutes later. Najmat sent credit note NKR-2026-CN-0217 and corrected invoice NKR-2026-104589, all lines at 5%, VAT AED 1,825; all checks passed
+Closes the case
+6 Closed
+Case history and the result: + AED 1,300. Offers event 2
+Opens event 2 or returns to the briefing
+
+
+Explain: the fresh invoice and the FTA checks
+
+The seller's invoices today
+
+Decide and Act: request to correct or explain
+
+Follow-up and Closed: corrected within minutes
+Other branch, refer to audit. Agent: "One invoice and AED 1,300: an audit is not proportionate. I recommend a request first; if the seller does not reply by 17.12, I will suggest a referral." It returns to the options.
+Why this case is realistic. Invoicing software checks the format, not whether a tax code fits the goods, so a wrong code in the item list goes out on every invoice with that item. A wrong rate inside a category, for example S at 0%, is caught mechanically, because category and rate disagree. Category Z at 0% and category E are formally valid, and zero-rated and exempt domestic supplies do exist, such as qualifying healthcare and education or residential rent. So these errors show only in context: furniture delivered in the UAE with no export, installation that is not on the exempt list. That is why the agent says "likely" and the FTA asks the seller to correct the invoice or explain in writing. The TRN flag uses data the FTA already holds: the buyer's VAT registration status.
+5. Case 2 · VAT return does not match e-invoices
+Company: Al Yasmeen General Trading LLC.
+5.1 Inspector side
+Al Yasmeen General Trading LLC, period August–October 2026, return filed on 25.11.2026. Demo date 10.12.2026.
+Step
+Agent
+Visitor
+2 Explain
+Box 1b (Dubai) declares VAT of AED 1,140,000; e-invoices show AED 1,626,200, a gap of AED 486,200 from 38 October invoices of the Dubai establishment to six buyers, all confirmed by the buyers' providers (C3). Box 1a (Abu Dhabi) declares AED 74,200 more than the e-invoices. Box 9 matches. Box 14: AED 823,100 declared vs AED 1,235,100 from e-invoices, net gap AED 412,000
+Opens the list of 38 invoices and any invoice as a tax-invoice form. Can ask about the case
+3 Decide
+What you can do: ask the taxpayer to explain or correct within 20 business days (recommended), or refer to audit
+Chooses
+4 Act
+Drafts the letter with the 38 invoices attached: explain the gap and provide documents, or submit a VD. Opens case CDP-VAT-2026-1187, follow-up on 07.01.2027
+Checks, edits if needed, presses "Send"
+5 Follow-up
+A few days later. The taxpayer replied on 11.12: AED 412,000 is a cut-off error (34 October invoices booked in November); AED 74,200 is 4 invoices of the Dubai branch reported under Abu Dhabi. One VD corrects both: Box 1b +486,200, Box 1a −74,200, Box 14 +412,000. The agent checks the VD against the e-invoices: the 34 invoices match, and the 4 invoices show the Dubai establishment as seller, so Box 1b is right. Conclusion: "The whole difference is explained"
+Opens the VD; closes the case, asks for more information or refers to audit
+6 Closed
+Shows the case history: letter 10.12, reply 11.12, check and closure 14.12. Result: + AED 412,000 VAT through the VD; AED 74,200 moved to Dubai. Offers event 3
+Opens event 3 or returns to the briefing
+
+
+Explain: return vs e-invoices by VAT201 box
+
+Invoice list and an invoice opened as a document
+
+Decide and Act: options and draft letter
+
+Follow-up: taxpayer's reply and the agent's check
+
+Closed: case history and the next event
+Other branches:
+Refer to audit. The agent drafts the referral with the calculation and the 38 invoices. Follow-up: "Audit accepted the case", status In audit.
+The reply explains only part of the gap. For example, a VD that adds AED 412,000 but leaves the 4 invoices in Abu Dhabi. Agent: "Box 1b is still AED 74,200 below the e-invoices. Ask for more information or refer to audit?"
+No reply by 07.01.2027. The agent suggests a referral to audit.
+5.2 Business side
+Letter CDP-VAT-2026-1187 of 10.12.2026: explain the difference in the August–October 2026 return or submit a VD within 20 business days, by 07.01.2027. Demo date 11.12.2026.
+Step
+Assistant
+Visitor
+2 Explain
+Shows the letter and the return vs e-invoices: Box 1b (Dubai) AED 1,140,000 vs AED 1,626,200; Box 1a (Abu Dhabi) AED 288,800 vs AED 214,600. Matches the 38 invoices from the letter with the ledger: 34 invoices with VAT of AED 412,000 are dated October but were booked in November; 4 invoices with VAT of AED 74,200 were issued by the Dubai branch but reported in Box 1a. Standard-rated supplies are reported in the Emirate of the establishment that makes the supply, so they belong in Box 1b
+Opens the 38 invoices and any invoice as a tax-invoice form; sees that AYT-2026-10-1147 was issued on 14.10 but booked on 3.11. Can ask about the case
+3 Decide
+What you can do: submit a VD for AED 412,000 and reply (recommended); reply with an explanation only; ask for more time
+Chooses
+4 Act
+Fills in the VD from e-invoices: Box 1a VAT 288,800 → 214,600; Box 1b VAT 1,140,000 → 1,626,200 (amount 22,800,000 → 32,524,000); Box 14 823,100 → 1,235,100. Drafts the reply. Reminds that these 34 invoices must not be counted again in the November–January return and that the FTA may apply a penalty for the late correction
+Checks, presses "Submit VD and reply"
+5 Follow-up
+A few days later. FTA reply: the VD matches the e-invoices and is accepted, the 4 invoices are now in Dubai, the case is closed
+Presses "Finish"
+6 Done
+Case closed; reply sent 27 days before the deadline. Summary with the FTA side of the case
+Tries another company or the inspector role
+
+
+Explain: FTA letter, return vs e-invoices, the 38 invoices traced
+
+Explain: invoice list and an invoice compared with the ledger
+
+Act: VD and reply
+
+Follow-up: FTA decision
+Other branch, reply with an explanation only. Assistant: "A difference above AED 10,000 must be corrected with a Voluntary Disclosure. An explanation alone will not close the case." It returns to the options.
+6. Case 3 · VAT refund not fully supported
+Company: Al Waha Electronics Trading LLC.
+6.1 Inspector side
+Al Waha Electronics Trading LLC, period August–October 2026, return filed on 26.11.2026. Refund request (VAT311) for AED 284,600 submitted on 27.11.2026; the decision is due by 25.12.2026. Demo date 10.12.2026.
+Step
+Agent
+Visitor
+2 Explain
+Box 9 in the return is AED 1,212,000; received e-invoices show AED 1,027,800. AED 184,200 has no e-invoice behind it. Another AED 46,800 comes from 14 invoices of Bright Line General Trading LLC, which has not filed its returns for Q2 and Q3. Fully supported: AED 53,600
+Opens the supplier check: Bright Line's filing status and one of its invoices as a tax-invoice form. Can ask about the case
+3 Decide
+What you can do: approve AED 53,600 now and ask for documents for AED 231,000 (recommended); hold the whole refund and ask for documents; refer to audit
+Chooses
+4 Act
+Drafts the letter: AED 53,600 approved; for the rest, within 10 business days (by 24.12), tax invoices for AED 184,200 and proof of payment of VAT of AED 46,800 to Bright Line. Suggests opening a non-filer case on Bright Line (CDP-NF-2026-0733). Follow-up on 24.12, one day before the decision deadline
+Presses "Send"
+5 Follow-up
+A few days later. Al Waha replied on 11.12: 6 paper tax invoices for AED 150,000 from suppliers that are registered and file returns but do not yet issue e-invoices; 14 bank confirmations of VAT paid to Bright Line; a VD that removes AED 34,200 from Box 9. The agent checks: AED 150,000 supported; AED 34,200 has no tax invoices and is corrected by the VD; payment to Bright Line is proven, but Bright Line still has not filed. Recommendation: approve another AED 150,000, reject AED 34,200, hold AED 46,800 until Bright Line is verified
+Opens the 6 invoices; approves, asks for more documents or refers to audit
+6 Closed
+Result: AED 203,600 approved, AED 34,200 rejected, AED 46,800 on hold, non-filer case on Bright Line open. Offers event 4
+Opens event 4 or returns to the briefing
+
+
+Explain: Box 9 reconciliation and the refund broken down
+
+Explain: supplier check and a Bright Line invoice
+
+Decide and Act: partial approval letter
+
+Follow-up: taxpayer's documents and decision
+Why this is realistic: e-invoicing is introduced in phases, so some suppliers still issue paper invoices. The agent does not reject automatically; it asks for documents and checks the suppliers. A supplier that does not file is a reason to verify, not an automatic reason to refuse, so AED 46,800 is held rather than rejected.
+6.2 Business side
+Refund request (VAT311) for August–October 2026, AED 284,600, submitted on 27.11. Letter CDP-REF-2026-0219 of 10.12: AED 53,600 approved; for AED 231,000, documents are needed within 10 business days, by 24.12. Demo date 11.12.2026.
+Step
+Assistant
+Visitor
+2 Explain
+Shows the letter and the Box 9 check: AED 1,212,000 in the return vs AED 1,027,800 on received e-invoices. From the company's records: AED 150,000 is backed by 6 paper tax invoices from 2 suppliers that do not yet issue e-invoices; AED 34,200 is 23 card slips and booking confirmations without the supplier's TRN, which are not tax invoices, so this VAT cannot be recovered; AED 46,800 is 14 invoices from Bright Line General Trading LLC, which has not filed its returns for Q2 and Q3, and the payments based on the invoice indicators are either in cash or in mixed form 
+Opens the 6 scanned paper invoices; can ask about the case
+3 Decide
+What you can do: send the 6 invoices and the proof of payment and accept AED 34,200 as not recoverable (recommended); send all documents including the card slips; ask for more time
+Chooses
+4 Act
+Drafts the reply with 20 documents. As AED 34,200 is above AED 10,000, prepares a VD that removes it from Box 9 of the August–October return. Warns that the FTA may hold AED 46,800 because Bright Line has not filed, there are indicators of cash settlements and offers to write to Bright Line and clarify the means of payment to the FTA
+Presses "Send reply"
+5 Follow-up
+A few days later. FTA decision: another AED 150,000 approved, AED 203,600 in total. AED 34,200 not approved: no tax invoices, corrected by the VD. AED 46,800 on hold until the FTA verifies Bright Line; the proof of payment is received
+Presses "Finish" or "Remind Bright Line"
+6 Done
+Refund of AED 203,600; AED 46,800 on hold; decision 11 days before the deadline
+—
+
+
+Explain: FTA letter and the refund broken down
+
+Explain: scanned paper invoices from suppliers not yet on e-invoicing
+
+Act: reply with documents
+
+Follow-up: refund decision
+Other branch, send all documents including the card slips. Assistant: "Card slips are not tax invoices. The FTA will reject AED 34,200 anyway, and the return still needs a VD." If the visitor insists, the result is the same: AED 203,600 approved.
+7. Case 4 · Voluntary Disclosure not submitted
+Company: Al Saqr Building Materials LLC.
+7.1 Inspector side
+Al Saqr Building Materials LLC, Q3 2026 (July–September), return filed on 28.10.2026. Demo date 10.12.2026.
+Step
+Agent
+Visitor
+2 Explain
+Between 2 November and 1 December the company issued 11 tax invoices for goods delivered in September, that is in Q3. They add AED 162,400 of VAT that is not in the return. A correction above AED 10,000 needs a VD within 20 business days. The first invoice alone crossed the limit on 2 November, so the VD was due by 30 November. None has been submitted. The invoices were also issued more than 14 days after delivery, later than the law requires
+Opens the timeline, the 11 invoices, an invoice, the return. Can ask "Why do these invoices belong to Q3?"
+3 Decide
+What you can do: remind the taxpayer to submit a VD within 10 business days (recommended), or refer to audit
+Chooses
+4 Act
+Drafts the reminder with the 11 invoices attached, opens case CDP-VD-2026-0356, follow-up on 24.12.2026
+Presses "Send"
+5 Follow-up
+A few days later. The company submitted a VD for AED 162,400 on 11.12. The agent reconciles the VD with the 11 invoices: Box 1c goes from AED 318,600 to AED 481,000 and matches the e-invoices. The VD came 11 calendar days late; this is noted in the taxpayer's history
+Opens the VD; closes the case or refers to audit
+6 Closed
+Result: + AED 162,400 VAT. This was the last event, so the agent opens the session summary
+Sees the summary
+
+
+Explain: timeline and invoices issued after filing
+
+Invoice as a document: issue date and supply date
+
+Decide and Act: draft reminder
+
+Follow-up: VD reconciled with the invoices
+Other reply: the taxpayer writes "These deliveries were made in October". Agent: "The invoices and the buyers' copies show supply dates in September. The explanation is not supported. I recommend a referral to audit."
+7.2 Business side
+Reminder CDP-VD-2026-0356 of 10.12: submit a VD for Q3 2026 within 10 business days, by 24.12, or explain. The Q4 return is due by 28.01.2027. Demo date 11.12.2026.
+Step
+Assistant
+Visitor
+2 Explain
+The Q3 return was filed on 28.10. From 2.11 to 1.12 the company issued 11 invoices for September deliveries with VAT of AED 162,400. The ledger books them in November and December, so they are also in the Q4 draft. Table: Q3 Box 1c (Sharjah) 318,600, should be 481,000; Q4 draft 402,900, should be 240,500
+Opens any of the 11 invoices from the list. Asks "Why Q3 and not Q4?". Answer: all 11 invoices and the buyers' copies show a VAT point date in September; a correction above AED 10,000 needs a VD
+3 Decide
+What you can do: submit a VD for Q3 and take the invoices out of Q4 (recommended); reply that the invoices belong to Q4; ask for more time
+Chooses
+4 Act
+Fills in the VD: Box 1c amount 6,372,000 → 9,620,000, VAT 318,600 → 481,000; Box 14 117,300 → 279,700. Takes the 11 invoices out of the Q4 draft so the VAT is paid once. Warns that the VD is late and the FTA may apply a penalty
+Presses "Submit VD"
+5 Follow-up
+A few days later. FTA reply: the VD matches the 11 invoices, the reminder is closed, the late submission is recorded. The Q4 draft no longer includes these invoices
+Presses "Finish"
+6 Done
+VD for AED 162,400; VAT paid once
+—
+
+
+Explain: invoices issued after filing and a question about the case
+
+Act: VD for Q3 and corrected Q4 draft
+
+Follow-up: FTA reply
+Other branch, reply that the invoices belong to Q4. Assistant: "Your invoices and your buyers' copies show September delivery dates. The FTA will not accept this explanation." It returns to the options.
+8. Free query and questions about a case
+8.1 Inspector
+The visitor can ask a question at any time, by text or voice. There are two places to ask:
+About the open case, in the "Ask about this case…" field on every case screen. The company and period come from the case. Example: "Why do these invoices belong to Q3?" in event 4.
+About the data in general, from the briefing. The agent answers on the demo data with a table, list or chart, says how it calculated, and suggests a next step. A finding can be turned into a case, which then goes through the same six steps.
+
+Question answered with a table and an offer to open cases
+
+Question answered with a list of invoices
+Visitor's question
+Agent's answer
+Top 5 companies in Sharjah with the biggest output VAT gap for Aug–Oct 2026
+A table of 5 companies with amounts. "Two of them have no open case yet. Shall I open cases for them?"
+Show Al Yasmeen's invoices to Marina Hospitality in October
+A list of 12 invoices with VAT of AED 168,400; each can be opened
+Show Najmat's invoices today
+The E-Invoice Registry list: 23 invoices, 14 passed, 9 flagged, grouped by check. "The latest flagged one is event 1 in your briefing. Open it?"
+Companies in Dubai that did not file the Q3 return
+A list of companies with their Q3 sales from e-invoices
+E-invoices by Emirate this month
+A chart by Emirate: invoice count and VAT
+Show risky companies
+Asks: "By what? VAT return gap · Missing VD · Not filing · Invoice errors"
+A question about a real company
+"This stand uses synthetic data only. There are no real taxpayers here." plus example questions
+An off-topic question
+"I can only answer questions about the demo tax data." plus example questions
+
+8.2 Business
+There are two ways to ask:
+About the open case, in the "Ask about this case…" field. The company and period come from the case. Examples on the screens: "Why Q3 and not Q4?" for Al Saqr, "Can my buyer recover this VAT?" for Najmat.
+About the company's data in general, on the "Ask the FTA Assistant" screen.
+
+Question about the company's data
+Visitor's question
+Assistant's answer
+Which of my November sales invoices were not confirmed by the buyer?
+13 of 642 have no buyer copy (C3), VAT AED 25,750. 11 of them go to one buyer, Palm Crest Hotels LLC, and no buyer copy has come from it since 20.11. One was rejected by the buyer's provider, one has no buyer TRN. "Shall I draft a short note to Palm Crest Hotels?"
+How much VAT did I charge in Abu Dhabi this quarter?
+The amount from e-invoices and a chart by month
+Is TRN 100562018370003 valid?
+Registration status and company name
+When is my next return due?
+Period and due date; whether the draft matches the e-invoices
+A question about another company
+"I can only show data of your company."
+A question about a real company or off topic
+"This stand uses synthetic data only." plus example questions
+
+The business assistant answers in the same way as the inspector's agent: numbers from the data and a "How I got this" note. The difference is access: the business sees only its own data and the counterparties on its own invoices.
+9. Summary screens
+9.1 Inspector
+
+Session summary
+Well done, Sara. Your session in 6 minutes.
+4 of 4 events closed. VAT secured: AED 575,700 (1,300 from the live invoice + 412,000 + 162,400; the first amount depends on the invoice that was sent). Refund not paid: AED 81,000 (34,200 rejected, 46,800 on hold). A table lists the visitor's decisions. Buttons: "Try as Business" and "Finish". After 30 seconds the stand returns to name entry.
+9.2 Business
+
+Summary for one company
+Well done, Sara. The case of Al Yasmeen General Trading is closed.
+The summary screen shows:
+tiles: time, case status, amount, deadline met;
+"What you did", step by step;
+"The same case on the FTA side": what the inspector and the FTA agent did on the same dates. This links the two roles;
+buttons for the other companies and "Try as FTA Inspector".
+After 30 seconds the stand returns to name entry.
+Company
+Result for the business
+Najmat
+Invoice checked in one second; two wrong VAT codes found and fixed; credit note and corrected invoice within 5 minutes; AED 1,300 of extra VAT; the buyer can recover AED 1,825
+Al Yasmeen
+Case closed, VD accepted: + AED 412,000, AED 74,200 moved to Dubai, reply 27 days before the deadline
+Al Waha
+Refund of AED 203,600; AED 34,200 not recoverable and corrected by VD; AED 46,800 on hold until the FTA verifies the supplier and the payment means
+Al Saqr
+VD for AED 162,400 accepted, VAT paid once, Q4 draft corrected

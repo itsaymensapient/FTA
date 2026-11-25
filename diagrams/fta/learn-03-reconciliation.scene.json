@@ -1,0 +1,1192 @@
+{
+  "width": 1600,
+  "height": 2466,
+  "elements": [
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 261.58,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / GITEX / LEARNING GUIDE",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 876.9599999999999,
+      "height": 50.4,
+      "text": "Trace Scenario 2 from question to evidence",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 956.42,
+      "height": 23.799999999999997,
+      "text": "Al Yasmeen: the draft expects a Dubai increase, an Abu Dhabi decrease and an AED 412,000 net gap.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "rectangle",
+      "id": "Visitor---application",
+      "x": 64,
+      "y": 216,
+      "width": 288,
+      "height": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-5",
+      "x": 88,
+      "y": 229,
+      "width": 255.77999999999997,
+      "height": 29.4,
+      "text": "Visitor / application",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "Supervisor",
+      "x": 408,
+      "y": 216,
+      "width": 288,
+      "height": 64,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-6",
+      "x": 432,
+      "y": 229,
+      "width": 121.8,
+      "height": 29.4,
+      "text": "Supervisor",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "Specialist-workflow",
+      "x": 752,
+      "y": 216,
+      "width": 288,
+      "height": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-7",
+      "x": 776,
+      "y": 229,
+      "width": 231.42,
+      "height": 29.4,
+      "text": "Specialist workflow",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "Scoped-data---calc-tools",
+      "x": 1096,
+      "y": 216,
+      "width": 288,
+      "height": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-8",
+      "x": 1120,
+      "y": 229,
+      "width": 292.32,
+      "height": 29.4,
+      "text": "Scoped data / calc tools",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "message-0",
+      "points": [
+        [
+          208,
+          352
+        ],
+        [
+          552,
+          352
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-9",
+      "x": 380,
+      "y": 322,
+      "width": 300.44,
+      "height": 19.599999999999998,
+      "text": "1  “Explain this return discrepancy.”",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-1",
+      "points": [
+        [
+          552,
+          432
+        ],
+        [
+          896,
+          432
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-10",
+      "x": 724,
+      "y": 402,
+      "width": 430.35999999999996,
+      "height": 19.599999999999998,
+      "text": "2  Scoped case + approved reconciliation instructions",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-2",
+      "points": [
+        [
+          896,
+          512
+        ],
+        [
+          1240,
+          512
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-11",
+      "x": 1068,
+      "y": 482,
+      "width": 341.03999999999996,
+      "height": 19.599999999999998,
+      "text": "3  Read return, invoice and ledger records",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-3",
+      "points": [
+        [
+          1240,
+          592
+        ],
+        [
+          896,
+          592
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-12",
+      "x": 1068,
+      "y": 562,
+      "width": 349.15999999999997,
+      "height": 19.599999999999998,
+      "text": "4  Authorized rows + source IDs + snapshots",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-4",
+      "points": [
+        [
+          896,
+          672
+        ],
+        [
+          1240,
+          672
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-13",
+      "x": 1068,
+      "y": 642,
+      "width": 357.28,
+      "height": 19.599999999999998,
+      "text": "5  Reconcile boxes and calculate the net gap",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-5",
+      "points": [
+        [
+          1240,
+          752
+        ],
+        [
+          896,
+          752
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-14",
+      "x": 1068,
+      "y": 722,
+      "width": 406,
+      "height": 19.599999999999998,
+      "text": "6  Dubai +486,200; Abu Dhabi −74,200; net +412,000",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-6",
+      "points": [
+        [
+          896,
+          832
+        ],
+        [
+          552,
+          832
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-15",
+      "x": 724,
+      "y": 802,
+      "width": 511.55999999999995,
+      "height": 19.599999999999998,
+      "text": "7  Evidence: 34 cut-off invoices + 4 branch-allocation invoices",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-7",
+      "points": [
+        [
+          552,
+          912
+        ],
+        [
+          896,
+          912
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-16",
+      "x": 724,
+      "y": 882,
+      "width": 503.43999999999994,
+      "height": 19.599999999999998,
+      "text": "8  Investigate completeness; prepare the supported explanation",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-8",
+      "points": [
+        [
+          896,
+          992
+        ],
+        [
+          552,
+          992
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-17",
+      "x": 724,
+      "y": 962,
+      "width": 438.47999999999996,
+      "height": 19.599999999999998,
+      "text": "9  Findings + evidence references + proposed next step",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "message-9",
+      "points": [
+        [
+          552,
+          1072
+        ],
+        [
+          208,
+          1072
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-18",
+      "x": 380,
+      "y": 1042,
+      "width": 422.23999999999995,
+      "height": 19.599999999999998,
+      "text": "10  Show explanation, invoice list and draft options",
+      "size": 14,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "working",
+      "x": 64,
+      "y": 1176,
+      "width": 1472,
+      "height": 128,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-19",
+      "x": 88,
+      "y": 1189,
+      "width": 386.85999999999996,
+      "height": 32.199999999999996,
+      "text": "Working that comes from tools",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-20",
+      "x": 88,
+      "y": 1234,
+      "width": 396.71999999999997,
+      "height": 25.2,
+      "text": "Dubai: 1,626,200 − 1,140,000 = 486,200",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-21",
+      "x": 696,
+      "y": 1234,
+      "width": 396.71999999999997,
+      "height": 25.2,
+      "text": "Abu Dhabi: 214,600 − 288,800 = −74,200",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-22",
+      "x": 88,
+      "y": 1267,
+      "width": 887.4,
+      "height": 23.799999999999997,
+      "text": "Net: 486,200 − 74,200 = AED 412,000. The explanation must identify the supporting records.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-23",
+      "x": 64,
+      "y": 1345,
+      "width": 1061.3999999999999,
+      "height": 21,
+      "text": "Draft scenario figures, not live taxpayer findings. This diagram ends before approval and submission; see the action flow.",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-example-heading",
+      "x": 64,
+      "y": 1416,
+      "width": 1472,
+      "height": 132,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-24",
+      "x": 88,
+      "y": 1433,
+      "width": 255.2,
+      "height": 15.399999999999999,
+      "text": "WORKED EXAMPLE / READ FROM TOP TO BOTTOM",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-25",
+      "x": 88,
+      "y": 1454,
+      "width": 769.0799999999999,
+      "height": 36.4,
+      "text": "A worked investigation with actual draft arithmetic",
+      "size": 26,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-26",
+      "x": 88,
+      "y": 1500,
+      "width": 709.92,
+      "height": 25.2,
+      "text": "The user asks: “Is the full AED 486,200 Dubai difference extra VAT?”",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-27",
+      "x": 88,
+      "y": 1575,
+      "width": 95.69999999999999,
+      "height": 15.399999999999999,
+      "text": "STEP / WHO ACTS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-28",
+      "x": 360,
+      "y": 1575,
+      "width": 133.98,
+      "height": 15.399999999999999,
+      "text": "WHAT THEY ACTUALLY DO",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-29",
+      "x": 1032,
+      "y": 1575,
+      "width": 204.16,
+      "height": 15.399999999999999,
+      "text": "WHAT COMES BACK / WHY IT MATTERS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-row-0",
+      "x": 64,
+      "y": 1604,
+      "width": 1472,
+      "height": 120,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-30",
+      "x": 88,
+      "y": 1617,
+      "width": 25.52,
+      "height": 30.799999999999997,
+      "text": "01",
+      "size": 22,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-31",
+      "x": 136,
+      "y": 1620,
+      "width": 167.04,
+      "height": 25.2,
+      "text": "Supervisor Agent",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-32",
+      "x": 360,
+      "y": 1619,
+      "width": 640.9,
+      "height": 23.799999999999997,
+      "text": "Recognizes a reconciliation question. Loads instructions and asks",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-33",
+      "x": 360,
+      "y": 1644,
+      "width": 660.62,
+      "height": 23.799999999999997,
+      "text": "the Data workflow for the selected return and its invoice evidence.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-34",
+      "x": 1032,
+      "y": 1619,
+      "width": 453.55999999999995,
+      "height": 23.799999999999997,
+      "text": "A scoped investigation. The question itself is",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-35",
+      "x": 1032,
+      "y": 1644,
+      "width": 207.05999999999997,
+      "height": 23.799999999999997,
+      "text": "not treated as proof.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-row-1",
+      "x": 64,
+      "y": 1724,
+      "width": 1472,
+      "height": 120,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-36",
+      "x": 88,
+      "y": 1737,
+      "width": 25.52,
+      "height": 30.799999999999997,
+      "text": "02",
+      "size": 22,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-37",
+      "x": 136,
+      "y": 1740,
+      "width": 135.72,
+      "height": 25.2,
+      "text": "Data workflow",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-38",
+      "x": 360,
+      "y": 1739,
+      "width": 650.76,
+      "height": 23.799999999999997,
+      "text": "Reads Dubai expected VAT 1,626,200 and declared VAT 1,140,000; Abu",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-39",
+      "x": 360,
+      "y": 1764,
+      "width": 433.84,
+      "height": 23.799999999999997,
+      "text": "Dhabi expected 214,600 and declared 288,800.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-40",
+      "x": 1032,
+      "y": 1739,
+      "width": 453.55999999999995,
+      "height": 23.799999999999997,
+      "text": "Four source-backed amounts, with their period,",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-41",
+      "x": 1032,
+      "y": 1764,
+      "width": 236.64,
+      "height": 23.799999999999997,
+      "text": "currency and record IDs.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-row-2",
+      "x": 64,
+      "y": 1844,
+      "width": 1472,
+      "height": 120,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-42",
+      "x": 88,
+      "y": 1857,
+      "width": 25.52,
+      "height": 30.799999999999997,
+      "text": "03",
+      "size": 22,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-43",
+      "x": 136,
+      "y": 1860,
+      "width": 167.04,
+      "height": 25.2,
+      "text": "Calculation tool",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-44",
+      "x": 360,
+      "y": 1859,
+      "width": 611.3199999999999,
+      "height": 23.799999999999997,
+      "text": "Subtracts declared from expected for each Emirate: 1,626,200 −",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-45",
+      "x": 360,
+      "y": 1884,
+      "width": 285.94,
+      "height": 23.799999999999997,
+      "text": "1,140,000; 214,600 − 288,800.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-46",
+      "x": 1032,
+      "y": 1859,
+      "width": 433.84,
+      "height": 23.799999999999997,
+      "text": "Dubai +486,200; Abu Dhabi −74,200. These are",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-47",
+      "x": 1032,
+      "y": 1884,
+      "width": 187.33999999999997,
+      "height": 23.799999999999997,
+      "text": "signed adjustments.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-row-3",
+      "x": 64,
+      "y": 1964,
+      "width": 1472,
+      "height": 120,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-48",
+      "x": 88,
+      "y": 1977,
+      "width": 25.52,
+      "height": 30.799999999999997,
+      "text": "04",
+      "size": 22,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-49",
+      "x": 136,
+      "y": 1980,
+      "width": 187.92,
+      "height": 25.2,
+      "text": "Investigation task",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-50",
+      "x": 360,
+      "y": 1979,
+      "width": 601.4599999999999,
+      "height": 23.799999999999997,
+      "text": "Checks the invoice breakdown: 34 cut-off invoices account for",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-51",
+      "x": 360,
+      "y": 2004,
+      "width": 492.99999999999994,
+      "height": 23.799999999999997,
+      "text": "412,000; 4 allocation invoices account for 74,200.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-52",
+      "x": 1032,
+      "y": 1979,
+      "width": 463.41999999999996,
+      "height": 23.799999999999997,
+      "text": "38 supporting invoices. Allocation changes move",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-53",
+      "x": 1032,
+      "y": 2004,
+      "width": 256.35999999999996,
+      "height": 23.799999999999997,
+      "text": "VAT between Emirate boxes.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-row-4",
+      "x": 64,
+      "y": 2084,
+      "width": 1472,
+      "height": 120,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-54",
+      "x": 88,
+      "y": 2097,
+      "width": 25.52,
+      "height": 30.799999999999997,
+      "text": "05",
+      "size": 22,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-55",
+      "x": 136,
+      "y": 2100,
+      "width": 167.04,
+      "height": 25.2,
+      "text": "Calculation tool",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-56",
+      "x": 360,
+      "y": 2099,
+      "width": 640.9,
+      "height": 23.799999999999997,
+      "text": "Adds the signed box adjustments: 486,200 + (−74,200). Checks that",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-57",
+      "x": 360,
+      "y": 2124,
+      "width": 325.38,
+      "height": 23.799999999999997,
+      "text": "the invoice breakdown reconciles.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-58",
+      "x": 1032,
+      "y": 2099,
+      "width": 433.84,
+      "height": 23.799999999999997,
+      "text": "Net extra VAT in the draft: AED 412,000. The",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-59",
+      "x": 1032,
+      "y": 2124,
+      "width": 315.52,
+      "height": 23.799999999999997,
+      "text": "allocation is not counted twice.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "worked-row-5",
+      "x": 64,
+      "y": 2204,
+      "width": 1472,
+      "height": 120,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-60",
+      "x": 88,
+      "y": 2217,
+      "width": 25.52,
+      "height": 30.799999999999997,
+      "text": "06",
+      "size": 22,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-61",
+      "x": 136,
+      "y": 2220,
+      "width": 208.79999999999998,
+      "height": 25.2,
+      "text": "Explanation workflow",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-62",
+      "x": 360,
+      "y": 2219,
+      "width": 631.04,
+      "height": 23.799999999999997,
+      "text": "Answers: “Dubai increases by 486,200, but Abu Dhabi decreases by",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-63",
+      "x": 360,
+      "y": 2244,
+      "width": 621.18,
+      "height": 23.799999999999997,
+      "text": "74,200. The net increase is 412,000.” Offers an action preview.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-64",
+      "x": 1032,
+      "y": 2219,
+      "width": 404.26,
+      "height": 23.799999999999997,
+      "text": "A checkable answer and an optional draft.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-65",
+      "x": 1032,
+      "y": 2244,
+      "width": 354.96,
+      "height": 23.799999999999997,
+      "text": "Nothing is submitted by this answer.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-66",
+      "x": 64,
+      "y": 2345,
+      "width": 194.88,
+      "height": 29.4,
+      "text": "What to remember",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-67",
+      "x": 64,
+      "y": 2381,
+      "width": 1301.52,
+      "height": 23.799999999999997,
+      "text": "A good agent separates the net shortfall from a movement between boxes. Repeating one large number would give the wrong explanation.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "learn-03-reconciliation-text-68",
+      "x": 64,
+      "y": 2432,
+      "width": 1071.84,
+      "height": 19.599999999999998,
+      "text": "Worked examples use the supplied synthetic draft. Tool behavior and interfaces are proposed; these are not live taxpayer operations.",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

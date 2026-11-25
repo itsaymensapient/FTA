@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FTA data agents: architecture overview</title><style>html,body{margin:0;background:#fff;color:#182C3A;font-family:Segoe UI, Arial, sans-serif}main{max-width:100%;min-width:0}.diagram-container{width:100%;overflow-x:auto}svg{display:block;width:100%;min-width:1600px;height:auto}@media print{.diagram-container{overflow:visible}svg{min-width:0}}</style></head><body><main><div class="diagram-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="fta-agent-architecture-overview-title fta-agent-architecture-overview-desc"><title id="fta-agent-architecture-overview-title">FTA data agents: architecture overview</title><desc id="fta-agent-architecture-overview-desc">Approved section instructions guide the supervisor and specialist agents, while a scoped adapter provides plain-language prediction evidence.</desc><defs><marker id="fta-agent-architecture-overview-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="fta-agent-architecture-overview-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1000" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="712" x2="1536" y2="712" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="816" x2="1536" y2="816" stroke="#D8E0E5" stroke-width="1"/>
+<path data-edge-id="instructions-to-supervisor" d="M 512 284 L 672 284" fill="none" stroke="#14665E" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow-accent)"/>
+<path data-edge-id="user-to-supervisor" d="M 1248 260 L 1120 260" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="dispatch-semantic" d="M 784 344 L 784 380 Q 784 388 776 388 L 328 388 Q 320 388 320 396 L 320 444" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="dispatch-ml" d="M 896 344 L 896 396 Q 896 404 888 404 L 832 404 Q 824 404 824 412 L 824 444" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="dispatch-rag" d="M 1008 344 L 1008 380 Q 1008 388 1016 388 L 1296 388 Q 1304 388 1304 396 L 1304 444" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="semantic-tool-overview" d="M 320 644 L 320 712" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="ml-tool-overview" d="M 824 644 L 824 712" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="rag-tool-overview" d="M 1304 644 L 1304 712" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="validated-to-investigation" d="M 416 884 L 536 884" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<path data-edge-id="investigation-to-report-overview" d="M 968 884 L 1064 884" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-agent-architecture-overview-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / ARCHITECTURE OVERVIEW</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">A supervised agent layer over Gold</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Approved instructions shape the plan; scoped tools provide data and evidence.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<text x="64" y="204" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">PREPARED AND REVIEWED BEFORE RUNTIME</text>
+<rect data-node-id="prepared-context" x="64" y="224" width="448" height="120" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.75"/>
+<text x="88" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Section instruction library</text>
+<text x="88" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Plain-language domain, calculation and model guides</text>
+<text x="88" y="310" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Reviewed, approved and versioned</text>
+<rect data-node-id="supervisor-overview" x="672" y="224" width="448" height="120" rx="6" fill="#FFFFFF" stroke="#14665E" stroke-width="1.75"/>
+<text x="696" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">Supervisor Agent</text>
+<text x="696" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Resolve domain and permissions; load sections</text>
+<text x="696" y="310" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Plan, validate, schedule and coordinate</text>
+<rect data-node-id="user-overview" x="1248" y="224" width="288" height="72" rx="36" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1276" y="268" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Authenticated question</text>
+<text x="64" y="416" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">SPECIALIST WORKFLOWS / SELECT ONLY WHAT THE TASK NEEDS</text>
+<rect data-node-id="semantic-overview" x="64" y="444" width="512" height="200" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="480" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">Semantic subgraph</text>
+<text x="88" y="520" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Data Query Agent</text>
+<text x="88" y="546" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Schema, query planning and validated read-only SQL</text>
+<text x="88" y="584" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Calculation Agent</text>
+<text x="88" y="610" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Certified formulas, deterministic execution and working</text>
+<rect data-node-id="ml-overview" x="608" y="444" width="432" height="200" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="632" y="480" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">ML subgraph</text>
+<text x="632" y="520" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">ML Explanation Agent</text>
+<text x="632" y="550" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Loaded guidance + authorized prediction facts</text>
+<text x="632" y="577" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Approved evidence descriptions</text>
+<text x="632" y="604" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Supported explanation and limitations</text>
+<rect data-node-id="rag-overview" x="1072" y="444" width="464" height="200" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1096" y="480" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">RAG subgraph</text>
+<text x="1096" y="520" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Knowledge Agent</text>
+<text x="1096" y="550" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Approved documents and metadata</text>
+<text x="1096" y="577" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Authorized, version-aware retrieval</text>
+<text x="1096" y="604" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Relevant passages with citations</text>
+<text x="64" y="696" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">SCOPED TOOLS</text>
+<text x="88" y="752" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Gold SQL + certified calculations</text>
+<text x="88" y="780" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Authorized views, formulas, units and provenance</text>
+<text x="632" y="752" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Prediction evidence adapter</text>
+<text x="632" y="780" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Reason IDs resolved to approved descriptions</text>
+<text x="1096" y="752" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Document retrieval</text>
+<text x="1096" y="780" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Access-filtered sources and applicable citations</text>
+<text x="64" y="858" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">RESULT HANDLING</text>
+<text x="64" y="890" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Collect and validate</text>
+<text x="64" y="918" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Figures, completeness and evidence</text>
+<text x="584" y="890" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Investigation Agent</text>
+<text x="584" y="918" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">When needed; follow-up via Supervisor</text>
+<text x="1104" y="890" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Reporting Agent</text>
+<text x="1104" y="918" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Answer, calculation working and citations</text>
+<text x="64" y="972" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">The supervisor owns the journey. Every tool enforces scope. Missing evidence leads to clarification or review.</text>
+<rect x="548.8" y="249" width="86.4" height="20" fill="#FFFFFF"/>
+<text x="592" y="264" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">LOAD FIRST</text></svg></div></main></body></html>

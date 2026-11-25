@@ -1,0 +1,62 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 14
+skinparam defaultFontColor #182C3A
+skinparam ArrowColor #536674
+skinparam ArrowThickness 1
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam rectangleBackgroundColor #FFFFFF
+skinparam rectangleBorderColor #D8E0E5
+skinparam componentBackgroundColor #F5F7F8
+skinparam componentBorderColor #536674
+skinparam databaseBackgroundColor #F5F7F8
+skinparam databaseBorderColor #536674
+title FTA data agent architecture - proposed
+actor User as user
+component "Supervisor Agent\nPlan, delegate, coordinate" as supervisor #EEF7F4
+artifact "Versioned instruction files" as instructions
+artifact "Model logic and reason mappings" as source_guidance
+component "Prepare reviewed plain-language sections" as prepare_guidance
+component "Prediction evidence adapter\nIDs to approved descriptions" as evidence_adapter
+package "Semantic subgraph" {
+  component "Data Query Agent\nSchema, plan, SQL" as query
+  component "Calculation Agent\nCertified formula tools" as calculate
+}
+package "ML subgraph" {
+  component "ML Explanation Agent\nPrediction + matching evidence" as explain
+}
+package "RAG subgraph" {
+  component "Knowledge Agent\nAuthorized cited retrieval" as knowledge
+}
+component "Result collection + validation" as validate
+component "Investigation Agent\nWhen needed" as investigate
+component "Reporting Agent\nEvidence-grounded response" as report
+user --> supervisor : question
+instructions --> supervisor : approved context
+source_guidance --> prepare_guidance
+prepare_guidance --> instructions : reviewed section files
+evidence_adapter --> explain : prediction facts + approved descriptions
+supervisor --> query : scoped tasks
+supervisor --> calculate : when required
+supervisor --> explain : when required
+supervisor --> knowledge : when required
+query --> calculate : result references
+query --> validate
+calculate --> validate
+explain --> validate
+knowledge --> validate
+validate --> investigate : investigation needed
+validate --> report : sufficient evidence
+investigate --> report
+investigate ..> supervisor : bounded follow-up
+report --> user : answer
+note bottom of validate
+  Each specialist loads its relevant approved instruction sections first.
+  All source access uses scoped tools.
+  Gold, model evidence and approved documents are external interfaces.
+end note
+@enduml

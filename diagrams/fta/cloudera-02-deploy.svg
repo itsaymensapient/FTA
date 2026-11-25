@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1540" role="img" aria-labelledby="cloudera-02-deploy-title cloudera-02-deploy-desc" id="cloudera-02-deploy-root"><title id="cloudera-02-deploy-title">How we would deploy the GITEX agent application</title><desc id="cloudera-02-deploy-desc">Read top to bottom: platform setup → versioned project → workflow configuration → tools → publication → acceptance checks.</desc><defs>
+      <style>#cloudera-02-deploy-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #cloudera-02-deploy-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#cloudera-02-deploy-root .diagram-container { overflow:visible }
+}</style><marker id="cloudera-02-deploy-cloudera-02-deploy-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="cloudera-02-deploy-cloudera-02-deploy-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1540" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="stage-0" x="64" y="216" width="1472" height="160" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="stage-1" x="64" y="400" width="1472" height="160" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="stage-2" x="64" y="584" width="1472" height="160" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="stage-3" x="64" y="768" width="1472" height="160" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="stage-4" x="64" y="952" width="1472" height="160" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<rect data-node-id="stage-5" x="64" y="1136" width="1472" height="160" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<line x1="64" y1="1474" x2="1536" y2="1474" stroke="#D8E0E5" stroke-width="1"/>
+<path data-edge-id="stage-arrow-0" d="M 800 376 L 800 400" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-02-deploy-cloudera-02-deploy-arrow)"/>
+<path data-edge-id="stage-arrow-1" d="M 800 560 L 800 584" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-02-deploy-cloudera-02-deploy-arrow)"/>
+<path data-edge-id="stage-arrow-2" d="M 800 744 L 800 768" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-02-deploy-cloudera-02-deploy-arrow)"/>
+<path data-edge-id="stage-arrow-3" d="M 800 928 L 800 952" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-02-deploy-cloudera-02-deploy-arrow)"/>
+<path data-edge-id="stage-arrow-4" d="M 800 1112 L 800 1136" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-02-deploy-cloudera-02-deploy-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / CLOUDERA / HOSTING GUIDE</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">How we would deploy the GITEX agent application</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Read top to bottom: platform setup → versioned project → workflow configuration → tools → publication → acceptance checks.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<text x="88" y="243" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">PLATFORM TEAM + CLOUDERA</text>
+<text x="88" y="278" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">1  Prepare the target environment</text>
+<text x="88" y="316" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Confirm cloud/on-premises edition, release, entitlement and network paths.</text>
+<text x="88" y="344" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Create Workbench/project; choose an approved LLM hosting route.</text>
+<text x="936" y="268" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">OUTPUT: usable workspace, identity and reachable service</text>
+<text x="936" y="294" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">endpoints.</text>
+<text x="936" y="320" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">If using AI Inference: plan Registry, compute cluster and</text>
+<text x="936" y="346" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">model capacity.</text>
+<text x="88" y="427" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">YOU / AI ENGINEER</text>
+<text x="88" y="462" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">2  Build a reproducible project release</text>
+<text x="88" y="500" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Version workflow code, reviewed instruction sections, tools and test data.</text>
+<text x="88" y="528" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Pin dependencies and runtime; configure secrets through approved controls.</text>
+<text x="936" y="452" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">OUTPUT: one identifiable application release, with</text>
+<text x="936" y="478" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">repeatable setup.</text>
+<text x="936" y="504" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Keep secrets out of prompts, browser code and the source</text>
+<text x="936" y="530" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">repository.</text>
+<text x="88" y="611" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">YOU + PLATFORM TEAM</text>
+<text x="88" y="646" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">3  Configure Agent Studio and the model</text>
+<text x="88" y="684" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Use the documented prebuilt Studio runtime; set manager and specialist tasks.</text>
+<text x="88" y="712" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Connect the chosen model endpoint and test structured outputs / tool use.</text>
+<text x="936" y="636" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">OUTPUT: an executable workflow calling a reachable</text>
+<text x="936" y="662" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">language model.</text>
+<text x="936" y="688" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">An agent role is configuration plus tools; it is not a new</text>
+<text x="936" y="714" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">trained model.</text>
+<text x="88" y="795" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">YOU + DATA/BACKEND OWNERS</text>
+<text x="88" y="830" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">4  Wire the controlled tools and durable state</text>
+<text x="88" y="868" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Connect read-only Gold queries, deterministic calculations and references.</text>
+<text x="88" y="896" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Implement case persistence, exact-payload approval and demo action APIs.</text>
+<text x="936" y="820" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">OUTPUT: scoped, testable contracts that return facts and</text>
+<text x="936" y="846" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">evidence IDs.</text>
+<text x="936" y="872" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Do not expose a generic SQL writer or unrestricted</text>
+<text x="936" y="898" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">submission function.</text>
+<text x="88" y="979" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">YOU / WORKFLOW PUBLISHER</text>
+<text x="88" y="1014" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">5  Publish the workflow and application</text>
+<text x="88" y="1052" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Agent Studio publishes the workflow engine as a Workbench Model endpoint.</text>
+<text x="88" y="1080" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Connect the supplied interface or our custom Workbench Application.</text>
+<text x="936" y="1004" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">OUTPUT: authenticated workflow and UI endpoints, plus run</text>
+<text x="936" y="1030" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">traces.</text>
+<text x="936" y="1056" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Kickoff returns a trace ID; the UI tracks asynchronous</text>
+<text x="936" y="1082" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">execution.</text>
+<text x="88" y="1163" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHOLE DELIVERY TEAM</text>
+<text x="88" y="1198" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">6  Verify and rehearse the full scenario</text>
+<text x="88" y="1236" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Check all four stories, both role views, approvals, failures and session reset.</text>
+<text x="88" y="1264" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Measure model/tool latency and concurrent runs; keep the demo ready to serve.</text>
+<text x="936" y="1188" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">OUTPUT: acceptance evidence and an agreed demo runbook.</text>
+<text x="936" y="1214" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Use Al Yasmeen’s +486,200 / −74,200 / +412,000 as</text>
+<text x="936" y="1240" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">reference checks.</text>
+<text x="64" y="1396" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Name trap: “Workbench Model” here runs the workflow code. “LLM endpoint” is the language model that code calls.</text>
+<text x="64" y="1436" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">We build and test the domain behavior. Cloudera supplies the supported runtime, deployment mechanisms and connected services.</text>
+<text x="64" y="1502" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">This is a proposed deployment order, not a committed schedule or a verified sizing estimate. Source links and release constraints are in the guide.</text>
+</svg>

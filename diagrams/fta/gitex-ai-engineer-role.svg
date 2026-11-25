@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1056" role="img" aria-labelledby="gitex-ai-engineer-role-title gitex-ai-engineer-role-desc" id="gitex-ai-engineer-role-root"><title id="gitex-ai-engineer-role-title">Your AI engineering role in the FTA demonstration</title><desc id="gitex-ai-engineer-role-desc">A proposed ownership map shows how approved domain rules, data and application interfaces feed the agent layer you build and evaluate, then deploy on Cloudera.</desc><defs>
+      <style>#gitex-ai-engineer-role-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #gitex-ai-engineer-role-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#gitex-ai-engineer-role-root .diagram-container { overflow:visible }
+}</style><marker id="gitex-ai-engineer-role-gitex-ai-engineer-role-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="gitex-ai-engineer-role-gitex-ai-engineer-role-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1056" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="204" x2="1536" y2="204" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="372" x2="1536" y2="372" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="540" x2="1536" y2="540" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="780" x2="1536" y2="780" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="948" x2="1536" y2="948" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="your-lane" x="64" y="540" width="1472" height="240" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<path data-edge-id="rules-to-instructions" d="M 320 284 L 296 284 Q 288 284 288 292 L 288 636 Q 288 644 296 644 L 320 644" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-ai-engineer-role-gitex-ai-engineer-role-arrow)"/>
+<path data-edge-id="data-to-tools" d="M 552 500 L 552 588" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-ai-engineer-role-gitex-ai-engineer-role-arrow)"/>
+<path data-edge-id="backend-to-agents" d="M 1184 500 L 1184 524 Q 1184 532 1176 532 L 1000 532 Q 992 532 992 540 L 992 588" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-ai-engineer-role-gitex-ai-engineer-role-arrow)"/>
+<path data-edge-id="tools-to-orchestration" d="M 672 644 L 768 644" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-ai-engineer-role-gitex-ai-engineer-role-arrow)"/>
+<path data-edge-id="orchestration-to-quality" d="M 1120 644 L 1216 644" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-ai-engineer-role-gitex-ai-engineer-role-arrow)"/>
+<path data-edge-id="deploy" d="M 992 700 L 992 820" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-ai-engineer-role-gitex-ai-engineer-role-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / YOUR ROLE</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">Your job: make the agents work reliably</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Proposed responsibility split for the GITEX PoC. Confirm named owners and interfaces on the call.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<text x="88" y="244" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / DOMAIN OWNERS</text>
+<text x="88" y="280" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Approve the meaning</text>
+<text x="88" y="304" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">of rules and decisions</text>
+<rect data-node-id="approved-policy" x="320" y="236" width="352" height="96" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="344" y="270" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Approved rules + guidance</text>
+<text x="344" y="298" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Tax interpretation, options and wording</text>
+<text x="344" y="322" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Reviewed plain-language section files</text>
+<text x="88" y="412" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">DATA + APPLICATION TEAM</text>
+<text x="88" y="448" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Provide records and</text>
+<text x="88" y="472" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">operational interfaces</text>
+<rect data-node-id="data-inputs" x="320" y="404" width="352" height="96" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="344" y="438" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Data + evidence contracts</text>
+<text x="344" y="466" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Invoices, returns, ledger and documents</text>
+<text x="344" y="490" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Verified totals, identifiers and scope</text>
+<rect data-node-id="application-inputs" x="960" y="404" width="448" height="96" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="984" y="438" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Demo action + case interfaces</text>
+<text x="984" y="466" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Drafts, approvals, submissions and case state</text>
+<text x="984" y="490" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Shared history across Inspector and Business</text>
+<text x="88" y="584" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">YOU / AI ENGINEER</text>
+<text x="88" y="624" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Build agent behavior,</text>
+<text x="88" y="648" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">tool integration and</text>
+<text x="88" y="672" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">evidence-based answers.</text>
+<rect data-node-id="instructions-tools" x="320" y="588" width="352" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="344" y="622" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Instructions + scoped tools</text>
+<text x="344" y="650" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Load approved sections before tasks</text>
+<text x="344" y="674" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Query, calculate and retrieve evidence</text>
+<rect data-node-id="agent-workflows" x="768" y="588" width="352" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="792" y="622" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Supervisor + specialists</text>
+<text x="792" y="650" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Plan, explain, investigate and draft</text>
+<text x="792" y="674" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Coordinate approved actions and follow-up</text>
+<rect data-node-id="quality" x="1216" y="588" width="296" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1240" y="622" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Evaluate + trace</text>
+<text x="1240" y="650" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Correct figures and explanations</text>
+<text x="1240" y="674" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Access, failures and repeat actions</text>
+<text x="88" y="820" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">CLOUDERA / PLATFORM TEAM</text>
+<text x="88" y="856" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Provide the runtime,</text>
+<text x="88" y="880" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">models and connectivity</text>
+<rect data-node-id="cloudera" x="768" y="820" width="744" height="96" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="792" y="854" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Run the application on Cloudera</text>
+<text x="792" y="882" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Workbench development; agent orchestration; model serving; governed connections</text>
+<text x="792" y="906" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Exact services and release support to be confirmed with the platform team</text>
+<text x="64" y="988" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Your delivery: agent workflows + instruction loading + tool adapters + validation + evaluations.</text>
+<text x="64" y="1024" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Domain approval, data preparation, backend state and platform provisioning are shared dependencies.</text>
+<rect x="1026.88" y="745" width="58.24" height="20" fill="#FFFFFF"/>
+<text x="1056" y="760" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">DEPLOY</text></svg>

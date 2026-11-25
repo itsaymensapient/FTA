@@ -1,0 +1,838 @@
+{
+  "width": 1600,
+  "height": 1000,
+  "elements": [
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 255.2,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / ARCHITECTURE OVERVIEW",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 709.92,
+      "height": 50.4,
+      "text": "A supervised agent layer over Gold",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 759.2199999999999,
+      "height": 23.799999999999997,
+      "text": "Approved instructions shape the plan; scoped tools provide data and evidence.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-5",
+      "x": 64,
+      "y": 193,
+      "width": 229.67999999999998,
+      "height": 15.399999999999999,
+      "text": "PREPARED AND REVIEWED BEFORE RUNTIME",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "prepared-context",
+      "x": 64,
+      "y": 224,
+      "width": 448,
+      "height": 120,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-6",
+      "x": 88,
+      "y": 237,
+      "width": 328.85999999999996,
+      "height": 29.4,
+      "text": "Section instruction library",
+      "size": 21,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-7",
+      "x": 88,
+      "y": 271,
+      "width": 443.7,
+      "height": 21,
+      "text": "Plain-language domain, calculation and model guides",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-8",
+      "x": 88,
+      "y": 295,
+      "width": 278.4,
+      "height": 21,
+      "text": "Reviewed, approved and versioned",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "supervisor-overview",
+      "x": 672,
+      "y": 224,
+      "width": 448,
+      "height": 120,
+      "fill": "#FFFFFF",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-9",
+      "x": 696,
+      "y": 235,
+      "width": 213.44,
+      "height": 32.199999999999996,
+      "text": "Supervisor Agent",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-10",
+      "x": 696,
+      "y": 271,
+      "width": 391.5,
+      "height": 21,
+      "text": "Resolve domain and permissions; load sections",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-11",
+      "x": 696,
+      "y": 295,
+      "width": 339.29999999999995,
+      "height": 21,
+      "text": "Plan, validate, schedule and coordinate",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "user-overview",
+      "x": 1248,
+      "y": 224,
+      "width": 288,
+      "height": 72,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-12",
+      "x": 1276,
+      "y": 249,
+      "width": 242.43999999999997,
+      "height": 26.599999999999998,
+      "text": "Authenticated question",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "instructions-to-supervisor",
+      "points": [
+        [
+          512,
+          284
+        ],
+        [
+          672,
+          284
+        ]
+      ],
+      "color": "#14665E",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-13",
+      "x": 592,
+      "y": 253,
+      "width": 63.8,
+      "height": 15.399999999999999,
+      "text": "LOAD FIRST",
+      "size": 11,
+      "color": "#14665E",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "user-to-supervisor",
+      "points": [
+        [
+          1248,
+          260
+        ],
+        [
+          1120,
+          260
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-14",
+      "x": 64,
+      "y": 405,
+      "width": 344.52,
+      "height": 15.399999999999999,
+      "text": "SPECIALIST WORKFLOWS / SELECT ONLY WHAT THE TASK NEEDS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "semantic-overview",
+      "x": 64,
+      "y": 444,
+      "width": 512,
+      "height": 200,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-15",
+      "x": 88,
+      "y": 458,
+      "width": 216.92,
+      "height": 30.799999999999997,
+      "text": "Semantic subgraph",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-16",
+      "x": 88,
+      "y": 501,
+      "width": 176.32,
+      "height": 26.599999999999998,
+      "text": "Data Query Agent",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-17",
+      "x": 88,
+      "y": 531,
+      "width": 434.99999999999994,
+      "height": 21,
+      "text": "Schema, query planning and validated read-only SQL",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-18",
+      "x": 88,
+      "y": 565,
+      "width": 187.33999999999997,
+      "height": 26.599999999999998,
+      "text": "Calculation Agent",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-19",
+      "x": 88,
+      "y": 595,
+      "width": 478.49999999999994,
+      "height": 21,
+      "text": "Certified formulas, deterministic execution and working",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "ml-overview",
+      "x": 608,
+      "y": 444,
+      "width": 432,
+      "height": 200,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-20",
+      "x": 632,
+      "y": 458,
+      "width": 140.35999999999999,
+      "height": 30.799999999999997,
+      "text": "ML subgraph",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-21",
+      "x": 632,
+      "y": 501,
+      "width": 220.39999999999998,
+      "height": 26.599999999999998,
+      "text": "ML Explanation Agent",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-22",
+      "x": 632,
+      "y": 535,
+      "width": 391.5,
+      "height": 21,
+      "text": "Loaded guidance + authorized prediction facts",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-23",
+      "x": 632,
+      "y": 562,
+      "width": 261,
+      "height": 21,
+      "text": "Approved evidence descriptions",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-24",
+      "x": 632,
+      "y": 589,
+      "width": 321.9,
+      "height": 21,
+      "text": "Supported explanation and limitations",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "rag-overview",
+      "x": 1072,
+      "y": 444,
+      "width": 464,
+      "height": 200,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-25",
+      "x": 1096,
+      "y": 458,
+      "width": 153.11999999999998,
+      "height": 30.799999999999997,
+      "text": "RAG subgraph",
+      "size": 22,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-26",
+      "x": 1096,
+      "y": 501,
+      "width": 165.29999999999998,
+      "height": 26.599999999999998,
+      "text": "Knowledge Agent",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-27",
+      "x": 1096,
+      "y": 535,
+      "width": 269.7,
+      "height": 21,
+      "text": "Approved documents and metadata",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-28",
+      "x": 1096,
+      "y": 562,
+      "width": 304.5,
+      "height": 21,
+      "text": "Authorized, version-aware retrieval",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-29",
+      "x": 1096,
+      "y": 589,
+      "width": 278.4,
+      "height": 21,
+      "text": "Relevant passages with citations",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "dispatch-semantic",
+      "points": [
+        [
+          784,
+          344
+        ],
+        [
+          784,
+          388
+        ],
+        [
+          320,
+          388
+        ],
+        [
+          320,
+          444
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "dispatch-ml",
+      "points": [
+        [
+          896,
+          344
+        ],
+        [
+          896,
+          404
+        ],
+        [
+          824,
+          404
+        ],
+        [
+          824,
+          444
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "dispatch-rag",
+      "points": [
+        [
+          1008,
+          344
+        ],
+        [
+          1008,
+          388
+        ],
+        [
+          1304,
+          388
+        ],
+        [
+          1304,
+          444
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-30",
+      "x": 64,
+      "y": 685,
+      "width": 76.55999999999999,
+      "height": 15.399999999999999,
+      "text": "SCOPED TOOLS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-31",
+      "x": 88,
+      "y": 733,
+      "width": 363.65999999999997,
+      "height": 26.599999999999998,
+      "text": "Gold SQL + certified calculations",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-32",
+      "x": 88,
+      "y": 765,
+      "width": 417.59999999999997,
+      "height": 21,
+      "text": "Authorized views, formulas, units and provenance",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-33",
+      "x": 632,
+      "y": 733,
+      "width": 297.53999999999996,
+      "height": 26.599999999999998,
+      "text": "Prediction evidence adapter",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-34",
+      "x": 632,
+      "y": 765,
+      "width": 382.79999999999995,
+      "height": 21,
+      "text": "Reason IDs resolved to approved descriptions",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-35",
+      "x": 1096,
+      "y": 733,
+      "width": 198.35999999999999,
+      "height": 26.599999999999998,
+      "text": "Document retrieval",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-36",
+      "x": 1096,
+      "y": 765,
+      "width": 417.59999999999997,
+      "height": 21,
+      "text": "Access-filtered sources and applicable citations",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "semantic-tool-overview",
+      "points": [
+        [
+          320,
+          644
+        ],
+        [
+          320,
+          712
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "ml-tool-overview",
+      "points": [
+        [
+          824,
+          644
+        ],
+        [
+          824,
+          712
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "rag-tool-overview",
+      "points": [
+        [
+          1304,
+          644
+        ],
+        [
+          1304,
+          712
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-37",
+      "x": 64,
+      "y": 847,
+      "width": 95.69999999999999,
+      "height": 15.399999999999999,
+      "text": "RESULT HANDLING",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-38",
+      "x": 64,
+      "y": 870,
+      "width": 231.99999999999997,
+      "height": 28,
+      "text": "Collect and validate",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-39",
+      "x": 64,
+      "y": 903,
+      "width": 295.79999999999995,
+      "height": 21,
+      "text": "Figures, completeness and evidence",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-40",
+      "x": 584,
+      "y": 870,
+      "width": 220.39999999999998,
+      "height": 28,
+      "text": "Investigation Agent",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-41",
+      "x": 584,
+      "y": 903,
+      "width": 321.9,
+      "height": 21,
+      "text": "When needed; follow-up via Supervisor",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-42",
+      "x": 1104,
+      "y": 870,
+      "width": 174,
+      "height": 28,
+      "text": "Reporting Agent",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-43",
+      "x": 1104,
+      "y": 903,
+      "width": 356.7,
+      "height": 21,
+      "text": "Answer, calculation working and citations",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "validated-to-investigation",
+      "points": [
+        [
+          416,
+          884
+        ],
+        [
+          536,
+          884
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "investigation-to-report-overview",
+      "points": [
+        [
+          968,
+          884
+        ],
+        [
+          1064,
+          884
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-agent-architecture-overview-text-44",
+      "x": 64,
+      "y": 957,
+      "width": 956.9999999999999,
+      "height": 21,
+      "text": "The supervisor owns the journey. Every tool enforces scope. Missing evidence leads to clarification or review.",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

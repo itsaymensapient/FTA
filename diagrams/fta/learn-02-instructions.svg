@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2434" role="img" aria-labelledby="learn-02-instructions-title learn-02-instructions-desc" id="learn-02-instructions-root"><title id="learn-02-instructions-title">How Ali’s instruction-file approach works</title><desc id="learn-02-instructions-desc">Approved task instructions, retrieved references and prediction evidence have different jobs.</desc><defs>
+      <style>#learn-02-instructions-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #learn-02-instructions-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#learn-02-instructions-root .diagram-container { overflow:visible }
+}</style><marker id="learn-02-instructions-learn-02-instructions-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="learn-02-instructions-learn-02-instructions-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="2434" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="1304" x2="1536" y2="1304" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="worked-example-heading" x="64" y="1384" width="1472" height="132" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<rect data-node-id="worked-row-0" x="64" y="1572" width="1472" height="120" rx="0" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-1" x="64" y="1692" width="1472" height="120" rx="0" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-2" x="64" y="1812" width="1472" height="120" rx="0" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-3" x="64" y="1932" width="1472" height="120" rx="0" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-4" x="64" y="2052" width="1472" height="120" rx="0" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="worked-row-5" x="64" y="2172" width="1472" height="120" rx="0" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<path data-edge-id="prepare" d="M 496 380 L 584 380" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-02-instructions-learn-02-instructions-arrow)"/>
+<path data-edge-id="publish" d="M 1016 380 L 1104 380" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-02-instructions-learn-02-instructions-arrow)"/>
+<path data-edge-id="load-to-plan" d="M 496 696 L 584 696" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-02-instructions-learn-02-instructions-arrow)"/>
+<path data-edge-id="plan-to-specialists" d="M 1016 696 L 1104 696" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#learn-02-instructions-learn-02-instructions-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / GITEX / LEARNING GUIDE</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">How Ali’s instruction-file approach works</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Approved task instructions, retrieved references and prediction evidence have different jobs.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<text x="64" y="204" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">A / PREPARE BEFORE THE DEMO</text>
+<text x="64" y="240" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">Turn technical and business meaning into reviewed section files</text>
+<rect data-node-id="Inputs-from-the-owners" x="64" y="300" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="334" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Inputs from the owners</text>
+<text x="88" y="362" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Model or rule behavior and output meanings</text>
+<text x="88" y="386" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Certified formula and period definitions</text>
+<text x="88" y="410" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Approved explanations and action options</text>
+<rect data-node-id="Review-and-publish" x="584" y="300" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="608" y="334" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Review and publish</text>
+<text x="608" y="362" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Write plain-language procedures</text>
+<text x="608" y="386" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Domain / ML owners approve meaning</text>
+<text x="608" y="410" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Version sections and their applicability</text>
+<rect data-node-id="Instruction-section-library" x="1104" y="300" width="432" height="160" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="1128" y="334" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Instruction section library</text>
+<text x="1128" y="362" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">domain / return-reconciliation</text>
+<text x="1128" y="386" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">calculation / emirate-gap</text>
+<text x="1128" y="410" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">model / classification-interpretation</text>
+<text x="64" y="520" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">B / LOAD FOR EACH REQUEST</text>
+<text x="64" y="556" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">Resolve the task and load the relevant sections before planning</text>
+<rect data-node-id="Trusted-context---section-lookup" x="64" y="616" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="650" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Trusted context + section lookup</text>
+<text x="88" y="678" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Role, company, case and period</text>
+<text x="88" y="702" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Explicit approved section IDs and versions</text>
+<text x="88" y="726" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Do not rely on similarity search for rules</text>
+<rect data-node-id="Supervisor-builds-a-bounded-plan" x="584" y="616" width="432" height="160" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="608" y="650" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Supervisor builds a bounded plan</text>
+<text x="608" y="678" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Tasks, dependencies and allowed tools</text>
+<text x="608" y="702" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Expected evidence and completion criteria</text>
+<text x="608" y="726" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Validate scope and execution limits</text>
+<rect data-node-id="Specialists-receive-task-context" x="1104" y="616" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="650" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Specialists receive task context</text>
+<text x="1128" y="678" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Relevant instruction sections only</text>
+<text x="1128" y="702" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Authorized record / evidence references</text>
+<text x="1128" y="726" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Tools permitted for this particular task</text>
+<text x="64" y="836" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">C / OBTAIN EVIDENCE DURING EXECUTION</text>
+<text x="64" y="872" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">The guidance teaches interpretation; evidence supports the individual answer</text>
+<rect data-node-id="Data-and-calculation-results" x="64" y="936" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="970" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Data and calculation results</text>
+<text x="88" y="998" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Invoice IDs, amounts and return boxes</text>
+<text x="88" y="1022" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Query ID, formula version, units and period</text>
+<text x="88" y="1046" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">The language model does not invent totals</text>
+<rect data-node-id="Approved-prediction-descriptions" x="584" y="936" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="608" y="970" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Approved prediction descriptions</text>
+<text x="608" y="998" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Evidence tool reads the recorded prediction</text>
+<text x="608" y="1022" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Resolve identifiers with reviewed mappings</text>
+<text x="608" y="1046" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Pass descriptions and supporting facts</text>
+<rect data-node-id="Retrieved-reference-passages" x="1104" y="936" width="432" height="160" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="970" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">Retrieved reference passages</text>
+<text x="1128" y="998" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Approved guidance and document sections</text>
+<text x="1128" y="1022" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Access, date and version filters</text>
+<text x="1128" y="1046" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Citations support statements, not tool rights</text>
+<text x="64" y="1156" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">What an explanation can say</text>
+<text x="64" y="1192" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">“These records account for the difference, using the approved calculation definition.”</text>
+<text x="64" y="1222" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">If evidence is absent: explain the gap and request review. A general model guide cannot prove an individual cause.</text>
+<text x="64" y="1328" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Suggested section names are proposed examples. Instruction loading supplies context; it does not fine-tune model weights.</text>
+<text x="88" y="1412" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WORKED EXAMPLE / READ FROM TOP TO BOTTOM</text>
+<text x="88" y="1448" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" text-anchor="start">Exactly what the agent reads before answering</text>
+<text x="88" y="1486" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Same Al Yasmeen case: “Explain the difference and tell me what needs correcting.”</text>
+<text x="88" y="1554" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">STEP / WHO ACTS</text>
+<text x="360" y="1554" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHAT THEY ACTUALLY DO</text>
+<text x="1032" y="1554" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHAT COMES BACK / WHY IT MATTERS</text>
+<text x="88" y="1607" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">01</text>
+<text x="136" y="1606" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Domain owner + you</text>
+<text x="360" y="1604" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Prepare a reconciliation section: compare by Emirate, use the</text>
+<text x="360" y="1629" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">calculation tool, cite invoice IDs and never invent missing</text>
+<text x="360" y="1654" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">evidence.</text>
+<text x="1032" y="1604" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">A reviewed, versioned plain-language file. The</text>
+<text x="1032" y="1629" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">owner approves its meaning.</text>
+<text x="88" y="1727" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">02</text>
+<text x="136" y="1726" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Instruction loader</text>
+<text x="360" y="1724" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Selects that approved section for this case and passes it to the</text>
+<text x="360" y="1749" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">supervisor before the plan is built.</text>
+<text x="1032" y="1724" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">The supervisor receives task instructions, not</text>
+<text x="1032" y="1749" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">raw implementation code.</text>
+<text x="88" y="1847" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">03</text>
+<text x="136" y="1846" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Supervisor Agent</text>
+<text x="360" y="1844" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Plans the work using the section’s rules. Each specialist receives</text>
+<text x="360" y="1869" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">the relevant section before running its task.</text>
+<text x="1032" y="1844" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Read records → calculate → check evidence →</text>
+<text x="1032" y="1869" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">explain. No submission yet.</text>
+<text x="88" y="1967" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">04</text>
+<text x="136" y="1966" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Data + Calculation</text>
+<text x="360" y="1964" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Retrieves the company’s return and invoice records, then applies</text>
+<text x="360" y="1989" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">the approved comparison formula.</text>
+<text x="1032" y="1964" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Case evidence: 38 invoices; box changes +486,200</text>
+<text x="1032" y="1989" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">and −74,200 AED.</text>
+<text x="88" y="2087" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">05</text>
+<text x="136" y="2086" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Knowledge workflow</text>
+<text x="360" y="2084" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">If the answer makes a policy statement, retrieves the applicable</text>
+<text x="360" y="2109" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">approved reference passage with its version and citation.</text>
+<text x="1032" y="2084" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Supporting reference text. It does not replace</text>
+<text x="1032" y="2109" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">the case-specific figures.</text>
+<text x="88" y="2207" fill="#14665E" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">06</text>
+<text x="136" y="2206" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="start">Explanation workflow</text>
+<text x="360" y="2204" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Combines the instructions, tool results and references. Says what</text>
+<text x="360" y="2229" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">is supported and flags any missing evidence.</text>
+<text x="1032" y="2204" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">“The net gap is AED 412,000.” It cannot claim a</text>
+<text x="1032" y="2229" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">model cause without prediction evidence.</text>
+<text x="64" y="2334" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="600" text-anchor="start">What to remember</text>
+<text x="64" y="2366" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">The section file tells the agent how to investigate; the invoice and return records tell it what happened in this case.</text>
+<text x="64" y="2414" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Worked examples use the supplied synthetic draft. Tool behavior and interfaces are proposed; these are not live taxpayer operations.</text>
+</svg>

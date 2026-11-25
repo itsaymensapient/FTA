@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "learn-01-system",
+    "title": "Understand the complete system",
+    "sub": "You build the agent application that connects approved guidance, trusted data and operational workflows."
+  },
+  {
+    "slug": "learn-02-instructions",
+    "title": "How Ali’s instruction-file approach works",
+    "sub": "Approved task instructions, retrieved references and prediction evidence have different jobs."
+  },
+  {
+    "slug": "learn-03-reconciliation",
+    "title": "Trace Scenario 2 from question to evidence",
+    "sub": "Al Yasmeen: the draft expects a Dubai increase, an Abu Dhabi decrease and an AED 412,000 net gap."
+  },
+  {
+    "slug": "learn-04-actions",
+    "title": "How an agent acts without losing control",
+    "sub": "Drafting, approving, executing and verifying are separate steps with separate evidence."
+  },
+  {
+    "slug": "learn-05-invoice-refund",
+    "title": "Scenario playbooks: invoice and refund",
+    "sub": "These stories reuse the same supervisor, guidance loader, evidence tools, approval gate and case engine."
+  },
+  {
+    "slug": "learn-06-return-disclosure",
+    "title": "Scenario playbooks: reconciliation and disclosure",
+    "sub": "Period allocation and arithmetic come from approved definitions and tools; the agents explain and coordinate."
+  },
+  {
+    "slug": "learn-07-build-test",
+    "title": "What you build and how you prove it works",
+    "sub": "Start with one complete vertical slice, then reuse the contracts and workflows across the remaining stories."
+  }
+]

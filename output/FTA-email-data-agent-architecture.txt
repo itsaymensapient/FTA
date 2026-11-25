@@ -1,0 +1,47 @@
+Subject: Re: Proposed Agentic AI architecture for FTA - data agent layer
+
+Hi Ali,
+
+My proposal is to use your end-to-end execution flow as the backbone, with specialist agents divided inside the semantic, ML and knowledge-retrieval workflows. This builds on Sulieman's agent responsibilities while making the planning, execution and validation steps explicit. Our scope would be the Agentic AI layer that lets users query Gold, calculate measures, investigate patterns and understand existing ML results.
+
+The normal flow
+
+User question -> Supervisor -> resolve domain and permissions -> load the relevant instruction files -> build execution plan -> validate plan -> schedule the required workflows -> collect and validate results -> investigate when needed -> report the answer.
+
+The Supervisor owns the goal, task dependencies and journey state. It selects only the agents needed for the question, coordinates their results and replans within defined limits. Independent tasks can run in parallel; dependent tasks wait for their inputs. Invalid plans return for clarification, and failures follow a defined retry or human-handoff policy.
+
+Agents inside the workflows
+
+- Semantic subgraph: a Data Query Agent resolves business terms, selects the relevant schema, builds a query plan and generates SQL. A Calculation Agent handles requested formulas, comparisons and derived measures through certified SQL or tested functions. The internal steps are context selection, query/formula planning, generation, deterministic validation, controlled execution and result checks. Simple certified metrics can run directly through a tool without invoking both agents.
+- ML subgraph: an ML Explanation Agent identifies the stored classification, loads the matching model guidance, retrieves evidence for that prediction and explains the supported findings and limitations. Explaining an existing decision does not automatically rerun the model.
+- RAG subgraph: a Knowledge Agent retrieves approved guidance, schema definitions, verified query examples and model documentation, with access and version filters. It returns relevant passages and citations to support the assigned task.
+- Investigation Agent: after result collection, it reconciles findings, examines trends or inconsistencies and identifies any missing evidence. Further queries go back through the Supervisor as additional validated tasks.
+- Reporting Agent: produces the final answer from the validated evidence, including the figures, calculation definitions, citations and limitations. This role can initially share the Supervisor's implementation.
+
+These are logical responsibilities. We can implement each subgraph as a small workflow containing agent reasoning and deterministic tools, without requiring a separate model deployment for every role.
+
+Instruction files before planning and execution
+
+Following your note, I would divide approved plain-language instructions by domain and section: procedures, terminology, semantic definitions, calculation rules, model interpretation and tool restrictions. The Supervisor loads the relevant sections before planning, and each specialist receives its applicable sections before executing its task. We record the instruction versions with the run.
+
+For ML explanations, these files describe the model and how to interpret its outputs. A specific classification still needs matching prediction evidence. The agent should explain the evidence available for that record and clearly identify gaps. Retrieved documents remain supporting evidence and cannot change permissions or tool policy.
+
+Tools, communication and validation
+
+Agents communicate through the Supervisor using structured tasks and results: objective, inputs, dependencies, allowed tools, result, evidence references and status. The shared runtime owns checkpoints, retries and audit traces.
+
+Every data operation uses a scoped tool contract. A trusted execution layer enforces read-only Gold access, taxpayer/role scope, approved SQL operations and execution limits. Calculation tools perform the arithmetic. Result validation checks provenance, missing data, units and consistency before an answer is produced. The reporting step cannot invent a missing figure or decision reason.
+
+RAG supports documents and metadata through keyword/vector retrieval where useful. Gold facts and aggregations use SQL through the semantic layer. Mandatory instructions and exact mappings are loaded directly by version rather than depending on similarity search.
+
+Example
+
+For "Compare flagged invoices this month with last month and explain the change", the Supervisor assigns comparable Gold queries to the Data Query Agent and the numerical comparison to the Calculation Agent. The ML and Knowledge agents contribute relevant evidence if required. After result collection, the Investigation Agent examines the supported patterns and any data or model-version differences. Reporting distinguishes observed changes from explanations that still need evidence. A simple total can take the shorter semantic-only path.
+
+What we can develop now
+
+Our immediate deliverables can be the agent definitions, internal subgraph workflows, instruction files, task/result schemas, tool contracts and mocks, state/checkpoint design, and Arabic/English evaluation cases. We can test these against representative mock Gold data before mapping the architecture to Cloudera's supported runtime and interfaces.
+
+I have attached a diagram showing your execution flow, the agents inside each subgraph and their supporting tools.
+
+Best regards,

@@ -1,0 +1,23 @@
+{
+  "scope": "FTA project diagrams only",
+  "direction": "Restrained engineering diagrams; no gradients, shadows, decorative icons or repeated panel grids",
+  "paper": "#FFFFFF",
+  "paper2": "#F5F7F8",
+  "ink": "#182C3A",
+  "muted": "#536674",
+  "soft": "#5C6F7D",
+  "rule": "#D8E0E5",
+  "accent": "#14665E",
+  "accentTint": "#EEF7F4",
+  "link": "#285E86",
+  "font": "Segoe UI, Arial, sans-serif",
+  "mono": "Consolas, monospace",
+  "title": 34,
+  "nodeTitle": 20,
+  "body": 16,
+  "caption": 14,
+  "eyebrow": 11,
+  "radius": 6,
+  "grid": 4,
+  "connector": "Rounded orthogonal, distinct ports, no transit through unrelated nodes"
+}

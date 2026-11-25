@@ -1,0 +1,753 @@
+{
+  "width": 1600,
+  "height": 1080,
+  "elements": [
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 306.23999999999995,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / GITEX / MEETING · 25 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 814.3199999999999,
+      "height": 50.4,
+      "text": "Scenario v2.9 — roles, steps, two cases",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 818.38,
+      "height": 23.799999999999997,
+      "text": "One shared journey. Specialist and Business see the same facts from opposite sides.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-5",
+      "x": 64,
+      "y": 177,
+      "width": 57.419999999999995,
+      "height": 15.399999999999999,
+      "text": "01  ENTRY",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "name-entry",
+      "x": 64,
+      "y": 220,
+      "width": 360,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-6",
+      "x": 88,
+      "y": 234,
+      "width": 115.99999999999999,
+      "height": 28,
+      "text": "Name entry",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-7",
+      "x": 88,
+      "y": 267,
+      "width": 252.29999999999998,
+      "height": 21,
+      "text": "Visitor types a greeting name",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "role-choice",
+      "x": 464,
+      "y": 220,
+      "width": 360,
+      "height": 112,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-8",
+      "x": 488,
+      "y": 234,
+      "width": 127.6,
+      "height": 28,
+      "text": "Role choice",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-9",
+      "x": 488,
+      "y": 267,
+      "width": 226.2,
+      "height": 21,
+      "text": "FTA Specialist or Business",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "then",
+      "x": 864,
+      "y": 220,
+      "width": 672,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-10",
+      "x": 888,
+      "y": 234,
+      "width": 46.4,
+      "height": 28,
+      "text": "Then",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-11",
+      "x": 888,
+      "y": 267,
+      "width": 391.5,
+      "height": 21,
+      "text": "Specialist → risk-ordered briefing (2 events)",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-12",
+      "x": 888,
+      "y": 291,
+      "width": 339.29999999999995,
+      "height": 21,
+      "text": "Business → choose Al Yasmeen or Al Waha",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "e1",
+      "points": [
+        [
+          424,
+          276
+        ],
+        [
+          464,
+          276
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "e2",
+      "points": [
+        [
+          824,
+          276
+        ],
+        [
+          864,
+          276
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-13",
+      "x": 64,
+      "y": 361,
+      "width": 165.88,
+      "height": 15.399999999999999,
+      "text": "02  SIX STEPS (BOTH ROLES)",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "step-0",
+      "x": 64,
+      "y": 408,
+      "width": 228,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-14",
+      "x": 80,
+      "y": 425,
+      "width": 77.14,
+      "height": 26.599999999999998,
+      "text": "1 Check",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-15",
+      "x": 80,
+      "y": 462,
+      "width": 81.19999999999999,
+      "height": 19.599999999999998,
+      "text": "Open issue",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "s-0",
+      "points": [
+        [
+          292,
+          456
+        ],
+        [
+          312,
+          456
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step-1",
+      "x": 312,
+      "y": 408,
+      "width": 228,
+      "height": 96,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-16",
+      "x": 328,
+      "y": 425,
+      "width": 99.17999999999999,
+      "height": 26.599999999999998,
+      "text": "2 Explain",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-17",
+      "x": 328,
+      "y": 462,
+      "width": 64.96,
+      "height": 19.599999999999998,
+      "text": "Evidence",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "s-1",
+      "points": [
+        [
+          540,
+          456
+        ],
+        [
+          560,
+          456
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step-2",
+      "x": 560,
+      "y": 408,
+      "width": 228,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-18",
+      "x": 576,
+      "y": 425,
+      "width": 88.16,
+      "height": 26.599999999999998,
+      "text": "3 Decide",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-19",
+      "x": 576,
+      "y": 462,
+      "width": 56.839999999999996,
+      "height": 19.599999999999998,
+      "text": "Options",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "s-2",
+      "points": [
+        [
+          788,
+          456
+        ],
+        [
+          808,
+          456
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step-3",
+      "x": 808,
+      "y": 408,
+      "width": 228,
+      "height": 96,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-20",
+      "x": 824,
+      "y": 425,
+      "width": 55.099999999999994,
+      "height": 26.599999999999998,
+      "text": "4 Act",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-21",
+      "x": 824,
+      "y": 462,
+      "width": 40.599999999999994,
+      "height": 19.599999999999998,
+      "text": "Draft",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "s-3",
+      "points": [
+        [
+          1036,
+          456
+        ],
+        [
+          1056,
+          456
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step-4",
+      "x": 1056,
+      "y": 408,
+      "width": 228,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-22",
+      "x": 1072,
+      "y": 425,
+      "width": 121.21999999999998,
+      "height": 26.599999999999998,
+      "text": "5 Follow-up",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-23",
+      "x": 1072,
+      "y": 462,
+      "width": 48.72,
+      "height": 19.599999999999998,
+      "text": "Verify",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "s-4",
+      "points": [
+        [
+          1284,
+          456
+        ],
+        [
+          1304,
+          456
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "rectangle",
+      "id": "step-5",
+      "x": 1304,
+      "y": 408,
+      "width": 228,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-24",
+      "x": 1320,
+      "y": 425,
+      "width": 66.11999999999999,
+      "height": 26.599999999999998,
+      "text": "6 Done",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-25",
+      "x": 1320,
+      "y": 462,
+      "width": 40.599999999999994,
+      "height": 19.599999999999998,
+      "text": "Close",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-26",
+      "x": 64,
+      "y": 533,
+      "width": 146.73999999999998,
+      "height": 15.399999999999999,
+      "text": "03  THE TWO STAND CASES",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "case-1-al-yasmeen",
+      "x": 64,
+      "y": 580,
+      "width": 720,
+      "height": 200,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-27",
+      "x": 88,
+      "y": 594,
+      "width": 220.39999999999998,
+      "height": 28,
+      "text": "Case 1 · Al Yasmeen",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-28",
+      "x": 88,
+      "y": 627,
+      "width": 313.2,
+      "height": 21,
+      "text": "VAT return does not match e-invoices",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-29",
+      "x": 88,
+      "y": 651,
+      "width": 165.29999999999998,
+      "height": 21,
+      "text": "Net gap AED 412,000",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-30",
+      "x": 88,
+      "y": 675,
+      "width": 295.79999999999995,
+      "height": 21,
+      "text": "Dubai +486,200 · Abu Dhabi −74,200",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-31",
+      "x": 88,
+      "y": 699,
+      "width": 252.29999999999998,
+      "height": 21,
+      "text": "Fix: VD correcting both boxes",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "case-2-al-waha",
+      "x": 816,
+      "y": 580,
+      "width": 720,
+      "height": 200,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-32",
+      "x": 840,
+      "y": 594,
+      "width": 185.6,
+      "height": 28,
+      "text": "Case 2 · Al Waha",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-33",
+      "x": 840,
+      "y": 627,
+      "width": 226.2,
+      "height": 21,
+      "text": "Refund not fully supported",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-34",
+      "x": 840,
+      "y": 651,
+      "width": 147.89999999999998,
+      "height": 21,
+      "text": "Claim AED 284,600",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-35",
+      "x": 840,
+      "y": 675,
+      "width": 391.5,
+      "height": 21,
+      "text": "Approve 203,600 · reject 34,200 · hold 46,800",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-36",
+      "x": 840,
+      "y": 699,
+      "width": 278.4,
+      "height": 21,
+      "text": "Bright Line non-filer stays open",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-37",
+      "x": 64,
+      "y": 802,
+      "width": 313.2,
+      "height": 25.2,
+      "text": "Also: free query (open policy)",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-38",
+      "x": 64,
+      "y": 840,
+      "width": 1289.9199999999998,
+      "height": 22.4,
+      "text": "Typed questions only if every figure comes from data; otherwise suggested questions. Extra analytics examples are not fully seeded in v1.2.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "meet-02-scenario-journey-text-39",
+      "x": 64,
+      "y": 1025,
+      "width": 696,
+      "height": 21,
+      "text": "Figures from Scenario v2.9 / Data Model Checks. Synthetic demonstration amounts.",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

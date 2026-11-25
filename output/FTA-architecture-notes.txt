@@ -1,0 +1,207 @@
+FTA AGENTIC AI: PROPOSAL NOTES
+Prepared 23 November 2026
+Status: proposed logical architecture for discussion, not an agreed implementation
+
+1. SOURCE REVIEW AND LIMITS
+
+All five supplied files were reviewed:
+
+- documents/Cloudera_Enterprise_AI_Explainer.pdf: all seven pages, text and rendered pages. An independent partner sales explainer, explicitly not official Cloudera collateral. It separates build, model serving and applications, emphasizes governance/private deployment, and cautions that product availability depends on release. Its product and performance claims are not treated here as verified implementation requirements.
+- documents/Cloudera_AI_Agent_Tech_Stack.pptx: all 21 physical slides, text and both embedded images. The footer counts 20 because slide 11 adds an inference illustration. The deck describes a particular Spark/S3 stack without Hive, agent tools/orchestration, optional document retrieval, serving, observability and deployment. This is a possible implementation reference. It does not establish the actual FTA Gold schema or explainability data.
+- documents/AI-use-cases PoC.png: all ten service characteristics and verification questions. Despite the filename, the image lists service expectations, rather than a concrete inventory of tax use cases.
+- opinions/FTA-agentic-ai-proposed-architecture.png: Sulieman's proposal, with taxpayers as the proposed PoC audience, a supervisor, five specialist agents, tools, approvals and shared controls.
+- opinions/Ali-feedback.jpeg: domain/permission resolution, planning, plan validation, scheduling, semantic/ML/RAG subgraphs, result collection, investigation, reporting and explicit failure handling.
+
+The emails and private-discussion excerpts supplied in the chat are additional project context. Silver -> ML -> Gold comes from Ali's email. None of the files supplies an actual schema, sample prediction record, model artifact, approved explanation vocabulary, FTA legal corpus, action API contract, or signed-off initial persona.
+
+This proposal retains Sulieman's useful shared controls and specialist responsibilities, follows Ali's normal execution flow, and treats reusable guidance as a separate design element. It does not claim that taxpayer-first rollout, automatic invoice correction, or a particular model's evidence fields are already approved requirements.
+
+2. DESIGN CHOICE
+
+Recommended: a supervisor coordinates bounded workflows, using LLM reasoning only for tasks that need it. Deterministic services enforce policies and execute tools. This supports Ali's end-to-end flow and task-based selection within that flow.
+
+Alternatives considered:
+- One general agent with all tools: quick to prototype, but makes domain isolation, evidence handling and tool permissions harder to review as scope grows.
+- Every specialist runs for every request: predictable sequence, but unnecessary work for simple questions and artificial dependencies between unrelated tasks.
+
+The selected design uses a stable control flow with a variable task graph. This is a recommendation, not a recorded team decision. A workflow/subgraph can contain one agent and several deterministic steps. The logical boundaries do not require separate model deployments or microservices.
+
+3. REQUEST LIFECYCLE
+
+A. Authenticate through the channel. Resolve role, taxpayer scope, delegated authority and permitted purpose from the trusted identity context. A chat-supplied taxpayer ID is a requested record locator, never authority to access it.
+B. Resolve the task and domain. Ambiguous intent is clarified. Authorization services establish permissible operations before data retrieval or planning.
+C. Fetch the reviewed domain pack from an instruction registry using explicit domain/version keys. Load only relevant sections. Keep a pinned record of the pack version and resolve additional model-specific guidance after identifying the prediction's model version.
+D. Build an execution plan containing the task, allowed workflow, tool, input dependencies, expected evidence, budget, and any required approval.
+E. Validate the plan in software against policies, tool schemas, data scope and budgets. An LLM critic can supplement this check but cannot replace enforcement. Reject or clarify invalid plans.
+F. Schedule only the required workflows. Execute dependent steps in order and independent steps in parallel. All workflow results return through the supervisor. Replanning must pass validation again.
+G. Collect structured results with evidence references. Reconcile calculation definitions, data snapshots and any contradictions. Run investigation only when synthesis or further evidence is necessary.
+H. Report a supported answer, or explain the information gap. An action request can enter a separate approved workflow if that business process is enabled.
+
+Every tool call independently enforces authorization. Plan validation and prompts alone cannot secure data access. A shared backend credential must not erase the individual user's row/column scope.
+
+4. WORKFLOWS AND TOOL BOUNDARIES
+
+Supervisor
+- Holds the goal, task graph, dependency state, budgets and journey state.
+- Issues scoped tasks and consumes structured results, including failure status.
+- Delegates all data access and effects through authorized tools.
+
+Semantic/data workflow
+- Grounds business terms in an approved semantic catalog: views, joins, grain, measures, periods, units and rounding.
+- Prefers certified metrics/query templates when available, with validated generated SQL for supported additional questions.
+- Parses SQL, permits only approved operations/functions/views, and rejects disallowed constructs and multiple statements.
+- Executes with a read-only principal, enforced data policies, query timeout, bounded output and engine-supported cost controls.
+- Uses SQL expressions or tested calculation functions for all numeric work. The LLM explains results; it does not supply arithmetic from memory.
+- Checks scope, nulls, empty sets, duplicate joins, units, snapshot/freshness and reconciliation where relevant. Distinguishes unavailable records from a true numeric zero.
+
+ML explanation workflow
+- Reads a recorded classification; explaining historical predictions does not implicitly rescore them.
+- Joins the prediction to version-matched explanation evidence and approved interpretation guidance.
+- An exact reason-code dictionary can be looked up directly. A bare code can be mapped deterministically before any LLM narration.
+- A rule trace can support an explanation of an applied rule. Feature contributions support an account of model behavior, with the explainer's limitations. They do not establish a causal fact or legal finding.
+- If generating an explanation on demand is supported, use an approved explanation tool with the exact original model, preprocessing and feature snapshot. Label post-hoc evidence and its method. Do not silently substitute the current model or current invoice data.
+- If evidence is unavailable or inconsistent, provide only the supported general description and escalate the individual explanation request.
+- New scoring, simulations or model training are separate future tool permissions and workflows, not an implicit step in read-only Q&A.
+
+Knowledge workflow
+- Uses an ingestion process that parses/OCRs where required, splits by meaningful section, and retains document ID, section/page, authority, language, access tags, version, effective interval and superseded status.
+- Supports keyword plus vector retrieval and reranking where they improve retrieval quality. Apply access restrictions before exposing retrieved content.
+- Resolves historical versus current rules according to the user's question. A newer publication is not automatically the applicable rule for a past transaction.
+- Retrieves authoritative tax guidance only when supplied/approved. The current project folder is not itself a legal knowledge base.
+- Gold transaction facts and metrics remain structured queries. Any later graph or similarity use case requires a separate data design; the initial analytical path does not need transaction embeddings.
+
+Investigation and reporting
+- Compare data, explanation and document evidence, resolving discrepancies through additional scoped tasks when useful.
+- Separate observed facts, calculated results, model outputs, regulatory references and recommended next steps.
+- Provide user-readable evidence and calculation steps. Internal plan decisions and audit traces do not require displaying hidden model reasoning.
+- Apply audience-specific disclosure: an officer and a taxpayer need different scopes and detail even when they use shared capabilities.
+
+Optional action workflow
+- Draft a specific action against a confirmed business API. The project materials do not establish authority or capability to change invoices.
+- Capture the authorized person's approval of the exact action payload, target record, version and expiry. User approval does not override FTA permissions or business rules.
+- Recheck permission and record version immediately before executing. Changed payloads or stale records require a new preview/approval as appropriate.
+- Use idempotency keys, operation IDs and durable status tracking. For timeouts with an unknown write outcome, check status before attempting a write again.
+- Stop/cancel where supported, resume after interruptions, track to an actual outcome, and escalate exceptions to an officer with the necessary context.
+- Operational systems own approved business changes. Downstream ingestion refreshes Silver/ML/Gold through the established pipeline; chat does not directly edit analytical Gold tables.
+
+5. GUIDANCE FILES AND PREDICTION EVIDENCE
+
+Ali's use of "code" is ambiguous: it may refer to programming code or reason codes. The design handles both without assuming which meaning was intended.
+
+- Implementation code stays behind tested tools. Domain owners produce reviewed plain-language guidance describing relevant business behavior and limitations.
+- Reason identifiers can be resolved through an exact, versioned mapping before narration. The underlying structured evidence and audit link remain available.
+- Mandatory instructions are loaded explicitly from an approved registry, rather than relying on vector similarity to retrieve a rule the system must follow.
+- Regulations and other retrieved documents supply evidence. They cannot grant permissions, change tool policy or become executable instructions.
+- A general model guide describes a model's purpose, features, output meaning and limits. It cannot replace record-specific evidence.
+
+Illustrative domain-pack sections (not supplied FTA policy):
+  pack identity, owner, approval status, version and effective interval
+  domain terminology and permitted task types
+  metric definitions and calculation-tool references
+  workflow procedures and allowed-tool references
+  model interpretation guides keyed by model/version
+  escalation triggers and audience-specific disclosure rules
+
+Proposed prediction-evidence contract, subject to actual model capabilities:
+  prediction_id and business_record_id
+  prediction_time and model_id/model_version
+  label/classification and score/score meaning where applicable
+  feature_snapshot_ref and preprocessing_version
+  explanation_ref and explanation_method/version, when available
+  provenance/data_snapshot_ref and evidence status
+
+These fields may live in Gold or in an access-controlled companion store joined by prediction ID. Avoid forcing every model into a reason-code format it does not generate. A score is not automatically a calibrated probability. Gold lineage must make the classification and relevant historical context retrievable without exposing sensitive features unnecessarily.
+
+6. EXAMPLE TOOL CONTRACTS
+
+These are proposed logical functions, not an MCP requirement or existing endpoints. Tools can later be exposed using an approved platform interface.
+
+get_domain_pack(domain, applicable_time, model_ref?)
+  Returns the approved pack and version, or an explicit unavailable status.
+
+query_gold(query_spec, semantic_version)
+  Injects trusted identity/scope internally. Returns query ID, columns/units, result, snapshot/freshness, semantic version and warnings.
+
+calculate(metric_id, authorized_input_refs, rule_version)
+  Returns the deterministic value, units, rounding rule, function/version and input lineage.
+
+get_prediction_evidence(prediction_id)
+  Returns authorized prediction metadata, evidence type/reference, model version, source snapshot, limitations and evidence status.
+
+retrieve_knowledge(question, domain, applicable_time, model_version?)
+  Applies trusted access filters. Returns source passages, document/section references, versions and applicability metadata.
+
+draft_action(action_type, target, proposed_changes)
+  Returns a preview and immutable payload hash, with no business write.
+
+execute_approved_action(approval_ref, payload_hash, idempotency_key)
+  Independently validates approval, permissions and current record version. Returns operation ID and committed/pending/failed/unknown status.
+
+get_operation_status(operation_id)
+  Returns actual operational status and any required next step.
+
+Every result envelope should contain task ID, success/failure status, evidence references, freshness/version metadata and a safe error code. Credentials and policy scope are injected by the trusted execution layer, not supplied as model-authored tool parameters.
+
+7. STATE, FAILURES AND SHARED CONTROLS
+
+Persist structured journey state outside model context: user/role scope, goal, domain-pack versions, plan/tasks, evidence IDs, data snapshots, approvals, operation IDs and status. Resume revalidates identity, authorization, data freshness and outstanding approvals. A saved chat transcript alone is insufficient.
+
+Failure classes should distinguish transient service errors, invalid inputs, missing evidence, policy denials and uncertain write outcomes. Only transient, safe calls get bounded retries. Missing evidence is reported or escalated. A failed required evidence step blocks the related claim. Partial answers identify their limitations explicitly.
+
+Shared services: policy enforcement, model gateway/deployment controls, secure secrets, data minimization, encryption, durable state, audit/tracing, evaluation, operational monitoring and human handoff. Treat retrieved text and tool content as untrusted data for instruction-following purposes. Log enough to reproduce evidence without indiscriminately storing taxpayer data or credentials in traces.
+
+8. HOW THE TEN SERVICE CHARACTERISTICS ARE ADDRESSED
+
+1 Outcome-focused: capture the goal and define what completion means.
+2 Available data: scoped Gold queries and relevant journey context.
+3 Customer need: domain-aware planning and conditional task routing.
+4 Reduced effort: the supervisor coordinates authorized retrieval and evidence collection.
+5 Execute on behalf: optional approved action workflow after APIs and process approval.
+6 Customer control: preview, approve, reject or stop eligible actions.
+7 Resume: durable state, checkpoints and authorization revalidation.
+8 Exceptions: failure policy, staffed escalation and context handoff.
+9 Outcome tracking: operation/case IDs and monitoring through a confirmed final status.
+10 Natural language: Arabic/English interaction and evaluation.
+
+A read-only PoC tests only part of this target. It does not establish full compliance with the ten characteristics. Later service workflows need user-journey and operational validation.
+
+9. WHAT CAN START BEFORE PLATFORM SELECTION
+
+- Confirm an initial domain/persona and define representative questions, permitted outcomes and acceptance criteria.
+- Obtain the Gold schema, metric definitions, sample authorized records and historical prediction/evidence examples.
+- Draft domain packs and the semantic/evidence contracts with the domain and ML owners.
+- Implement tool-interface mocks and a reference workflow/state machine independent of the serving/orchestration platform.
+- Assemble Arabic/English reference questions with expected results, citations and explanation limits.
+- Test unauthorized cross-taxpayer requests, missing/stale evidence, adversarial retrieved text, ambiguous periods, duplicate joins, correct rounding, interrupted sessions and safe refusal/escalation.
+- Prototype approval/resume and duplicate-write handling with mocked actions. Do not mistake a mock for an enabled FTA integration.
+
+10. MEETING DECISIONS AND QUESTIONS
+
+Business / FTA owners:
+- Is the first persona an officer, analyst or taxpayer, and which one domain and outcome define the PoC?
+- Which Gold views, metrics, time semantics and historical snapshots are authoritative?
+- What explanation artifacts actually exist for each classifier? Who approves their interpretation and permissible disclosure?
+- Which approved knowledge sources, effective-date rules and Arabic versions are available?
+- Which actions are in scope, who has approval authority, and what system owns each action and outcome?
+
+Cloudera / platform owners:
+- How will end-user identity and taxpayer scope propagate into query, document and action tools, including behind shared service accounts?
+- What workflow primitives support conditional routing, validated plans, durable state, pause/resume and external approval?
+- How do tool sandboxing, networking and secret handling work in the actual target deployment? Which tool interfaces/transports are supported there?
+- How are models, embeddings and reranking hosted within the required data boundary, and what are the Arabic quality and latency constraints?
+- Which audit/evaluation capabilities cover queries, evidence, workflow decisions, approvals, failures and operational status?
+- What versions, maturity, licensing and support apply to the proposed deployment? Map capabilities only after the logical design is agreed.
+
+11. EXTERNAL DESIGN CHECKS
+
+NIST's Four Principles of Explainable Artificial Intelligence requires explanations to accurately reflect the process/output and recognizes knowledge limits. This supports the distinction between general model guidance and evidence for an individual prediction:
+https://www.nist.gov/publications/four-principles-explainable-artificial-intelligence
+
+Anthropic's Building Effective Agents describes routing and orchestrator/worker patterns, and recommends matching complexity to the task. It supports using conditional workflows rather than invoking all specialists indiscriminately. This is architecture guidance, not a proposed model/vendor choice:
+https://www.anthropic.com/engineering/building-effective-agents
+
+12. DELIVERABLES
+
+output/FTA-email-reply.txt: send-ready draft, with no sender identity invented. No email has been sent.
+opinions/FTA-agentic-ai-architecture-refined.png: new proposal image, preserving both supplied opinions.
+output/FTA-diagram-prompt.txt: prompt used with the built-in image generation tool.

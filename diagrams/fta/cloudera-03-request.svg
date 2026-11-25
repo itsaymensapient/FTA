@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1760" role="img" aria-labelledby="cloudera-03-request-title cloudera-03-request-desc" id="cloudera-03-request-root"><title id="cloudera-03-request-title">One hosted request, from question to verified action</title><desc id="cloudera-03-request-desc">Worked example: Al Yasmeen return reconciliation. The scenario figures are from the supplied synthetic GITEX draft.</desc><defs>
+      <style>#cloudera-03-request-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #cloudera-03-request-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#cloudera-03-request-root .diagram-container { overflow:visible }
+}</style><marker id="cloudera-03-request-cloudera-03-request-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="cloudera-03-request-cloudera-03-request-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1760" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="async-note" x="64" y="184" width="1472" height="52" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="approval-fragment" x="64" y="992" width="1472" height="384" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<rect data-node-id="tools-example" x="64" y="1432" width="1472" height="232" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<line x1="64" y1="1694" x2="1536" y2="1694" stroke="#D8E0E5" stroke-width="1"/>
+<path data-edge-id="life-0" d="M 208 332 V 1360" fill="none" stroke="#536674" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path data-edge-id="life-1" d="M 552 332 V 1360" fill="none" stroke="#536674" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path data-edge-id="life-2" d="M 896 332 V 1360" fill="none" stroke="#536674" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path data-edge-id="life-3" d="M 1240 332 V 1360" fill="none" stroke="#536674" stroke-width="1" stroke-linejoin="round" stroke-dasharray="5 5"/>
+<path data-edge-id="msg-0" d="M 208 392 L 552 392" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-1" d="M 552 472 L 896 472" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-2" d="M 896 552 L 552 552" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-3" d="M 552 632 L 1240 632" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-4" d="M 1240 712 L 552 712" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-5" d="M 552 792 L 896 792" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-6" d="M 896 872 L 552 872" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-7" d="M 552 952 L 208 952" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-8" d="M 208 1072 L 552 1072" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-9" d="M 552 1152 L 1240 1152" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-10" d="M 1240 1232 L 552 1232" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<path data-edge-id="msg-11" d="M 552 1312 L 208 1312" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#cloudera-03-request-cloudera-03-request-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / CLOUDERA / HOSTING GUIDE</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">One hosted request, from question to verified action</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Worked example: Al Yasmeen return reconciliation. The scenario figures are from the supplied synthetic GITEX draft.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<text x="88" y="216" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">The app starts a workflow and gets a trace ID. It retrieves run events/results; the durable business case has its own separate ID.</text>
+<rect data-node-id="actor-0" x="64" y="268" width="288" height="64" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="302" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">UI + server adapter</text>
+<rect data-node-id="actor-1" x="408" y="268" width="288" height="64" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="432" y="302" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">Agent workflow / CPU</text>
+<rect data-node-id="actor-2" x="752" y="268" width="288" height="64" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="776" y="302" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">LLM endpoint</text>
+<rect data-node-id="actor-3" x="1096" y="268" width="288" height="64" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1120" y="302" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">Scoped tools / backend</text>
+<text x="88" y="1470" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">What the tool contracts mean in this example</text>
+<text x="88" y="1512" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Read selected return: trusted company + period → authorized amounts, invoice IDs and a record snapshot.</text>
+<text x="88" y="1546" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Reconcile return: those records + approved definition → signed box adjustments and AED 412,000 net difference.</text>
+<text x="88" y="1580" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Submit demo change: exact payload + valid approval + unique operation key → one trackable operation.</text>
+<text x="88" y="1614" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Verify change: operation ID + refreshed records → verified, pending or failed; the LLM cannot choose the status.</text>
+<text x="64" y="1722" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">A human pause is persisted in application case state; do not assume Agent Studio provides a complete approval/case-management system.</text>
+<rect x="177.28" y="1009" width="445.44" height="20" fill="#FFFFFF"/>
+<text x="400" y="1024" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">OPT / ACTION PATH ONLY IF THE USER APPROVES THE EXACT PREVIEW</text>
+<rect x="188.32" y="357" width="383.36" height="23" fill="#FFFFFF"/>
+<text x="380" y="375" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">1  Start: scoped question + selected case</text>
+<rect x="505.44" y="437" width="437.12" height="23" fill="#FFFFFF"/>
+<text x="724" y="455" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">2  Approved instructions + goal: propose a plan</text>
+<rect x="527.84" y="517" width="392.32" height="23" fill="#FFFFFF"/>
+<text x="724" y="535" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">3  Proposed plan; application validates it</text>
+<rect x="659.52" y="597" width="472.96000000000004" height="23" fill="#FFFFFF"/>
+<text x="896" y="615" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">4  Read Gold evidence; run certified reconciliation</text>
+<rect x="681.92" y="677" width="428.16" height="23" fill="#FFFFFF"/>
+<text x="896" y="695" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">5  Evidence IDs; +486,200 / −74,200 / +412,000</text>
+<rect x="483.03999999999996" y="757" width="481.92" height="23" fill="#FFFFFF"/>
+<text x="724" y="775" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">6  Explain these results; cite the supplied evidence</text>
+<rect x="500.96000000000004" y="837" width="446.08" height="23" fill="#FFFFFF"/>
+<text x="724" y="855" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">7  Draft explanation; application checks support</text>
+<rect x="174.88" y="917" width="410.24" height="23" fill="#FFFFFF"/>
+<text x="380" y="935" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">8  Show explanation and a correction preview</text>
+<rect x="210.72" y="1037" width="338.56" height="23" fill="#FFFFFF"/>
+<text x="380" y="1055" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">9  Approve the exact preview version</text>
+<rect x="672.96" y="1117" width="446.08" height="23" fill="#FFFFFF"/>
+<text x="896" y="1135" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">10  Backend checks approval; submits demo change</text>
+<rect x="655.04" y="1197" width="481.92" height="23" fill="#FFFFFF"/>
+<text x="896" y="1215" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">11  Operation status + refreshed-record verification</text>
+<rect x="188.32" y="1277" width="383.36" height="23" fill="#FFFFFF"/>
+<text x="380" y="1295" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.7">12  Verified outcome + shared case status</text></svg>

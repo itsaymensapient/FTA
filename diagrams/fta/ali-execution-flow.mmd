@@ -1,0 +1,29 @@
+%% src: output/FTA-reply-Ali-and-Sulieman.txt
+flowchart TD
+title FTA agent request flow - Ali execution approach
+U([User question]) --> S[Supervisor Agent]
+S --> D[Resolve domain and permissions]
+D --> L[Load section instructions]
+M[Model logic and mappings] --> PLAIN[Prepare reviewed plain language]
+PLAIN --> I[Versioned section instructions]
+I -.->|load first| L
+L --> P[Build execution plan]
+P --> V{Plan valid?}
+V -->|yes| W[Workflow scheduler]
+V -->|no| X([Clarify or reject])
+W --> SEM[Semantic subgraph]
+W --> ML[ML subgraph: guidance and evidence]
+W --> RAG[RAG subgraph]
+SEM --> C[Collect and validate results]
+ML --> C
+RAG --> C
+SEM -.->|failure| F[Failure policy]
+ML -.->|failure| F
+RAG -.->|failure| F
+F --> H([Bounded retry or human handoff])
+C --> N{Investigation needed?}
+N -->|yes| A[Investigation Agent]
+N -->|no| R[Reporting Agent]
+A --> R
+A -.->|bounded replan| S
+R --> O([Final response])

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1152" role="img" aria-labelledby="gitex-scenarios-agent-workflow-title gitex-scenarios-agent-workflow-desc" id="gitex-scenarios-agent-workflow-root"><title id="gitex-scenarios-agent-workflow-title">How agents solve the four GITEX scenarios</title><desc id="gitex-scenarios-agent-workflow-desc">A shared approved-guidance and tool-based workflow supports four synthetic tax scenarios, with human approval before demo actions and recorded follow-up.</desc><defs>
+      <style>#gitex-scenarios-agent-workflow-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #gitex-scenarios-agent-workflow-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#gitex-scenarios-agent-workflow-root .diagram-container { overflow:visible }
+}</style><marker id="gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1152" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="712" x2="1536" y2="712" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="804" x2="1536" y2="804" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="888" x2="1536" y2="888" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="972" x2="1536" y2="972" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="1056" x2="1536" y2="1056" stroke="#D8E0E5" stroke-width="1"/>
+<path data-edge-id="guide-to-plan" d="M 384 276 L 480 276" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow)"/>
+<path data-edge-id="plan-to-tools" d="M 928 276 L 1088 276" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow)"/>
+<path data-edge-id="tool-to-validation" d="M 1312 332 L 1312 436" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow)"/>
+<path data-edge-id="validation-to-draft" d="M 1088 492 L 928 492" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow)"/>
+<path data-edge-id="approved-to-action" d="M 480 492 L 384 492" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#gitex-scenarios-agent-workflow-gitex-scenarios-agent-workflow-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / SCENARIO IMPLEMENTATION</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">One agent system, four demonstration stories</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Rules and tools establish facts. Agents explain and coordinate. People approve actions.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<rect data-node-id="guidance" x="64" y="220" width="320" height="112" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="88" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">1  Load approved guidance</text>
+<text x="88" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Domain and scenario sections</text>
+<text x="88" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Role, company and permitted scope</text>
+<rect data-node-id="supervisor" x="480" y="220" width="448" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="504" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">2  Supervisor plans the task</text>
+<text x="504" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Select data, calculation, explanation and knowledge work</text>
+<text x="504" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Validate the plan and schedule dependencies</text>
+<rect data-node-id="tools" x="1088" y="220" width="448" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1112" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">3  Execute scoped tools</text>
+<text x="1112" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Query Gold; run certified rules and calculations</text>
+<text x="1112" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Retrieve records and approved evidence descriptions</text>
+<rect data-node-id="validation" x="1088" y="436" width="448" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1112" y="470" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">4  Validate and investigate</text>
+<text x="1112" y="498" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Reconcile amounts, documents and periods</text>
+<text x="1112" y="522" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Identify gaps; request further evidence when needed</text>
+<rect data-node-id="approval" x="480" y="436" width="448" height="112" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="504" y="470" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">5  Draft + human approval</text>
+<text x="504" y="498" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Explain options and prepare letters or corrections</text>
+<text x="504" y="522" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Show the exact action before Send or Submit</text>
+<rect data-node-id="action" x="64" y="436" width="320" height="112" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="470" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">6  Act + follow up</text>
+<text x="88" y="498" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Execute against the demo backend</text>
+<text x="88" y="522" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Record status and verify the outcome</text>
+<text x="64" y="592" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">The workflow state survives role switching. Future replies use a controlled demo clock and recorded events.</text>
+<text x="64" y="652" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">SCENARIO CONFIGURATION / REUSE THE SAME ENGINE</text>
+<text x="64" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">DEMO STORY</text>
+<text x="352" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FACTS / TOOL CHECKS</text>
+<text x="768" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">WHAT THE AGENTS DO</text>
+<text x="1216" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">VERIFIABLE OUTCOME</text>
+<text x="64" y="752" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">1  Live e-invoice</text>
+<text x="352" y="752" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Selected lines, buyer registration,</text>
+<text x="352" y="776" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">configured VAT checks and totals</text>
+<text x="768" y="752" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Explain flags; prepare the correction</text>
+<text x="768" y="776" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">documents and proposed next step</text>
+<text x="1216" y="752" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Approved correction arrives</text>
+<text x="1216" y="776" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">and is checked again</text>
+<text x="64" y="836" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">2  Return mismatch</text>
+<text x="352" y="836" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Invoice / ledger / return reconciliation</text>
+<text x="352" y="860" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Draft target: AED 412,000 net gap</text>
+<text x="768" y="836" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Trace the affected records; explain the</text>
+<text x="768" y="860" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">difference; draft a request or disclosure</text>
+<text x="1216" y="836" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Stored changes reconcile;</text>
+<text x="1216" y="860" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">both role views agree</text>
+<text x="64" y="920" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">3  Refund evidence</text>
+<text x="352" y="920" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Match claim amounts to invoices,</text>
+<text x="352" y="944" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">documents and supplier evidence</text>
+<text x="768" y="920" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Identify missing support; request</text>
+<text x="768" y="944" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">documents; draft a supported recommendation</text>
+<text x="1216" y="920" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Approved, rejected and</text>
+<text x="1216" y="944" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">pending amounts stay distinct</text>
+<text x="64" y="1004" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">4  Missing disclosure</text>
+<text x="352" y="1004" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Supply / issue / filing dates;</text>
+<text x="352" y="1028" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">period allocation and duplicate checks</text>
+<text x="768" y="1004" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Explain the period; prepare the</text>
+<text x="768" y="1028" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">disclosure and Q4 draft adjustment</text>
+<text x="1216" y="1004" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">The relevant VAT is</text>
+<text x="1216" y="1028" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">counted once</text>
+<text x="64" y="1112" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Demo acceptance: traceable numbers, supported explanations, enforced scope, approved actions and consistent case state.</text>
+<rect x="395.84000000000003" y="457" width="72.32" height="20" fill="#FFFFFF"/>
+<text x="432" y="472" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">APPROVED</text></svg>

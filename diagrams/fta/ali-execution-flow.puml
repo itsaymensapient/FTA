@@ -1,0 +1,53 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 14
+skinparam defaultFontColor #182C3A
+skinparam ArrowColor #536674
+skinparam activityBackgroundColor #F5F7F8
+skinparam activityBorderColor #536674
+skinparam activityDiamondBackgroundColor #FFFFFF
+skinparam activityDiamondBorderColor #14665E
+title FTA request execution - Ali approach
+start
+:User question;
+:Supervisor Agent;
+:Resolve domain and permissions;
+:Load approved section instructions;
+note right
+  Model/rule logic and mappings are first
+  prepared as reviewed plain-language files.
+  Versioned domain, semantic, calculation
+  and model sections are selected explicitly.
+  Load before planning and execution.
+end note
+:Build execution plan;
+if (Plan valid?) then (yes)
+  :Workflow scheduler;
+  :Execute only required semantic, ML and RAG tasks;
+  note right
+    ML receives prepared model guidance,
+    prediction facts and approved descriptions.
+    Respect dependencies.
+    Parallelize independent tasks.
+    Failures follow a bounded retry,
+    clarification or human-handoff policy.
+  end note
+  :Collect and validate results;
+  if (Investigation needed?) then (yes)
+    :Investigation Agent;
+    note right
+      Any follow-up returns through
+      the Supervisor and plan validation.
+    end note
+  endif
+  :Reporting Agent;
+  :Final response;
+  stop
+else (no)
+  :Clarify or reject;
+  stop
+endif
+@enduml

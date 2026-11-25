@@ -1,0 +1,745 @@
+{
+  "width": 1600,
+  "height": 1056,
+  "elements": [
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 178.64,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / YOUR ROLE",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 814.3199999999999,
+      "height": 50.4,
+      "text": "Your job: make the agents work reliably",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 956.42,
+      "height": 23.799999999999997,
+      "text": "Proposed responsibility split for the GITEX PoC. Confirm named owners and interfaces on the call.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "rectangle",
+      "id": "your-lane",
+      "x": 64,
+      "y": 540,
+      "width": 1472,
+      "height": 240,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-5",
+      "x": 88,
+      "y": 233,
+      "width": 121.21999999999998,
+      "height": 15.399999999999999,
+      "text": "FTA / DOMAIN OWNERS",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-6",
+      "x": 88,
+      "y": 264,
+      "width": 176.32,
+      "height": 22.4,
+      "text": "Approve the meaning",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-7",
+      "x": 88,
+      "y": 288,
+      "width": 204.16,
+      "height": 22.4,
+      "text": "of rules and decisions",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "approved-policy",
+      "x": 320,
+      "y": 236,
+      "width": 352,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-8",
+      "x": 344,
+      "y": 250,
+      "width": 290,
+      "height": 28,
+      "text": "Approved rules + guidance",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-9",
+      "x": 344,
+      "y": 284,
+      "width": 316.67999999999995,
+      "height": 19.599999999999998,
+      "text": "Tax interpretation, options and wording",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-10",
+      "x": 344,
+      "y": 308,
+      "width": 300.44,
+      "height": 19.599999999999998,
+      "text": "Reviewed plain-language section files",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-11",
+      "x": 88,
+      "y": 401,
+      "width": 146.73999999999998,
+      "height": 15.399999999999999,
+      "text": "DATA + APPLICATION TEAM",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-12",
+      "x": 88,
+      "y": 432,
+      "width": 176.32,
+      "height": 22.4,
+      "text": "Provide records and",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-13",
+      "x": 88,
+      "y": 456,
+      "width": 204.16,
+      "height": 22.4,
+      "text": "operational interfaces",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "data-inputs",
+      "x": 320,
+      "y": 404,
+      "width": 352,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-14",
+      "x": 344,
+      "y": 418,
+      "width": 290,
+      "height": 28,
+      "text": "Data + evidence contracts",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-15",
+      "x": 344,
+      "y": 452,
+      "width": 316.67999999999995,
+      "height": 19.599999999999998,
+      "text": "Invoices, returns, ledger and documents",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-16",
+      "x": 344,
+      "y": 476,
+      "width": 308.56,
+      "height": 19.599999999999998,
+      "text": "Verified totals, identifiers and scope",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "application-inputs",
+      "x": 960,
+      "y": 404,
+      "width": 448,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-17",
+      "x": 984,
+      "y": 418,
+      "width": 336.4,
+      "height": 28,
+      "text": "Demo action + case interfaces",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-18",
+      "x": 984,
+      "y": 452,
+      "width": 365.4,
+      "height": 19.599999999999998,
+      "text": "Drafts, approvals, submissions and case state",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-19",
+      "x": 984,
+      "y": 476,
+      "width": 357.28,
+      "height": 19.599999999999998,
+      "text": "Shared history across Inspector and Business",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-20",
+      "x": 88,
+      "y": 573,
+      "width": 108.46,
+      "height": 15.399999999999999,
+      "text": "YOU / AI ENGINEER",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-21",
+      "x": 88,
+      "y": 608,
+      "width": 194.88,
+      "height": 22.4,
+      "text": "Build agent behavior,",
+      "size": 16,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-22",
+      "x": 88,
+      "y": 632,
+      "width": 185.6,
+      "height": 22.4,
+      "text": "tool integration and",
+      "size": 16,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-23",
+      "x": 88,
+      "y": 656,
+      "width": 213.44,
+      "height": 22.4,
+      "text": "evidence-based answers.",
+      "size": 16,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "instructions-tools",
+      "x": 320,
+      "y": 588,
+      "width": 352,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-24",
+      "x": 344,
+      "y": 602,
+      "width": 313.2,
+      "height": 28,
+      "text": "Instructions + scoped tools",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-25",
+      "x": 344,
+      "y": 636,
+      "width": 284.2,
+      "height": 19.599999999999998,
+      "text": "Load approved sections before tasks",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-26",
+      "x": 344,
+      "y": 660,
+      "width": 308.56,
+      "height": 19.599999999999998,
+      "text": "Query, calculate and retrieve evidence",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "agent-workflows",
+      "x": 768,
+      "y": 588,
+      "width": 352,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-27",
+      "x": 792,
+      "y": 602,
+      "width": 278.4,
+      "height": 28,
+      "text": "Supervisor + specialists",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-28",
+      "x": 792,
+      "y": 636,
+      "width": 292.32,
+      "height": 19.599999999999998,
+      "text": "Plan, explain, investigate and draft",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-29",
+      "x": 792,
+      "y": 660,
+      "width": 332.91999999999996,
+      "height": 19.599999999999998,
+      "text": "Coordinate approved actions and follow-up",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "quality",
+      "x": 1216,
+      "y": 588,
+      "width": 296,
+      "height": 112,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-30",
+      "x": 1240,
+      "y": 602,
+      "width": 185.6,
+      "height": 28,
+      "text": "Evaluate + trace",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-31",
+      "x": 1240,
+      "y": 636,
+      "width": 259.84,
+      "height": 19.599999999999998,
+      "text": "Correct figures and explanations",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-32",
+      "x": 1240,
+      "y": 660,
+      "width": 284.2,
+      "height": 19.599999999999998,
+      "text": "Access, failures and repeat actions",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "rules-to-instructions",
+      "points": [
+        [
+          320,
+          284
+        ],
+        [
+          288,
+          284
+        ],
+        [
+          288,
+          644
+        ],
+        [
+          320,
+          644
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "data-to-tools",
+      "points": [
+        [
+          552,
+          500
+        ],
+        [
+          552,
+          588
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "backend-to-agents",
+      "points": [
+        [
+          1184,
+          500
+        ],
+        [
+          1184,
+          532
+        ],
+        [
+          992,
+          532
+        ],
+        [
+          992,
+          588
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "tools-to-orchestration",
+      "points": [
+        [
+          672,
+          644
+        ],
+        [
+          768,
+          644
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "arrow",
+      "id": "orchestration-to-quality",
+      "points": [
+        [
+          1120,
+          644
+        ],
+        [
+          1216,
+          644
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-33",
+      "x": 88,
+      "y": 809,
+      "width": 153.11999999999998,
+      "height": 15.399999999999999,
+      "text": "CLOUDERA / PLATFORM TEAM",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-34",
+      "x": 88,
+      "y": 840,
+      "width": 185.6,
+      "height": 22.4,
+      "text": "Provide the runtime,",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-35",
+      "x": 88,
+      "y": 864,
+      "width": 213.44,
+      "height": 22.4,
+      "text": "models and connectivity",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "cloudera",
+      "x": 768,
+      "y": 820,
+      "width": 744,
+      "height": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-36",
+      "x": 792,
+      "y": 834,
+      "width": 359.59999999999997,
+      "height": 28,
+      "text": "Run the application on Cloudera",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-37",
+      "x": 792,
+      "y": 867,
+      "width": 687.3,
+      "height": 21,
+      "text": "Workbench development; agent orchestration; model serving; governed connections",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-38",
+      "x": 792,
+      "y": 891,
+      "width": 635.0999999999999,
+      "height": 21,
+      "text": "Exact services and release support to be confirmed with the platform team",
+      "size": 15,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "deploy",
+      "points": [
+        [
+          992,
+          700
+        ],
+        [
+          992,
+          820
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-39",
+      "x": 1056,
+      "y": 749,
+      "width": 38.279999999999994,
+      "height": 15.399999999999999,
+      "text": "DEPLOY",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-40",
+      "x": 64,
+      "y": 968,
+      "width": 1113.6,
+      "height": 28,
+      "text": "Your delivery: agent workflows + instruction loading + tool adapters + validation + evaluations.",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "gitex-ai-engineer-role-text-41",
+      "x": 64,
+      "y": 1008,
+      "width": 918.7199999999999,
+      "height": 22.4,
+      "text": "Domain approval, data preparation, backend state and platform provisioning are shared dependencies.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

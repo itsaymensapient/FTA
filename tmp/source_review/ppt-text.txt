@@ -1,0 +1,281 @@
+
+=== ppt/slides/slide1.xml ===
+Building a full AI agent on Cloudera
+Tech stack walkthrough: Agent Studio path with Spark and S3 data pull.
+RAG Studio covered separately as an optional add on.
+Sources: Using AI Studios guide  +  docs.cloudera.com/machine-learning/cloud
+Cloudera AI  |  Agent stack briefing  |  Docs based
+1 / 20
+
+=== ppt/slides/slide2.xml ===
+Agenda
+•  1. Architecture graph (same flow we will follow)
+•  2. Core agent path, component by component
+•  3. Where data is read and pulled (Spark + S3, no Hive)
+•  4. Optional: RAG Studio, only the extra pieces you need
+•  5. Sources
+Cloudera AI  |  Agent stack briefing  |  Docs based
+2 / 20
+
+=== ppt/slides/slide3.xml ===
+Architecture graph
+Read top to bottom. Left branch is data. Right branch is AI Studios.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+3 / 20
+
+=== ppt/slides/slide4.xml ===
+How to read the graph
+Start
+MLUser role gets you into the environment so you can run workloads.
+Platform
+Cloudera AI Workbench hosts projects, data connections, and AI Studios.
+Build
+Agent Studio is the orchestration hub. Inference serves the LLM.
+Data
+Spark + S3 connections and tools feed Read / Pull at the bottom.
+Ship
+Phoenix for observability. Model endpoints, apps, and SDK for users.
+Optional
+RAG Studio sits beside Agent Studio. Use it only if you need document retrieval.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+4 / 20
+
+=== ppt/slides/slide5.xml ===
+01
+MLUser environment role
+What it is
+An environment resource role in Cloudera AI. MLUser can view workbenches in the environment and run workloads on them.
+What you need it for
+This is the role to start development. You need it before you can work in a workbench day to day.
+Details
+•  MLAdmin creates and deletes workbenches and has admin access. Use that only if you must administer the platform.
+•  MLBusinessUser is for viewing apps as a business user, not for building agents.
+•  Inside Agent Studio, project access still maps to Contributor vs Viewer for create and edit rights.
+•  First login to a new workbench should be a Site Admin (MLAdmin). An MLUser first login can fail.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+5 / 20
+
+=== ppt/slides/slide6.xml ===
+02
+Cloudera AI Workbench
+What it is
+The cloud native machine learning workspace. Projects, runtimes, data connections, and AI Studios all live here.
+What you need it for
+It is the platform home. Without a workbench project, you cannot launch Agent Studio or wire data connections.
+Details
+•  Create a project, then open AI Studios from the left navigation.
+•  Site Administration is used to add runtime repos (for example Agent Studio ML Runtime image).
+•  Workbench SSO authenticates users into Agent Studio. Do not bypass that auth.
+•  Service accounts are recommended when shared Studio instances talk to lake or similar services.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+6 / 20
+
+=== ppt/slides/slide7.xml ===
+03
+Data connections: S3 and Spark
+What it is
+Workbench data connections. Use S3 Object Store for object storage and Spark Data Lake for lake analytics access. No Hive in this design.
+What you need it for
+These connections are how your agents and tools reach enterprise data in a controlled way.
+Details
+•  S3: available on AWS workbenches with RAZ enabled. Create under Site Administration, Data Connections, type S3 Object Store.
+•  Spark: same environment connections are often auto discovered. Or create Spark Data Lake under Project Settings, Data Connections.
+•  For Spark setup, paste the Data Lake cloud storage path shown for the Hive Metastore External Warehouse directory. Connection type remains Spark Data Lake.
+•  Toggle availability so the connection shows in projects that need it.
+•  Ranger permissions are required for S3 operations when using RAZ.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+7 / 20
+
+=== ppt/slides/slide8.xml ===
+04
+AI Studios
+What it is
+A suite of low code studios on Cloudera AI: Agent, RAG, Fine Tuning, and Synthetic Data. This stack focuses on Agent first.
+What you need it for
+AI Studios is the entry point to launch the studio apps inside your project.
+Details
+•  Launch Agent Studio from the AI Studios tile (runtime image is the supported method).
+•  Set environment variables, choose PBJ Workbench editor and Agent Studio kernel when prompted.
+•  Prerequisite: add the Agent Studio runtime repo URL under Site Administration, Runtimes.
+•  Fine Tuning and Synthetic Data Studios are optional later if you customize models or training data.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+8 / 20
+
+=== ppt/slides/slide9.xml ===
+05
+Agent Studio
+What it is
+Low code to high code environment to build, test, and deploy multi agent workflows.
+What you need it for
+This is where you define agents, tasks, tools, manager agents, and publish production workflows.
+Details
+•  Create workflows with agents (name, role, backstory, goal, LLM).
+•  Assign tasks, tools, and optional MCP servers to each agent.
+•  Use Manager Agent and Planning when you need multi agent coordination.
+•  Test with run, evaluations, and flow visuals, then Deploy.
+•  Sandboxed tool execution applies to new and draft workflows. Tools need CDSW API v2 for data connections.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+9 / 20
+
+=== ppt/slides/slide10.xml ===
+06
+Cloudera AI Inference
+What it is
+Cloudera hosted inference service for LLMs. In this stack it is the only model provider we use.
+What you need it for
+Agents need a registered LLM. Inference is where those models are served and called.
+Details
+•  In Agent Studio, open LLMs, Register New Model, choose Cloudera AI Inference.
+•  Provide model alias, identifier, API base, and auth as required. First model becomes default.
+•  JWT authentication applies for Cloudera AI Inference. Align token lifespan with ops policy.
+•  Same Inference service can also power RAG Studio embedding and chat when you add RAG later.
+•  Other providers (OpenAI, Bedrock, and others) exist in docs but are out of scope for Cloudera only.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+10 / 20
+
+=== ppt/slides/slide11.xml ===
+06
+Cloudera AI Inference
+Cloudera AI  |  Agent stack briefing  |  Docs based
+10 / 20
+
+=== ppt/slides/slide12.xml ===
+07
+MCP stdio servers
+What it is
+Model Context Protocol servers that expose tool families. Agent Studio runs local MCP over stdio (uvx for Python, npx for Node).
+What you need it for
+Use MCP when agents must talk to external systems in a standard, grouped tool set.
+Details
+•  Examples in docs: Slack, Jira, databases, web search style servers.
+•  Register the MCP server, pick tools, set env vars, attach to an agent in the workflow.
+•  Transport today: local stdio only. Remote transports are not the documented Agent Studio path.
+•  MCP tools also participate in the bottom Read / Pull path when they query external data.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+11 / 20
+
+=== ppt/slides/slide13.xml ===
+08
+Custom Spark tools and inbuilt tools
+What it is
+Inbuilt tools (file, directory, PDF, S3 reader, artifacts, code execution) plus custom tools you write for Spark.
+What you need it for
+Tools are how agents actually read files, S3 objects, and Spark connected lake data.
+Details
+•  Inbuilt: File Read, Directory Read, PDF (project files only). S3 reader needs RAZ and Ranger.
+•  Custom Spark: call cmldata.get_connection with your Spark Data Lake connection name.
+•  Pass cdsw_api_v2_key in UserParameters. Sandbox blocks inherited data connection auth.
+•  Do not use CDW Hive tools or Talk to your CDW Database templates in this design.
+•  Artifact Files Read/Write and Code Execution help agents produce shareable outputs.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+12 / 20
+
+=== ppt/slides/slide14.xml ===
+09
+Arize Phoenix
+What it is
+Open source observability integrated with Agent Studio for traces and operational metrics.
+What you need it for
+You need it to see latency, token use, inputs, outputs, and step level execution when debugging agents.
+Details
+•  Available in the workflow UI observability panel and as Phoenix dashboards in the workbench.
+•  Pairs with Evaluations for development testing and audits of deployed runs.
+•  Use this before and after deploy so production behavior is visible.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+13 / 20
+
+=== ppt/slides/slide15.xml ===
+10
+Model endpoints, apps, SDK
+What it is
+When you deploy a workflow, Cloudera can expose a workbench model endpoint and a default user facing app. Python SDK and APIs support custom UIs.
+What you need it for
+This is how people and systems consume the finished agent outside the Studio editor.
+Details
+•  Publish the workflow to get an endpoint and default front end.
+•  Test with documented API operations against the model endpoint.
+•  Build custom consumer apps with the Agent Studio Python SDK and APIs if the default UI is not enough.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+14 / 20
+
+=== ppt/slides/slide16.xml ===
+11
+Read / Pull via Spark and S3
+What it is
+The convergence point on the graph. Data connections, Spark tools, MCP, and optional RAG all feed how data is retrieved.
+What you need it for
+This is the practical data path for a full agent: get lake and object data into agent reasoning safely.
+Details
+•  Path: Spark Data Lake + S3 connections, then custom Spark tools and S3 reader, then agent tasks.
+•  Auth: CDSW API v2 for connections in sandboxed tools. RAZ and Ranger for S3. JWT for Inference.
+•  Optional DataFlow can land files in the Data Lake, then Spark reads them.
+•  No Hive and no CDW Hive tools in this stack.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+15 / 20
+
+=== ppt/slides/slide17.xml ===
+Build sequence (core agent)
+1
+Get MLUser (and Contributor project access for Agent Studio edits)
+2
+Open Workbench, create project, add Spark + S3 data connections
+3
+Add Agent Studio runtime repo, launch Agent Studio
+4
+Register Cloudera AI Inference model as default LLM
+5
+Create workflow and agents, attach Spark/S3 tools and MCP as needed
+6
+Test, review Phoenix and Evaluations, then deploy endpoint / app
+Cloudera AI  |  Agent stack briefing  |  Docs based
+16 / 20
+
+=== ppt/slides/slide18.xml ===
+Optional: RAG Studio
+Skip this section if agents only need Spark tables, S3 objects, and project files.
+Use RAG when answers must be grounded in enterprise documents.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+17 / 20
+
+=== ppt/slides/slide19.xml ===
+RAG: what you already have
+Reuse the core stack. Do not rebuild these for RAG.
+MLUser + Workbench
+Same access and project home
+Cloudera AI Inference
+Chat, embedding, and rerank models
+Data connections
+S3 still useful for RAG file storage
+MCP (optional)
+RAG Studio can also attach MCP tools
+Cloudera AI  |  Agent stack briefing  |  Docs based
+18 / 20
+
+=== ppt/slides/slide20.xml ===
+RAG: additional components only
+Add these on top of the agent stack when you want document grounded chatbots.
+RAG Studio
+No code studio for RAG chatbots with knowledge bases and evaluation scores.
+Knowledge Bases
+Upload documents, set chunk size, embedding model, optional HyDE and rerank.
+Vector store
+Embedded Qdrant, Cloudera Semantic Search, or ChromaDB. Prefer Qdrant or Cloudera Semantic Search.
+RAG file storage
+Project filesystem (default) or AWS S3 bucket and prefix.
+NiFi ingestion
+Scalable pipelines when you need continuous or high volume document ingest.
+Embedding / rerank
+Configure on Inference (or studio model settings) for retrieval quality.
+Cloudera AI  |  Agent stack briefing  |  Docs based
+19 / 20
+
+=== ppt/slides/slide21.xml ===
+Sources
+•  Using AI Studios (Cloudera AI): Agent Studio, RAG Studio, MCP, tools, Inference, Phoenix
+•  User Roles: docs.cloudera.com/machine-learning/cloud/site-administration/topics/ml-user-roles.html
+•  Spark data connection: .../setup-data-connections/topics/ml-mlde-spark-data-connection.html
+•  S3 data connection: .../setup-data-connections/topics/ml-mlde-s3-data-connection.html
+•  Configuring RAG Studio: .../setup-ai-studios/topics/ml-configuring-rag-studio.html
+•  Agent Studio tools, MCP integration, and data connection sandbox topics under machine-learning/cloud
+Cloudera AI  |  Agent stack briefing  |  Docs based
+20 / 20

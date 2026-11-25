@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1680" role="img" aria-labelledby="fta-connected-models-agents-title fta-connected-models-agents-desc" id="fta-connected-models-agents-root"><title id="fta-connected-models-agents-title">Connected models and agents for interactive FTA journeys</title><desc id="fta-connected-models-agents-desc">One supervisor, a shared language-model endpoint, controlled specialist tools and durable per-company case state for Scenarios 2, 3 and 4.</desc><defs>
+      <style>#fta-connected-models-agents-root { color: #182C3A; font-family: Segoe UI, Arial, sans-serif; }
+      #fta-connected-models-agents-root .diagram-container { width:100%;overflow-x:auto }
+      @media print {
+#fta-connected-models-agents-root .diagram-container { overflow:visible }
+}</style><marker id="fta-connected-models-agents-fta-connected-models-agents-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="fta-connected-models-agents-fta-connected-models-agents-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1680" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="specialists" x="64" y="848" width="928" height="360" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<line x1="88" y1="968" x2="968" y2="968" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="88" y1="1036" x2="968" y2="1036" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="88" y1="1104" x2="968" y2="1104" stroke="#D8E0E5" stroke-width="1"/>
+<rect data-node-id="scope-note" x="64" y="1536" width="1472" height="80" rx="6" fill="#EEF7F4" stroke="#D8E0E5" stroke-width="1.25"/>
+<line x1="64" y1="1640" x2="1536" y2="1640" stroke="#D8E0E5" stroke-width="1"/>
+<path data-edge-id="user-request" d="M 384 324 L 384 448" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="user-response" d="M 608 448 L 608 324" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="load-instructions" d="M 1104 280 L 1048 280 Q 1040 280 1040 288 L 1040 392 Q 1040 400 1032 400 L 872 400 Q 864 400 864 408 L 864 448" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="llm-request" d="M 992 520 L 1104 520" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="llm-result" d="M 1104 584 L 992 584" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="dispatch" d="M 384 656 L 384 848" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="collect" d="M 608 848 L 608 656" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 5" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<path data-edge-id="persist" d="M 992 624 L 1032 624 Q 1040 624 1040 632 L 1040 1192 Q 1040 1200 1048 1200 L 1104 1200" fill="none" stroke="#536674" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#fta-connected-models-agents-fta-connected-models-agents-arrow)"/>
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / INTERACTIVE / CONNECTED DESIGN</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">Connect the agents through one shared workflow</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Scenarios 2, 3 and 4 reuse the same components; every company and case keeps its own authorized context.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 23 NOV 2026</text>
+<rect data-node-id="user" x="64" y="224" width="928" height="100" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">User interface — one ongoing conversation</text>
+<text x="88" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Questions, choices, supporting documents, edits and exact-payload approvals</text>
+<rect data-node-id="instructions" x="1104" y="224" width="432" height="112" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="258" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">Ali’s approved section files</text>
+<text x="1128" y="286" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Select the relevant scenario/task sections</text>
+<text x="1128" y="310" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Load before planning and specialist work</text>
+<rect data-node-id="supervisor" x="64" y="448" width="928" height="208" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="88" y="482" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">Supervisor + validated workflow controller</text>
+<text x="88" y="510" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Resolve trusted role/company/case; load the applicable instruction versions</text>
+<text x="88" y="534" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Plan → validate → dispatch specialist tasks → check their evidence/results</text>
+<text x="88" y="558" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Ask the user for missing information or a decision; persist the current stage</text>
+<text x="88" y="582" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Resume the correct step after a reply, document upload or approved action</text>
+<text x="88" y="606" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Specialists return results here; they do not independently call each other</text>
+<rect data-node-id="llm" x="1104" y="448" width="432" height="208" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="482" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">Shared LLM endpoint</text>
+<text x="1128" y="510" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Planning, language and interpretation</text>
+<text x="1128" y="534" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Separate role prompts and task context</text>
+<text x="1128" y="558" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Supervisor and specialists reuse it</text>
+<text x="1128" y="582" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">No new model is needed for each role</text>
+<text x="1128" y="606" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Model output is checked before use</text>
+<text x="88" y="886" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">Specialist tasks + their controlled tools</text>
+<text x="88" y="928" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Data + calculation</text>
+<text x="400" y="928" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Scoped Gold queries and deterministic arithmetic</text>
+<text x="400" y="954" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Return records, signed amounts, source IDs and formula versions.</text>
+<text x="88" y="996" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Knowledge / reference</text>
+<text x="400" y="996" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Approved passage lookup; semantic search if needed</text>
+<text x="400" y="1022" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Return applicable references and citations, not new permissions.</text>
+<text x="88" y="1064" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Investigation + explanation</text>
+<text x="400" y="1064" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Compare evidence, find gaps and explain findings</text>
+<text x="400" y="1090" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Return a supported answer, unresolved points and the next options.</text>
+<text x="88" y="1132" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="600" text-anchor="start">Action workflow</text>
+<text x="400" y="1132" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Preview → approval checks → demo API → verification</text>
+<text x="400" y="1158" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Return a draft or actual operation status; never infer success.</text>
+<text x="1104" y="740" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">How the shared model works</text>
+<text x="1104" y="780" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">The runtime invokes the LLM for each</text>
+<text x="1104" y="809" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">language-based task with its own context.</text>
+<text x="1104" y="838" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Tools establish facts and perform effects.</text>
+<text x="1104" y="867" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Optional embedding or ML endpoints are</text>
+<text x="1104" y="896" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">added only for a defined retrieval or</text>
+<text x="1104" y="925" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">prediction requirement—not by default.</text>
+<rect data-node-id="state" x="1104" y="1104" width="432" height="192" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1128" y="1138" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">Durable case state</text>
+<text x="1128" y="1166" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Company ID + case ID + record version</text>
+<text x="1128" y="1190" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Current stage and pending user decision</text>
+<text x="1128" y="1214" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Evidence, answers and instruction versions</text>
+<text x="1128" y="1238" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Approved payload + operation status</text>
+<text x="1128" y="1262" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Supervisor owns the state transitions</text>
+<text x="64" y="1360" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600" text-anchor="start">One interactive journey, rather than independent answers</text>
+<text x="64" y="1404" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Start → investigate → ask/review evidence → explain → preview → approve → execute → verify → follow up.</text>
+<text x="64" y="1438" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">A reply can return the case to investigation. A changed preview needs fresh approval. A pending operation stays pending.</text>
+<text x="64" y="1472" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Every handoff carries: case + trusted scope + task + instruction versions + evidence references + expected next step.</text>
+<text x="88" y="1568" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Scenario 2: reconciliation   ·   Scenario 3: refund evidence   ·   Scenario 4: disclosure and period allocation</text>
+<text x="88" y="1596" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Same workflow engine, different approved instructions and tools. Scenario 5 remains optional until its interaction is defined.</text>
+<text x="64" y="1666" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Proposed wiring, not a live deployment. Shared components do not imply shared taxpayer data or automatic approval.</text>
+<rect x="314.56" y="364" width="138.88" height="21" fill="#FFFFFF"/>
+<text x="384" y="380" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.7">QUESTION / REPLY</text>
+<rect x="523.2" y="396" width="169.6" height="21" fill="#FFFFFF"/>
+<text x="608" y="412" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.7">RESULT / NEXT CHOICE</text>
+<rect x="905.6" y="368" width="92.8" height="21" fill="#FFFFFF"/>
+<text x="952" y="384" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.7">LOAD FIRST</text>
+<rect x="1004.8" y="487" width="86.4" height="20" fill="#FFFFFF"/>
+<text x="1048" y="502" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">MODEL CALL</text>
+<rect x="997.76" y="553" width="100.48" height="20" fill="#FFFFFF"/>
+<text x="1048" y="568" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">DRAFT RESULT</text>
+<rect x="291.52" y="716" width="184.96" height="21" fill="#FFFFFF"/>
+<text x="384" y="732" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.7">SCOPED TASK + GUIDANCE</text>
+<rect x="511.68" y="776" width="192.64000000000001" height="21" fill="#FFFFFF"/>
+<text x="608" y="792" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.7">TYPED RESULT + EVIDENCE</text>
+<rect x="986.24" y="1025" width="107.52" height="20" fill="#FFFFFF"/>
+<text x="1040" y="1040" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="0.7">SAVE / RESUME</text></svg>

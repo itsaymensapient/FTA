@@ -1,0 +1,64 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1120" role="img" aria-labelledby="meet-03-data-model-title meet-03-data-model-desc"><title id="meet-03-data-model-title">Data Model v1.2 — what builders open</title><desc id="meet-03-data-model-desc">Entities feed tools. Rules compute findings. Checks prove the demo math.</desc><defs><marker id="meet-03-data-model-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#536674"/></marker><marker id="meet-03-data-model-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M 0 0 L 8 3 L 0 6 Z" fill="#14665E"/></marker></defs><rect width="1600" height="1120" fill="#FFFFFF"/><line x1="64" y1="156" x2="1536" y2="156" stroke="#D8E0E5" stroke-width="1"/>
+<line x1="64" y1="1056" x2="1536" y2="1056" stroke="#D8E0E5" stroke-width="1"/>
+
+<text x="64" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">FTA / AGENTIC AI / GITEX / MEETING · 25 NOV 2026</text>
+<text x="64" y="92" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" text-anchor="start">Data Model v1.2 — what builders open</text>
+<text x="64" y="128" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Entities feed tools. Rules compute findings. Checks prove the demo math.</text>
+<text x="1536" y="40" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end" letter-spacing="1">PROPOSED · 25 NOV 2026</text>
+<text x="64" y="188" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">SHEET GROUPS</text>
+<rect data-node-id="cdp-data" x="64" y="220" width="360" height="176" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="88" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">CDP data</text>
+<text x="88" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">taxpayer · establishment</text>
+<text x="88" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">e_invoice · vat_return</text>
+<text x="88" y="330" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">VD · refund · filing</text>
+<rect data-node-id="case-store" x="444" y="220" width="360" height="176" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="468" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Case store</text>
+<text x="468" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">fta_case · finding</text>
+<text x="468" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">letter · document</text>
+<text x="468" y="330" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">case_event log</text>
+<rect data-node-id="taxpayer-ledger" x="824" y="220" width="360" height="176" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.5"/>
+<text x="848" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Taxpayer ledger</text>
+<text x="848" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">taxpayer_record only</text>
+<text x="848" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Business Assistant sees it</text>
+<text x="848" y="330" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Specialist never does</text>
+<rect data-node-id="config-stand" x="1204" y="220" width="360" height="176" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1228" y="254" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Config + stand</text>
+<text x="1228" y="282" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">ref_vat201_box</text>
+<text x="1228" y="306" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">agent_option</text>
+<text x="1228" y="330" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">session tables</text>
+<text x="64" y="436" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">RULES R01–R13 (IN CODE, NOT IN THE LLM)</text>
+<rect data-node-id="rule-0" x="64" y="468" width="360" height="88" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="84" y="504" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">R01–R04</text>
+<text x="84" y="536" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Return / Emirate math</text>
+<rect data-node-id="rule-1" x="444" y="468" width="360" height="88" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="464" y="504" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">R05–R08</text>
+<text x="464" y="536" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">VD · evidence · deadlines</text>
+<rect data-node-id="rule-2" x="824" y="468" width="360" height="88" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="844" y="504" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">R09–R10</text>
+<text x="844" y="536" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Risk · VD check</text>
+<rect data-node-id="rule-3" x="1204" y="468" width="360" height="88" rx="6" fill="#F5F7F8" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1224" y="504" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">R11–R13</text>
+<text x="1224" y="536" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">People · access · tools</text>
+<text x="64" y="592" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="start" letter-spacing="1.7">AGENTTOOLS (EXAMPLES)</text>
+<rect data-node-id="tool-0" x="64" y="628" width="480" height="84" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="84" y="664" fill="#182C3A" font-family="Consolas, monospace" font-size="18" font-weight="600" text-anchor="start">get_briefing</text>
+<text x="84" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Signal</text>
+<rect data-node-id="tool-1" x="568" y="628" width="480" height="84" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="588" y="664" fill="#182C3A" font-family="Consolas, monospace" font-size="18" font-weight="600" text-anchor="start">get_return_reconciliation</text>
+<text x="588" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Explain</text>
+<rect data-node-id="tool-2" x="1072" y="628" width="480" height="84" rx="6" fill="#EEF7F4" stroke="#14665E" stroke-width="1.25"/>
+<text x="1092" y="664" fill="#182C3A" font-family="Consolas, monospace" font-size="18" font-weight="600" text-anchor="start">get_refund_breakdown</text>
+<text x="1092" y="692" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Explain</text>
+<rect data-node-id="tool-3" x="64" y="728" width="480" height="84" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="84" y="764" fill="#182C3A" font-family="Consolas, monospace" font-size="18" font-weight="600" text-anchor="start">match_ledger</text>
+<text x="84" y="792" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Business</text>
+<rect data-node-id="tool-4" x="568" y="728" width="480" height="84" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="588" y="764" fill="#182C3A" font-family="Consolas, monospace" font-size="18" font-weight="600" text-anchor="start">prepare_vd / submit</text>
+<text x="588" y="792" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Act</text>
+<rect data-node-id="tool-5" x="1072" y="728" width="480" height="84" rx="6" fill="#FFFFFF" stroke="#D8E0E5" stroke-width="1.25"/>
+<text x="1092" y="764" fill="#182C3A" font-family="Consolas, monospace" font-size="18" font-weight="600" text-anchor="start">check_answer</text>
+<text x="1092" y="792" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Follow-up</text>
+<text x="64" y="860" fill="#182C3A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Checks sheet</text>
+<text x="64" y="896" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="400" text-anchor="start">Expected totals (412,000 · 486,200 · 203,600 · …) are the acceptance targets for every demo run.</text>
+<text x="64" y="1080" fill="#536674" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Workbook purpose: two-case stand seed. Free-query examples outside these cases are not in the set.</text>
+</svg>

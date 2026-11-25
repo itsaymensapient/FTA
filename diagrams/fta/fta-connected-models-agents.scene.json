@@ -1,0 +1,1045 @@
+{
+  "width": 1600,
+  "height": 1680,
+  "elements": [
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-1",
+      "x": 64,
+      "y": 29,
+      "width": 312.62,
+      "height": 15.399999999999999,
+      "text": "FTA / AGENTIC AI / INTERACTIVE / CONNECTED DESIGN",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-2",
+      "x": 64,
+      "y": 56,
+      "width": 960.4799999999999,
+      "height": 50.4,
+      "text": "Connect the agents through one shared workflow",
+      "size": 36,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-3",
+      "x": 64,
+      "y": 111,
+      "width": 1025.4399999999998,
+      "height": 23.799999999999997,
+      "text": "Scenarios 2, 3 and 4 reuse the same components; every company and case keeps its own authorized context.",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-4",
+      "x": 1536,
+      "y": 29,
+      "width": 140.35999999999999,
+      "height": 15.399999999999999,
+      "text": "PROPOSED · 23 NOV 2026",
+      "size": 11,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "end"
+    },
+    {
+      "type": "rectangle",
+      "id": "user",
+      "x": 64,
+      "y": 224,
+      "width": 928,
+      "height": 100,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-5",
+      "x": 88,
+      "y": 235,
+      "width": 546.9399999999999,
+      "height": 32.199999999999996,
+      "text": "User interface — one ongoing conversation",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-6",
+      "x": 88,
+      "y": 269,
+      "width": 739.5,
+      "height": 23.799999999999997,
+      "text": "Questions, choices, supporting documents, edits and exact-payload approvals",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "instructions",
+      "x": 1104,
+      "y": 224,
+      "width": 432,
+      "height": 112,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-7",
+      "x": 1128,
+      "y": 235,
+      "width": 373.52,
+      "height": 32.199999999999996,
+      "text": "Ali’s approved section files",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-8",
+      "x": 1128,
+      "y": 269,
+      "width": 414.11999999999995,
+      "height": 23.799999999999997,
+      "text": "Select the relevant scenario/task sections",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-9",
+      "x": 1128,
+      "y": 293,
+      "width": 394.4,
+      "height": 23.799999999999997,
+      "text": "Load before planning and specialist work",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "supervisor",
+      "x": 64,
+      "y": 448,
+      "width": 928,
+      "height": 208,
+      "fill": "#EEF7F4",
+      "stroke": "#14665E",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-10",
+      "x": 88,
+      "y": 459,
+      "width": 560.28,
+      "height": 32.199999999999996,
+      "text": "Supervisor + validated workflow controller",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-11",
+      "x": 88,
+      "y": 493,
+      "width": 739.5,
+      "height": 23.799999999999997,
+      "text": "Resolve trusted role/company/case; load the applicable instruction versions",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-12",
+      "x": 88,
+      "y": 517,
+      "width": 729.64,
+      "height": 23.799999999999997,
+      "text": "Plan → validate → dispatch specialist tasks → check their evidence/results",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-13",
+      "x": 88,
+      "y": 541,
+      "width": 759.2199999999999,
+      "height": 23.799999999999997,
+      "text": "Ask the user for missing information or a decision; persist the current stage",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-14",
+      "x": 88,
+      "y": 565,
+      "width": 719.78,
+      "height": 23.799999999999997,
+      "text": "Resume the correct step after a reply, document upload or approved action",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-15",
+      "x": 88,
+      "y": 589,
+      "width": 729.64,
+      "height": 23.799999999999997,
+      "text": "Specialists return results here; they do not independently call each other",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "llm",
+      "x": 1104,
+      "y": 448,
+      "width": 432,
+      "height": 208,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-16",
+      "x": 1128,
+      "y": 459,
+      "width": 253.45999999999998,
+      "height": 32.199999999999996,
+      "text": "Shared LLM endpoint",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-17",
+      "x": 1128,
+      "y": 493,
+      "width": 364.82,
+      "height": 23.799999999999997,
+      "text": "Planning, language and interpretation",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-18",
+      "x": 1128,
+      "y": 517,
+      "width": 374.67999999999995,
+      "height": 23.799999999999997,
+      "text": "Separate role prompts and task context",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-19",
+      "x": 1128,
+      "y": 541,
+      "width": 345.09999999999997,
+      "height": 23.799999999999997,
+      "text": "Supervisor and specialists reuse it",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-20",
+      "x": 1128,
+      "y": 565,
+      "width": 354.96,
+      "height": 23.799999999999997,
+      "text": "No new model is needed for each role",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-21",
+      "x": 1128,
+      "y": 589,
+      "width": 335.23999999999995,
+      "height": 23.799999999999997,
+      "text": "Model output is checked before use",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "user-request",
+      "points": [
+        [
+          384,
+          324
+        ],
+        [
+          384,
+          448
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-22",
+      "x": 384,
+      "y": 368,
+      "width": 111.35999999999999,
+      "height": 16.799999999999997,
+      "text": "QUESTION / REPLY",
+      "size": 12,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "user-response",
+      "points": [
+        [
+          608,
+          448
+        ],
+        [
+          608,
+          324
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-23",
+      "x": 608,
+      "y": 400,
+      "width": 139.2,
+      "height": 16.799999999999997,
+      "text": "RESULT / NEXT CHOICE",
+      "size": 12,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "load-instructions",
+      "points": [
+        [
+          1104,
+          280
+        ],
+        [
+          1040,
+          280
+        ],
+        [
+          1040,
+          400
+        ],
+        [
+          864,
+          400
+        ],
+        [
+          864,
+          448
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-24",
+      "x": 952,
+      "y": 372,
+      "width": 69.6,
+      "height": 16.799999999999997,
+      "text": "LOAD FIRST",
+      "size": 12,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "llm-request",
+      "points": [
+        [
+          992,
+          520
+        ],
+        [
+          1104,
+          520
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-25",
+      "x": 1048,
+      "y": 491,
+      "width": 63.8,
+      "height": 15.399999999999999,
+      "text": "MODEL CALL",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "llm-result",
+      "points": [
+        [
+          1104,
+          584
+        ],
+        [
+          992,
+          584
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-26",
+      "x": 1048,
+      "y": 557,
+      "width": 76.55999999999999,
+      "height": 15.399999999999999,
+      "text": "DRAFT RESULT",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "rectangle",
+      "id": "specialists",
+      "x": 64,
+      "y": 848,
+      "width": 928,
+      "height": 360,
+      "fill": "#FFFFFF",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-27",
+      "x": 88,
+      "y": 861,
+      "width": 594.5,
+      "height": 35,
+      "text": "Specialist tasks + their controlled tools",
+      "size": 25,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-28",
+      "x": 88,
+      "y": 909,
+      "width": 198.35999999999999,
+      "height": 26.599999999999998,
+      "text": "Data + calculation",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-29",
+      "x": 400,
+      "y": 911,
+      "width": 473.28,
+      "height": 23.799999999999997,
+      "text": "Scoped Gold queries and deterministic arithmetic",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-30",
+      "x": 400,
+      "y": 938,
+      "width": 593.92,
+      "height": 22.4,
+      "text": "Return records, signed amounts, source IDs and formula versions.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-31",
+      "x": 88,
+      "y": 977,
+      "width": 231.42,
+      "height": 26.599999999999998,
+      "text": "Knowledge / reference",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-32",
+      "x": 400,
+      "y": 979,
+      "width": 492.99999999999994,
+      "height": 23.799999999999997,
+      "text": "Approved passage lookup; semantic search if needed",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-33",
+      "x": 400,
+      "y": 1006,
+      "width": 593.92,
+      "height": 22.4,
+      "text": "Return applicable references and citations, not new permissions.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-34",
+      "x": 88,
+      "y": 1045,
+      "width": 297.53999999999996,
+      "height": 26.599999999999998,
+      "text": "Investigation + explanation",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-35",
+      "x": 400,
+      "y": 1047,
+      "width": 473.28,
+      "height": 23.799999999999997,
+      "text": "Compare evidence, find gaps and explain findings",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-36",
+      "x": 400,
+      "y": 1074,
+      "width": 612.4799999999999,
+      "height": 22.4,
+      "text": "Return a supported answer, unresolved points and the next options.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-37",
+      "x": 88,
+      "y": 1113,
+      "width": 165.29999999999998,
+      "height": 26.599999999999998,
+      "text": "Action workflow",
+      "size": 19,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-38",
+      "x": 400,
+      "y": 1115,
+      "width": 502.85999999999996,
+      "height": 23.799999999999997,
+      "text": "Preview → approval checks → demo API → verification",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-39",
+      "x": 400,
+      "y": 1142,
+      "width": 584.64,
+      "height": 22.4,
+      "text": "Return a draft or actual operation status; never infer success.",
+      "size": 16,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "dispatch",
+      "points": [
+        [
+          384,
+          656
+        ],
+        [
+          384,
+          848
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-40",
+      "x": 384,
+      "y": 720,
+      "width": 153.11999999999998,
+      "height": 16.799999999999997,
+      "text": "SCOPED TASK + GUIDANCE",
+      "size": 12,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "arrow",
+      "id": "collect",
+      "points": [
+        [
+          608,
+          848
+        ],
+        [
+          608,
+          656
+        ]
+      ],
+      "color": "#536674",
+      "dash": true,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-41",
+      "x": 608,
+      "y": 780,
+      "width": 160.07999999999998,
+      "height": 16.799999999999997,
+      "text": "TYPED RESULT + EVIDENCE",
+      "size": 12,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-42",
+      "x": 1104,
+      "y": 716,
+      "width": 361.91999999999996,
+      "height": 33.599999999999994,
+      "text": "How the shared model works",
+      "size": 24,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-43",
+      "x": 1104,
+      "y": 763,
+      "width": 354.96,
+      "height": 23.799999999999997,
+      "text": "The runtime invokes the LLM for each",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-44",
+      "x": 1104,
+      "y": 792,
+      "width": 404.26,
+      "height": 23.799999999999997,
+      "text": "language-based task with its own context.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-45",
+      "x": 1104,
+      "y": 821,
+      "width": 414.11999999999995,
+      "height": 23.799999999999997,
+      "text": "Tools establish facts and perform effects.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-46",
+      "x": 1104,
+      "y": 850,
+      "width": 374.67999999999995,
+      "height": 23.799999999999997,
+      "text": "Optional embedding or ML endpoints are",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-47",
+      "x": 1104,
+      "y": 879,
+      "width": 364.82,
+      "height": 23.799999999999997,
+      "text": "added only for a defined retrieval or",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-48",
+      "x": 1104,
+      "y": 908,
+      "width": 374.67999999999995,
+      "height": 23.799999999999997,
+      "text": "prediction requirement—not by default.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "state",
+      "x": 1104,
+      "y": 1104,
+      "width": 432,
+      "height": 192,
+      "fill": "#F5F7F8",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-49",
+      "x": 1128,
+      "y": 1115,
+      "width": 240.11999999999998,
+      "height": 32.199999999999996,
+      "text": "Durable case state",
+      "size": 23,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-50",
+      "x": 1128,
+      "y": 1149,
+      "width": 364.82,
+      "height": 23.799999999999997,
+      "text": "Company ID + case ID + record version",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-51",
+      "x": 1128,
+      "y": 1173,
+      "width": 384.53999999999996,
+      "height": 23.799999999999997,
+      "text": "Current stage and pending user decision",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-52",
+      "x": 1128,
+      "y": 1197,
+      "width": 414.11999999999995,
+      "height": 23.799999999999997,
+      "text": "Evidence, answers and instruction versions",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-53",
+      "x": 1128,
+      "y": 1221,
+      "width": 345.09999999999997,
+      "height": 23.799999999999997,
+      "text": "Approved payload + operation status",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-54",
+      "x": 1128,
+      "y": 1245,
+      "width": 364.82,
+      "height": 23.799999999999997,
+      "text": "Supervisor owns the state transitions",
+      "size": 17,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "arrow",
+      "id": "persist",
+      "points": [
+        [
+          992,
+          624
+        ],
+        [
+          1040,
+          624
+        ],
+        [
+          1040,
+          1200
+        ],
+        [
+          1104,
+          1200
+        ]
+      ],
+      "color": "#536674",
+      "dash": false,
+      "arrow": true
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-55",
+      "x": 1040,
+      "y": 1029,
+      "width": 82.94,
+      "height": 15.399999999999999,
+      "text": "SAVE / RESUME",
+      "size": 11,
+      "color": "#536674",
+      "weight": 600,
+      "anchor": "middle"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-56",
+      "x": 64,
+      "y": 1332,
+      "width": 909.4399999999999,
+      "height": 39.199999999999996,
+      "text": "One interactive journey, rather than independent answers",
+      "size": 28,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-57",
+      "x": 64,
+      "y": 1386,
+      "width": 1075.32,
+      "height": 25.2,
+      "text": "Start → investigate → ask/review evidence → explain → preview → approve → execute → verify → follow up.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-58",
+      "x": 64,
+      "y": 1420,
+      "width": 1252.8,
+      "height": 25.2,
+      "text": "A reply can return the case to investigation. A changed preview needs fresh approval. A pending operation stays pending.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-59",
+      "x": 64,
+      "y": 1454,
+      "width": 1221.48,
+      "height": 25.2,
+      "text": "Every handoff carries: case + trusted scope + task + instruction versions + evidence references + expected next step.",
+      "size": 18,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "rectangle",
+      "id": "scope-note",
+      "x": 64,
+      "y": 1536,
+      "width": 1472,
+      "height": 80,
+      "fill": "#EEF7F4",
+      "stroke": "#D8E0E5",
+      "dash": false
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-60",
+      "x": 88,
+      "y": 1548,
+      "width": 1287.6,
+      "height": 28,
+      "text": "Scenario 2: reconciliation   ·   Scenario 3: refund evidence   ·   Scenario 4: disclosure and period allocation",
+      "size": 20,
+      "color": "#182C3A",
+      "weight": 600,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-61",
+      "x": 88,
+      "y": 1579,
+      "width": 1242.36,
+      "height": 23.799999999999997,
+      "text": "Same workflow engine, different approved instructions and tools. Scenario 5 remains optional until its interaction is defined.",
+      "size": 17,
+      "color": "#182C3A",
+      "weight": 400,
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "id": "fta-connected-models-agents-text-62",
+      "x": 64,
+      "y": 1652,
+      "width": 925.68,
+      "height": 19.599999999999998,
+      "text": "Proposed wiring, not a live deployment. Shared components do not imply shared taxpayer data or automatic approval.",
+      "size": 14,
+      "color": "#536674",
+      "weight": 400,
+      "anchor": "start"
+    }
+  ]
+}

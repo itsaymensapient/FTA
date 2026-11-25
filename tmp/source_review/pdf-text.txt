@@ -1,0 +1,338 @@
+
+=== PDF PAGE 1 ===
+PARTNER SALES EXPLAINER   |   DATA AND AI
+Cloudera for Enterprise
+Data and AI, in plain terms
+Latest innovations, technology tie-ups, and a simple guide to
+AI Workbench, AI Studios and AI Inference
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+1
+The one-line story: Cloudera's pitch is "bring AI to the data, not the data to the AI." Customers
+run analytics and AI wherever their data already sits (public cloud, private data centre, sovereign
+infrastructure or edge) under one set of security and governance rules.
+ 30 EB
+ of data on Cloudera's platform
+ (company figure)
+ 36x
+ faster GPU inference claimed
+ with NVIDIA NIM
+ 4
+ AI Studios: synthetic data,
+ fine-tuning, RAG, agents
+ 30 Nov
+ 2026: scheduled GA of
+ Anywhere Cloud
+Why Cloudera is pivotal for senior customers
+Senior data and technology leaders face the same three questions on AI: can we use our most sensitive data, can
+we control the cost, and can we prove it is governed? Cloudera's relevance comes from where it already sits in the
+estate.
+ It already holds the data. Cloudera says its platform spans about 30 exabytes of data. AI can start from data the
+customer already owns and governs, with no migration first.
+ It is built for regulated industries. Financial services, healthcare, telecommunications, manufacturing and the
+public sector are the named targets for its secure AI deployment.
+ Sovereignty and private AI. Models, prompts and data can stay behind the customer's firewall, including
+air-gapped environments.
+ Predictable cost. On-premises inference is positioned with fixed pricing and a lower total cost than token-based
+cloud APIs.
+ One governance layer. Shared Data Experience (SDX) applies the same security and compliance rules to data,
+models and agents, wherever they run.
+ Open standards, less lock-in. Apache Iceberg and the Polaris catalog let other engines read the same data
+without copying it.
+ Analyst validation. Cloudera is named a leader in The Forrester Wave: Data Fabric Platforms, Q4 2025.
+The executive message in one sentence: AI projects stall when sensitive data cannot leave the building;
+Cloudera lets the AI come to the data, with the governance the board expects.
+
+
+=== PDF PAGE 2 ===
+Cloudera for Enterprise Data and AI
+Plain-language explainer
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+2
+Latest innovations
+Cloudera Anywhere Cloud
+Announced on 19 August 2026 at EVOLVE in Singapore. It is a new platform for building, deploying and scaling
+production data and AI applications across multi-cloud, on-premises and sovereign environments. It can run
+standalone or alongside a customer's existing Cloudera data lake.
+ Agentic copilot: turns plain-language requests into automated data workflows or infrastructure changes.
+ Self-service marketplace: blueprints launch AI applications and analytics pipelines in minutes, with security
+inherited automatically.
+ Open foundation: Apache Iceberg, Polaris catalog and unified APIs; zero-copy queries on data in place.
+ Layered architecture: foundation services, a Unified Data Fabric (policy, governance, lineage, audit) and
+independently deployable Data Services 2.x built on Spark, Flink, Kafka, NiFi, Trino and Airflow.
+ Governed agents: sandboxed execution, audit trails and human approval gates for sensitive actions.
+ Hadoop-free: new AI and analytics workloads go to Anywhere Cloud; existing customers get six years of support
+on the current platform, and older data services can coexist with the new ones.
+ Design partners: ADMIRAL Technologies, ExxonMobil, IQVIA, IXEN.ai and Mastercard, among others. During
+evaluation ExxonMobil reported deployment time falling from about six hours to about 65 minutes.
+ Status: technical preview today; general availability is scheduled for 30 November 2026.
+Cloudera Blueprints
+Announced at EVOLVE26 New York in late October 2026. Blueprints are ready-to-deploy AI packages that pair
+NVIDIA's reference workflows with Cloudera's data management, security and governance. The first four cover
+financial transaction analysis, automated clinical documentation, telecommunications network configuration and
+synthetic video detection.
+Private AI in the data centre
+In early 2026 Cloudera extended AI Inference and Data Warehouse with Trino to on-premises environments, so
+customers can serve models and run federated analytics behind their own firewall.
+Acquired technology now in the platform
+Taikun (Kubernetes-based orchestration), Verta (model management and low-code tools) and Octopai (data lineage
+and cataloguing) contribute to the new architecture.
+
+
+=== PDF PAGE 3 ===
+Cloudera for Enterprise Data and AI
+Plain-language explainer
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+3
+Enterprise AI technology tie-ups
+Cloudera groups its alliances under the Enterprise AI Ecosystem, first announced in 2024 and expanded in 2025
+and again on 27 October 2026. The idea is customer choice across models, infrastructure and applications.
+Partner
+What it adds
+Why a senior customer cares
+NVIDIA
+Accelerated compute and AI software inside Cloudera AI.
+NIM microservices power AI Inference; the Agent Toolkit,
+Nemotron models and reference workflows sit behind
+Blueprints.
+Faster time to production and better
+use of GPU investment.
+Mistral AI
+(Sept 2026)
+A strategic partnership reported as nine-figure. Mistral
+models run inside the customer's environment, including
+air-gapped; customers can train custom models on their own
+data and keep ownership.
+Sovereign AI with a European
+frontier-model option.
+VAST Data
+(July 2026)
+A joint AI factory combining Cloudera's lakehouse services
+with VAST's AI Operating System, on NVIDIA's AI Data
+Platform reference design.
+Tackles "GPU starvation", where
+data bottlenecks leave GPUs idle.
+Neo4j
+Graph technology and knowledge graphs that give AI agents
+context on how customers, transactions, products and
+processes relate.
+More accurate, explainable agent
+answers.
+PuppyGraph
+Queries Cloudera's Iceberg data as a real-time knowledge
+graph with no ETL or data movement.
+Graph insight without another copy
+of the data.
+Dell
+Technologies
+Infrastructure partner; named Cloudera's IMPACT Partner of
+the Year in March 2026. Dell ObjectScale is a supported
+storage option for Anywhere Cloud.
+A validated on-premises stack.
+ServiceNow,
+Snowflake
+Zero-copy access to trusted data for workflows; open
+interoperability through Iceberg and Apache Polaris.
+Works with platforms the customer
+already runs.
+How the three AI products fit together
+Governed data
+ Lakehouse, SDX,
+ Iceberg
+AI Workbench
+ Build, train,
+ fine-tune
+AI Studios
+Low-code GenAI
+inside Workbench
+AI Registry
+Store, version,
+ track models
+AI Inference
+ Serve models
+ in production
+Apps and agents
+ Chatbots, copilots,
+ automation
+Think of a restaurant. AI Workbench is the kitchen where the team cooks. AI Studios are the recipe kits that
+let less technical staff produce a good dish quickly. AI Inference is the serving counter that gets every dish to
+customers quickly, safely and at scale.
+
+
+=== PDF PAGE 4 ===
+Cloudera for Enterprise Data and AI
+Plain-language explainer
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+4
+Cloudera AI Workbench: where teams build
+A secure, shared workspace where data scientists and developers build, train, fine-tune and deploy models on
+enterprise data, across hybrid, multi-cloud or on-premises environments.
+ Familiar tools: Jupyter, VS Code or RStudio, in a browser or on a laptop.
+ Custom runtimes: isolated, containerised sessions for Python, R, Scala, Spark and GPU work.
+ Scale-out compute: resources scale up and down to match the workload.
+ AMPs (Applied ML Prototypes): ready-to-run project templates that give teams a working starting point.
+ Built-in governance: security and compliance handled through SDX.
+ Deploy apps and agents: host them while data, models and infrastructure stay under customer control.
+Cloudera AI Studios: build GenAI with less code
+A suite of low-code tools, opened from inside AI Workbench. Teams can start in a visual interface and move to full
+code when they need more control. All four studios work together within one project.
+Studio
+What it does, simply
+Typical use
+Synthetic Data
+Studio
+Creates realistic artificial data that keeps the patterns of real
+data without exposing sensitive records. Also builds test sets
+for evaluating agents and RAG systems.
+Teams short on training data or
+bound by GDPR and CCPA
+rules.
+Fine Tuning Studio
+Teaches a general model the customer's own domain: import
+data, pick a base model, run the job, evaluate, export. Tracks
+experiments with MLflow.
+Domain accuracy in healthcare,
+finance or legal.
+RAG Studio
+Connects a model to company documents so a chatbot
+answers from current, trusted content. Includes reranking,
+automated evaluation and chatbot monitoring, with no code.
+Knowledge assistants, secure
+chatbots, document search.
+Agent Studio
+Designs and deploys teams of AI agents that carry out
+multi-step tasks. Agents can use Cloudera Data Flow, Data
+Warehouse and Data Visualization as tools; full tracing and
+debugging.
+Automating work across
+systems while data stays
+private.
+
+
+=== PDF PAGE 5 ===
+Cloudera for Enterprise Data and AI
+Plain-language explainer
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+5
+Cloudera AI Inference: where models run in production
+Inference is the moment a model does its job: answering a question or scoring a transaction. AI Inference is the
+production-grade service that hosts both predictive models and generative AI, and keeps them fast, secure and
+monitored.
+ Powered by NVIDIA: tight integration with NIM microservices and Triton Inference Server.
+ Performance (Cloudera's claim): up to 36x faster inference on NVIDIA GPUs and nearly 4x throughput on
+CPUs.
+ Scale: 100 or more model endpoints at once, given correctly sized compute; autoscaling and high availability.
+ Any model type: traditional ML, LLMs and other GenAI; TensorFlow, PyTorch, Scikit-learn, Hugging Face.
+ Standard APIs: OpenAI-compatible API for LLMs and Open Inference Protocol for traditional models, so existing
+applications connect easily.
+ Real-time and batch: low-latency answers and large batch jobs.
+ Registry and lineage: models are stored and versioned in Cloudera AI Registry, with data and model lineage for
+audit.
+ Monitoring: latency, throughput and model health, plus GenAI measures such as sentiment, feedback and drift.
+ Security: authentication, and encryption in motion and at rest.
+Option
+What the customer gets
+Cloudera on cloud
+Multi-cloud deployment, quick start with no infrastructure set-up, and scale-to-zero autoscaling
+so idle GPUs do not cost money.
+Cloudera on premises
+Models, prompts and assets stay behind the firewall. Designed for air-gapped environments,
+with fixed pricing.
+Check before you position
+ AI Studios status: Cloudera's documentation labels AI Studios "Technical Preview" in some releases. Confirm
+the status for the customer's version.
+ Anywhere Cloud timing: technical preview now; GA is scheduled for 30 November 2026, so confirm availability
+before committing dates.
+ "Coming soon" items: the AI Inference page still marks canary, blue-green and A/B rollouts, authorization and
+open management APIs as coming soon.
+ Vendor figures: the 36x, 4x and 30-exabyte numbers are Cloudera's own. The ExxonMobil result came from an
+evaluation, and the analyst notes results will vary by workload.
+ Deal size: the "nine-figure" Mistral description comes from press coverage.
+
+
+=== PDF PAGE 6 ===
+Cloudera for Enterprise Data and AI
+Plain-language explainer
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+6
+Assets, datasheets and materials
+Product pages and tours
+ Cloudera Anywhere Cloud
+https://www.cloudera.com/products/anywhere-cloud.html
+ Cloudera AI Workbench
+https://www.cloudera.com/products/machine-learning/ai-workbench.html
+ Cloudera AI Studios
+https://www.cloudera.com/products/machine-learning/ai-studios.html
+ Cloudera AI Inference service
+https://www.cloudera.com/products/machine-learning/ai-inference-service.html
+ AI Workbench product tour
+https://www.cloudera.com/products/enterprise-ai/ai/product-tour.html
+ AI Studios product tour
+https://www.cloudera.com/products/enterprise-ai/ai/ai-studios/product-tour.html
+ AI Inference product tour
+https://www.cloudera.com/products/enterprise-ai/ai/ai-inference-service/product-tour.html
+ Cloudera and NVIDIA partner solution
+https://www.cloudera.com/partners/solutions/nvidia.html
+Datasheets, whitepapers and reports
+ AI Inference datasheet (PDF)
+https://www.cloudera.com/content/dam/www/marketing/resources/datasheets/cloudera-ai-inference-datasheet.pdf
+ Whitepaper: Accelerate Enterprise AI with Cloudera and NVIDIA (PDF)
+https://www.cloudera.com/content/dam/www/marketing/resources/whitepapers/accelerate-enterprise-ai-with-cloudera-and-n
+vidia-bring-ai-models-to-your-data-to-build-powerful-ai-solutions.pdf
+ Analyst report: the future of enterprise AI agents
+https://www.cloudera.com/campaign/the-future-of-enterprise-ai-agents.html
+ Ebook: Edge to AI for Dummies
+https://www.cloudera.com/campaign/edge-to-ai-for-dummies.html
+ Cloudera resource library
+https://www.cloudera.com/resources/resource-library.html
+Documentation
+ AI Studios overview
+https://docs.cloudera.com/machine-learning/cloud/use-ai-studios/topics/ml-ai-studios-overview.html
+ AI Studios user guide (PDF)
+https://docs.cloudera.com/machine-learning/cloud/use-ai-studios/ml-use-ai-studios.pdf
+ AI Inference overview
+https://docs.cloudera.com/machine-learning/cloud/ai-inference/topics/ml-caii-use-caii.html
+ Supported models and servers in AI Inference
+https://docs.cloudera.com/machine-learning/cloud/release-notes/topics/ml-model-server-inventory.html
+ AMPs overview
+https://docs.cloudera.com/machine-learning/cloud/applied-ml-prototypes/topics/ml-amps-overview.html
+
+
+=== PDF PAGE 7 ===
+Cloudera for Enterprise Data and AI
+Plain-language explainer
+Independent explainer compiled from public sources, 22 November 2026. Not official Cloudera collateral.
+7
+Assets, datasheets and materials (continued)
+Blogs
+ AI Studios: making advanced AI accessible to all
+https://www.cloudera.com/blog/business/clouderas-ai-studios-making-advanced-ai-accessible-to-all.html
+ Deploy and scale AI applications with AI Inference
+https://www.cloudera.com/blog/business/deploy-and-scale-ai-applications-with-cloudera-ai-inference-service
+ Deep dive: AI Inference and solution patterns
+https://www.cloudera.com/blog/technical/scaling-ai-solutions-with-cloudera-a-deep-dive-into-ai-inference-and-solution-patter
+ns.html
+ Private AI with AI Inference, AI-Q NVIDIA Blueprint and NIM
+https://www.cloudera.com/blog/partners/cloudera-supercharges-your-private-ai-with-cloudera-ai-inference-nvidia-ai-q-and-n
+vidia-nim
+ Three events, one partner story (ServiceNow, Dell, Snowflake)
+https://www.cloudera.com/blog/partners/three-events-one-partner-story-how-cloudera-is-turning-ai-ambition-into-action.html
+Announcements and analyst coverage
+ Anywhere Cloud press release (syndicated)
+https://www.zawya.com/en/press-release/companies-news/cloudera-powers-the-agentic-ai-era-with-cloudera-anywhere-clo
+ud-462705
+ HyperFRAME Research on Anywhere Cloud
+https://hyperframeresearch.com/2026/11/03/is-cloudera-finally-delivering-on-the-industry-promise-of-cloud-anywhere/
+ SiliconANGLE on Blueprints and the ecosystem expansion
+https://siliconangle.com/2026/10/28/cloudera-expands-its-ai-ecosystem-with-partnerships-and-packaged-blueprints/
+ Mistral and Cloudera partnership
+https://mistral.ai/news/mistral-x-cloudera/
+ Cloudera and VAST Data partnership release
+https://aap.com.au/aapreleases/globenewswire9761569/
+ IT Brief on the Hadoop-free platform
+https://itbrief.news/story/exclusive-cloudera-builds-hadoop-free-future-platform
+ Cloudera Newsroom
+https://www.cloudera.com/about/news-and-blogs.html
+ EVOLVE26 events
+https://www.cloudera.com/events/evolve.html
+No standalone public datasheet was found for AI Workbench or AI Studios; the product pages and tours above are the best public
+sources. Links were collected on 22 November 2026 and may change.
