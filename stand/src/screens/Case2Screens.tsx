@@ -1,3 +1,7 @@
+import { RefundJourney } from '@/components/RefundJourney'
+import { PaperDocumentsPanel } from '@/components/PaperDocuments'
+import { SupplierStatusPanel } from '@/components/SupplierStatus'
+import { useState } from 'react'
 import { ActivityFooter } from '@/components/ActivityFooter'
 import { Shell } from '@/components/Shell'
 import { Stepper } from '@/components/Stepper'
@@ -5,13 +9,10 @@ import {
   ActionCard,
   AskBar,
   Button,
-  DangerNote,
   FadeIn,
-  OptionList,
   Panel,
   PaperPanel,
   SectionLabel,
-  StatTile,
   Table,
   TableBody,
   TableCell,
@@ -19,7 +20,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui'
-import { Badge } from '@/components/ui/badge'
 import { useStandData } from '@/data/StandData'
 import { aed, aedPlain } from '@/lib/format'
 import { useStand } from '@/session/StandSession'
@@ -104,7 +104,6 @@ export function R1bSupplierCheck() {
   const {
     DEMO,
     COMPANIES,
-    WAHA_ON_HOLD,
   } = useStandData()
   const company = COMPANIES.waha
   const { visitorName, go } = useStand()
@@ -127,26 +126,8 @@ export function R1bSupplierCheck() {
         <FadeIn>
           <Panel>
             <SectionLabel>You · Supplier check</SectionLabel>
-            <p className="text-sm leading-6">
-              Bright Line General Trading LLC is VAT-registered but has not filed returns for Q2 and Q3 2026.
-            </p>
-            <div className="mt-4 flex flex-col gap-2.5 text-sm leading-5">
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">Registration</span>
-                <span className="num-ok">Active since 2021</span>
-              </div>
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">Q2 2026 return</span>
-                <span className="num-gap">Not filed</span>
-              </div>
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">Q3 2026 return</span>
-                <span className="num-gap">Not filed</span>
-              </div>
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground">Invoices to Al Waha</span>
-                <span>14 · VAT {aed(WAHA_ON_HOLD)}</span>
-              </div>
+            <div className="mt-2">
+              <SupplierStatusPanel />
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button variant="outline" onClick={() => go('R1_refund_explain')}>
@@ -184,260 +165,95 @@ export function R1bSupplierCheck() {
 }
 
 export function R2RefundAct() {
-  const {
-    DEMO,
-    COMPANIES,
-    WAHA_FTA_OPTIONS,
-    WAHA_CLAIMED,
-    WAHA_ON_HOLD,
-  } = useStandData()
-  const company = COMPANIES.waha
-  const { visitorName, go, choices, setChoice, log, flashMessage } = useStand()
-  const selected = choices.c2_fta || 'OPT-FTA-REF-1'
+  const { DEMO, COMPANIES } = useStandData()
+  const { visitorName, go } = useStand()
+  const [phase, setPhase] = useState<'DECIDE' | 'ACT' | 'FOLLOW_UP' | 'CLOSED'>('DECIDE')
   return (
-    <Shell
-      role="FTA_SPECIALIST"
-      visitorName={visitorName || DEMO.visitorDefault}
-      footer={
-        <ActivityFooter
-          label="AGENT ACTIVITY"
-          items={[
-            { label: 'Letter drafted', status: 'done' },
-            { label: 'Non-filer case prepared', status: 'done' },
-            { label: 'Waiting for Send', status: 'wait' },
-          ]}
-        />
-      }
-    >
-      <Stepper variant="FTA" current="ACT" eventLabel={`Event 2 · ${company.name}`} />
-      <div className="mt-5 grid items-start gap-5 lg:grid-cols-[360px_1fr]">
-        <FadeIn className="flex flex-col gap-3">
-          <Panel>
-            <SectionLabel>What you can do</SectionLabel>
-            <OptionList
-              options={WAHA_FTA_OPTIONS}
-              selected={selected}
-              onSelect={(id) => setChoice('c2_fta', id)}
-            />
-          </Panel>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant="success"
-              onClick={() => {
-                log('Partial approval letter sent')
-                go('R3_refund_followup')
-              }}
-            >
-              Send
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                log('Opened letter editor')
-                flashMessage('Draft letter opened for edit. Adjust the text, then Send.')
-              }}
-            >
-              Edit
-            </Button>
-            <Button variant="ghost" onClick={() => go('R1_refund_explain')}>
-              Cancel
-            </Button>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.06} className="flex flex-col gap-4">
-          <PaperPanel>
-            <div className="text-xs leading-5 text-[#5b6b7c]">Ref. {company.caseId}</div>
-            <h2 className="mt-1.5 text-xl font-semibold leading-snug tracking-[-0.02em]">
-              Partial approval and request for documents
-            </h2>
-            <p className="mt-3 text-sm leading-6">
-              Of {aed(WAHA_CLAIMED)} claimed, AED 53,600 is approved. By 24 December provide tax invoices for AED 184,200 and
-              proof of VAT paid to Bright Line for {aed(WAHA_ON_HOLD)}. A non-filer case {COMPANIES.brightLine.caseId} is
-              suggested.
-            </p>
-          </PaperPanel>
-          <div className="grid gap-3 md:grid-cols-2">
-            <Panel>
-              <div className="text-[0.6875rem] font-semibold tracking-[0.08em] text-muted-foreground uppercase">
-                Cases
-              </div>
-              <div className="mt-1.5 text-sm leading-5">{company.caseId} · follow-up 24 Dec</div>
-              <div className="text-sm leading-5">{COMPANIES.brightLine.caseId} · Bright Line non-filer</div>
-            </Panel>
-            <Panel>
-              <div className="text-[0.6875rem] font-semibold tracking-[0.08em] text-muted-foreground uppercase">
-                Payment
-              </div>
-              <div className="mt-1.5 text-lg font-semibold leading-snug num-ok">AED 53,600 approved</div>
-            </Panel>
-          </div>
-        </FadeIn>
-      </div>
+    <Shell role="FTA_SPECIALIST" visitorName={visitorName || DEMO.visitorDefault}>
+      <Stepper
+        variant="FTA"
+        current={phase === 'FOLLOW_UP' || phase === 'CLOSED' ? 'ACT' : phase}
+        eventLabel={`Event 2 · ${COMPANIES.waha.name}`}
+      />
+      <RefundJourney
+        role="fta"
+        onComplete={() => go('R3_refund_followup')}
+        onPhaseChange={setPhase}
+      />
     </Shell>
   )
 }
 
 export function R3RefundFollowup() {
-  const {
-    DEMO,
-    COMPANIES,
-    WAHA_CLAIMED,
-    WAHA_APPROVED,
-    WAHA_REJECTED,
-    WAHA_ON_HOLD,
-  } = useStandData()
+  const { DEMO, COMPANIES } = useStandData()
+  const { visitorName, go } = useStand()
+  return <Shell role="FTA_SPECIALIST" visitorName={visitorName || DEMO.visitorDefault}>
+    <Stepper variant="FTA" current="FOLLOW_UP" eventLabel={`Event 2 · ${COMPANIES.waha.name}`} />
+    <RefundJourney role="review" onComplete={() => go('18_summary')} />
+    <Button variant="ghost" onClick={() => go('R1_refund_explain')}>Back</Button>
+  </Shell>
+}
+
+export function W1Home() {
+  const { DEMO, COMPANIES, WAHA_CLAIMED } = useStandData()
   const company = COMPANIES.waha
-  const wahaNotPaid = WAHA_REJECTED + WAHA_ON_HOLD
-  const { visitorName, go, log, flashMessage } = useStand()
+  const { visitorName, go } = useStand()
+  const name = visitorName || DEMO.visitorDefault
   return (
     <Shell
-      role="FTA_SPECIALIST"
-      visitorName={visitorName || DEMO.visitorDefault}
-      date={DEMO.followUpToday}
+      role="BUSINESS"
+      visitorName={name}
+      companyLabel={`${company.name} · TRN ${company.trn}`}
       footer={
         <ActivityFooter
-          label="AGENT ACTIVITY"
+          label="ASSISTANT ACTIVITY"
           items={[
-            { label: '6 paper invoices checked', status: 'done' },
-            { label: 'Bright Line filing rechecked', status: 'done' },
+            { label: 'FTA letter read', status: 'done' },
+            { label: 'Refund claim checked against purchases', status: 'done' },
           ]}
         />
       }
     >
-      <Stepper variant="FTA" current="FOLLOW_UP" eventLabel={`Event 2 · ${company.name}`} />
-      <div className="mt-5 grid items-start gap-5 lg:grid-cols-[340px_1fr]">
-        <FadeIn>
+      <h1 className="stand-title mb-1">Your VAT overview</h1>
+      <Stepper variant="BUSINESS" current="CHECK" />
+      <div className="mt-5 grid items-start gap-5 lg:grid-cols-[320px_1fr]">
+        <FadeIn className="flex flex-col gap-3">
           <Panel>
-            <SectionLabel>Mon 14 Dec · follow-up</SectionLabel>
+            <SectionLabel>+ FTA assistant</SectionLabel>
             <p className="text-sm leading-6">
-              Al Waha sent 6 paper tax invoices (AED 150,000), bank confirmations for Bright Line, and a VD removing{' '}
-              {aed(WAHA_REJECTED)}. Recommend: approve 150,000, reject {aedPlain(WAHA_REJECTED)}, hold{' '}
-              {aedPlain(WAHA_ON_HOLD)}.
+              Good day, {name}. I am the FTA Assistant for <strong>{company.name}</strong>. I check your refund claims,
+              purchase e-invoices and letters from the FTA.
             </p>
           </Panel>
-        </FadeIn>
-        <FadeIn delay={0.06} className="flex flex-col gap-4">
           <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">Refund decision (AED)</h2>
-            <Table>
-              <TableHeader>
-                <TableRow className="hover:bg-transparent">
-                  <TableHead>Part</TableHead>
-                  <TableHead>Claimed</TableHead>
-                  <TableHead>Approved</TableHead>
-                  <TableHead>Not paid</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {[
-                  ['Supported by e-invoices', '53,600', '53,600', '—'],
-                  ['Supported by paper invoices', '150,000', '150,000', '—'],
-                ].map((row) => (
-                  <TableRow key={row[0]}>
-                    <TableCell>{row[0]}</TableCell>
-                    <TableCell>{row[1]}</TableCell>
-                    <TableCell className={row[2] !== '—' ? 'num-ok' : ''}>{row[2]}</TableCell>
-                    <TableCell className={row[3] !== '—' ? 'num-gap' : ''}>{row[3]}</TableCell>
-                  </TableRow>
-                ))}
-                <TableRow>
-                  <TableCell>No tax invoices · rejected</TableCell>
-                  <TableCell>{aedPlain(WAHA_REJECTED)}</TableCell>
-                  <TableCell>—</TableCell>
-                  <TableCell className="num-gap">{aedPlain(WAHA_REJECTED)}</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Bright Line · on hold</TableCell>
-                  <TableCell>{aedPlain(WAHA_ON_HOLD)}</TableCell>
-                  <TableCell>—</TableCell>
-                  <TableCell className="num-gap">{aedPlain(WAHA_ON_HOLD)}</TableCell>
-                </TableRow>
-                <TableRow className="font-semibold">
-                  <TableCell>Total</TableCell>
-                  <TableCell>{aedPlain(WAHA_CLAIMED)}</TableCell>
-                  <TableCell className="num-ok">{aedPlain(WAHA_APPROVED)}</TableCell>
-                  <TableCell className="num-gap">{aedPlain(wahaNotPaid)}</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+            <SectionLabel>+ FTA assistant</SectionLabel>
+            <p className="text-sm leading-6">
+              <strong>One item needs your attention.</strong> Documents are due for part of your refund claim.
+            </p>
           </Panel>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant="outline"
-              onClick={() => {
-                log('Opened 6 paper invoices')
-                flashMessage('6 paper invoices reviewed: VAT AED 150,000 supported.')
-              }}
-            >
-              Open 6 invoices
-            </Button>
-            <Button
-              variant="success"
-              onClick={() => {
-                log('Refund approved as recommended')
-                go('18_summary')
-              }}
-            >
-              Approve as recommended
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                log('Asked for more documents')
-                go('16_query_table')
-              }}
-            >
-              Ask for more documents
-            </Button>
-            <Button
-              variant="destructive"
-              onClick={() => {
-                if (!window.confirm('Refer this refund case to audit?')) return
-                log('Referred to audit')
-                flashMessage('Refund case referred to audit.')
-                go('18_summary')
-              }}
-            >
-              Refer to audit
-            </Button>
-          </div>
+          <Button variant="gold" onClick={() => go('W2_explain')}>
+            Open the item
+          </Button>
+          <AskBar placeholder="…or ask me about your VAT data." />
+        </FadeIn>
+        <FadeIn delay={0.06}>
+          <ActionCard
+            className="border-t-2 border-t-gold bg-gold/5"
+            action={<Button onClick={() => go('W2_explain')}>Open</Button>}
+          >
+            <div className="flex items-center gap-2 text-[0.75rem] font-semibold tracking-wide text-destructive uppercase">
+              <span className="size-1.5 rounded-full bg-destructive" aria-hidden />
+              Documents due 24 Dec
+            </div>
+            <div className="text-[0.9375rem] font-semibold leading-snug tracking-[-0.02em]">
+              Refund request · {company.caseId}
+            </div>
+            <p className="text-[0.8125rem] leading-5 text-muted-foreground">
+              Claim {aed(WAHA_CLAIMED)} · AED 53,600 approved; documents needed for AED 231,000.
+            </p>
+          </ActionCard>
         </FadeIn>
       </div>
-    </Shell>
-  )
-}
-
-export function W1Home() {
-  const {
-    DEMO,
-    COMPANIES,
-  } = useStandData()
-  const company = COMPANIES.waha
-  const { visitorName, go } = useStand()
-  return (
-    <Shell
-      role="BUSINESS"
-      visitorName={visitorName || DEMO.visitorDefault}
-      companyLabel={`${company.name} · TRN ${company.trn}`}
-    >
-      <Stepper variant="BUSINESS" current="CHECK" />
-      <FadeIn className="mx-auto mt-5 flex max-w-4xl flex-col gap-4">
-        <h1 className="stand-title">VAT overview</h1>
-        <ActionCard
-          className="ring-gold/40"
-          action={<Button onClick={() => go('W2_explain')}>Open the item</Button>}
-        >
-          <Badge variant="destructive" className="w-fit">
-            Documents due 24.12.2026
-          </Badge>
-          <div className="text-[0.9375rem] font-semibold leading-snug tracking-[-0.02em]">
-            Refund request · {company.caseId}
-          </div>
-          <p className="text-[0.8125rem] leading-5 text-muted-foreground">
-            AED 53,600 approved; documents needed for AED 231,000.
-          </p>
-        </ActionCard>
-      </FadeIn>
     </Shell>
   )
 }
@@ -524,11 +340,9 @@ export function W2bPaperInvoice() {
   const {
     DEMO,
     COMPANIES,
-    WAHA_PAPER_INVOICES,
   } = useStandData()
   const company = COMPANIES.waha
   const { visitorName, go } = useStand()
-  const inv = WAHA_PAPER_INVOICES[0]
   return (
     <Shell
       role="BUSINESS"
@@ -538,7 +352,7 @@ export function W2bPaperInvoice() {
         <ActivityFooter
           label="ASSISTANT ACTIVITY"
           items={[
-            { label: '6 scanned invoices found', status: 'done' },
+            { label: 'Paper tax invoices loaded from CDP', status: 'done' },
             { label: "Suppliers' registration checked", status: 'done' },
           ]}
         />
@@ -548,182 +362,48 @@ export function W2bPaperInvoice() {
         Refund request · {company.caseId}
       </div>
       <Stepper variant="BUSINESS" current="EXPLAIN" />
-      <div className="mt-5 grid items-start gap-5 lg:grid-cols-[360px_1fr]">
-        <FadeIn>
-          <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">6 paper tax invoices</h2>
-            <div className="flex flex-col gap-2 text-sm">
-              {WAHA_PAPER_INVOICES.map((row) => (
-                <div key={row.number} className="rounded-lg border border-border px-3.5 py-2.5">
-                  <div className="font-medium leading-5">{row.number}</div>
-                  <div className="text-xs leading-5 text-muted-foreground">
-                    {row.supplier} · {row.date} · VAT {aedPlain(row.vat)}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-3 text-sm font-semibold leading-5">Total VAT 150,000</div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Button variant="outline" onClick={() => go('W2_explain')}>
-                Back
-              </Button>
-              <Button onClick={() => go('W3_act')}>What can I do?</Button>
-            </div>
-          </Panel>
-        </FadeIn>
-        <FadeIn delay={0.06}>
-          <Panel>
-            <div className="text-[0.6875rem] font-semibold tracking-[0.1em] text-muted-foreground uppercase">
-              Tax invoice · paper, scanned
-            </div>
-            <h2 className="mt-1 text-xl font-semibold leading-snug tracking-[-0.02em]">{inv.number}</h2>
-            <p className="mt-3 text-sm leading-6">
-              Seller {inv.supplier} · Buyer {company.name}
-            </p>
-            <p className="mt-1 text-sm leading-6 text-muted-foreground">
-              VAT AED {aedPlain(inv.vat)} · Both suppliers are VAT-registered and not yet on e-invoicing.
-            </p>
-          </Panel>
-        </FadeIn>
-      </div>
+      <FadeIn className="mt-5">
+        <Panel>
+          <PaperDocumentsPanel companyName={company.name} />
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Button variant="outline" onClick={() => go('W2_explain')}>
+              Back
+            </Button>
+            <Button onClick={() => go('W3_act')}>What can I do?</Button>
+          </div>
+        </Panel>
+      </FadeIn>
     </Shell>
   )
 }
 
 export function W3Act() {
-  const {
-    DEMO,
-    COMPANIES,
-    WAHA_BIZ_OPTIONS,
-    WAHA_ON_HOLD,
-    WAHA_REJECTED,
-  } = useStandData()
+  const { DEMO, COMPANIES } = useStandData()
+  const { visitorName, go } = useStand()
   const company = COMPANIES.waha
-  const { visitorName, go, choices, setChoice, setWeakMessage, weakMessage, log, flashMessage } =
-    useStand()
-  const selected = choices.c2_biz || 'OPT-BUS-REF-1'
+  const [phase, setPhase] = useState<'DECIDE' | 'ACT' | 'FOLLOW_UP' | 'CLOSED'>('DECIDE')
   return (
     <Shell
       role="BUSINESS"
       visitorName={visitorName || DEMO.visitorDefault}
       companyLabel={`${company.name} · TRN ${company.trn}`}
-      footer={
-        <ActivityFooter
-          label="ASSISTANT ACTIVITY"
-          items={[
-            { label: 'Reply drafted, 20 documents attached', status: 'done' },
-            { label: 'VD for Box 9 prepared', status: 'done' },
-            { label: 'Waiting for your approval', status: 'wait' },
-          ]}
-        />
-      }
     >
-      <div className="mb-3 text-lg font-semibold leading-snug tracking-[-0.02em]">
-        Refund request · {company.caseId}
-      </div>
-      <Stepper variant="BUSINESS" current="ACT" />
-      <div className="mt-5 grid items-start gap-5 lg:grid-cols-[360px_1fr]">
-        <FadeIn className="flex flex-col gap-3">
-          <Panel>
-            <SectionLabel>What you can do</SectionLabel>
-            <OptionList
-              accent="gold"
-              options={WAHA_BIZ_OPTIONS}
-              selected={selected}
-              onSelect={(id) => {
-                setChoice('c2_biz', id)
-                const opt = WAHA_BIZ_OPTIONS.find((o) => o.id === id)
-                if (opt?.weak && opt.weakReply) setWeakMessage(opt.weakReply)
-                else setWeakMessage(null)
-              }}
-            />
-            {weakMessage ? <DangerNote>{weakMessage}</DangerNote> : null}
-          </Panel>
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant="success"
-              disabled={Boolean(weakMessage)}
-              onClick={() => {
-                log('Sent reply with documents')
-                go('W4_followup')
-              }}
-            >
-              Send reply
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                log('Drafted note to Bright Line')
-                flashMessage('Note drafted: please file Q2/Q3 returns so Al Waha input VAT can clear.')
-              }}
-            >
-              Draft note to Bright Line
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => {
-                log('Editing reply pack')
-                flashMessage('Edit mode: review attachments and the VD, then Send reply.')
-              }}
-            >
-              Edit
-            </Button>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.06} className="flex flex-col gap-4">
-          <Panel>
-            <h2 className="mb-2 text-base font-semibold leading-snug">Reply to Ref. {company.caseId}</h2>
-            <p className="text-sm leading-6 text-muted-foreground">
-              Attached: 6 tax invoices for input VAT of AED 150,000 and 14 bank payment confirmations for Bright Line. A
-              VD removes AED {aedPlain(WAHA_REJECTED)} from Box 9.
-            </p>
-          </Panel>
-          <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">What you send for AED 231,000</h2>
-            <Table>
-              <TableHeader>
-                <TableRow className="hover:bg-transparent">
-                  <TableHead>Item</TableHead>
-                  <TableHead>VAT</TableHead>
-                  <TableHead>Expected</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell>Paper tax invoices (6 PDF)</TableCell>
-                  <TableCell>150,000</TableCell>
-                  <TableCell className="num-ok">Supported</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Payment proof, Bright Line</TableCell>
-                  <TableCell>{aedPlain(WAHA_ON_HOLD)}</TableCell>
-                  <TableCell className="text-gold">Depends on supplier</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Card slips · VD Box 9</TableCell>
-                  <TableCell>{aedPlain(WAHA_REJECTED)}</TableCell>
-                  <TableCell className="num-gap">Not recoverable</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Panel>
-        </FadeIn>
-      </div>
+      <Stepper
+        variant="BUSINESS"
+        current={phase === 'FOLLOW_UP' || phase === 'CLOSED' ? 'ACT' : phase}
+      />
+      <RefundJourney role="business" onComplete={() => go('W4_followup')} onPhaseChange={setPhase} />
+      <Button variant="ghost" onClick={() => go('W2_explain')}>
+        Back
+      </Button>
     </Shell>
   )
 }
 
 export function W4Followup() {
-  const {
-    DEMO,
-    COMPANIES,
-    WAHA_APPROVED,
-    WAHA_REJECTED,
-    WAHA_ON_HOLD,
-  } = useStandData()
+  const { DEMO, COMPANIES, WAHA_CLAIMED } = useStandData()
+  const { visitorName, go } = useStand()
   const company = COMPANIES.waha
-  const wahaNotPaid = WAHA_REJECTED + WAHA_ON_HOLD
-  const { visitorName, go, log, flashMessage } = useStand()
   return (
     <Shell
       role="BUSINESS"
@@ -735,7 +415,7 @@ export function W4Followup() {
           label="ASSISTANT ACTIVITY"
           items={[
             { label: 'FTA decision received', status: 'done' },
-            { label: 'Refund AED 150,000 scheduled', status: 'done' },
+            { label: 'Refund outcome recorded', status: 'done' },
           ]}
         />
       }
@@ -745,42 +425,32 @@ export function W4Followup() {
       </div>
       <Stepper variant="BUSINESS" current="FOLLOW_UP" />
       <div className="mt-5 grid items-start gap-5 lg:grid-cols-[340px_1fr]">
-        <FadeIn>
+        <FadeIn className="flex flex-col gap-3">
           <Panel>
-            <SectionLabel>Mon 14 Dec 2026 · the FTA decided</SectionLabel>
-            <p className="text-sm leading-6">
-              The FTA accepted your 6 paper invoices. AED 150,000 more is approved, {aed(WAHA_APPROVED)} in total.{' '}
-              {aed(WAHA_REJECTED)} is not approved. {aed(WAHA_ON_HOLD)} is on hold until Bright Line is verified.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Button variant="gold" onClick={() => go('Z1_summary')}>
-                Finish
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => {
-                  log('Reminder sent to Bright Line')
-                  flashMessage('Reminder queued for Bright Line: file outstanding Q2/Q3 returns.')
-                }}
-              >
-                Remind Bright Line
-              </Button>
+            <div className="mb-2 rounded-md bg-primary px-3 py-1.5 text-[0.75rem] font-medium text-primary-foreground">
+              The FTA replied
             </div>
+            <SectionLabel>FTA assistant</SectionLabel>
+            <p className="text-sm leading-6">
+              The FTA reviewed your documents for refund claim {aed(WAHA_CLAIMED)}. Check the decision letter and finish
+              when you are ready.
+            </p>
           </Panel>
+          <Button variant="gold" onClick={() => go('Z1_summary')}>
+            Finish
+          </Button>
+          <RefundJourney role="status" onComplete={() => go('Z1_summary')} />
         </FadeIn>
-        <FadeIn delay={0.06} className="grid gap-3 md:grid-cols-3">
-          <StatTile
-            label="Refund approved"
-            value={aed(WAHA_APPROVED)}
-            hint="53,600 on 10 Dec + 150,000 on 14 Dec"
-            tone="ok"
-          />
-          <StatTile
-            label="Not paid now"
-            value={aed(wahaNotPaid)}
-            hint={`${aedPlain(WAHA_REJECTED)} rejected · ${aedPlain(WAHA_ON_HOLD)} on hold`}
-          />
-          <StatTile label="Decision" value="Early" hint="11 days before 25 Dec" tone="ok" />
+        <FadeIn delay={0.06}>
+          <div className="rounded-md border border-border bg-white p-5 text-[#12263a] shadow-sm">
+            <p className="text-xs text-[#5b6b7c]">From the FTA · Ref. {company.caseId}</p>
+            <p className="mt-4 text-sm leading-6">Dear Sir or Madam,</p>
+            <p className="mt-3 text-sm leading-6">
+              Thank you for the documents. Your refund request has been reviewed against e-invoices and the evidence you
+              submitted. See the amounts approved, rejected and held in your summary.
+            </p>
+            <p className="mt-6 text-xs text-[#5b6b7c]">Federal Tax Authority · VAT refund</p>
+          </div>
         </FadeIn>
       </div>
     </Shell>

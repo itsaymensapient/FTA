@@ -30,6 +30,8 @@ def load_tables() -> Tables:
         names = [
             "taxpayer",
             "e_invoice",
+            "e_invoice_line",
+            "establishment",
             "vat_return",
             "vat_return_box",
             "fta_case",

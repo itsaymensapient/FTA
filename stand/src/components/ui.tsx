@@ -1,3 +1,5 @@
+import { useAIActivity } from '@/components/AIActivity'
+import { useStand } from '@/session/StandSession'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -13,7 +15,7 @@ import {
 import { cn } from '@/lib/utils'
 import { Check } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 
 export function Panel({
   children,
@@ -25,8 +27,8 @@ export function Panel({
   contentClassName?: string
 }) {
   return (
-    <Card className={cn('gap-0 py-0 shadow-none ring-border/70', className)}>
-      <CardContent className={cn('p-5', contentClassName)}>{children}</CardContent>
+    <Card className={cn('gap-0 rounded-xl py-0 shadow-none ring-border/70', className)}>
+      <CardContent className={cn('p-5 sm:p-6', contentClassName)}>{children}</CardContent>
     </Card>
   )
 }
@@ -70,9 +72,20 @@ export function PaperPanel({
   )
 }
 
-export function SectionLabel({ children }: { children: ReactNode }) {
+export function SectionLabel({
+  children,
+  className,
+}: {
+  children: ReactNode
+  className?: string
+}) {
   return (
-    <div className="mb-2 text-[0.625rem] font-semibold tracking-[0.1em] text-gold uppercase">
+    <div
+      className={cn(
+        'mb-2 text-[0.625rem] font-semibold tracking-[0.1em] text-gold uppercase',
+        className,
+      )}
+    >
       {children}
     </div>
   )
@@ -109,30 +122,88 @@ export { Button, Input, Table, TableBody, TableCell, TableHead, TableHeader, Tab
 export function AskBar({
   placeholder = 'Ask about this case…',
   onAsk,
+  live = true,
 }: {
   placeholder?: string
   onAsk?: (q: string) => void
+  /** When true (default), POST /api/agent/ask and show the tool answer under the input. */
+  live?: boolean
 }) {
+  const [busy, setBusy] = useState(false)
+  const setAIActive = useAIActivity()
+  const { role, company } = useStand()
+  const [answer, setAnswer] = useState<string | null>(null)
+  const [meta, setMeta] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
+
   return (
-    <form
-      className="mt-1"
-      onSubmit={(e) => {
-        e.preventDefault()
-        const fd = new FormData(e.currentTarget)
-        const q = String(fd.get('q') || '').trim()
-        if (q) onAsk?.(q)
-        e.currentTarget.reset()
-      }}
-    >
-      <Input
-        name="q"
-        placeholder={placeholder}
-        aria-label={placeholder}
-        autoComplete="off"
-        spellCheck={false}
-        className="h-10"
-      />
-    </form>
+    <div className="mt-1 flex flex-col gap-2">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          const form = e.currentTarget
+          const fd = new FormData(form)
+          const q = String(fd.get('q') || '').trim()
+          if (!q) return
+          onAsk?.(q)
+          if (!live) {
+            form.reset()
+            return
+          }
+          setBusy(true)
+          setAIActive(true)
+          setError(null)
+          setAnswer(null)
+          setMeta(null)
+          void fetch('/api/agent/ask', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: q, ...(role === 'BUSINESS' ? { demo_company: company || 'unknown' } : {}) }),
+          })
+            .then(async (res) => {
+              const body = (await res.json()) as {
+                ok?: boolean
+                answer?: string
+                tool?: string
+                source?: string
+                error?: string
+                llm?: { used?: boolean; model?: string }
+              }
+              if (!res.ok || body.ok === false) {
+                throw new Error(body.error || `Ask failed (${res.status})`)
+              }
+              setAnswer(body.answer || '')
+              const provider = body.llm?.used
+                ? `Live AI · ${body.llm.model || 'shared model'}`
+                : 'Offline demo · tool-based answer'
+              const evidence = [body.tool, body.source].filter(Boolean).join(' · ')
+              setMeta([provider, evidence ? `How I got this: ${evidence}` : null].filter(Boolean).join(' — '))
+              form.reset()
+            })
+            .catch((err: unknown) => {
+              setError(err instanceof Error ? err.message : String(err))
+            })
+            .finally(() => { setBusy(false); setAIActive(false) })
+        }}
+      >
+        <Input
+          name="q"
+          placeholder={busy ? 'Looking up CDP tools…' : placeholder}
+          aria-label={placeholder}
+          autoComplete="off"
+          spellCheck={false}
+          disabled={busy}
+          className="h-10"
+        />
+      </form>
+      <p role="status" className="text-xs leading-5 text-destructive">{error || ''}</p>
+      {answer ? (
+        <div className="rounded-md border border-border bg-muted/40 px-3 py-2.5">
+          <p className="whitespace-pre-wrap text-sm leading-6">{answer}</p>
+          {meta ? <p className="mt-2 text-xs leading-5 text-muted-foreground">{meta}</p> : null}
+        </div>
+      ) : null}
+    </div>
   )
 }
 

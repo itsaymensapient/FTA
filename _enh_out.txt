@@ -1,0 +1,21 @@
+﻿enhanced stand css
+wrote stand-design\package.json
+wrote stand-design\tsconfig.json
+wrote stand-design\tsconfig.app.json
+wrote stand-design\tsconfig.node.json
+wrote stand-design\tsconfig.json
+wrote stand-design\vite.config.ts
+wrote stand-design\index.html
+wrote stand-design\README.md
+wrote stand-design\src\index.css
+wrote stand-design\src\lib\cn.ts
+wrote stand-design\src\fixtures.ts
+wrote stand-design\src\nav.tsx
+wrote stand-design\src\components\ui.tsx
+wrote stand-design\src\components\Shell.tsx
+wrote stand-design\src\screens.tsx
+wrote stand-design\src\App.tsx
+wrote stand-design\src\main.tsx
+wrote stand-design\src\vite-env.d.ts
+stand UC2Journey letter-sheet class applied
+done

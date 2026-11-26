@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -43,7 +43,7 @@
 
 :root,
 .shell-biz {
-  --radius: 0.375rem;
+  --radius: 0.75rem;
   --background: #eef2f6;
   --foreground: #12263a;
   --card: #ffffff;
@@ -80,7 +80,7 @@
 
 .shell-fta,
 .dark {
-  --radius: 0.375rem;
+  --radius: 0.75rem;
   --background: #0b1f33;
   --foreground: #e8eef5;
   --card: #152a40;
@@ -137,7 +137,7 @@
 
   body {
     @apply m-0 min-h-screen bg-background text-foreground text-[0.875rem];
-    line-height: 1.45;
+    line-height: 1.55;
     font-feature-settings: "ss01" on, "cv11" on;
   }
 
@@ -217,4 +217,44 @@
   .num-gold {
     @apply font-bold text-gold;
   }
+}
+
+.ai-activity { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; display: flex; align-items: center; gap: .65rem; padding: .5rem .8rem .5rem .5rem; border: 1px solid #a6c7ee; border-radius: 999px; background: #102b46; color: #fff; box-shadow: 0 8px 24px #071b3040; font-size: .8rem; font-weight: 500; }
+.ai-activity-icon { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 50%; background: #2f69c7; }
+.ai-activity-spinner { animation: ai-spin 1.2s linear infinite; }
+@keyframes ai-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ai-activity-spinner { animation: none; } }
+
+/* design-enhance */
+.shell-fta {
+  background:
+    radial-gradient(1200px 520px at 12% -10%, rgba(59, 122, 240, 0.22), transparent 55%),
+    radial-gradient(900px 480px at 90% 0%, rgba(216, 196, 138, 0.1), transparent 50%),
+    linear-gradient(180deg, #0a1a2c 0%, #0b1f33 42%, #0e2438 100%);
+}
+.shell-biz {
+  background:
+    radial-gradient(1000px 480px at 8% -8%, rgba(184, 137, 58, 0.12), transparent 50%),
+    radial-gradient(800px 420px at 100% 0%, rgba(22, 58, 95, 0.08), transparent 45%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f6 55%, #e8eef4 100%);
+}
+.shell-fta [data-slot="card"] {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 10px 28px rgba(3, 12, 24, 0.28);
+}
+.shell-biz [data-slot="card"] {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 8px 24px rgba(18, 38, 58, 0.06);
+}
+.letter-sheet {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 18px 40px rgba(18, 38, 58, 0.12);
+}
+.agent-bubble {
+  animation: rise-in 360ms var(--ease-out) both;
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .agent-bubble { animation: none; }
 }

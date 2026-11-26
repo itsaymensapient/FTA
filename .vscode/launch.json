@@ -2,56 +2,33 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Start PostgreSQL",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/scripts/start-postgres.ps1\"",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "Re-migrate & Seed (local PG)",
+      "name": "FTA: Backend API",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "node",
-      "program": "${workspaceFolder}/db/seed-from-xlsx.mjs",
-      "cwd": "${workspaceFolder}/db",
-      "console": "integratedTerminal",
-      "preLaunchTask": "Start PostgreSQL",
-      "skipFiles": ["<node_internals>/**"]
-    },
-    {
-      "name": "Launch Backend API",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["--watch", "src/index.mjs"],
+      "program": "${workspaceFolder}/server/src/index.mjs",
       "cwd": "${workspaceFolder}/server",
-      "console": "integratedTerminal",
-      "preLaunchTask": "Build Workbook Snapshot",
+      "envFile": "${workspaceFolder}/.env",
       "env": {
-        "API_PORT": "8787"
+        "API_PORT": "8787",
+        "TEMPORAL_ENABLED": "true"
       },
-      "serverReadyAction": {
-        "pattern": "listening on (https?://\\S+)",
-        "uriFormat": "%s/health",
-        "action": "openExternally"
-      },
-      "skipFiles": ["<node_internals>/**"]
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     },
     {
-      "name": "Launch Stand UI",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:5173",
-      "webRoot": "${workspaceFolder}/stand",
-      "preLaunchTask": "Launch Stand UI"
-    },
-    {
-      "name": "Launch Stand UI (Vite only)",
+      "name": "FTA: Frontend",
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "--host", "localhost", "--port", "5173"],
+      "program": "${workspaceFolder}/stand/node_modules/vite/bin/vite.js",
+      "args": [
+        "--host",
+        "localhost",
+        "--port",
+        "5173",
+        "--strictPort"
+      ],
       "cwd": "${workspaceFolder}/stand",
       "console": "integratedTerminal",
       "serverReadyAction": {
@@ -59,27 +36,16 @@
         "uriFormat": "%s",
         "action": "openExternally"
       }
-    },
-    {
-      "name": "Ali: Run B1 Checks",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "& \"$env:LocalAppData\\Programs\\Python\\Python312\\python.exe\" -m pytest ali/tests/test_checks.py -q",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "Ali: Ask free question",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "& \"$env:LocalAppData\\Programs\\Python\\Python312\\python.exe\" -m ali.agents.ask_agent \"What is the Al Waha refund split?\"",
-      "cwd": "${workspaceFolder}"
     }
   ],
   "compounds": [
     {
-      "name": "Full Stack (local PG + API + UI)",
-      "configurations": ["Launch Backend API", "Launch Stand UI"],
-      "preLaunchTask": "Start PostgreSQL",
+      "name": "FTA: Full Stack",
+      "configurations": [
+        "FTA: Backend API",
+        "FTA: Frontend"
+      ],
+      "preLaunchTask": "FTA: Prepare Full Stack",
       "stopAll": true
     }
   ]

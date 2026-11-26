@@ -1,3 +1,5 @@
+import '@fontsource-variable/outfit'
+import { AIActivityProvider } from './components/AIActivity'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
@@ -7,10 +9,10 @@ import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <StandDataProvider>
+    <AIActivityProvider><StandDataProvider>
       <StandSessionProvider>
         <App />
       </StandSessionProvider>
-    </StandDataProvider>
+    </StandDataProvider></AIActivityProvider>
   </StrictMode>,
 )

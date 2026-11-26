@@ -3,6 +3,7 @@ import http from 'http'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import pg from 'pg'
+import { runAgentBridge } from './agent-bridge.mjs'
 import { buildStandPayload } from './stand-payload.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -80,11 +81,40 @@ function send(res, status, body, headers = {}) {
   res.writeHead(status, {
     'Content-Type': typeof body === 'string' ? 'text/plain; charset=utf-8' : 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,OPTIONS',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     ...headers,
   })
   res.end(payload)
+}
+
+function readJsonBody(req, limitBytes = 1_000_000) {
+  return new Promise((resolve, reject) => {
+    const chunks = []
+    let size = 0
+    req.on('data', (chunk) => {
+      size += chunk.length
+      if (size > limitBytes) {
+        reject(new Error('Request body too large'))
+        req.destroy()
+        return
+      }
+      chunks.push(chunk)
+    })
+    req.on('end', () => {
+      const raw = Buffer.concat(chunks).toString('utf8').trim()
+      if (!raw) {
+        resolve({})
+        return
+      }
+      try {
+        resolve(JSON.parse(raw))
+      } catch (err) {
+        reject(new Error(`Invalid JSON body: ${err instanceof Error ? err.message : String(err)}`))
+      }
+    })
+    req.on('error', reject)
+  })
 }
 
 function loadSnapshot() {
@@ -224,6 +254,121 @@ const server = http.createServer(async (req, res) => {
       return
     }
 
+    if (req.method === 'GET' && url.pathname === '/api/agent/health') {
+      const ping = await runAgentBridge({ action: 'ping' }, loadEnv())
+      send(res, ping.ok ? 200 : 503, ping)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/llm/test') {
+      const result = await runAgentBridge({ action: 'llm_test' }, loadEnv())
+      send(res, result.ok ? 200 : 503, result)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/case-tool') {
+      const body = await readJsonBody(req)
+      const result = await runAgentBridge({
+        action: 'case_tool',
+        tool: body.tool,
+        finding_id: body.finding_id,
+        invoice_uuid: body.invoice_uuid,
+        case_type: body.case_type,
+        side: body.side,
+        tin: body.tin,
+        case_id: body.case_id,
+        document_type: body.document_type,
+      }, loadEnv())
+      send(res, result.ok ? 200 : 400, result)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/refund') {
+      const body = await readJsonBody(req)
+      if (!new Set(['create', 'get', 'approve', 'revise', 'step', 'select_option']).has(body.operation)) {
+        send(res, 400, { ok: false, error: 'Unknown journey operation.' }); return
+      }
+      const result = await runAgentBridge({
+        action: `refund_${body.operation}`,
+        session_id: body.session_id,
+        journey_id: body.journey_id,
+        version: body.version,
+        text: body.text,
+        step: body.step,
+        side: body.side,
+        option_id: body.option_id,
+      }, loadEnv(), 90000)
+      send(res, result.ok ? 200 : 400, result)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/uc2') {
+      const body = await readJsonBody(req)
+      const permitted = new Set(['create', 'get', 'approve', 'revise', 'step', 'select_option'])
+      if (!permitted.has(body.operation)) {
+        send(res, 400, { ok: false, error: 'Unknown journey operation.' })
+        return
+      }
+      const result = await runAgentBridge({
+        action: `uc2_${body.operation}`,
+        session_id: body.session_id,
+        journey_id: body.journey_id,
+        version: body.version,
+        text: body.text,
+        step: body.step,
+        side: body.side,
+        option_id: body.option_id,
+      }, loadEnv(), 90000)
+      send(res, result.ok ? 200 : 400, result)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/ask') {
+      const body = await readJsonBody(req)
+      const result = await runAgentBridge(
+        {
+          action: 'ask',
+          question: body.question,
+          demo_company: body.demo_company,
+          session_id: body.session_id,
+          persist: body.persist === true,
+        },
+        loadEnv(),
+      )
+      send(res, result.ok ? 200 : result.error_type === 'llm' ? 502 : 400, result)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/fta') {
+      const body = await readJsonBody(req)
+      const result = await runAgentBridge(
+        {
+          action: 'fta',
+          case_id: body.case_id,
+          auto_confirm: body.auto_confirm === true,
+        },
+        loadEnv(),
+        90000,
+      )
+      send(res, result.ok ? 200 : result.error_type === 'llm' ? 502 : 400, result)
+      return
+    }
+
+    if (req.method === 'POST' && url.pathname === '/api/agent/assistant') {
+      const body = await readJsonBody(req)
+      const result = await runAgentBridge(
+        {
+          action: 'assistant',
+          case_id: body.case_id,
+          auto_confirm: body.auto_confirm === true,
+        },
+        loadEnv(),
+        90000,
+      )
+      send(res, result.ok ? 200 : result.error_type === 'llm' ? 502 : 400, result)
+      return
+    }
+
     send(res, 404, { error: 'Not found' })
   } catch (err) {
     console.error(err)
@@ -233,7 +378,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`gitex-stand-api listening on http://127.0.0.1:${PORT}`)
-  console.log(`  /api/stand  /api/taxpayers  /api/cases  /health`)
+  console.log(`  /api/stand  /api/taxpayers  /api/cases  /api/agent/*  /health`)
 })
 
 for (const signal of ['SIGINT', 'SIGTERM']) {

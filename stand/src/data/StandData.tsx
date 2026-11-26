@@ -84,8 +84,8 @@ export type StandDemo = {
     letters: Record<string, { subject?: string; body?: string }>
   }
   prep: {
-    fta: { text: string; done: boolean; time?: string }[]
-    biz: { text: string; done: boolean; time?: string }[]
+    fta: { text: string; done: boolean; time?: string; group?: string }[]
+    biz: { text: string; done: boolean; time?: string; group?: string }[]
   }
 }
 

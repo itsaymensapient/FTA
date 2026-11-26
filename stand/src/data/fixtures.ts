@@ -164,11 +164,42 @@ export const WAHA_PAPER_INVOICES = [
 ] as const
 
 export const PREP_FTA_LINES = [
-  { text: 'Checked 21,480 new e-invoices against filed returns', done: true },
-  { text: 'Checked 214 VAT returns for Aug–Oct 2026', done: true },
-  { text: 'Checked 12 refund requests against received invoices', done: true },
-  { text: 'Ranked open issues by risk and deadline', done: true },
-  { text: 'Writing your briefing…', done: false },
+  {
+    group: 'CDP RULES · OVERNIGHT',
+    text: '21,480 new e-invoices loaded and checked',
+    done: true,
+    time: '06:00–06:41',
+  },
+  {
+    group: 'CDP RULES · OVERNIGHT',
+    text: '214 VAT returns reconciled with e-invoices, box by box',
+    done: true,
+    time: '06:41–07:20',
+  },
+  {
+    group: 'CDP RULES · OVERNIGHT',
+    text: '12 refund requests and 1,206 suppliers checked',
+    done: true,
+    time: '07:20–07:52',
+  },
+  {
+    group: 'FTA AGENT · WITH THE RESULTS',
+    text: 'Read the 2 findings and pulled the evidence: 38 invoices, 14 supplier invoices',
+    done: true,
+    time: '07:52–08:05',
+  },
+  {
+    group: 'FTA AGENT · WITH THE RESULTS',
+    text: "Checked both companies' history and the deadlines",
+    done: true,
+    time: '08:05–08:12',
+  },
+  {
+    group: 'FTA AGENT · WITH THE RESULTS',
+    text: 'Writing your briefing and the draft letters…',
+    done: false,
+    time: 'now',
+  },
 ]
 
 export const PREP_BIZ_LINES = [

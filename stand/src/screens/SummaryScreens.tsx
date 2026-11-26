@@ -1,321 +1,95 @@
-import { ActivityFooter } from '@/components/ActivityFooter'
 import { Shell } from '@/components/Shell'
 import {
   Button,
   FadeIn,
   Panel,
   StatTile,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
+  AskBar,
 } from '@/components/ui'
 import { useStandData } from '@/data/StandData'
-import { aed, aedPlain } from '@/lib/format'
+import { aed } from '@/lib/format'
 import { useStand } from '@/session/StandSession'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+type SavedJourney = { state: string; verification?: { net?: number; approved?: number; rejected?: number; on_hold?: number } }
+
+function useSavedJourney(endpoint: 'uc2' | 'refund', key: string) {
+  const [data, setData] = useState<SavedJourney | null>(null)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    let active = true
+    const id = localStorage.getItem(key)
+    if (!id) { setLoading(false); return }
+    fetch(`/api/agent/${endpoint}`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({operation:'get', journey_id:id}) })
+      .then(async r => { const body = await r.json(); if (!r.ok || !body.ok) throw new Error(body.error || 'Unable to load status.'); return body.journey as SavedJourney })
+      .then(journey => { if (active) setData(journey) })
+      .catch(e => { if (active) setError(e.message) })
+      .finally(() => { if (active) setLoading(false) })
+    return () => { active = false }
+  }, [endpoint, key])
+  return { data, error, loading }
+}
 
 export function FtaSummaryScreen() {
-  const {
-    DEMO,
-    COMPANIES,
-    YASMEEN_GAP_NET,
-    WAHA_APPROVED,
-    WAHA_REJECTED,
-    WAHA_ON_HOLD,
-  } = useStandData()
+  const { DEMO } = useStandData()
   const { visitorName, chooseRole, reset, go } = useStand()
-  const name = visitorName || DEMO.visitorDefault
-  const wahaNotPaid = WAHA_REJECTED + WAHA_ON_HOLD
-
-  useEffect(() => {
-    const t = setTimeout(() => reset(), 30000)
-    return () => clearTimeout(t)
-  }, [reset])
-
-  return (
-    <Shell
-      role="FTA_SPECIALIST"
-      visitorName={name}
-      date={DEMO.followUpToday}
-      footer={
-        <ActivityFooter
-          label="AGENT ACTIVITY"
-          items={[{ label: 'Session log saved (demo)', status: 'done' }]}
-        />
-      }
-    >
-      <FadeIn className="mx-auto flex max-w-4xl flex-col gap-5">
-        <h1 className="stand-title text-balance">
-          Well done, {name}. Your session in 4 minutes.
-        </h1>
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-          <StatTile label="Events closed" value="2 of 2" />
-          <StatTile label="VAT secured" value={aed(YASMEEN_GAP_NET)} tone="ok" />
-          <StatTile label="Refund not paid" value={aed(wahaNotPaid)} />
-          <StatTile label="Your time" value="4 min" />
-        </div>
-        <Panel>
-          <h2 className="mb-3 text-base font-semibold leading-snug">Your decisions</h2>
-          <Table>
-            <TableHeader>
-              <TableRow className="hover:bg-transparent">
-                <TableHead>Case</TableHead>
-                <TableHead>You chose</TableHead>
-                <TableHead>Result</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>{COMPANIES.yasmeen.short}</TableCell>
-                <TableCell>Ask taxpayer / close after VD</TableCell>
-                <TableCell className="num-ok">{aed(YASMEEN_GAP_NET, true)}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>{COMPANIES.waha.short}</TableCell>
-                <TableCell>Partial approval</TableCell>
-                <TableCell>
-                  {aedPlain(WAHA_APPROVED)} approved · {aedPlain(wahaNotPaid)} not paid
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Panel>
-        <div className="flex flex-wrap items-center gap-3">
-          <Button variant="gold" onClick={() => chooseRole('BUSINESS')}>
-            Try as Business
-          </Button>
-          <Button variant="outline" onClick={reset}>
-            Finish
-          </Button>
-          <Button variant="ghost" onClick={() => go('03_briefing')}>
-            Back to briefing
-          </Button>
-          <span className="text-xs leading-5 text-muted-foreground">The stand resets in 30 seconds</span>
-        </div>
-      </FadeIn>
-    </Shell>
-  )
+  const yasmeen = useSavedJourney('uc2', 'fta-uc2-journey-id')
+  const waha = useSavedJourney('refund', 'fta-refund-journey-id')
+  const complete = [yasmeen.data, waha.data].filter(j => j?.state === 'CLOSED').length
+  useEffect(() => { const timer = setTimeout(reset, 30000); return () => clearTimeout(timer) }, [reset])
+  return <Shell role="FTA_SPECIALIST" visitorName={visitorName || DEMO.visitorDefault}>
+    <FadeIn className="mx-auto flex max-w-4xl flex-col gap-5">
+      <h1 className="stand-title">Your demo session</h1>
+      <p className="text-sm text-muted-foreground">Results shown below are saved demo actions.</p>
+      {(yasmeen.error || waha.error) && <p role="alert">Could not load all case results. Refresh the page or return to the case.</p>}
+      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+        <StatTile label="Cases closed" value={yasmeen.loading || waha.loading ? 'Loading…' : `${complete} of 2`} />
+        <StatTile label="Al Yasmeen net adjustment" value={yasmeen.data?.state === 'CLOSED' && yasmeen.data.verification?.net != null ? aed(yasmeen.data.verification.net) : 'Not closed'} />
+        <StatTile label="Al Waha refund approved" value={waha.data?.state === 'CLOSED' && waha.data.verification?.approved != null ? aed(waha.data.verification.approved) : 'Not closed'} />
+      </div>
+      <Panel><h2 className="mb-3 font-semibold">Case status</h2><div className="space-y-2 text-sm">
+        <p>Al Yasmeen: {yasmeen.loading ? 'Loading…' : yasmeen.data?.state.replaceAll('_',' ').toLowerCase() || 'Not started'}</p>
+        <p>Al Waha: {waha.loading ? 'Loading…' : waha.data?.state.replaceAll('_',' ').toLowerCase() || 'Not started'}</p>
+      </div></Panel>
+      <div className="flex flex-wrap gap-3"><Button variant="gold" onClick={() => chooseRole('BUSINESS')}>Try as Business</Button><Button variant="outline" onClick={reset}>Finish</Button><Button variant="ghost" onClick={() => go('03_briefing')}>Back to briefing</Button></div>
+      <p className="text-xs text-muted-foreground">The stand resets in 30 seconds.</p>
+    </FadeIn>
+  </Shell>
 }
 
 export function BizSummaryScreen() {
-  const { DEMO, COMPANIES, YASMEEN_GAP_NET, YASMEEN_INVOICE_COUNT, WAHA_APPROVED } = useStandData()
+  const { DEMO, COMPANIES } = useStandData()
   const { visitorName, company, chooseRole, reset, openCase } = useStand()
-  const name = visitorName || DEMO.visitorDefault
   const isWaha = company === 'waha'
-  const c = isWaha ? COMPANIES.waha : COMPANIES.yasmeen
-
-  useEffect(() => {
-    const t = setTimeout(() => reset(), 30000)
-    return () => clearTimeout(t)
-  }, [reset])
-
-  return (
-    <Shell
-      role="BUSINESS"
-      visitorName={name}
-      companyLabel={`${c.name} · TRN ${c.trn}`}
-      date={DEMO.followUpToday}
-      footer={
-        <ActivityFooter
-          label="ASSISTANT ACTIVITY"
-          items={[{ label: 'Session log saved (demo)', status: 'done' }]}
-        />
-      }
-    >
-      <FadeIn className="mx-auto flex max-w-4xl flex-col gap-5">
-        <h1 className="stand-title text-balance">
-          Well done, {name}. The case of {c.short} is closed.
-        </h1>
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-          {(isWaha
-            ? [
-                ['Your time', '3 min'],
-                ['FTA case', 'Closed', 'ok'],
-                ['Refund', aed(WAHA_APPROVED), 'ok'],
-                ['Decision', '11 days early', 'ok'],
-              ]
-            : [
-                ['Your time', '3 min'],
-                ['FTA case', 'Closed', 'ok'],
-                ['VAT corrected', aed(YASMEEN_GAP_NET)],
-                ['Reply', '27 days early', 'ok'],
-              ]
-          ).map(([k, v, tone]) => (
-            <StatTile key={k} label={k} value={v} tone={tone === 'ok' ? 'ok' : 'default'} />
-          ))}
-        </div>
-        <Panel>
-          <h2 className="mb-3 text-base font-semibold leading-snug">What you did</h2>
-          <Table>
-            <TableHeader>
-              <TableRow className="hover:bg-transparent">
-                <TableHead>Step</TableHead>
-                <TableHead>Assistant</TableHead>
-                <TableHead>You</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {(isWaha
-                ? [
-                    ['Explain', 'Matched refund parts with your records', 'Read the result'],
-                    ['Decide', 'Offered 3 options', 'Chose documents + VD'],
-                    ['Act', 'Drafted reply with 20 documents', 'Checked and sent'],
-                    ['Follow-up', 'Read the FTA decision', 'Closed the item'],
-                  ]
-                : [
-                    [
-                      'Explain',
-                      `Matched ${YASMEEN_INVOICE_COUNT} invoices with your ledger`,
-                      'Read the result',
-                    ],
-                    ['Decide', 'Offered 3 options', 'Chose VD and reply'],
-                    ['Act', 'Filled in the VD and drafted the reply', 'Checked and submitted'],
-                    ['Follow-up', 'Read the FTA reply', 'Closed the item'],
-                  ]
-              ).map((row) => (
-                <TableRow key={row[0]}>
-                  <TableCell>{row[0]}</TableCell>
-                  <TableCell>{row[1]}</TableCell>
-                  <TableCell>{row[2]}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Panel>
-        <Panel>
-          <h2 className="mb-3 text-base font-semibold leading-snug">The same case on the FTA side</h2>
-          <Table>
-            <TableHeader>
-              <TableRow className="hover:bg-transparent">
-                <TableHead>Date</TableHead>
-                <TableHead>FTA specialist</TableHead>
-                <TableHead>You</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>10 Dec</TableCell>
-                <TableCell>Sends the letter</TableCell>
-                <TableCell>Letter arrives in the FTA Assistant</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>11 Dec</TableCell>
-                <TableCell>—</TableCell>
-                <TableCell>{isWaha ? 'Sends documents and VD' : 'Submits VD and reply'}</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>14 Dec</TableCell>
-                <TableCell>Closes / decides</TableCell>
-                <TableCell>Gets the decision</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Panel>
-        <div className="flex flex-wrap items-center gap-3">
-          <Button
-            variant="outline"
-            onClick={() => openCase(isWaha ? 'yasmeen' : 'waha', isWaha ? 'Y1_home' : 'W1_home')}
-          >
-            {isWaha ? 'Al Yasmeen · return' : 'Al Waha · refund'}
-          </Button>
-          <Button variant="gold" onClick={() => chooseRole('FTA_SPECIALIST')}>
-            Try as FTA Specialist
-          </Button>
-          <Button variant="ghost" onClick={reset}>
-            Finish
-          </Button>
-          <span className="text-xs leading-5 text-muted-foreground">The stand resets in 30 seconds</span>
-        </div>
-      </FadeIn>
-    </Shell>
-  )
+  const selected = isWaha ? COMPANIES.waha : COMPANIES.yasmeen
+  const { data, loading, error } = useSavedJourney(isWaha ? 'refund' : 'uc2', isWaha ? 'fta-refund-journey-id' : 'fta-uc2-journey-id')
+  useEffect(() => { const timer = setTimeout(reset, 30000); return () => clearTimeout(timer) }, [reset])
+  return <Shell role="BUSINESS" visitorName={visitorName || DEMO.visitorDefault} companyLabel={`${selected.name} · TRN ${selected.trn}`}>
+    <FadeIn className="mx-auto flex max-w-4xl flex-col gap-5">
+      <h1 className="stand-title">{selected.short} · demo case summary</h1>
+      {error && <p role="alert">Unable to load the saved case. Return to the case to retry.</p>}
+      <Panel><h2 className="font-semibold">Case status</h2><p className="mt-3 text-sm">{loading ? 'Loading…' : data?.state.replaceAll('_',' ').toLowerCase() || 'Not started'}</p>
+        {data?.state === 'CLOSED' && <p className="mt-3 text-sm">{isWaha && data.verification?.approved != null ? `Demo refund decision: ${aed(data.verification.approved)} approved, ${aed(data.verification.rejected || 0)} rejected, ${aed(data.verification.on_hold || 0)} on hold.` : data.verification?.net != null ? `Verified demo net adjustment: ${aed(data.verification.net)}.` : ''}</p>}
+      </Panel>
+      <div className="flex flex-wrap gap-3"><Button variant="outline" onClick={() => openCase(isWaha ? 'yasmeen' : 'waha', isWaha ? 'Y1_home' : 'W1_home')}>Try the other company</Button><Button variant="gold" onClick={() => chooseRole('FTA_SPECIALIST')}>Try as FTA Specialist</Button><Button variant="ghost" onClick={reset}>Finish</Button></div>
+      <p className="text-xs text-muted-foreground">The stand resets in 30 seconds.</p>
+    </FadeIn>
+  </Shell>
 }
 
 export function QueryScreen() {
   const { DEMO, COMPANIES } = useStandData()
-  const { visitorName, role, go } = useStand()
+  const { visitorName, role, company, go } = useStand()
   const isBiz = role === 'BUSINESS'
-  return (
-    <Shell
-      role={isBiz ? 'BUSINESS' : 'FTA_SPECIALIST'}
-      visitorName={visitorName || DEMO.visitorDefault}
-      companyLabel={isBiz ? `${COMPANIES.yasmeen.name} · TRN ${COMPANIES.yasmeen.trn}` : undefined}
-      footer={
-        <ActivityFooter
-          label={isBiz ? 'ASSISTANT ACTIVITY' : 'AGENT ACTIVITY'}
-          items={[
-            { label: 'Question understood', status: 'done' },
-            { label: 'Answer from CDP tools', status: 'done' },
-          ]}
-        />
-      }
-    >
-      <div className="grid items-start gap-5 lg:grid-cols-[360px_1fr]">
-        <FadeIn>
-          <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">
-              {isBiz ? 'Ask the FTA Assistant' : 'Ask the FTA agent'}
-            </h2>
-            <div className="mb-3 rounded-lg border border-border bg-muted/40 px-3.5 py-3 text-sm leading-6">
-              {isBiz
-                ? 'Which of my November sales invoices were not confirmed by the buyer?'
-                : 'Show Al Yasmeen’s invoices to Marina Hospitality in October'}
-            </div>
-            <p className="text-sm leading-6 text-muted-foreground">
-              {isBiz
-                ? '13 of 642 November invoices have no buyer copy yet. 11 are to one buyer.'
-                : 'Al Yasmeen issued 12 invoices to Marina Hospitality in October 2026, VAT AED 168,400.'}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <Button variant="outline" onClick={() => go(isBiz ? 'B01_company' : '03_briefing')}>
-                Back
-              </Button>
-            </div>
-          </Panel>
-        </FadeIn>
-        <FadeIn delay={0.06}>
-          <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">
-              {isBiz ? 'November 2026 · sales without buyer copy' : 'Al Yasmeen → Marina Hospitality · Oct 2026'}
-            </h2>
-            <Table>
-              <TableHeader>
-                <TableRow className="hover:bg-transparent">
-                  <TableHead>{isBiz ? 'Buyer' : 'Invoice'}</TableHead>
-                  <TableHead>{isBiz ? 'Invoices' : 'Date'}</TableHead>
-                  <TableHead>VAT</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {(isBiz
-                  ? [
-                      ['Palm Crest Hotels LLC', '11', '23,650'],
-                      ['Gulfline Catering LLC', '1', '1,240'],
-                      ['Dar Al Noor Clinics LLC', '1', '860'],
-                    ]
-                  : [
-                      ['AYT-2026-10-1147', '14 Oct', '11,300'],
-                      ['AYT-2026-10-1203', '21 Oct', '9,400'],
-                      ['AYT-2026-10-1216', '22 Oct', '20,625'],
-                    ]
-                ).map((row) => (
-                  <TableRow key={row[0]}>
-                    <TableCell>{row[0]}</TableCell>
-                    <TableCell>{row[1]}</TableCell>
-                    <TableCell>{row[2]}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-            <p className="mt-4 text-xs leading-5 text-muted-foreground">
-              How I got this: CDP query on demo data for this role only.
-            </p>
-          </Panel>
-        </FadeIn>
-      </div>
-    </Shell>
-  )
+  const selected = company === 'waha' ? COMPANIES.waha : COMPANIES.yasmeen
+  return <Shell role={isBiz ? 'BUSINESS' : 'FTA_SPECIALIST'} visitorName={visitorName || DEMO.visitorDefault}
+    companyLabel={isBiz && company ? `${selected.name} · TRN ${selected.trn}` : undefined}>
+    <div className="mx-auto max-w-3xl"><Panel>
+      <h1 className="text-lg font-semibold">{isBiz ? 'Ask the FTA Assistant' : 'Ask the FTA agent'}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">Ask about the synthetic demo data. Answers use the available case tools.</p>
+      {isBiz && !company ? <p className="mt-4 text-sm">Choose a company before asking a business question.</p> : <AskBar placeholder="Ask about the demo data…" />}
+      <Button className="mt-4" variant="outline" onClick={() => go(isBiz ? 'B01_company' : '03_briefing')}>Back</Button>
+    </Panel></div>
+  </Shell>
 }

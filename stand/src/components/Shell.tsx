@@ -141,7 +141,7 @@ export function Shell({
           duration: reduce ? 0 : 0.22,
           ease: [0.23, 1, 0.32, 1],
         }}
-        className={cn('stand-page flex-1 scroll-mt-20 px-6 py-5', className)}
+        className={cn('stand-page flex-1 scroll-mt-20 px-5 py-7 sm:px-6 sm:py-8', className)}
       >
         {children}
       </motion.main>

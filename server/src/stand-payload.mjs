@@ -12,15 +12,27 @@ function num(v) {
   return typeof v === 'number' ? v : Number(v)
 }
 
+function toDate(value) {
+  if (!value) return null
+  if (value instanceof Date) {
+    return Number.isNaN(value.getTime()) ? null : value
+  }
+  const raw = String(value).trim()
+  // Postgres/node-pg often yields Date; snapshot JSON yields YYYY-MM-DD or ISO.
+  const day = raw.length >= 10 && /^\d{4}-\d{2}-\d{2}/.test(raw) ? raw.slice(0, 10) : null
+  const d = day ? new Date(`${day}T00:00:00Z`) : new Date(raw)
+  return Number.isNaN(d.getTime()) ? null : d
+}
+
 function shortDate(iso) {
-  if (!iso) return ''
-  const d = new Date(`${String(iso).slice(0, 10)}T00:00:00Z`)
+  const d = toDate(iso)
+  if (!d) return ''
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })
 }
 
 function weekdayDate(iso) {
-  if (!iso) return ''
-  const d = new Date(`${String(iso).slice(0, 10)}T00:00:00Z`)
+  const d = toDate(iso)
+  if (!d) return ''
   return d.toLocaleDateString('en-GB', {
     weekday: 'short',
     day: 'numeric',
