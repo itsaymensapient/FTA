@@ -20,18 +20,9 @@ import {
   TableRow,
 } from '@/components/ui'
 import { Badge } from '@/components/ui/badge'
-import {
-  COMPANIES,
-  DEMO,
-  WAHA_BIZ_OPTIONS,
-  WAHA_FTA_OPTIONS,
-  WAHA_PAPER_INVOICES,
-  WAHA_REFUND_PARTS,
-} from '@/data/fixtures'
-import { aedPlain } from '@/lib/format'
+import { useStandData } from '@/data/StandData'
+import { aed, aedPlain } from '@/lib/format'
 import { useStand } from '@/session/StandSession'
-
-const company = COMPANIES.waha
 
 function toneClass(tone: string) {
   if (tone === 'ok') return 'num-ok'
@@ -40,6 +31,14 @@ function toneClass(tone: string) {
 }
 
 export function R1RefundExplain() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_REFUND_PARTS,
+    WAHA_CLAIMED,
+    WAHA_ON_HOLD,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -62,7 +61,7 @@ export function R1RefundExplain() {
             <SectionLabel>AI agent</SectionLabel>
             <p className="text-sm leading-6">
               Box 9: AED 1,212,000 in the return, AED 1,027,800 on received e-invoices. AED 184,200 has no e-invoice.
-              AED 46,800 is from Bright Line, which has not filed Q2 and Q3. Fully supported: AED 53,600.
+              {aed(WAHA_ON_HOLD)} is from Bright Line, which has not filed Q2 and Q3. Fully supported: AED 53,600.
             </p>
           </Panel>
           <div className="flex flex-wrap gap-2">
@@ -75,7 +74,7 @@ export function R1RefundExplain() {
         </FadeIn>
         <FadeIn delay={0.06}>
           <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">Refund AED 284,600</h2>
+            <h2 className="mb-3 text-base font-semibold leading-snug">Refund {aed(WAHA_CLAIMED)}</h2>
             <Table>
               <TableHeader>
                 <TableRow className="hover:bg-transparent">
@@ -102,6 +101,12 @@ export function R1RefundExplain() {
 }
 
 export function R1bSupplierCheck() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_ON_HOLD,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -140,7 +145,7 @@ export function R1bSupplierCheck() {
               </div>
               <div className="flex justify-between gap-4">
                 <span className="text-muted-foreground">Invoices to Al Waha</span>
-                <span>14 · VAT AED 46,800</span>
+                <span>14 · VAT {aed(WAHA_ON_HOLD)}</span>
               </div>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -179,6 +184,14 @@ export function R1bSupplierCheck() {
 }
 
 export function R2RefundAct() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_FTA_OPTIONS,
+    WAHA_CLAIMED,
+    WAHA_ON_HOLD,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go, choices, setChoice, log, flashMessage } = useStand()
   const selected = choices.c2_fta || 'OPT-FTA-REF-1'
   return (
@@ -238,8 +251,8 @@ export function R2RefundAct() {
               Partial approval and request for documents
             </h2>
             <p className="mt-3 text-sm leading-6">
-              Of AED 284,600 claimed, AED 53,600 is approved. By 24 December provide tax invoices for AED 184,200 and
-              proof of VAT paid to Bright Line for AED 46,800. A non-filer case {COMPANIES.brightLine.caseId} is
+              Of {aed(WAHA_CLAIMED)} claimed, AED 53,600 is approved. By 24 December provide tax invoices for AED 184,200 and
+              proof of VAT paid to Bright Line for {aed(WAHA_ON_HOLD)}. A non-filer case {COMPANIES.brightLine.caseId} is
               suggested.
             </p>
           </PaperPanel>
@@ -265,6 +278,16 @@ export function R2RefundAct() {
 }
 
 export function R3RefundFollowup() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_CLAIMED,
+    WAHA_APPROVED,
+    WAHA_REJECTED,
+    WAHA_ON_HOLD,
+  } = useStandData()
+  const company = COMPANIES.waha
+  const wahaNotPaid = WAHA_REJECTED + WAHA_ON_HOLD
   const { visitorName, go, log, flashMessage } = useStand()
   return (
     <Shell
@@ -287,8 +310,9 @@ export function R3RefundFollowup() {
           <Panel>
             <SectionLabel>Mon 14 Dec · follow-up</SectionLabel>
             <p className="text-sm leading-6">
-              Al Waha sent 6 paper tax invoices (AED 150,000), bank confirmations for Bright Line, and a VD removing AED
-              34,200. Recommend: approve 150,000, reject 34,200, hold 46,800.
+              Al Waha sent 6 paper tax invoices (AED 150,000), bank confirmations for Bright Line, and a VD removing{' '}
+              {aed(WAHA_REJECTED)}. Recommend: approve 150,000, reject {aedPlain(WAHA_REJECTED)}, hold{' '}
+              {aedPlain(WAHA_ON_HOLD)}.
             </p>
           </Panel>
         </FadeIn>
@@ -308,8 +332,6 @@ export function R3RefundFollowup() {
                 {[
                   ['Supported by e-invoices', '53,600', '53,600', '—'],
                   ['Supported by paper invoices', '150,000', '150,000', '—'],
-                  ['No tax invoices · rejected', '34,200', '—', '34,200'],
-                  ['Bright Line · on hold', '46,800', '—', '46,800'],
                 ].map((row) => (
                   <TableRow key={row[0]}>
                     <TableCell>{row[0]}</TableCell>
@@ -318,11 +340,23 @@ export function R3RefundFollowup() {
                     <TableCell className={row[3] !== '—' ? 'num-gap' : ''}>{row[3]}</TableCell>
                   </TableRow>
                 ))}
+                <TableRow>
+                  <TableCell>No tax invoices · rejected</TableCell>
+                  <TableCell>{aedPlain(WAHA_REJECTED)}</TableCell>
+                  <TableCell>—</TableCell>
+                  <TableCell className="num-gap">{aedPlain(WAHA_REJECTED)}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Bright Line · on hold</TableCell>
+                  <TableCell>{aedPlain(WAHA_ON_HOLD)}</TableCell>
+                  <TableCell>—</TableCell>
+                  <TableCell className="num-gap">{aedPlain(WAHA_ON_HOLD)}</TableCell>
+                </TableRow>
                 <TableRow className="font-semibold">
                   <TableCell>Total</TableCell>
-                  <TableCell>284,600</TableCell>
-                  <TableCell className="num-ok">203,600</TableCell>
-                  <TableCell className="num-gap">81,000</TableCell>
+                  <TableCell>{aedPlain(WAHA_CLAIMED)}</TableCell>
+                  <TableCell className="num-ok">{aedPlain(WAHA_APPROVED)}</TableCell>
+                  <TableCell className="num-gap">{aedPlain(wahaNotPaid)}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -374,6 +408,11 @@ export function R3RefundFollowup() {
 }
 
 export function W1Home() {
+  const {
+    DEMO,
+    COMPANIES,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -404,6 +443,15 @@ export function W1Home() {
 }
 
 export function W2Explain() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_REFUND_PARTS,
+    WAHA_CLAIMED,
+    WAHA_REJECTED,
+    WAHA_ON_HOLD,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -430,7 +478,7 @@ export function W2Explain() {
           <Panel>
             <SectionLabel>FTA assistant</SectionLabel>
             <p className="text-sm leading-6">
-              AED 150,000: 6 paper tax invoices. AED 34,200: card slips — not tax invoices. AED 46,800: Bright Line, at
+              AED 150,000: 6 paper tax invoices. AED {aedPlain(WAHA_REJECTED)}: card slips — not tax invoices. {aed(WAHA_ON_HOLD)}: Bright Line, at
               risk because the supplier is not filing.
             </p>
           </Panel>
@@ -445,7 +493,7 @@ export function W2Explain() {
         <FadeIn delay={0.06}>
           <Panel>
             <h2 className="mb-3 text-base font-semibold leading-snug">
-              Refund AED 284,600 — what I found in your records
+              Refund {aed(WAHA_CLAIMED)} — what I found in your records
             </h2>
             <Table>
               <TableHeader>
@@ -473,6 +521,12 @@ export function W2Explain() {
 }
 
 export function W2bPaperInvoice() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_PAPER_INVOICES,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go } = useStand()
   const inv = WAHA_PAPER_INVOICES[0]
   return (
@@ -537,6 +591,14 @@ export function W2bPaperInvoice() {
 }
 
 export function W3Act() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_BIZ_OPTIONS,
+    WAHA_ON_HOLD,
+    WAHA_REJECTED,
+  } = useStandData()
+  const company = COMPANIES.waha
   const { visitorName, go, choices, setChoice, setWeakMessage, weakMessage, log, flashMessage } =
     useStand()
   const selected = choices.c2_biz || 'OPT-BUS-REF-1'
@@ -613,7 +675,7 @@ export function W3Act() {
             <h2 className="mb-2 text-base font-semibold leading-snug">Reply to Ref. {company.caseId}</h2>
             <p className="text-sm leading-6 text-muted-foreground">
               Attached: 6 tax invoices for input VAT of AED 150,000 and 14 bank payment confirmations for Bright Line. A
-              VD removes AED 34,200 from Box 9.
+              VD removes AED {aedPlain(WAHA_REJECTED)} from Box 9.
             </p>
           </Panel>
           <Panel>
@@ -634,12 +696,12 @@ export function W3Act() {
                 </TableRow>
                 <TableRow>
                   <TableCell>Payment proof, Bright Line</TableCell>
-                  <TableCell>46,800</TableCell>
+                  <TableCell>{aedPlain(WAHA_ON_HOLD)}</TableCell>
                   <TableCell className="text-gold">Depends on supplier</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Card slips · VD Box 9</TableCell>
-                  <TableCell>34,200</TableCell>
+                  <TableCell>{aedPlain(WAHA_REJECTED)}</TableCell>
                   <TableCell className="num-gap">Not recoverable</TableCell>
                 </TableRow>
               </TableBody>
@@ -652,6 +714,15 @@ export function W3Act() {
 }
 
 export function W4Followup() {
+  const {
+    DEMO,
+    COMPANIES,
+    WAHA_APPROVED,
+    WAHA_REJECTED,
+    WAHA_ON_HOLD,
+  } = useStandData()
+  const company = COMPANIES.waha
+  const wahaNotPaid = WAHA_REJECTED + WAHA_ON_HOLD
   const { visitorName, go, log, flashMessage } = useStand()
   return (
     <Shell
@@ -678,8 +749,8 @@ export function W4Followup() {
           <Panel>
             <SectionLabel>Mon 14 Dec 2026 · the FTA decided</SectionLabel>
             <p className="text-sm leading-6">
-              The FTA accepted your 6 paper invoices. AED 150,000 more is approved, AED 203,600 in total. AED 34,200 is
-              not approved. AED 46,800 is on hold until Bright Line is verified.
+              The FTA accepted your 6 paper invoices. AED 150,000 more is approved, {aed(WAHA_APPROVED)} in total.{' '}
+              {aed(WAHA_REJECTED)} is not approved. {aed(WAHA_ON_HOLD)} is on hold until Bright Line is verified.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button variant="gold" onClick={() => go('Z1_summary')}>
@@ -700,11 +771,15 @@ export function W4Followup() {
         <FadeIn delay={0.06} className="grid gap-3 md:grid-cols-3">
           <StatTile
             label="Refund approved"
-            value="AED 203,600"
+            value={aed(WAHA_APPROVED)}
             hint="53,600 on 10 Dec + 150,000 on 14 Dec"
             tone="ok"
           />
-          <StatTile label="Not paid now" value="AED 81,000" hint="34,200 rejected · 46,800 on hold" />
+          <StatTile
+            label="Not paid now"
+            value={aed(wahaNotPaid)}
+            hint={`${aedPlain(WAHA_REJECTED)} rejected · ${aedPlain(WAHA_ON_HOLD)} on hold`}
+          />
           <StatTile label="Decision" value="Early" hint="11 days before 25 Dec" tone="ok" />
         </FadeIn>
       </div>

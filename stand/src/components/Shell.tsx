@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
-import { DEMO } from '@/data/fixtures'
+import { useStandData } from '@/data/StandData'
 import { cn } from '@/lib/utils'
 import type { Role } from '@/data/types'
 import { useStand } from '@/session/StandSession'
@@ -30,9 +30,12 @@ export function Shell({
   const isBiz = role === 'BUSINESS'
   const isEntry = role === 'ENTRY'
   const title = isBiz ? 'CDP · FTA ASSISTANT' : 'FTA CDP · AI Agent Demo'
+  const { DEMO, source } = useStandData()
   const shownDate = date ?? (isBiz ? DEMO.bizToday : DEMO.ftaToday)
   const { flash } = useStand()
   const reduce = useReducedMotion()
+  const sourceLabel =
+    source === 'postgres' ? 'Live DB' : source === 'snapshot' ? 'Workbook' : source === 'loading' ? '…' : 'Demo data'
 
   return (
     <div
@@ -83,8 +86,8 @@ export function Shell({
                 </Badge>
               </a>
             ) : null}
-            <Badge variant="outline" className="h-6 px-2 font-medium">
-              Demo data
+            <Badge variant="outline" className="h-6 px-2 font-medium" title="Data source for this demo">
+              {sourceLabel}
             </Badge>
             <div className="hidden items-center gap-1.5 text-sm leading-none text-muted-foreground sm:flex">
               <CalendarDays className="size-3.5 opacity-70" aria-hidden="true" />

@@ -1,0 +1,302 @@
+{
+  "source": "Checks sheet · v1.2",
+  "count": 37,
+  "checks": [
+    {
+      "id": 1,
+      "case": "Case 1",
+      "check": "Al Yasmeen sales e-invoices, Aug–Oct 2026",
+      "expected": "1912",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 2,
+      "case": "Case 1",
+      "check": "Box 1a Abu Dhabi · e-invoices",
+      "expected": "214600",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 3,
+      "case": "Case 1",
+      "check": "Box 1a Abu Dhabi · return",
+      "expected": "288800",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 4,
+      "case": "Case 1",
+      "check": "Box 1b Dubai · e-invoices",
+      "expected": "1626200",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 5,
+      "case": "Case 1",
+      "check": "Box 1b Dubai · return",
+      "expected": "1140000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 6,
+      "case": "Case 1",
+      "check": "Box 1b gap",
+      "expected": "486200",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 7,
+      "case": "Case 1",
+      "check": "Box 1c Sharjah · e-invoices = return",
+      "expected": "96300",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 8,
+      "case": "Case 1",
+      "check": "Box 9 · received e-invoices",
+      "expected": "702000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 9,
+      "case": "Case 1",
+      "check": "Box 9 · return",
+      "expected": "702000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 10,
+      "case": "Case 1",
+      "check": "Box 14 · return",
+      "expected": "823100",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 11,
+      "case": "Case 1",
+      "check": "Box 14 · recomputed from e-invoices",
+      "expected": "1235100",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 12,
+      "case": "Case 1",
+      "check": "Net gap",
+      "expected": "412000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 13,
+      "case": "Case 1",
+      "check": "Invoices behind the gap (finding F-1187-01)",
+      "expected": "38",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 14,
+      "case": "Case 1",
+      "check": "VAT of those invoices",
+      "expected": "486200",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 15,
+      "case": "Case 1",
+      "check": "Marina Hospitality, October 2026, VAT",
+      "expected": "168400",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 16,
+      "case": "Case 1",
+      "check": "Ledger: booked in November",
+      "expected": "412000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 17,
+      "case": "Case 1",
+      "check": "Ledger: booked in Box 1a",
+      "expected": "74200",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 18,
+      "case": "Case 1",
+      "check": "VD Box 1b corrected = e-invoices Box 1b",
+      "expected": "0",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 19,
+      "case": "Case 1",
+      "check": "VD Box 1a corrected = e-invoices Box 1a",
+      "expected": "0",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 20,
+      "case": "Case 1",
+      "check": "VD Box 14 change",
+      "expected": "412000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 21,
+      "case": "Case 2",
+      "check": "Al Waha sales e-invoices, VAT",
+      "expected": "927400",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 22,
+      "case": "Case 2",
+      "check": "Al Waha received e-invoices, count",
+      "expected": "2406",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 23,
+      "case": "Case 2",
+      "check": "Box 9 · received e-invoices",
+      "expected": "1027800",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 24,
+      "case": "Case 2",
+      "check": "Box 9 · return",
+      "expected": "1212000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 25,
+      "case": "Case 2",
+      "check": "Box 9 without e-invoices",
+      "expected": "184200",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 26,
+      "case": "Case 2",
+      "check": "Box 14 · return (refundable)",
+      "expected": "-284600",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 27,
+      "case": "Case 2",
+      "check": "Refund claimed",
+      "expected": "284600",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 28,
+      "case": "Case 2",
+      "check": "Bright Line invoices to Al Waha, VAT",
+      "expected": "46800",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 29,
+      "case": "Case 2",
+      "check": "Bright Line returns not filed",
+      "expected": "2",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 30,
+      "case": "Case 2",
+      "check": "Supported part = claimed − without e-invoices − Bright Line",
+      "expected": "53600",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 31,
+      "case": "Case 2",
+      "check": "Paper tax invoices received",
+      "expected": "150000",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 32,
+      "case": "Case 2",
+      "check": "Ledger: card slips and booking confirmations",
+      "expected": "34200",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 33,
+      "case": "Case 2",
+      "check": "Ledger Box 9 = return Box 9",
+      "expected": "0",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 34,
+      "case": "Case 2",
+      "check": "Bank confirmations for Bright Line",
+      "expected": "46800",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 35,
+      "case": "Case 2",
+      "check": "VD Box 9 corrected",
+      "expected": "1177800",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 36,
+      "case": "Case 2",
+      "check": "Approved = supported + paper invoices",
+      "expected": "203600",
+      "from_data": null,
+      "ok": null
+    },
+    {
+      "id": 37,
+      "case": "Case 2",
+      "check": "Approved + rejected + on hold = claimed",
+      "expected": "284600",
+      "from_data": null,
+      "ok": null
+    }
+  ]
+}

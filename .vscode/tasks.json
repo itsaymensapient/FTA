@@ -4,7 +4,7 @@
     {
       "label": "Start PostgreSQL",
       "type": "shell",
-      "command": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"$svc = Get-Service -Name 'postgresql-x64-17' -ErrorAction SilentlyContinue; if (-not $svc) { Write-Error 'Service postgresql-x64-17 not found. Install PostgreSQL 17 or update this task.'; exit 1 }; if ($svc.Status -ne 'Running') { Start-Service postgresql-x64-17 }; Get-Service postgresql-x64-17 | Format-Table Name, Status, DisplayName -AutoSize\"",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/scripts/start-postgres.ps1\"",
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -12,6 +12,19 @@
         "reveal": "always",
         "panel": "shared",
         "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Workbook Snapshot",
+      "type": "shell",
+      "command": "npm run snapshot",
+      "options": {
+        "cwd": "${workspaceFolder}/db"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
       },
       "problemMatcher": []
     },
@@ -41,7 +54,8 @@
       "script": "dev",
       "path": "server/",
       "isBackground": true,
-      "dependsOn": ["Start PostgreSQL"],
+      "dependsOn": ["Start PostgreSQL", "Build Workbook Snapshot"],
+      "dependsOrder": "sequence",
       "presentation": {
         "reveal": "always",
         "panel": "dedicated",
@@ -78,13 +92,50 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": ".",
-          "endsPattern": "(Local:|ready in)"
+          "endsPattern": "Local:"
         }
       }
     },
     {
+      "label": "Ali: Run B1 Checks",
+      "type": "shell",
+      "command": "\"${env:LocalAppData}\\Programs\\Python\\Python312\\python.exe\" -m pytest ali/tests/test_checks.py -q",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}"
+        }
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Ali: Ask free question",
+      "type": "shell",
+      "command": "\"${env:LocalAppData}\\Programs\\Python\\Python312\\python.exe\" -m ali.agents.ask_agent \"What open cases need attention?\"",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Start Full Stack",
-      "dependsOn": ["Start PostgreSQL", "Launch Backend API", "Launch Stand UI"],
+      "dependsOn": ["Start PostgreSQL", "Build Workbook Snapshot", "Launch Backend API", "Launch Stand UI"],
       "dependsOrder": "sequence",
       "problemMatcher": [],
       "presentation": {

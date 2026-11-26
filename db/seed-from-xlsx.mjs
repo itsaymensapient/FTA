@@ -141,17 +141,20 @@ function mapSheets(xlDir) {
   const wb = fs.readFileSync(path.join(xlDir, "workbook.xml"), "utf8");
   const rels = fs.readFileSync(path.join(xlDir, "_rels", "workbook.xml.rels"), "utf8");
   const idToTarget = {};
-  for (const m of rels.matchAll(/Id="([^"]+)"[^>]*Target="([^"]+)"/g)) {
-    idToTarget[m[1]] = m[2].replace(/^\//, "").replace(/^xl\//, "");
+  for (const tag of rels.matchAll(/<Relationship\b[^>]*>/g)) {
+    const id = /Id="([^"]+)"/.exec(tag[0])?.[1];
+    const target = /Target="([^"]+)"/.exec(tag[0])?.[1];
+    if (!id || !target) continue;
+    idToTarget[id] = target.replace(/^\//, "").replace(/^xl\//, "");
   }
   const sheets = {};
-  for (const m of wb.matchAll(/name="([^"]+)"[^>]*r:id="([^"]+)"/g)) {
-    sheets[m[1]] = path.join(xlDir, idToTarget[m[2]].replace(/^worksheets\//, "worksheets" + path.sep).replace(/\//g, path.sep));
-    const target = idToTarget[m[2]];
-    const file = target.includes("worksheets/")
-      ? path.join(xlDir, "worksheets", path.basename(target))
-      : path.join(xlDir, target);
-    sheets[m[1]] = file;
+  for (const tag of wb.matchAll(/<sheet\b[^>]*>/g)) {
+    const name = /name="([^"]+)"/.exec(tag[0])?.[1];
+    const rid = /r:id="([^"]+)"/.exec(tag[0])?.[1];
+    if (!name || !rid) continue;
+    const target = idToTarget[rid];
+    if (!target) continue;
+    sheets[name] = path.join(xlDir, target.replace(/\//g, path.sep));
   }
   return sheets;
 }
@@ -208,9 +211,15 @@ async function main() {
   const port = Number(env.LOCAL_PGPORT || 5432);
   const database = env.LOCAL_PGDATABASE || "gitex_stand";
   const user = env.LOCAL_PGUSER || env.PGUSER;
-  const password = env.LOCAL_PGPASSWORD;
-  if (!user || !password) {
-    console.error("Add LOCAL_PGUSER and LOCAL_PGPASSWORD to .env (local Postgres, not Azure).");
+  const hasLocalPass = Object.prototype.hasOwnProperty.call(env, "LOCAL_PGPASSWORD");
+  const password = hasLocalPass
+    ? env.LOCAL_PGPASSWORD
+    : host === "127.0.0.1" || host === "localhost"
+      ? env.PGPASSWORD
+      : null;
+  if (!user || (!hasLocalPass && (password === undefined || password === null))) {
+    console.error("Add LOCAL_PGUSER and LOCAL_PGPASSWORD to .env (local Postgres). Empty password is allowed: LOCAL_PGPASSWORD=");
+    console.error("Or run: npm run snapshot  (API can serve workbook data without Postgres).");
     process.exit(1);
   }
 
@@ -227,9 +236,12 @@ async function main() {
 
   const client = new pg.Client({ host, port, user, password, database, ssl: false });
   await client.connect();
+  await client.query("DROP SCHEMA IF EXISTS app CASCADE;");
   await client.query("DROP SCHEMA public CASCADE; CREATE SCHEMA public;");
   await client.query(fs.readFileSync(SCHEMA, "utf8"));
-  console.log("schema applied");
+  const appSchema = path.join(__dirname, "schema_app.sql");
+  await client.query(fs.readFileSync(appSchema, "utf8"));
+  console.log("schema applied (public B1 tables + app schema)");
 
   const unzipDir = path.join(env.TEMP || process.env.TEMP, "gitex-xlsx-seed");
   unzipXlsx(XLSX, unzipDir);
@@ -269,6 +281,16 @@ async function main() {
     console.log(" ", name, r.rows[0].n);
   }
   await client.end();
+
+  try {
+    execFileSync(process.execPath, [path.join(__dirname, "build-snapshot.mjs")], {
+      stdio: "inherit",
+      cwd: __dirname,
+    });
+  } catch {
+    console.warn("snapshot refresh skipped (run npm run snapshot)");
+  }
+
   console.log("done");
 }
 

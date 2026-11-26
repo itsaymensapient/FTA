@@ -2,7 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Re-migrate & Seed",
+      "name": "Start PostgreSQL",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}/scripts/start-postgres.ps1\"",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Re-migrate & Seed (local PG)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "node",
@@ -20,7 +27,7 @@
       "runtimeArgs": ["--watch", "src/index.mjs"],
       "cwd": "${workspaceFolder}/server",
       "console": "integratedTerminal",
-      "preLaunchTask": "Start PostgreSQL",
+      "preLaunchTask": "Build Workbook Snapshot",
       "env": {
         "API_PORT": "8787"
       },
@@ -35,16 +42,16 @@
       "name": "Launch Stand UI",
       "type": "chrome",
       "request": "launch",
-      "url": "http://127.0.0.1:5173",
+      "url": "http://localhost:5173",
       "webRoot": "${workspaceFolder}/stand",
       "preLaunchTask": "Launch Stand UI"
     },
     {
-      "name": "Launch Stand UI (server only)",
+      "name": "Launch Stand UI (Vite only)",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "--host", "127.0.0.1", "--port", "5173"],
+      "runtimeArgs": ["vite", "--host", "localhost", "--port", "5173"],
       "cwd": "${workspaceFolder}/stand",
       "console": "integratedTerminal",
       "serverReadyAction": {
@@ -52,11 +59,25 @@
         "uriFormat": "%s",
         "action": "openExternally"
       }
+    },
+    {
+      "name": "Ali: Run B1 Checks",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "& \"$env:LocalAppData\\Programs\\Python\\Python312\\python.exe\" -m pytest ali/tests/test_checks.py -q",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Ali: Ask free question",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "& \"$env:LocalAppData\\Programs\\Python\\Python312\\python.exe\" -m ali.agents.ask_agent \"What is the Al Waha refund split?\"",
+      "cwd": "${workspaceFolder}"
     }
   ],
   "compounds": [
     {
-      "name": "Full Stack (PG + API + UI)",
+      "name": "Full Stack (local PG + API + UI)",
       "configurations": ["Launch Backend API", "Launch Stand UI"],
       "preLaunchTask": "Start PostgreSQL",
       "stopAll": true

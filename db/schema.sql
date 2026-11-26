@@ -241,6 +241,8 @@ CREATE TABLE agent_option (
   weak_option_reply TEXT
 );
 
+-- Demo seed copies of session rows from the workbook (read-only reference).
+-- Live visitor progress is stored in schema app — see schema_app.sql.
 CREATE TABLE stand_session (
   session_id TEXT PRIMARY KEY,
   visitor_name TEXT NOT NULL,

@@ -3,10 +3,34 @@ import http from 'http'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import pg from 'pg'
+import { buildStandPayload } from './stand-payload.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '../..')
+const SNAPSHOT_PATH = path.join(ROOT, 'db', 'snapshot.json')
 const PORT = Number(process.env.API_PORT || 8787)
+
+const TABLE_NAMES = [
+  'ref_vat201_box',
+  'taxpayer',
+  'establishment',
+  'e_invoice',
+  'e_invoice_line',
+  'vat_return',
+  'vat_return_box',
+  'fta_case',
+  'return_obligation',
+  'voluntary_disclosure',
+  'vd_box',
+  'refund_request',
+  'case_finding',
+  'finding_invoice',
+  'letter',
+  'case_document',
+  'case_event',
+  'taxpayer_record',
+  'agent_option',
+]
 
 function loadEnv() {
   const env = { ...process.env }
@@ -22,23 +46,25 @@ function loadEnv() {
   return env
 }
 
+function isLocalHost(host) {
+  return !host || host === '127.0.0.1' || host === 'localhost'
+}
+
 function dbConfig(env) {
-  const host = env.LOCAL_PGHOST || env.PGHOST || '127.0.0.1'
-  const port = Number(env.LOCAL_PGPORT || env.PGPORT || 5432)
-  const database = env.LOCAL_PGDATABASE || env.PGDATABASE || 'gitex_stand'
-  const user = env.LOCAL_PGUSER || env.PGUSER
-  const password = env.LOCAL_PGPASSWORD || env.PGPASSWORD
-  const sslMode = env.LOCAL_PGSSLMODE || env.PGSSLMODE || 'disable'
-  if (!user || !password) {
-    throw new Error(
-      'Set LOCAL_PGUSER and LOCAL_PGPASSWORD in .env for local Postgres (preferred). PGUSER/PGPASSWORD are accepted as fallback.',
-    )
-  }
-  if (!env.LOCAL_PGHOST && env.PGHOST && env.PGHOST !== '127.0.0.1' && env.PGHOST !== 'localhost') {
-    console.warn(
-      `[warn] Using remote PGHOST=${env.PGHOST}. Prefer LOCAL_PG* for the stand API.`,
-    )
-  }
+  // Prefer LOCAL_PG* for the stand. Never point Azure PGUSER/PGPASSWORD at localhost.
+  const host = env.LOCAL_PGHOST || (isLocalHost(env.PGHOST) ? env.PGHOST : null) || '127.0.0.1'
+  const port = Number(env.LOCAL_PGPORT || (isLocalHost(host) ? env.PGPORT : null) || 5432)
+  const database = env.LOCAL_PGDATABASE || 'gitex_stand'
+  const user = env.LOCAL_PGUSER || (isLocalHost(host) && isLocalHost(env.PGHOST) ? env.PGUSER : null)
+  const hasLocalPass = Object.prototype.hasOwnProperty.call(env, 'LOCAL_PGPASSWORD')
+  const password = hasLocalPass
+    ? env.LOCAL_PGPASSWORD
+    : isLocalHost(host) && isLocalHost(env.PGHOST)
+      ? env.PGPASSWORD
+      : null
+  const sslMode = env.LOCAL_PGSSLMODE || 'disable'
+  // Empty password is valid when LOCAL_PGPASSWORD= is present in .env
+  if (!user || (!hasLocalPass && (password === undefined || password === null))) return null
   return {
     host,
     port,
@@ -61,8 +87,76 @@ function send(res, status, body, headers = {}) {
   res.end(payload)
 }
 
+function loadSnapshot() {
+  if (!fs.existsSync(SNAPSHOT_PATH)) return null
+  return JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8'))
+}
+
+async function loadTablesFromPg(pool) {
+  const tables = {}
+  const counts = {}
+  for (const name of TABLE_NAMES) {
+    const result = await pool.query(`select * from ${name}`)
+    tables[name] = result.rows
+    counts[name] = result.rows.length
+  }
+  return { tables, counts }
+}
+
 const env = loadEnv()
-const pool = new pg.Pool(dbConfig(env))
+const cfg = dbConfig(env)
+let pool = null
+let pgReady = false
+let pgError = null
+const snapshot = loadSnapshot()
+
+if (cfg) {
+  pool = new pg.Pool({ ...cfg, max: 4, connectionTimeoutMillis: 2500 })
+  pool
+    .query('select 1 as ok')
+    .then(async () => {
+      const check = await pool.query(
+        `select to_regclass('public.taxpayer') as taxpayer, to_regclass('public.fta_case') as fta_case`,
+      )
+      if (!check.rows[0].taxpayer) {
+        pgReady = false
+        pgError = 'Schema missing — run npm run migrate:seed in db/'
+        console.warn(`[warn] Postgres reachable but empty: ${pgError}`)
+        return
+      }
+      pgReady = true
+      console.log(`[ok] Postgres ${cfg.host}:${cfg.port}/${cfg.database}`)
+    })
+    .catch((err) => {
+      pgReady = false
+      pgError = err.message
+      console.warn(`[warn] Postgres unavailable (${err.message}). Serving workbook snapshot.`)
+    })
+} else {
+  console.warn('[warn] No LOCAL_PGUSER/LOCAL_PGPASSWORD — serving workbook snapshot.')
+}
+
+if (!snapshot) {
+  console.warn('[warn] Missing db/snapshot.json — run: cd db && npm run snapshot')
+}
+
+async function getStandPayload() {
+  if (pgReady && pool) {
+    try {
+      const { tables, counts } = await loadTablesFromPg(pool)
+      return buildStandPayload(tables, { source: 'postgres', counts })
+    } catch (err) {
+      console.error('[pg] stand payload failed, falling back to snapshot:', err.message)
+    }
+  }
+  if (snapshot?.tables) {
+    return buildStandPayload(snapshot.tables, {
+      source: 'snapshot',
+      counts: snapshot.counts,
+    })
+  }
+  return null
+}
 
 const server = http.createServer(async (req, res) => {
   if (req.method === 'OPTIONS') {
@@ -74,36 +168,59 @@ const server = http.createServer(async (req, res) => {
 
   try {
     if (req.method === 'GET' && url.pathname === '/health') {
-      const result = await pool.query('select current_database() as database, now() as now')
+      let database = null
+      if (pgReady && pool) {
+        const result = await pool.query('select current_database() as database, now() as now')
+        database = result.rows[0]
+      }
       send(res, 200, {
         ok: true,
         service: 'gitex-stand-api',
-        database: result.rows[0].database,
-        now: result.rows[0].now,
+        source: pgReady ? 'postgres' : snapshot ? 'snapshot' : 'none',
+        postgres: pgReady,
+        postgresError: pgError,
+        snapshot: Boolean(snapshot),
+        database: database?.database ?? null,
+        now: database?.now ?? new Date().toISOString(),
       })
       return
     }
 
+    if (req.method === 'GET' && url.pathname === '/api/stand') {
+      const payload = await getStandPayload()
+      if (!payload) {
+        send(res, 503, {
+          error: 'No data source. Run: cd db && npm run snapshot  (or migrate:seed with LOCAL_PG*).',
+        })
+        return
+      }
+      send(res, 200, payload)
+      return
+    }
+
     if (req.method === 'GET' && url.pathname === '/api/taxpayers') {
-      const result = await pool.query(
-        `select tin, trn, legal_name, vat_status, einvoicing_status, demo_role
-         from taxpayer
-         order by legal_name
-         limit 50`,
-      )
-      send(res, 200, { items: result.rows })
+      const payload = await getStandPayload()
+      if (!payload) {
+        send(res, 503, { error: 'No data source' })
+        return
+      }
+      send(res, 200, {
+        source: payload.source,
+        items: Object.values(payload.companies),
+      })
       return
     }
 
     if (req.method === 'GET' && url.pathname === '/api/cases') {
-      const result = await pool.query(
-        `select case_id, tin, case_type, risk_level, status, amount_at_stake_aed,
-                opened_date, deadline_date, follow_up_date, closed_date, outcome
-         from fta_case
-         order by opened_date desc nulls last
-         limit 50`,
-      )
-      send(res, 200, { items: result.rows })
+      const payload = await getStandPayload()
+      if (!payload) {
+        send(res, 503, { error: 'No data source' })
+        return
+      }
+      send(res, 200, {
+        source: payload.source,
+        items: [payload.yasmeen.case, payload.waha.case].filter(Boolean),
+      })
       return
     }
 
@@ -116,11 +233,12 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, '127.0.0.1', () => {
   console.log(`gitex-stand-api listening on http://127.0.0.1:${PORT}`)
+  console.log(`  /api/stand  /api/taxpayers  /api/cases  /health`)
 })
 
 for (const signal of ['SIGINT', 'SIGTERM']) {
   process.on(signal, async () => {
-    await pool.end().catch(() => {})
+    if (pool) await pool.end().catch(() => {})
     server.close(() => process.exit(0))
   })
 }

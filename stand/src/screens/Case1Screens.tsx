@@ -20,20 +20,22 @@ import {
   TableRow,
 } from '@/components/ui'
 import { Badge } from '@/components/ui/badge'
-import {
-  COMPANIES,
-  DEMO,
-  YASMEEN_BOXES,
-  YASMEEN_BIZ_OPTIONS,
-  YASMEEN_FTA_OPTIONS,
-  YASMEEN_INVOICES,
-} from '@/data/fixtures'
+import { useStandData } from '@/data/StandData'
 import { aed, aedPlain } from '@/lib/format'
 import { useStand } from '@/session/StandSession'
 
-const company = COMPANIES.yasmeen
-
 export function C1ExplainFta() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_BOXES,
+    YASMEEN_GAP_1B,
+    YASMEEN_GAP_NET,
+    YASMEEN_GAP_1A,
+    YASMEEN_INVOICE_COUNT,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
+  const gap1a = Math.abs(YASMEEN_GAP_1A)
   const { visitorName, go, log } = useStand()
   return (
     <Shell
@@ -44,7 +46,7 @@ export function C1ExplainFta() {
           label="AGENT ACTIVITY"
           items={[
             { label: 'Return vs e-invoices by box', status: 'done' },
-            { label: '38 invoices listed', status: 'done' },
+            { label: `${YASMEEN_INVOICE_COUNT} invoices listed`, status: 'done' },
           ]}
         />
       }
@@ -56,24 +58,24 @@ export function C1ExplainFta() {
             <SectionLabel>AI agent</SectionLabel>
             <p className="text-sm leading-6">
               Box 1b (Dubai): VAT {aedPlain(1140000)} declared, {aedPlain(1626200)} on e-invoices — a gap of{' '}
-              <span className="num-gap">{aed(486200)}</span> from 38 October invoices.
+              <span className="num-gap">{aed(YASMEEN_GAP_1B)}</span> from {YASMEEN_INVOICE_COUNT} October invoices.
             </p>
           </Panel>
           <Panel>
             <p className="text-sm leading-6">
-              Box 1a is overstated by {aed(74200)}. Box 14 net gap is{' '}
-              <span className="num-gold">{aed(412000, true)}</span>.
+              Box 1a is overstated by {aed(gap1a)}. Box 14 net gap is{' '}
+              <span className="num-gold">{aed(YASMEEN_GAP_NET, true)}</span>.
             </p>
           </Panel>
           <div className="flex flex-wrap gap-2">
             <Button
               variant="outline"
               onClick={() => {
-                log('Opened 38 invoices')
+                log(`Opened ${YASMEEN_INVOICE_COUNT} invoices`)
                 go('05_c1_documents')
               }}
             >
-              Show 38 invoices
+              Show {YASMEEN_INVOICE_COUNT} invoices
             </Button>
             <Button
               onClick={() => {
@@ -128,6 +130,13 @@ export function C1ExplainFta() {
 }
 
 export function C1DocumentsFta() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_INVOICES,
+    YASMEEN_INVOICE_COUNT,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
   const { visitorName, go } = useStand()
   const selected = YASMEEN_INVOICES[0]
   return (
@@ -148,7 +157,7 @@ export function C1DocumentsFta() {
       <div className="mt-5 grid items-start gap-5 lg:grid-cols-[360px_1fr]">
         <FadeIn>
           <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">38 invoices behind the gap</h2>
+            <h2 className="mb-3 text-base font-semibold leading-snug">{YASMEEN_INVOICE_COUNT} invoices behind the gap</h2>
             <div className="flex flex-col gap-2 text-sm">
               {YASMEEN_INVOICES.map((inv) => (
                 <div key={inv.number} className="rounded-lg border border-border px-3.5 py-2.5">
@@ -208,6 +217,14 @@ export function C1DocumentsFta() {
 }
 
 export function C1ActFta() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_FTA_OPTIONS,
+    YASMEEN_GAP_1B,
+    YASMEEN_INVOICE_COUNT,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
   const { visitorName, go, choices, setChoice, log, flashMessage } = useStand()
   const selected = choices.c1_fta || 'OPT-FTA-REC-1'
   return (
@@ -267,7 +284,7 @@ export function C1ActFta() {
             </h2>
             <p className="mt-4 text-sm leading-6">
               To {company.name}, TRN {company.trn}. The CDP compared your return with e-invoices. Box 1b shows a gap of
-              AED 486,200 from 38 invoices. Please explain or submit a Voluntary Disclosure within 20 business days
+              {aed(YASMEEN_GAP_1B)} from {YASMEEN_INVOICE_COUNT} invoices. Please explain or submit a Voluntary Disclosure within 20 business days
               (follow-up 7 January 2027). The invoice list is attached.
             </p>
           </PaperPanel>
@@ -278,6 +295,15 @@ export function C1ActFta() {
 }
 
 export function C1FollowupFta() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_GAP_1B,
+    YASMEEN_GAP_NET,
+    YASMEEN_GAP_1A,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
+  const gap1a = Math.abs(YASMEEN_GAP_1A)
   const { visitorName, go, log, flashMessage } = useStand()
   return (
     <Shell
@@ -301,7 +327,7 @@ export function C1FollowupFta() {
           <Panel>
             <SectionLabel>Mon 14 Dec 2026 · the taxpayer replied</SectionLabel>
             <p className="text-sm leading-6">
-              Al Yasmeen replied on 11 December. AED 412,000 is a cut-off error; AED 74,200 was reported under Abu Dhabi.
+              Al Yasmeen replied on 11 December. {aed(YASMEEN_GAP_NET)} is a cut-off error; {aed(gap1a)} was reported under Abu Dhabi.
               The whole difference is explained. I recommend closing the case.
             </p>
           </Panel>
@@ -320,15 +346,15 @@ export function C1FollowupFta() {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell>486,200 (Dubai)</TableCell>
+                  <TableCell>{aedPlain(YASMEEN_GAP_1B)} (Dubai)</TableCell>
                   <TableCell>VD 11 Dec: 34 invoices added</TableCell>
-                  <TableCell>412,000</TableCell>
+                  <TableCell>{aedPlain(YASMEEN_GAP_NET)}</TableCell>
                   <TableCell className="num-ok">matches</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>—</TableCell>
                   <TableCell>4 invoices moved from Box 1a</TableCell>
-                  <TableCell>74,200</TableCell>
+                  <TableCell>{aedPlain(gap1a)}</TableCell>
                   <TableCell className="num-ok">matches</TableCell>
                 </TableRow>
                 <TableRow>
@@ -342,7 +368,7 @@ export function C1FollowupFta() {
           </Panel>
           <Panel className="ring-success/35">
             <div className="text-xl font-semibold leading-snug tracking-[-0.02em] num-ok">
-              + AED 412,000 additional VAT declared by the taxpayer.
+              {aed(YASMEEN_GAP_NET, true)} additional VAT declared by the taxpayer.
             </div>
           </Panel>
           <div className="flex flex-wrap gap-2">
@@ -350,7 +376,7 @@ export function C1FollowupFta() {
               variant="outline"
               onClick={() => {
                 log('Opened Voluntary Disclosure')
-                flashMessage('VD opened: AED 412,000 cut-off + AED 74,200 emirate move.')
+                flashMessage(`VD opened: ${aed(YASMEEN_GAP_NET)} cut-off + ${aed(gap1a)} emirate move.`)
                 go('05_c1_documents')
               }}
             >
@@ -393,6 +419,16 @@ export function C1FollowupFta() {
 }
 
 export function C1ClosedFta() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_GAP_1B,
+    YASMEEN_GAP_NET,
+    YASMEEN_GAP_1A,
+    YASMEEN_INVOICE_COUNT,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
+  const gap1a = Math.abs(YASMEEN_GAP_1A)
   const { visitorName, go, openCase } = useStand()
   return (
     <Shell
@@ -414,7 +450,7 @@ export function C1ClosedFta() {
         <FadeIn>
           <Panel>
             <p className="text-sm leading-6">
-              Case {company.caseId} is closed. Al Yasmeen declared AED 412,000 more VAT and moved AED 74,200 to Dubai.
+              Case {company.caseId} is closed. Al Yasmeen declared {aed(YASMEEN_GAP_NET)} more VAT and moved {aed(gap1a)} to Dubai.
             </p>
             <p className="mt-3 text-sm leading-6">
               Next on your list: <span className="font-medium text-destructive">Al Waha Electronics</span>, refund
@@ -446,10 +482,10 @@ export function C1ClosedFta() {
               </TableHeader>
               <TableBody>
                 {[
-                  ['10 Dec', 'Agent', 'Gap of AED 486,200 in Dubai found, letter drafted'],
+                  ['10 Dec', 'Agent', `Gap of ${aed(YASMEEN_GAP_1B)} in Dubai found, letter drafted`],
                   ['10 Dec', 'Sara', 'Letter sent, follow-up set for 7 Jan'],
                   ['11 Dec', 'Taxpayer', 'Reply and Voluntary Disclosure'],
-                  ['14 Dec', 'Agent', 'VD reconciled with the 38 e-invoices'],
+                  ['14 Dec', 'Agent', `VD reconciled with the ${YASMEEN_INVOICE_COUNT} e-invoices`],
                   ['14 Dec', 'Sara', 'Case closed'],
                 ].map((row) => (
                   <TableRow key={row.join()}>
@@ -461,7 +497,7 @@ export function C1ClosedFta() {
               </TableBody>
             </Table>
             <div className="mt-4 text-lg font-semibold leading-snug num-ok">
-              + AED 412,000 additional VAT declared.
+              {aed(YASMEEN_GAP_NET, true)} additional VAT declared.
             </div>
           </Panel>
         </FadeIn>
@@ -471,6 +507,13 @@ export function C1ClosedFta() {
 }
 
 export function Y1Home() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_GAP_1B,
+    YASMEEN_GAP_NET,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -501,7 +544,7 @@ export function Y1Home() {
             Request for clarification · {company.caseId}
           </div>
           <p className="text-[0.8125rem] leading-5 text-muted-foreground">
-            The FTA asks about AED 486,200 more VAT for Dubai on e-invoices, AED 412,000 net.
+            The FTA asks about {aed(YASMEEN_GAP_1B)} more VAT for Dubai on e-invoices, {aed(YASMEEN_GAP_NET)} net.
           </p>
         </ActionCard>
         <div className="grid gap-3 md:grid-cols-3">
@@ -517,6 +560,16 @@ export function Y1Home() {
 }
 
 export function Y2Explain() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_GAP_1B,
+    YASMEEN_GAP_NET,
+    YASMEEN_GAP_1A,
+    YASMEEN_INVOICE_COUNT,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
+  const gap1a = Math.abs(YASMEEN_GAP_1A)
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -528,7 +581,7 @@ export function Y2Explain() {
           label="ASSISTANT ACTIVITY"
           items={[
             { label: 'FTA letter explained', status: 'done' },
-            { label: '38 invoices traced in ledger', status: 'done' },
+            { label: `${YASMEEN_INVOICE_COUNT} invoices traced in ledger`, status: 'done' },
           ]}
         />
       }
@@ -542,13 +595,13 @@ export function Y2Explain() {
           <Panel>
             <SectionLabel>FTA assistant</SectionLabel>
             <p className="text-sm leading-6">
-              From your ledger: 34 invoices with VAT of AED 412,000 are dated October but booked in November; 4 invoices
-              with VAT of AED 74,200 were issued by the Dubai branch but reported in Box 1a.
+              From your ledger: 34 invoices with VAT of {aed(YASMEEN_GAP_NET)} are dated October but booked in November; 4 invoices
+              with VAT of {aed(gap1a)} were issued by the Dubai branch but reported in Box 1a.
             </p>
           </Panel>
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" onClick={() => go('Y2b_documents')}>
-              Show 38 invoices
+              Show {YASMEEN_INVOICE_COUNT} invoices
             </Button>
             <Button onClick={() => go('Y3_act')}>What can I do?</Button>
           </div>
@@ -558,7 +611,7 @@ export function Y2Explain() {
           <Panel>
             <h2 className="mb-2 text-base font-semibold leading-snug">From the FTA · 10 Dec 2026</h2>
             <p className="text-sm leading-6 text-muted-foreground">
-              Explain the difference or submit a VD by 07.01.2027. Box 1b gap AED 486,200; net AED 412,000.
+              Explain the difference or submit a VD by 07.01.2027. Box 1b gap {aed(YASMEEN_GAP_1B)}; net {aed(YASMEEN_GAP_NET)}.
             </p>
           </Panel>
           <Panel>
@@ -574,12 +627,12 @@ export function Y2Explain() {
               <TableBody>
                 <TableRow>
                   <TableCell>34 invoices booked in November</TableCell>
-                  <TableCell>412,000</TableCell>
+                  <TableCell>{aedPlain(YASMEEN_GAP_NET)}</TableCell>
                   <TableCell>Correct with a VD</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>4 invoices reported under Abu Dhabi</TableCell>
-                  <TableCell>74,200</TableCell>
+                  <TableCell>{aedPlain(gap1a)}</TableCell>
                   <TableCell>Move to Box 1b</TableCell>
                 </TableRow>
               </TableBody>
@@ -592,6 +645,13 @@ export function Y2Explain() {
 }
 
 export function Y2bDocuments() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_INVOICES,
+    YASMEEN_INVOICE_COUNT,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
   const { visitorName, go } = useStand()
   const inv = YASMEEN_INVOICES[0]
   return (
@@ -603,7 +663,7 @@ export function Y2bDocuments() {
         <ActivityFooter
           label="ASSISTANT ACTIVITY"
           items={[
-            { label: '38 invoices listed', status: 'done' },
+            { label: `${YASMEEN_INVOICE_COUNT} invoices listed`, status: 'done' },
             { label: 'Invoice dates compared with the ledger', status: 'done' },
           ]}
         />
@@ -616,7 +676,7 @@ export function Y2bDocuments() {
       <div className="mt-5 grid items-start gap-5 lg:grid-cols-[360px_1fr]">
         <FadeIn>
           <Panel>
-            <h2 className="mb-3 text-base font-semibold leading-snug">The 38 invoices from the FTA letter</h2>
+            <h2 className="mb-3 text-base font-semibold leading-snug">The {YASMEEN_INVOICE_COUNT} invoices from the FTA letter</h2>
             <div className="flex flex-col gap-2 text-sm">
               {YASMEEN_INVOICES.map((row) => (
                 <div key={row.number} className="rounded-lg border border-border px-3.5 py-2.5">
@@ -658,6 +718,16 @@ export function Y2bDocuments() {
 }
 
 export function Y3Act() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_BIZ_OPTIONS,
+    YASMEEN_GAP_1A,
+    YASMEEN_GAP_1B,
+    YASMEEN_GAP_NET,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
+  const gap1a = Math.abs(YASMEEN_GAP_1A)
   const { visitorName, go, choices, setChoice, setWeakMessage, weakMessage, log, flashMessage } =
     useStand()
   const selected = choices.c1_biz || 'OPT-BUS-REC-1'
@@ -739,9 +809,9 @@ export function Y3Act() {
               </TableHeader>
               <TableBody>
                 {[
-                  ['1a VAT', '288,800', '214,600', '−74,200'],
-                  ['1b VAT', '1,140,000', '1,626,200', '+486,200'],
-                  ['14', '823,100', '1,235,100', '+412,000'],
+                  ['1a VAT', '288,800', '214,600', `−${aedPlain(gap1a)}`],
+                  ['1b VAT', '1,140,000', '1,626,200', `+${aedPlain(YASMEEN_GAP_1B)}`],
+                  ['14', '823,100', '1,235,100', `+${aedPlain(YASMEEN_GAP_NET)}`],
                 ].map((row) => (
                   <TableRow key={row[0]}>
                     <TableCell>{row[0]}</TableCell>
@@ -767,6 +837,12 @@ export function Y3Act() {
 }
 
 export function Y4Followup() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_GAP_NET,
+  } = useStandData()
+  const company = COMPANIES.yasmeen
   const { visitorName, go, flashMessage, log } = useStand()
   return (
     <Shell
@@ -794,7 +870,7 @@ export function Y4Followup() {
             <SectionLabel>Mon 14 Dec 2026 · the FTA replied</SectionLabel>
             <p className="text-sm leading-6">
               The FTA reviewed your VD and your reply. VD accepted: it matches the e-invoices. The case is closed. The
-              additional VAT of AED 412,000 is in your payment summary.
+              additional VAT of {aed(YASMEEN_GAP_NET)} is in your payment summary.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button variant="gold" onClick={() => go('Z1_summary')}>
@@ -804,7 +880,7 @@ export function Y4Followup() {
                 variant="outline"
                 onClick={() => {
                   log('Opened payment summary')
-                  flashMessage('Payment summary: additional VAT AED 412,000 for Aug–Oct 2026.')
+                  flashMessage(`Payment summary: additional VAT ${aed(YASMEEN_GAP_NET)} for Aug–Oct 2026.`)
                   go('Z1_summary')
                 }}
               >
@@ -815,7 +891,7 @@ export function Y4Followup() {
         </FadeIn>
         <FadeIn delay={0.06} className="grid gap-3 md:grid-cols-3">
           <StatTile label="Case" value="Closed" hint="Letter 10 Dec · reply 11 Dec · closed 14 Dec" tone="ok" />
-          <StatTile label="Additional VAT" value="AED 412,000" hint="for Aug–Oct 2026" />
+          <StatTile label="Additional VAT" value={aed(YASMEEN_GAP_NET)} hint="for Aug–Oct 2026" />
           <StatTile label="Reply" value="Early" hint="27 days before the deadline" tone="ok" />
         </FadeIn>
       </div>

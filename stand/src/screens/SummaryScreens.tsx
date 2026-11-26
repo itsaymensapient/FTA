@@ -12,13 +12,23 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui'
-import { COMPANIES, DEMO } from '@/data/fixtures'
+import { useStandData } from '@/data/StandData'
+import { aed, aedPlain } from '@/lib/format'
 import { useStand } from '@/session/StandSession'
 import { useEffect } from 'react'
 
 export function FtaSummaryScreen() {
+  const {
+    DEMO,
+    COMPANIES,
+    YASMEEN_GAP_NET,
+    WAHA_APPROVED,
+    WAHA_REJECTED,
+    WAHA_ON_HOLD,
+  } = useStandData()
   const { visitorName, chooseRole, reset, go } = useStand()
   const name = visitorName || DEMO.visitorDefault
+  const wahaNotPaid = WAHA_REJECTED + WAHA_ON_HOLD
 
   useEffect(() => {
     const t = setTimeout(() => reset(), 30000)
@@ -43,8 +53,8 @@ export function FtaSummaryScreen() {
         </h1>
         <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
           <StatTile label="Events closed" value="2 of 2" />
-          <StatTile label="VAT secured" value="AED 412,000" tone="ok" />
-          <StatTile label="Refund not paid" value="AED 81,000" />
+          <StatTile label="VAT secured" value={aed(YASMEEN_GAP_NET)} tone="ok" />
+          <StatTile label="Refund not paid" value={aed(wahaNotPaid)} />
           <StatTile label="Your time" value="4 min" />
         </div>
         <Panel>
@@ -61,12 +71,14 @@ export function FtaSummaryScreen() {
               <TableRow>
                 <TableCell>{COMPANIES.yasmeen.short}</TableCell>
                 <TableCell>Ask taxpayer / close after VD</TableCell>
-                <TableCell className="num-ok">+ AED 412,000</TableCell>
+                <TableCell className="num-ok">{aed(YASMEEN_GAP_NET, true)}</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell>{COMPANIES.waha.short}</TableCell>
                 <TableCell>Partial approval</TableCell>
-                <TableCell>203,600 approved · 81,000 not paid</TableCell>
+                <TableCell>
+                  {aedPlain(WAHA_APPROVED)} approved · {aedPlain(wahaNotPaid)} not paid
+                </TableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -89,6 +101,7 @@ export function FtaSummaryScreen() {
 }
 
 export function BizSummaryScreen() {
+  const { DEMO, COMPANIES, YASMEEN_GAP_NET, YASMEEN_INVOICE_COUNT, WAHA_APPROVED } = useStandData()
   const { visitorName, company, chooseRole, reset, openCase } = useStand()
   const name = visitorName || DEMO.visitorDefault
   const isWaha = company === 'waha'
@@ -121,13 +134,13 @@ export function BizSummaryScreen() {
             ? [
                 ['Your time', '3 min'],
                 ['FTA case', 'Closed', 'ok'],
-                ['Refund', 'AED 203,600', 'ok'],
+                ['Refund', aed(WAHA_APPROVED), 'ok'],
                 ['Decision', '11 days early', 'ok'],
               ]
             : [
                 ['Your time', '3 min'],
                 ['FTA case', 'Closed', 'ok'],
-                ['VAT corrected', 'AED 412,000'],
+                ['VAT corrected', aed(YASMEEN_GAP_NET)],
                 ['Reply', '27 days early', 'ok'],
               ]
           ).map(([k, v, tone]) => (
@@ -153,7 +166,11 @@ export function BizSummaryScreen() {
                     ['Follow-up', 'Read the FTA decision', 'Closed the item'],
                   ]
                 : [
-                    ['Explain', 'Matched 38 invoices with your ledger', 'Read the result'],
+                    [
+                      'Explain',
+                      `Matched ${YASMEEN_INVOICE_COUNT} invoices with your ledger`,
+                      'Read the result',
+                    ],
                     ['Decide', 'Offered 3 options', 'Chose VD and reply'],
                     ['Act', 'Filled in the VD and drafted the reply', 'Checked and submitted'],
                     ['Follow-up', 'Read the FTA reply', 'Closed the item'],
@@ -218,6 +235,7 @@ export function BizSummaryScreen() {
 }
 
 export function QueryScreen() {
+  const { DEMO, COMPANIES } = useStandData()
   const { visitorName, role, go } = useStand()
   const isBiz = role === 'BUSINESS'
   return (

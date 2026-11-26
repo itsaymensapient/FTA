@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "snapshot": "node build-snapshot.mjs",
+    "checks:extract": "node extract-checks.mjs",
     "seed": "node seed-from-xlsx.mjs",
     "migrate:seed": "node seed-from-xlsx.mjs"
   },

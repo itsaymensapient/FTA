@@ -4,11 +4,13 @@ import { ActivityFooter } from '@/components/ActivityFooter'
 import { Shell } from '@/components/Shell'
 import { ActionCard, Button, Input, Panel } from '@/components/ui'
 import { Badge } from '@/components/ui/badge'
-import { BRIEFING, COMPANIES, DEMO, PREP_BIZ_LINES, PREP_FTA_LINES } from '@/data/fixtures'
+import { useStandData } from '@/data/StandData'
+import { aed } from '@/lib/format'
 import { useStand } from '@/session/StandSession'
 import { Building2, Check, Landmark, LoaderCircle } from 'lucide-react'
 
 export function NameScreen() {
+  const { DEMO } = useStandData()
   const { visitorName, setName, go } = useStand()
   return (
     <Shell role="ENTRY" visitorName={visitorName || 'Visitor'} date={DEMO.ftaToday}>
@@ -56,6 +58,7 @@ export function NameScreen() {
 }
 
 export function RoleScreen() {
+  const { DEMO } = useStandData()
   const { visitorName, chooseRole } = useStand()
   const name = visitorName || DEMO.visitorDefault
   return (
@@ -193,6 +196,7 @@ function PrepList({
 }
 
 export function PrepFtaScreen() {
+  const { DEMO, PREP_FTA_LINES } = useStandData()
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -249,6 +253,7 @@ export function PrepFtaScreen() {
 }
 
 export function PrepBizScreen() {
+  const { DEMO, COMPANIES, PREP_BIZ_LINES, YASMEEN_INVOICE_COUNT } = useStandData()
   const { visitorName, go } = useStand()
   return (
     <Shell
@@ -260,7 +265,7 @@ export function PrepBizScreen() {
           label="ASSISTANT ACTIVITY"
           items={[
             { label: 'FTA letter received', status: 'done' },
-            { label: '38 invoices matched', status: 'done' },
+            { label: `${YASMEEN_INVOICE_COUNT} invoices matched`, status: 'done' },
             { label: 'VD being prepared', status: 'wait' },
           ]}
         />
@@ -299,6 +304,7 @@ export function PrepBizScreen() {
 }
 
 export function BriefingScreen() {
+  const { DEMO, BRIEFING } = useStandData()
   const { visitorName, openCase, go, log } = useStand()
   const name = visitorName || DEMO.visitorDefault
   return (
@@ -364,6 +370,7 @@ export function BriefingScreen() {
 }
 
 export function CompanyChooserScreen() {
+  const { DEMO, COMPANIES, YASMEEN_GAP_1B, YASMEEN_GAP_NET, WAHA_CLAIMED } = useStandData()
   const { visitorName, openCase } = useStand()
   return (
     <Shell role="BUSINESS" visitorName={visitorName || DEMO.visitorDefault}>
@@ -381,8 +388,8 @@ export function CompanyChooserScreen() {
             </Badge>
             <div className="text-[0.9375rem] font-semibold leading-snug">{COMPANIES.yasmeen.name}</div>
             <p className="text-[0.8125rem] leading-5 text-muted-foreground">
-              The FTA asks for an explanation of the August–October 2026 return: e-invoices show AED 486,200 more VAT for
-              Dubai, AED 412,000 net.
+              The FTA asks for an explanation of the August–October 2026 return: e-invoices show {aed(YASMEEN_GAP_1B)} more
+              VAT for Dubai, {aed(YASMEEN_GAP_NET)} net.
             </p>
           </ActionCard>
           <ActionCard
@@ -393,7 +400,7 @@ export function CompanyChooserScreen() {
             </Badge>
             <div className="text-[0.9375rem] font-semibold leading-snug">{COMPANIES.waha.name}</div>
             <p className="text-[0.8125rem] leading-5 text-muted-foreground">
-              Of a refund of AED 284,600, AED 53,600 is approved; documents needed for AED 231,000.
+              Of a refund of {aed(WAHA_CLAIMED)}, AED 53,600 is approved; documents needed for AED 231,000.
             </p>
           </ActionCard>
         </div>
